@@ -1,0 +1,39 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/6/2019 2:28:16 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MSI"
+  DTS:CreatorName="MSI\piete"
+  DTS:DTSID="{9F8A9F7F-EB64-4136-82FE-51E9E4122C75}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="7177"
+  DTS:ObjectName="S1_Import_Business_Categories"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{0246601F-89B5-405E-8DE3-E831627FFDB7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{27B29261-B5F9-45DC-89AF-96D642CB528E}"
+      DTS:ObjectName="FileName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Business_Categories.csv</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
