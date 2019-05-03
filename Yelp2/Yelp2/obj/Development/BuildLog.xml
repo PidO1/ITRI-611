@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Yelp2</Name>
-    <LastWriteTime>2019-05-03T08:23:19.7205837Z</LastWriteTime>
+    <LastWriteTime>2019-05-03T08:49:15.6746658Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,7 +18,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S1_Import_Business.dtsx</Name>
-      <LastWriteTime>2019-05-03T08:33:24.6777754Z</LastWriteTime>
+      <LastWriteTime>2019-05-03T08:49:15.6467408Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
