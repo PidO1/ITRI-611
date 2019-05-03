@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">MSI</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAi9SZo6FmU0afonGOU0SeoQAAAAACAAAAAAAQZgAAAAEAACAAAAC47uvcIJ+IzFpR4rrygK06BO7E+nqmKP3KA2Ed8YpNkAAAAAAOgAAAAAIAACAAAADhUtn5Cw5QBLGHdM9LF6s/Yk/VVFkaflVsCQnjJXS3EpAAAABdofOaVtruvMx90nn/FnlnJ9QV7XoM5hhqmLhzxgB+zw1mBnfXLNNFYkWaZ+GSXSMZQRCoisQSkwuvCJqWfYMab+5z1kU7y2qISK5FAjiqrMBf+np2ne1FU86/BE1qnrXO7f1CwwEqqCS8rZoaw1gruFZi/rKfOmWacRNi/fqWTNSV3PZDAWjwT4mlvaUNZdtAAAAA7qMVsbGJXu0we4IizSscU7Ic1f+2LU045XkosoMhp5+Y5wGHFVB7XCDPtAX+cj1T6v4T7bi+kCNyMLRpf81VvA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAi9SZo6FmU0afonGOU0SeoQAAAAACAAAAAAAQZgAAAAEAACAAAABCNF+EU55KeFLTSZ7/MdzIsFoxo3MLYWNJ/cdd4MNOGwAAAAAOgAAAAAIAACAAAAAR2VHSqyuyZZ1FlXMo5E3nolMmRWZF76YeEBAXZ7X4I5AAAACG0jiK6y6iCPGVDn+twwQkBfLIHRkrazeG6D766ir50FypwKZGKjIdR5cqhG8v6y9r38so5qoPYq4PnqzG5EZhZEcKYhFWMdkIo/4EnAf/fOoVcIRPcm+bwl/qXlIKTOGW7I3trTJKN1ig3pe6FI4wM4J0VRh17B3H4YbEmne5ZVnYAM7FIhgXs9Li0Hjb0HJAAAAA25/WlUOO90GmKLhVQ5GU7tMB+V6Hdj3nXdz/bNd0u/31XrE6Oos9Q68TkKBxdXw8CCD8khMAEUkVq9D0rD+MZg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -363,10 +363,10 @@
                 <SSIS:Property SSIS:Name="Name">S1_Import_Business</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">35</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">40</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B66A811D-7FB8-4DE5-B726-4984E15E5491}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{522B4794-DE91-4715-AE20-7AC379FC95ED}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -611,21 +611,6 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Business_Errors_File.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Business_Errors_Import_File</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.Business_Errors_File.DataRowsToSkip">
