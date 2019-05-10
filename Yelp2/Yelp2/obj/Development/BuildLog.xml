@@ -2,33 +2,33 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Yelp2</Name>
-    <LastWriteTime>2019-05-03T08:49:15.6746658Z</LastWriteTime>
+    <LastWriteTime>2019-05-10T18:03:49.3921014Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>S1_Import.dtsx</Name>
-      <LastWriteTime>2019-04-26T09:52:18.3570092Z</LastWriteTime>
+      <LastWriteTime>2019-05-10T17:52:15.0444591Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S1_Import_BC.dtsx</Name>
-      <LastWriteTime>2019-05-03T08:23:19.6996853Z</LastWriteTime>
+      <LastWriteTime>2019-05-10T18:03:45.0113318Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S1_Import_Business.dtsx</Name>
-      <LastWriteTime>2019-05-03T08:49:15.6467408Z</LastWriteTime>
+      <LastWriteTime>2019-05-10T18:03:49.3749183Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S1_Import_Category.dtsx</Name>
-      <LastWriteTime>2019-04-06T12:28:54.7695699Z</LastWriteTime>
+      <LastWriteTime>2019-05-10T18:04:58.7451383Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S1_Import_Business_Categories.dtsx</Name>
-      <LastWriteTime>2019-04-12T08:25:17.9100394Z</LastWriteTime>
+      <LastWriteTime>2019-05-10T17:52:15.0484496Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
