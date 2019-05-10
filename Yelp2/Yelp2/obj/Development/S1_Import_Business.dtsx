@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Business"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{522B4794-DE91-4715-AE20-7AC379FC95ED}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{9CEBB7EB-B9E2-49E1-9A86-327F999AD243}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -354,7 +354,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">5/3/2019 11:37:58 AM</DTS:VariableValue>
+        DTS:DataType="7">5/10/2019 12:30:17 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -428,13 +428,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Import BC Business"
+      DTS:refId="Package\Import Business Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{6F667245-A3E9-4E08-949B-CBF664D4026E}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Import BC Business"
+      DTS:ObjectName="Import Business Task"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -442,7 +442,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Import BC Business\Derived Column"
+              refId="Package\Import Business Task\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -450,18 +450,18 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input]"
+                  refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input].Columns[B_Source_ID]"
+                      refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input].Columns[B_Source_ID]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="B_Source_ID"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -469,7 +469,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]},"Unknown" + [LEFT](#{Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]},21))</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]},"Unknown" + [LEFT](#{Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]},21))</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -479,13 +479,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input].Columns[B_Name]"
+                      refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input].Columns[B_Name]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="B_Name"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -493,7 +493,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]},"Unknown")</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]},"Unknown")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -503,13 +503,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input].Columns[B_Neighbourhood]"
+                      refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input].Columns[B_Neighbourhood]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="B_Neighbourhood"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Neighbourhood]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Neighbourhood]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -517,7 +517,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Neighbourhood]},"Unknown")</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Neighbourhood]},"Unknown")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -527,13 +527,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input].Columns[B_Address]"
+                      refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input].Columns[B_Address]"
                       cachedDataType="wstr"
                       cachedLength="125"
                       cachedName="B_Address"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Address]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Address]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -541,7 +541,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Address]},"Unknown")</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Address]},"Unknown")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -551,13 +551,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input].Columns[B_City]"
+                      refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input].Columns[B_City]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="B_City"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_City]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_City]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -565,7 +565,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_City]},"Unknown")</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_City]},"Unknown")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -575,13 +575,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input].Columns[B_State]"
+                      refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input].Columns[B_State]"
                       cachedDataType="wstr"
                       cachedLength="8"
                       cachedName="B_State"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_State]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_State]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -589,7 +589,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_State]},"Unknown")</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_State]},"Unknown")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -599,13 +599,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input].Columns[B_Postal_Code]"
+                      refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input].Columns[B_Postal_Code]"
                       cachedDataType="wstr"
                       cachedLength="8"
                       cachedName="B_Postal_Code"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Postal_Code]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Postal_Code]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -613,7 +613,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Postal_Code]},"Unknown")</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Postal_Code]},"Unknown")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -623,14 +623,14 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input].Columns[B_Latitude]"
+                      refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input].Columns[B_Latitude]"
                       cachedDataType="numeric"
                       cachedName="B_Latitude"
                       cachedPrecision="12"
                       cachedScale="10"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Latitude]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Latitude]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -638,7 +638,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Latitude]},0)</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Latitude]},0)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -648,14 +648,14 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input].Columns[B_Longitude]"
+                      refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input].Columns[B_Longitude]"
                       cachedDataType="numeric"
                       cachedName="B_Longitude"
                       cachedPrecision="13"
                       cachedScale="10"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Longitude]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Longitude]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -663,7 +663,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Longitude]},0)</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Longitude]},0)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -673,14 +673,14 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input].Columns[B_Rating_Stars]"
+                      refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input].Columns[B_Rating_Stars]"
                       cachedDataType="numeric"
                       cachedName="B_Rating_Stars"
                       cachedPrecision="2"
                       cachedScale="1"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Rating_Stars]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Rating_Stars]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -688,7 +688,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Rating_Stars]},0)</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Rating_Stars]},0)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -698,12 +698,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input].Columns[B_Is_Open]"
+                      refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input].Columns[B_Is_Open]"
                       cachedDataType="ui1"
                       cachedName="B_Is_Open"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Is_Open]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Is_Open]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -711,7 +711,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Is_Open]},0)</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Is_Open]},0)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -726,18 +726,18 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Import BC Business\Derived Column.Outputs[Derived Column Output]"
+                  refId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import BC Business\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]"
+                      refId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Import BC Business\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]"
+                      lineageId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]"
                       name="IBPT_ID"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -758,23 +758,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Import BC Business\Derived Column.Outputs[Derived Column Error Output]"
+                  refId="Package\Import Business Task\Derived Column.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import BC Business\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Business Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Import BC Business\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import Business Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Import BC Business\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import Business Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Import BC Business\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Business Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -783,7 +783,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Import BC Business\Flat File Source"
+              refId="Package\Import Business Task\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
@@ -803,24 +803,24 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Import BC Business\Flat File Source.Connections[FlatFileConnection]"
+                  refId="Package\Import Business Task\Flat File Source.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Business Flat File]"
                   connectionManagerRefId="Package.ConnectionManagers[Business Flat File]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output]"
+                  refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[business_id]"
+                      externalMetadataColumnId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[business_id]"
                       length="30"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]"
                       name="B_Source_ID"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -835,13 +835,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[business_name]"
+                      externalMetadataColumnId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[business_name]"
                       length="75"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]"
                       name="B_Name"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -856,13 +856,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Neighbourhood]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Neighbourhood]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[neighborhood]"
+                      externalMetadataColumnId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[neighborhood]"
                       length="50"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Neighbourhood]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Neighbourhood]"
                       name="B_Neighbourhood"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -877,13 +877,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Address]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Address]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[address]"
+                      externalMetadataColumnId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[address]"
                       length="125"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Address]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Address]"
                       name="B_Address"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -898,13 +898,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_City]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_City]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      externalMetadataColumnId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
                       length="75"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_City]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_City]"
                       name="B_City"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -919,13 +919,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_State]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_State]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[state]"
+                      externalMetadataColumnId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[state]"
                       length="8"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_State]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_State]"
                       name="B_State"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -940,13 +940,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Postal_Code]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Postal_Code]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[postal_code]"
+                      externalMetadataColumnId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[postal_code]"
                       length="8"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Postal_Code]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Postal_Code]"
                       name="B_Postal_Code"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -961,12 +961,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Latitude]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Latitude]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[latitude]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Latitude]"
+                      externalMetadataColumnId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[latitude]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Latitude]"
                       name="B_Latitude"
                       precision="12"
                       scale="10"
@@ -983,12 +983,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Longitude]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Longitude]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[longitude]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Longitude]"
+                      externalMetadataColumnId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[longitude]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Longitude]"
                       name="B_Longitude"
                       precision="13"
                       scale="10"
@@ -1005,12 +1005,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Rating_Stars]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Rating_Stars]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[stars]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Rating_Stars]"
+                      externalMetadataColumnId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[stars]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Rating_Stars]"
                       name="B_Rating_Stars"
                       precision="2"
                       scale="1"
@@ -1027,12 +1027,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Is_Open]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Is_Open]"
                       dataType="ui1"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[is_open]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Is_Open]"
+                      externalMetadataColumnId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[is_open]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Is_Open]"
                       name="B_Is_Open"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1050,86 +1050,86 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[business_id]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[business_id]"
                       dataType="wstr"
                       length="30"
                       name="business_id" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[business_name]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[business_name]"
                       dataType="wstr"
                       length="75"
                       name="business_name" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[neighborhood]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[neighborhood]"
                       dataType="wstr"
                       length="50"
                       name="neighborhood" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[address]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[address]"
                       dataType="wstr"
                       length="125"
                       name="address" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
                       dataType="wstr"
                       length="75"
                       name="city" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[state]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[state]"
                       dataType="wstr"
                       length="8"
                       name="state" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[postal_code]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[postal_code]"
                       dataType="wstr"
                       length="8"
                       name="postal_code" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[latitude]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[latitude]"
                       dataType="numeric"
                       name="latitude"
                       precision="12"
                       scale="10" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[longitude]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[longitude]"
                       dataType="numeric"
                       name="longitude"
                       precision="13"
                       scale="10" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[stars]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[stars]"
                       dataType="numeric"
                       name="stars"
                       precision="2"
                       scale="1" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[is_open]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[is_open]"
                       dataType="ui1"
                       name="is_open" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1138,7 +1138,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Import BC Business\Get error Description"
+              refId="Package\Import Business Task\Get error Description"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;11"
               description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
@@ -2005,30 +2005,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Import BC Business\Get error Description.Inputs[Input 0]"
+                  refId="Package\Import Business Task\Get error Description.Inputs[Input 0]"
                   hasSideEffects="true"
                   name="Input 0">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Import BC Business\Get error Description.Inputs[Input 0].Columns[ErrorCode]"
+                      refId="Package\Import Business Task\Get error Description.Inputs[Input 0].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\Import BC Business\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                      lineageId="Package\Import Business Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Import BC Business\Get error Description.Outputs[Output 0]"
+                  refId="Package\Import Business Task\Get error Description.Outputs[Output 0]"
                   name="Output 0"
-                  synchronousInputId="Package\Import BC Business\Get error Description.Inputs[Input 0]">
+                  synchronousInputId="Package\Import Business Task\Get error Description.Inputs[Input 0]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import BC Business\Get error Description.Outputs[Output 0].Columns[ErrorDescription]"
+                      refId="Package\Import Business Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]"
                       dataType="wstr"
                       length="300"
-                      lineageId="Package\Import BC Business\Get error Description.Outputs[Output 0].Columns[ErrorDescription]"
+                      lineageId="Package\Import Business Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]"
                       name="ErrorDescription" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -2036,7 +2036,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </outputs>
             </component>
             <component
-              refId="Package\Import BC Business\OLE DB Destination"
+              refId="Package\Import Business Task\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -2093,7 +2093,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Import BC Business\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Import Business Task\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.Stage 11]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.Stage 11]"
                   description="The OLE DB runtime connection used to access the database."
@@ -2101,159 +2101,159 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="RedirectRow"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Source_ID]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Source_ID]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="B_Source_ID"
-                      externalMetadataColumnId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]" />
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]" />
                     <inputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Name]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Name]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="B_Name"
-                      externalMetadataColumnId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Name]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]" />
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Name]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]" />
                     <inputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Neighbourhood]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Neighbourhood]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="B_Neighbourhood"
-                      externalMetadataColumnId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Neighbourhood]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Neighbourhood]" />
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Neighbourhood]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Neighbourhood]" />
                     <inputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Address]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Address]"
                       cachedDataType="wstr"
                       cachedLength="125"
                       cachedName="B_Address"
-                      externalMetadataColumnId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Address]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Address]" />
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Address]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Address]" />
                     <inputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_City]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_City]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="B_City"
-                      externalMetadataColumnId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_City]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_City]" />
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_City]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_City]" />
                     <inputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_State]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_State]"
                       cachedDataType="wstr"
                       cachedLength="8"
                       cachedName="B_State"
-                      externalMetadataColumnId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_State]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_State]" />
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_State]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_State]" />
                     <inputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Postal_Code]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Postal_Code]"
                       cachedDataType="wstr"
                       cachedLength="8"
                       cachedName="B_Postal_Code"
-                      externalMetadataColumnId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Postal_Code]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Postal_Code]" />
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Postal_Code]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Postal_Code]" />
                     <inputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Latitude]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Latitude]"
                       cachedDataType="numeric"
                       cachedName="B_Latitude"
                       cachedPrecision="12"
                       cachedScale="10"
-                      externalMetadataColumnId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Latitude]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Latitude]" />
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Latitude]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Latitude]" />
                     <inputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Longitude]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Longitude]"
                       cachedDataType="numeric"
                       cachedName="B_Longitude"
                       cachedPrecision="13"
                       cachedScale="10"
-                      externalMetadataColumnId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Longitude]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Longitude]" />
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Longitude]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Longitude]" />
                     <inputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Rating_Stars]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Rating_Stars]"
                       cachedDataType="numeric"
                       cachedName="B_Rating_Stars"
                       cachedPrecision="2"
                       cachedScale="1"
-                      externalMetadataColumnId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Rating_Stars]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Rating_Stars]" />
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Rating_Stars]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Rating_Stars]" />
                     <inputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Is_Open]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Is_Open]"
                       cachedDataType="ui1"
                       cachedName="B_Is_Open"
-                      externalMetadataColumnId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Is_Open]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Is_Open]" />
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Is_Open]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Is_Open]" />
                     <inputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IBPT_ID]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IBPT_ID]"
                       cachedDataType="i4"
                       cachedName="IBPT_ID"
-                      externalMetadataColumnId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
-                      lineageId="Package\Import BC Business\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]" />
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
+                      lineageId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
                       dataType="i4"
                       name="IBPT_ID" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
                       dataType="wstr"
                       length="30"
                       name="B_Source_ID" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Name]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Name]"
                       dataType="wstr"
                       length="75"
                       name="B_Name" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Neighbourhood]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Neighbourhood]"
                       dataType="wstr"
                       length="50"
                       name="B_Neighbourhood" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Address]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Address]"
                       dataType="wstr"
                       length="125"
                       name="B_Address" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_City]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_City]"
                       dataType="wstr"
                       length="75"
                       name="B_City" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_State]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_State]"
                       dataType="wstr"
                       length="8"
                       name="B_State" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Postal_Code]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Postal_Code]"
                       dataType="wstr"
                       length="8"
                       name="B_Postal_Code" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Latitude]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Latitude]"
                       dataType="numeric"
                       name="B_Latitude"
                       precision="12"
                       scale="10" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Longitude]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Longitude]"
                       dataType="numeric"
                       name="B_Longitude"
                       precision="13"
                       scale="10" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Rating_Stars]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Rating_Stars]"
                       dataType="numeric"
                       name="B_Rating_Stars"
                       precision="2"
                       scale="1" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Is_Open]"
+                      refId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Is_Open]"
                       dataType="ui1"
                       name="B_Is_Open" />
                   </externalMetadataColumns>
@@ -2261,22 +2261,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Import BC Business\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Import Business Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Business Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Import BC Business\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import Business Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Import BC Business\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import Business Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Import BC Business\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Business Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2285,7 +2285,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </outputs>
             </component>
             <component
-              refId="Package\Import BC Business\Rows_Read_Count"
+              refId="Package\Import Business Task\Rows_Read_Count"
               componentClassID="Microsoft.RowCount"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -2298,7 +2298,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Import BC Business\Rows_Read_Count.Inputs[Row Count Input 1]"
+                  refId="Package\Import Business Task\Rows_Read_Count.Inputs[Row Count Input 1]"
                   hasSideEffects="true"
                   name="Row Count Input 1">
                   <externalMetadataColumns />
@@ -2306,15 +2306,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Import BC Business\Rows_Read_Count.Outputs[Row Count Output 1]"
+                  refId="Package\Import Business Task\Rows_Read_Count.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
-                  synchronousInputId="Package\Import BC Business\Rows_Read_Count.Inputs[Row Count Input 1]">
+                  synchronousInputId="Package\Import Business Task\Rows_Read_Count.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Import BC Business\Row_Count_Errors"
+              refId="Package\Import Business Task\Row_Count_Errors"
               componentClassID="Microsoft.RowCount"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -2327,7 +2327,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Import BC Business\Row_Count_Errors.Inputs[Row Count Input 1]"
+                  refId="Package\Import Business Task\Row_Count_Errors.Inputs[Row Count Input 1]"
                   hasSideEffects="true"
                   name="Row Count Input 1">
                   <externalMetadataColumns />
@@ -2335,15 +2335,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Import BC Business\Row_Count_Errors.Outputs[Row Count Output 1]"
+                  refId="Package\Import Business Task\Row_Count_Errors.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
-                  synchronousInputId="Package\Import BC Business\Row_Count_Errors.Inputs[Row Count Input 1]">
+                  synchronousInputId="Package\Import Business Task\Row_Count_Errors.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Import BC Business\Write Business Errors"
+              refId="Package\Import Business Task\Write Business Errors"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Destination"
@@ -2366,193 +2366,193 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Import BC Business\Write Business Errors.Connections[FlatFileConnection]"
+                  refId="Package\Import Business Task\Write Business Errors.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Business_Errors_File]"
                   connectionManagerRefId="Package.ConnectionManagers[Business_Errors_File]"
                   name="FlatFileConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input]"
+                  refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input]"
                   hasSideEffects="true"
                   name="Flat File Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Source_ID]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Source_ID]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="B_Source_ID"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Name]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Name]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="B_Name"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Name]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Name]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Name]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Neighbourhood]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Neighbourhood]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="B_Neighbourhood"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Neighbourhood]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Neighbourhood]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Neighbourhood]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Neighbourhood]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Address]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Address]"
                       cachedDataType="wstr"
                       cachedLength="125"
                       cachedName="B_Address"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Address]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Address]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Address]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Address]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_City]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_City]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="B_City"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_City]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_City]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_City]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_City]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_State]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_State]"
                       cachedDataType="wstr"
                       cachedLength="8"
                       cachedName="B_State"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_State]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_State]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_State]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_State]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Postal_Code]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Postal_Code]"
                       cachedDataType="wstr"
                       cachedLength="8"
                       cachedName="B_Postal_Code"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Postal_Code]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Postal_Code]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Postal_Code]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Postal_Code]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Latitude]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Latitude]"
                       cachedDataType="numeric"
                       cachedName="B_Latitude"
                       cachedPrecision="12"
                       cachedScale="10"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Latitude]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Latitude]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Latitude]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Latitude]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Longitude]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Longitude]"
                       cachedDataType="numeric"
                       cachedName="B_Longitude"
                       cachedPrecision="13"
                       cachedScale="10"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Longitude]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Longitude]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Longitude]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Longitude]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Rating_Stars]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Rating_Stars]"
                       cachedDataType="numeric"
                       cachedName="B_Rating_Stars"
                       cachedPrecision="2"
                       cachedScale="1"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Rating_Stars]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Rating_Stars]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Rating_Stars]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Rating_Stars]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Is_Open]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[B_Is_Open]"
                       cachedDataType="ui1"
                       cachedName="B_Is_Open"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Is_Open]"
-                      lineageId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output].Columns[B_Is_Open]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Is_Open]"
+                      lineageId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Is_Open]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Import BC Business\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Import Business Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Import BC Business\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Import Business Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
                     <inputColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
                       cachedDataType="wstr"
                       cachedLength="300"
                       cachedName="ErrorDescription"
-                      externalMetadataColumnId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Description]"
-                      lineageId="Package\Import BC Business\Get error Description.Outputs[Output 0].Columns[ErrorDescription]" />
+                      externalMetadataColumnId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Description]"
+                      lineageId="Package\Import Business Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
                       dataType="wstr"
                       length="30"
                       name="B_Source_ID" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Name]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Name]"
                       dataType="wstr"
                       length="75"
                       name="B_Name" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Neighbourhood]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Neighbourhood]"
                       dataType="wstr"
                       length="50"
                       name="B_Neighbourhood" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Address]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Address]"
                       dataType="wstr"
                       length="125"
                       name="B_Address" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_City]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_City]"
                       dataType="wstr"
                       length="75"
                       name="B_City" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_State]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_State]"
                       dataType="wstr"
                       length="8"
                       name="B_State" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Postal_Code]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Postal_Code]"
                       dataType="wstr"
                       length="8"
                       name="B_Postal_Code" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Latitude]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Latitude]"
                       dataType="numeric"
                       name="B_Latitude"
                       precision="12"
                       scale="10" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Longitude]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Longitude]"
                       dataType="numeric"
                       name="B_Longitude"
                       precision="13"
                       scale="10" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Rating_Stars]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Rating_Stars]"
                       dataType="numeric"
                       name="B_Rating_Stars"
                       precision="2"
                       scale="1" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Is_Open]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Is_Open]"
                       dataType="ui1"
                       name="B_Is_Open" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
                       dataType="i4"
                       name="ErrorCode" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
                       dataType="i4"
                       name="ErrorColumn" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[IBPT_ID]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[IBPT_ID]"
                       dataType="i4"
                       name="IBPT_ID" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Code]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Code]"
                       dataType="i4"
                       name="Error Code" />
                     <externalMetadataColumn
-                      refId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Description]"
+                      refId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Description]"
                       dataType="wstr"
                       length="100"
                       name="Error Description" />
@@ -2563,35 +2563,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </components>
           <paths>
             <path
-              refId="Package\Import BC Business.Paths[Derived Column Output]"
-              endId="Package\Import BC Business\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Import Business Task.Paths[Derived Column Output]"
+              endId="Package\Import Business Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Import BC Business\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Import BC Business.Paths[Flat File Source Output]"
-              endId="Package\Import BC Business\Rows_Read_Count.Inputs[Row Count Input 1]"
+              refId="Package\Import Business Task.Paths[Flat File Source Output]"
+              endId="Package\Import Business Task\Rows_Read_Count.Inputs[Row Count Input 1]"
               name="Flat File Source Output"
-              startId="Package\Import BC Business\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Import Business Task\Flat File Source.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Import BC Business.Paths[OLE DB Destination Error Output]"
-              endId="Package\Import BC Business\Row_Count_Errors.Inputs[Row Count Input 1]"
+              refId="Package\Import Business Task.Paths[OLE DB Destination Error Output]"
+              endId="Package\Import Business Task\Row_Count_Errors.Inputs[Row Count Input 1]"
               name="OLE DB Destination Error Output"
-              startId="Package\Import BC Business\OLE DB Destination.Outputs[OLE DB Destination Error Output]" />
+              startId="Package\Import Business Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]" />
             <path
-              refId="Package\Import BC Business.Paths[Output 0]"
-              endId="Package\Import BC Business\Write Business Errors.Inputs[Flat File Destination Input]"
+              refId="Package\Import Business Task.Paths[Output 0]"
+              endId="Package\Import Business Task\Write Business Errors.Inputs[Flat File Destination Input]"
               name="Output 0"
-              startId="Package\Import BC Business\Get error Description.Outputs[Output 0]" />
+              startId="Package\Import Business Task\Get error Description.Outputs[Output 0]" />
             <path
-              refId="Package\Import BC Business.Paths[Row Count Output 1]"
-              endId="Package\Import BC Business\Derived Column.Inputs[Derived Column Input]"
+              refId="Package\Import Business Task.Paths[Row Count Output 1]"
+              endId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input]"
               name="Row Count Output 1"
-              startId="Package\Import BC Business\Rows_Read_Count.Outputs[Row Count Output 1]" />
+              startId="Package\Import Business Task\Rows_Read_Count.Outputs[Row Count Output 1]" />
             <path
-              refId="Package\Import BC Business.Paths[Row Count Output 11]"
-              endId="Package\Import BC Business\Get error Description.Inputs[Input 0]"
+              refId="Package\Import Business Task.Paths[Row Count Output 11]"
+              endId="Package\Import Business Task\Get error Description.Inputs[Input 0]"
               name="Row Count Output 1"
-              startId="Package\Import BC Business\Row_Count_Errors.Outputs[Row Count Output 1]" />
+              startId="Package\Import Business Task\Row_Count_Errors.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2675,12 +2675,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:From="Package\Create Import_Batch_Process_task_Business"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Import BC Business" />
+      DTS:To="Package\Import Business Task" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{B830C3F2-D92B-4943-ABD7-05BA15EFBB02}"
-      DTS:From="Package\Import BC Business"
+      DTS:From="Package\Import Business Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Update_Import_Batch_Process_Task_Success" />
@@ -2688,7 +2688,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{143E559F-88A5-4D14-BFA3-00E802F39147}"
-      DTS:From="Package\Import BC Business"
+      DTS:From="Package\Import Business Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Update_Import_Batch_Process_Task_Failure"
@@ -2711,8 +2711,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\Create Import_Batch_Process_task_Business"
           TopLeft="249,36" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Import BC Business"
+          Size="180,42"
+          Id="Package\Import Business Task"
           TopLeft="314,169" />
         <NodeLayout
           Size="289,42"
@@ -2724,18 +2724,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           TopLeft="82,345" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="396.75,78">
+          TopLeft="394,78">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,91"
+              EndConnector="10,91"
               Start="0,0"
-              End="0,83.5">
+              End="10,83.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,83.5" />
+                    End="0,41.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.5"
+                    Point2="0,45.5"
+                    Point3="4,45.5" />
+                  <mssgle:LineSegment
+                    End="6,45.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6,45.5"
+                    Point2="10,45.5"
+                    Point3="10,49.5" />
+                  <mssgle:LineSegment
+                    End="10,83.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2746,30 +2758,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="372.333333333333,211">
+          TopLeft="375.333333333333,211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-143.333333333333,134"
+              EndConnector="-146.333333333333,134"
               Start="0,0"
-              End="-143.333333333333,126.5">
+              End="-146.333333333333,126.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.3453070683662" />
+                    End="0,50.3083700440529" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,50.3453070683662"
-                    Point2="0,54.3453070683662"
-                    Point3="-4,54.3453070683662" />
+                    Point1="0,50.3083700440529"
+                    Point2="0,54.3083700440529"
+                    Point3="-4,54.3083700440529" />
                   <mssgle:LineSegment
-                    End="-139.333333333333,54.3453070683662" />
+                    End="-142.333333333333,54.3083700440529" />
                   <mssgle:CubicBezierSegment
-                    Point1="-139.333333333333,54.3453070683662"
-                    Point2="-143.333333333333,54.3453070683662"
-                    Point3="-143.333333333333,58.3453070683662" />
+                    Point1="-142.333333333333,54.3083700440529"
+                    Point2="-146.333333333333,54.3083700440529"
+                    Point3="-146.333333333333,58.3083700440529" />
                   <mssgle:LineSegment
-                    End="-143.333333333333,126.5" />
+                    End="-146.333333333333,126.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2780,37 +2792,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="426.666666666667,211">
+          TopLeft="432.666666666667,211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="196.833333333333,144"
+              EndConnector="190.833333333333,144"
               Start="0,0"
-              End="196.833333333333,136.5">
+              End="190.833333333333,136.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.4009269988413" />
+                    End="0,54.3612334801762" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,54.4009269988413"
-                    Point2="0,58.4009269988413"
-                    Point3="4,58.4009269988413" />
+                    Point1="0,54.3612334801762"
+                    Point2="0,58.3612334801762"
+                    Point3="4,58.3612334801762" />
                   <mssgle:LineSegment
-                    End="192.833333333333,58.4009269988413" />
+                    End="186.833333333333,58.3612334801762" />
                   <mssgle:CubicBezierSegment
-                    Point1="192.833333333333,58.4009269988413"
-                    Point2="196.833333333333,58.4009269988413"
-                    Point3="196.833333333333,62.4009269988413" />
+                    Point1="186.833333333333,58.3612334801762"
+                    Point2="190.833333333333,58.3612334801762"
+                    Point3="190.833333333333,62.3612334801762" />
                   <mssgle:LineSegment
-                    End="196.833333333333,136.5" />
+                    End="190.833333333333,136.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="83.1753190104167,63.4009269988413,30.4826953125,9.7490234375"
+              BoundingBox="80.1753190104167,63.3612334801762,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2818,32 +2830,62 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Import BC Business">
+    design-time-name="Package\Import Business Task">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="167,42"
-          Id="Package\Import BC Business\Rows_Read_Count"
+          Id="Package\Import Business Task\Rows_Read_Count"
           TopLeft="456.857142857143,92.6666666666667" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Import BC Business\OLE DB Destination"
-          TopLeft="454.857142857143,247" />
+          Size="177,42"
+          Id="Package\Import Business Task\Get error Description"
+          TopLeft="451.857142857143,416" />
         <NodeLayout
           Size="151,42"
-          Id="Package\Import BC Business\Flat File Source"
+          Id="Package\Import Business Task\Flat File Source"
           TopLeft="464.857142857143,14" />
         <NodeLayout
+          Size="171,42"
+          Id="Package\Import Business Task\OLE DB Destination"
+          TopLeft="454.857142857143,247" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Import Business Task\Write Business Errors"
+          TopLeft="450.857142857143,505.666666666667" />
+        <NodeLayout
           Size="167,42"
-          Id="Package\Import BC Business\Row_Count_Errors"
+          Id="Package\Import Business Task\Row_Count_Errors"
           TopLeft="456.857142857143,336.333333333333" />
         <NodeLayout
           Size="154,42"
-          Id="Package\Import BC Business\Derived Column"
+          Id="Package\Import Business Task\Derived Column"
           TopLeft="463.357142857143,171.333333333333" />
         <EdgeLayout
-          Id="Package\Import BC Business.Paths[Row Count Output 1]"
+          Id="Package\Import Business Task.Paths[Row Count Output 11]"
+          TopLeft="540.357142857143,378.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.6666666666666"
+              Start="0,0"
+              End="0,30.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Row Count Output 1]"
           TopLeft="540.357142857143,134.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2865,7 +2907,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import BC Business.Paths[OLE DB Destination Error Output]"
+          Id="Package\Import Business Task.Paths[Output 0]"
+          TopLeft="540.357142857143,458">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.6666666666667"
+              Start="0,0"
+              End="0,40.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[OLE DB Destination Error Output]"
           TopLeft="540.357142857143,289">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2889,7 +2953,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import BC Business.Paths[Flat File Source Output]"
+          Id="Package\Import Business Task.Paths[Flat File Source Output]"
           TopLeft="540.357142857143,56">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2911,7 +2975,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import BC Business.Paths[Derived Column Output]"
+          Id="Package\Import Business Task.Paths[Derived Column Output]"
           TopLeft="540.357142857143,213.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2932,63 +2996,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Import BC Business\Get error Description"
-          TopLeft="451.857142857143,416" />
-        <EdgeLayout
-          Id="Package\Import BC Business.Paths[Row Count Output 11]"
-          TopLeft="540.357142857143,378.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.6666666666666"
-              Start="0,0"
-              End="0,30.1666666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.1666666666666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Import BC Business\Write Business Errors"
-          TopLeft="450.857142857143,505.666666666667" />
-        <EdgeLayout
-          Id="Package\Import BC Business.Paths[Output 0]"
-          TopLeft="540.357142857143,458">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.6666666666667"
-              Start="0,0"
-              End="0,40.1666666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.1666666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Import BC Business\OLE DB Destination">
+    design-time-name="Package\Import Business Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
