@@ -11,11 +11,57 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Business_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{92243BCF-92BF-43B2-B5B7-594BA75FEDCE}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{6A6F0A14-542D-4D6B-A31B-4820D4D85FDE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Business_Categories Flat File]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C3664ACD-C967-442B-969E-5AAA7F288B4D}"
+      DTS:ObjectName="Business_Categories Flat File">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="7177"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019\Source_Files\Business_Categories.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="business_id"
+              DTS:DTSID="{D750C347-6D96-40C2-BAF5-AE1D08E493E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="75"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="category"
+              DTS:DTSID="{D6B378E2-AD84-443F-8227-60B1E7350C60}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="category_order"
+              DTS:DTSID="{19CB875B-735B-4534-BF3F-EA13D1EA38A4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Business_Category Errors Flat File]"
       DTS:CreationName="FLATFILE"
@@ -97,52 +143,6 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Business_Category Flat File]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{6BEA808A-63F3-4459-B30D-83BD0A4911C3}"
-      DTS:ObjectName="Business_Category Flat File">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="7177"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x0022_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019\Source_Files\Business_Categories">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="30"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="business_id"
-              DTS:DTSID="{4946B64F-DC05-4488-89AA-E1342C333B7D}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="75"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="category"
-              DTS:DTSID="{92497CCF-6A55-4579-ABC3-B0066B58C21C}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="category_order"
-              DTS:DTSID="{93C6BA02-0B14-41E5-BA3C-C1030C6C6522}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.Stage 11]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{1D4247C4-5FC0-4AB2-A3C7-565AE53C2E1C}"
@@ -183,7 +183,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">5/10/2019 4:44:48 PM</DTS:VariableValue>
+        DTS:DataType="7">5/10/2019 8:14:29 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -556,8 +556,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Business_Category Flat File]"
-                  connectionManagerRefId="Package.ConnectionManagers[Business_Category Flat File]"
+                  connectionManagerID="Package.ConnectionManagers[Business_Categories Flat File]"
+                  connectionManagerRefId="Package.ConnectionManagers[Business_Categories Flat File]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
