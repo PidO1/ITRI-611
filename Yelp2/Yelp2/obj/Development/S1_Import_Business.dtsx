@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Business"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{9CEBB7EB-B9E2-49E1-9A86-327F999AD243}">
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{DF46E335-11BB-4120-900D-081C0947F697}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -354,7 +354,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">5/10/2019 12:30:17 PM</DTS:VariableValue>
+        DTS:DataType="7">5/10/2019 4:42:57 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
