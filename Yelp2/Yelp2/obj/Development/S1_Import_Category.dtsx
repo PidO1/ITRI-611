@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="52"
-  DTS:VersionGUID="{A2BFBF10-75FF-40DB-BDF0-8EAC0A3933AF}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{2104AE02-3149-4524-8B44-9E7BEE390BEB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019\Source_Files\Category.csv">
+          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Category.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -98,7 +98,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019\Error_Files\S1_Import_CategoryErrors.csv">
+          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S1_Import_CategoryErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -215,7 +215,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">5/10/2019 8:14:28 PM</DTS:VariableValue>
+        DTS:DataType="7">5/20/2019 1:41:34 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1988,7 +1988,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Failure"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2029,7 +2029,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Success"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
