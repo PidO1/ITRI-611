@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Business_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{12097A9D-9058-4C1D-BFC7-66C1B1BFD53E}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{08AB192F-10F0-4683-A666-F5FDECCD9399}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -185,7 +185,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">5/20/2019 1:41:32 PM</DTS:VariableValue>
+        DTS:DataType="7">5/24/2019 7:53:16 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -273,276 +273,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Derived Column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[B_Source_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="B_Source_ID"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]},"Unknown")</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">REPLACENULL(B_Source_ID,"Unknown")</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[C_ID]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[C_ID]},"Unknown")</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">REPLACENULL(C_ID,"Unknown")</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[BC_order]"
-                      cachedDataType="i4"
-                      cachedName="BC_order"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[BC_order]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[BC_order]},"Unknown")</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">REPLACENULL(BC_order,"Unknown")</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]"
-                      name="IBPT_ID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">@[User::IBPT_ID]</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">@[User::IBPT_ID]</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\Flat File Destination"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="7177"
-              name="Flat File Destination">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Flat File Destination.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Business_Category Errors Flat File]"
-                  connectionManagerRefId="Package.ConnectionManagers[Business_Category Errors Flat File]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[B_Source_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="B_Source_ID"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[C_ID]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[C_ID]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[BC_order]"
-                      cachedDataType="i4"
-                      cachedName="BC_order"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[BC_order]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[BC_order]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[IBPT_ID]"
-                      cachedDataType="i4"
-                      cachedName="IBPT_ID"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[IBPT_ID]"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="300"
-                      cachedName="ErrorDescription"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
-                      lineageId="Package\Data Flow Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
-                      dataType="wstr"
-                      length="30"
-                      name="B_Source_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[C_ID]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[BC_order]"
-                      dataType="i4"
-                      name="BC_order" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[IBPT_ID]"
-                      dataType="i4"
-                      name="IBPT_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      dataType="i4"
-                      name="ErrorCode" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      dataType="i4"
-                      name="ErrorColumn" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
-                      dataType="wstr"
-                      length="300"
-                      name="ErrorDescription" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\Flat File Source"
+              refId="Package\Data Flow Task\Business_category_Flat_Files"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="7177"
-              name="Flat File Source"
+              name="Business_category_Flat_Files"
               usesDispositions="true"
               version="1">
               <properties>
@@ -557,24 +293,24 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
+                  refId="Package\Data Flow Task\Business_category_Flat_Files.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Business_Categories Flat File]"
                   connectionManagerRefId="Package.ConnectionManagers[Business_Categories Flat File]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
+                  refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]"
+                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[B_Source_ID]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[business_id]"
+                      externalMetadataColumnId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].ExternalColumns[business_id]"
                       length="30"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[B_Source_ID]"
                       name="B_Source_ID"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -589,13 +325,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[C_ID]"
+                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[C_ID]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[category]"
+                      externalMetadataColumnId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].ExternalColumns[category]"
                       length="75"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[C_ID]"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[C_ID]"
                       name="C_ID"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -610,12 +346,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[BC_order]"
+                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[category_order]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[BC_order]"
+                      externalMetadataColumnId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].ExternalColumns[category_order]"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]"
                       name="BC_order"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -633,46 +369,212 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[business_id]"
+                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].ExternalColumns[business_id]"
                       dataType="wstr"
                       length="30"
                       name="business_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[category]"
+                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].ExternalColumns[category]"
                       dataType="wstr"
                       length="75"
                       name="category" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[category_order]"
+                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].ExternalColumns[category_order]"
                       dataType="i4"
                       name="category_order" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Business_Category_Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Business_Category_Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Business_Category]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Business_Category_Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.Stage 11]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.Stage 11]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].Columns[B_Source_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="B_Source_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[B_Source_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].Columns[C_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="C_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[C_ID]"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[C_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].Columns[BC_order]"
+                      cachedDataType="i4"
+                      cachedName="BC_order"
+                      externalMetadataColumnId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[BC_order]"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
+                      dataType="wstr"
+                      length="30"
+                      name="B_Source_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[C_ID]"
+                      dataType="wstr"
+                      length="75"
+                      name="C_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[BC_order]"
+                      dataType="i4"
+                      name="BC_order" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Error_Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Error_Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Error_row_Count</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Error_Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Error_Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Data Flow Task\Error_Count.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -1552,7 +1454,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       refId="Package\Data Flow Task\Get error Description.Inputs[Input 0].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                      lineageId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1575,135 +1477,144 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Business_Category]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.Stage 11]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.Stage 11]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
+              refId="Package\Data Flow Task\Remove_Nulls"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Remove_Nulls"
+              usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="RedirectRow"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
+                  refId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[B_Source_ID]"
+                      refId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input].Columns[B_Source_ID]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="B_Source_ID"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[B_Source_ID]" />
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[B_Source_ID]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACENULL](#{Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[B_Source_ID]},"Unknown")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(B_Source_ID,"Unknown")</property>
+                      </properties>
+                    </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[C_ID]"
+                      refId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input].Columns[C_ID]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="C_ID"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_ID]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[C_ID]" />
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[C_ID]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACENULL](#{Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[C_ID]},"Unknown")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(C_ID,"Unknown")</property>
+                      </properties>
+                    </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BC_order]"
+                      refId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input].Columns[BC_order]"
                       cachedDataType="i4"
                       cachedName="BC_order"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BC_order]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[BC_order]" />
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACENULL](#{Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]},"Unknown")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(BC_order,"Unknown")</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
-                      dataType="wstr"
-                      length="30"
-                      name="B_Source_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_ID]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BC_order]"
-                      dataType="i4"
-                      name="BC_order" />
-                  </externalMetadataColumns>
+                  <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Output].Columns[IBPT_ID]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Output].Columns[IBPT_ID]"
+                      name="IBPT_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::IBPT_ID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::IBPT_ID]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1741,66 +1652,155 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Row Count 1"
-              componentClassID="Microsoft.RowCount"
-              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
-              name="Row Count 1">
+              refId="Package\Data Flow Task\S1_Import_Business_Category_Errors"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="7177"
+              name="S1_Import_Business_Category_Errors">
               <properties>
                 <property
-                  dataType="System.String"
-                  description="Specifies the variable to hold the row count."
-                  name="VariableName">User::Error_row_Count</property>
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
               </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Business_Category Errors Flat File]"
+                  connectionManagerRefId="Package.ConnectionManagers[Business_Category Errors Flat File]"
+                  name="FlatFileConnection" />
+              </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Row Count 1.Inputs[Row Count Input 1]"
+                  refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input]"
                   hasSideEffects="true"
-                  name="Row Count Input 1">
-                  <externalMetadataColumns />
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[B_Source_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="B_Source_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[B_Source_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[C_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="C_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[C_ID]"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[C_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[BC_order]"
+                      cachedDataType="i4"
+                      cachedName="BC_order"
+                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[BC_order]"
+                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[IBPT_ID]"
+                      cachedDataType="i4"
+                      cachedName="IBPT_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[IBPT_ID]"
+                      lineageId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Output].Columns[IBPT_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="300"
+                      cachedName="ErrorDescription"
+                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
+                      lineageId="Package\Data Flow Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
+                      dataType="wstr"
+                      length="30"
+                      name="B_Source_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[C_ID]"
+                      dataType="wstr"
+                      length="75"
+                      name="C_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[BC_order]"
+                      dataType="i4"
+                      name="BC_order" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[IBPT_ID]"
+                      dataType="i4"
+                      name="IBPT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
+                      dataType="wstr"
+                      length="300"
+                      name="ErrorDescription" />
+                  </externalMetadataColumns>
                 </input>
               </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Row Count 1.Outputs[Row Count Output 1]"
-                  name="Row Count Output 1"
-                  synchronousInputId="Package\Data Flow Task\Row Count 1.Inputs[Row Count Input 1]">
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
             </component>
           </components>
           <paths>
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Flat File Source Output]"
               endId="Package\Data Flow Task\Row Count.Inputs[Row Count Input 1]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Destination Error Output]"
-              endId="Package\Data Flow Task\Row Count 1.Inputs[Row Count Input 1]"
+              endId="Package\Data Flow Task\Error_Count.Inputs[Row Count Input 1]"
               name="OLE DB Destination Error Output"
-              startId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]" />
+              startId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Output 0]"
-              endId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+              endId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input]"
               name="Output 0"
               startId="Package\Data Flow Task\Get error Description.Outputs[Output 0]" />
             <path
               refId="Package\Data Flow Task.Paths[Row Count Output 1]"
-              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input]"
               name="Row Count Output 1"
               startId="Package\Data Flow Task\Row Count.Outputs[Row Count Output 1]" />
             <path
               refId="Package\Data Flow Task.Paths[Row Count Output 11]"
               endId="Package\Data Flow Task\Get error Description.Inputs[Input 0]"
               name="Row Count Output 1"
-              startId="Package\Data Flow Task\Row Count 1.Outputs[Row Count Output 1]" />
+              startId="Package\Data Flow Task\Error_Count.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2064,34 +2064,34 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\Data Flow Task\Get error Description"
           TopLeft="623,533" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
+          Size="199,42"
+          Id="Package\Data Flow Task\Business_Category_Table"
           TopLeft="439,322" />
         <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task\Flat File Source"
+          Size="216,42"
+          Id="Package\Data Flow Task\Business_category_Flat_Files"
           TopLeft="436,50" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\Data Flow Task\Flat File Destination"
+          Size="257,42"
+          Id="Package\Data Flow Task\S1_Import_Business_Category_Errors"
           TopLeft="652,281" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow Task\Derived Column"
+          Size="145,42"
+          Id="Package\Data Flow Task\Remove_Nulls"
           TopLeft="425,231" />
         <NodeLayout
-          Size="139,42"
-          Id="Package\Data Flow Task\Row Count 1"
+          Size="136,42"
+          Id="Package\Data Flow Task\Error_Count"
           TopLeft="462,435" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Row Count Output 11]"
-          TopLeft="531.5,477">
+          TopLeft="530,477">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="151.833333333333,56"
+              EndConnector="153.333333333333,56"
               Start="0,0"
-              End="151.833333333333,48.5">
+              End="153.333333333333,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2102,13 +2102,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     Point2="0,33.2989921612542"
                     Point3="4,33.2989921612542" />
                   <mssgle:LineSegment
-                    End="147.833333333333,33.2989921612542" />
+                    End="149.333333333333,33.2989921612542" />
                   <mssgle:CubicBezierSegment
-                    Point1="147.833333333333,33.2989921612542"
-                    Point2="151.833333333333,33.2989921612542"
-                    Point3="151.833333333333,37.2989921612542" />
+                    Point1="149.333333333333,33.2989921612542"
+                    Point2="153.333333333333,33.2989921612542"
+                    Point3="153.333333333333,37.2989921612542" />
                   <mssgle:LineSegment
-                    End="151.833333333333,48.5" />
+                    End="153.333333333333,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2123,9 +2123,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9,47"
+              EndConnector="-13.5,47"
               Start="0,0"
-              End="-9,39.5">
+              End="-13.5,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2136,13 +2136,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     Point2="0,23.5"
                     Point3="-4,23.5" />
                   <mssgle:LineSegment
-                    End="-5,23.5" />
+                    End="-9.5,23.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-5,23.5"
-                    Point2="-9,23.5"
-                    Point3="-9,27.5" />
+                    Point1="-9.5,23.5"
+                    Point2="-13.5,23.5"
+                    Point3="-13.5,27.5" />
                   <mssgle:LineSegment
-                    End="-9,39.5" />
+                    End="-13.5,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2153,18 +2153,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Output 0]"
-          TopLeft="738.833333333333,533">
+          TopLeft="739.666666666667,533">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-210"
+              EndConnector="40.8333333333334,-210"
               Start="0,0"
-              End="0,-202.5">
+              End="40.8333333333334,-202.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-202.5" />
+                    End="0,-81.1287793952968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-81.1287793952968"
+                    Point2="0,-85.1287793952968"
+                    Point3="4,-85.1287793952968" />
+                  <mssgle:LineSegment
+                    End="36.8333333333334,-85.1287793952968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.8333333333334,-85.1287793952968"
+                    Point2="40.8333333333334,-85.1287793952968"
+                    Point3="40.8333333333334,-89.1287793952968" />
+                  <mssgle:LineSegment
+                    End="40.8333333333334,-202.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2175,42 +2187,66 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Destination Error Output]"
-          TopLeft="528,364">
+          TopLeft="538.5,364">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71"
+              EndConnector="-8.5,71"
               Start="0,0"
-              End="0,63.5">
+              End="-8.5,63.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.5" />
+                    End="0,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5"
+                    Point2="0,35.5"
+                    Point3="-4,35.5" />
+                  <mssgle:LineSegment
+                    End="-4.5,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.5,35.5"
+                    Point2="-8.5,35.5"
+                    Point3="-8.5,39.5" />
+                  <mssgle:LineSegment
+                    End="-8.5,63.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,26.033203125,146.4178125,11.43359375"
+              BoundingBox="-77.45890625,40.5,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="511.25,92">
+          TopLeft="544,92">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50"
+              EndConnector="-33,50"
               Start="0,0"
-              End="0,42.5">
+              End="-33,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.5" />
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="-4,25" />
+                  <mssgle:LineSegment
+                    End="-29,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29,25"
+                    Point2="-33,25"
+                    Point3="-33,29" />
+                  <mssgle:LineSegment
+                    End="-33,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2221,13 +2257,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="502,273">
+          TopLeft="497.5,273">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="22.5,49"
+              EndConnector="41,49"
               Start="0,0"
-              End="22.5,41.5">
+              End="41,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2238,13 +2274,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     Point2="0,24.5"
                     Point3="4,24.5" />
                   <mssgle:LineSegment
-                    End="18.5,24.5" />
+                    End="37,24.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.5,24.5"
-                    Point2="22.5,24.5"
-                    Point3="22.5,28.5" />
+                    Point1="37,24.5"
+                    Point2="41,24.5"
+                    Point3="41,28.5" />
                   <mssgle:LineSegment
-                    End="22.5,41.5" />
+                    End="41,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2257,7 +2293,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task\Business_Category_Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

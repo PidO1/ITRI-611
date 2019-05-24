@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_BC"
   DTS:PackageType="5"
-  DTS:VersionBuild="81"
-  DTS:VersionGUID="{7D3AA639-2024-4E87-8163-90207CAFC439}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{B67091A1-88D8-4A1D-85F4-FA5275A33171}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -49,7 +49,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">5/20/2019 3:12:34 PM</DTS:VariableValue>
+        DTS:DataType="7">5/24/2019 7:51:59 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -63,14 +63,14 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Process Error update"
+      DTS:refId="Package\S1_Import_BC_Failure_Update"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{50A5F38B-390F-45B3-BE2D-ACCE4DF382D5}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Process Error update"
-      DTS:ThreadHint="1">
+      DTS:ObjectName="S1_Import_BC_Failure_Update"
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -92,13 +92,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Process start Entry"
+      DTS:refId="Package\S1_Import_BC_insert"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{8B110FC6-2B8E-46F2-8D46-5109BCA199C2}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Process start Entry"
+      DTS:ObjectName="S1_Import_BC_insert"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -134,14 +134,14 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Process Success update"
+      DTS:refId="Package\S1_Import_BC_Sucess_Update"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{20F74297-FCDD-4767-93FE-4569A8CFB144}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Process Success update"
-      DTS:ThreadHint="0">
+      DTS:ObjectName="S1_Import_BC_Sucess_Update"
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -243,7 +243,7 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{F84D3A80-AEC6-457F-8440-35C18028AC1D}"
-      DTS:From="Package\Process start Entry"
+      DTS:From="Package\S1_Import_BC_insert"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Sequence Container" />
@@ -254,7 +254,7 @@
       DTS:From="Package\Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Process Success update" />
+      DTS:To="Package\S1_Import_BC_Sucess_Update" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -262,7 +262,7 @@
       DTS:From="Package\Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Process Error update"
+      DTS:To="Package\S1_Import_BC_Failure_Update"
       DTS:Value="1" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -278,16 +278,16 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="177,42"
-          Id="Package\Process Error update"
+          Size="224,42"
+          Id="Package\S1_Import_BC_Failure_Update"
           TopLeft="614,527" />
         <NodeLayout
-          Size="167,42"
-          Id="Package\Process start Entry"
+          Size="179,42"
+          Id="Package\S1_Import_BC_insert"
           TopLeft="183,12" />
         <NodeLayout
-          Size="191,42"
-          Id="Package\Process Success update"
+          Size="224,42"
+          Id="Package\S1_Import_BC_Sucess_Update"
           TopLeft="229,523" />
         <NodeLayout
           Size="162,42"
@@ -310,13 +310,13 @@
           TopLeft="174,119" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="266.5,54">
+          TopLeft="272.5,54">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="232.5,65"
+              EndConnector="226.5,65"
               Start="0,0"
-              End="232.5,57.5">
+              End="226.5,57.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -327,13 +327,13 @@
                     Point2="0,32.5"
                     Point3="4,32.5" />
                   <mssgle:LineSegment
-                    End="228.5,32.5" />
+                    End="222.5,32.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="228.5,32.5"
-                    Point2="232.5,32.5"
-                    Point3="232.5,36.5" />
+                    Point1="222.5,32.5"
+                    Point2="226.5,32.5"
+                    Point3="226.5,36.5" />
                   <mssgle:LineSegment
-                    End="232.5,57.5" />
+                    End="226.5,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -348,9 +348,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-67.5,107"
+              EndConnector="-51,107"
               Start="0,0"
-              End="-67.5,99.5">
+              End="-51,99.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -361,13 +361,13 @@
                     Point2="0,42.9576427255985"
                     Point3="-4,42.9576427255985" />
                   <mssgle:LineSegment
-                    End="-63.5,42.9576427255985" />
+                    End="-47,42.9576427255985" />
                   <mssgle:CubicBezierSegment
-                    Point1="-63.5,42.9576427255985"
-                    Point2="-67.5,42.9576427255985"
-                    Point3="-67.5,46.9576427255985" />
+                    Point1="-47,42.9576427255985"
+                    Point2="-51,42.9576427255985"
+                    Point3="-51,46.9576427255985" />
                   <mssgle:LineSegment
-                    End="-67.5,99.5" />
+                    End="-51,99.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -382,9 +382,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="96.5,111"
+              EndConnector="120,111"
               Start="0,0"
-              End="96.5,103.5">
+              End="120,103.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -395,20 +395,20 @@
                     Point2="0,44.5635359116022"
                     Point3="4,44.5635359116022" />
                   <mssgle:LineSegment
-                    End="92.5,44.5635359116022" />
+                    End="116,44.5635359116022" />
                   <mssgle:CubicBezierSegment
-                    Point1="92.5,44.5635359116022"
-                    Point2="96.5,44.5635359116022"
-                    Point3="96.5,48.5635359116022" />
+                    Point1="116,44.5635359116022"
+                    Point2="120,44.5635359116022"
+                    Point3="120,48.5635359116022" />
                   <mssgle:LineSegment
-                    End="96.5,103.5" />
+                    End="120,103.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="33.00865234375,49.5635359116022,30.4826953125,9.7490234375"
+              BoundingBox="44.75865234375,49.5635359116022,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

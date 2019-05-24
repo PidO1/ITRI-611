@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{2104AE02-3149-4524-8B44-9E7BEE390BEB}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{1BF11BFC-F327-4418-9BB4-98345139049A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -215,7 +215,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">5/20/2019 1:41:25 PM</DTS:VariableValue>
+        DTS:DataType="7">5/24/2019 7:53:33 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1811,12 +1811,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </outputs>
             </component>
             <component
-              refId="Package\Import Category Task\S1_Import_CategoryErrors"
+              refId="Package\Import Category Task\S1_Import_Category_Errors"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Destination"
               localeId="7177"
-              name="S1_Import_CategoryErrors">
+              name="S1_Import_Category_Errors">
               <properties>
                 <property
                   dataType="System.Boolean"
@@ -1834,109 +1834,109 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Import Category Task\S1_Import_CategoryErrors.Connections[FlatFileConnection]"
+                  refId="Package\Import Category Task\S1_Import_Category_Errors.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Error_File]"
                   connectionManagerRefId="Package.ConnectionManagers[Error_File]"
                   name="FlatFileConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input]"
+                  refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input]"
                   hasSideEffects="true"
                   name="Flat File Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].Columns[category_id]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[category_id]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="category_id"
-                      externalMetadataColumnId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[category_id]"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[category_id]"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[category_id]" />
                     <inputColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].Columns[title]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[title]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="title"
-                      externalMetadataColumnId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[title]"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[title]"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[title]" />
                     <inputColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].Columns[parent_1]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[parent_1]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="parent_1"
-                      externalMetadataColumnId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[parent_1]"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_1]"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_1]" />
                     <inputColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].Columns[parent_2]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[parent_2]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="parent_2"
-                      externalMetadataColumnId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[parent_2]"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_2]"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_2]" />
                     <inputColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].Columns[parent_3]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[parent_3]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="parent_3"
-                      externalMetadataColumnId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[parent_3]"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_3]"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]" />
                     <inputColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
                       lineageId="Package\Import Category Task\Category Table Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
                     <inputColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
                       lineageId="Package\Import Category Task\Category Table Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
                     <inputColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
                       cachedDataType="wstr"
                       cachedLength="300"
                       cachedName="ErrorDescription"
-                      externalMetadataColumnId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
                       lineageId="Package\Import Category Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[category_id]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[category_id]"
                       dataType="wstr"
                       length="75"
                       name="category_id" />
                     <externalMetadataColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[title]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[title]"
                       dataType="wstr"
                       length="75"
                       name="title" />
                     <externalMetadataColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[parent_1]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_1]"
                       dataType="wstr"
                       length="50"
                       name="parent_1" />
                     <externalMetadataColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[parent_2]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_2]"
                       dataType="wstr"
                       length="50"
                       name="parent_2" />
                     <externalMetadataColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[parent_3]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_3]"
                       dataType="wstr"
                       length="50"
                       name="parent_3" />
                     <externalMetadataColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
                       dataType="i4"
                       name="ErrorCode" />
                     <externalMetadataColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
                       dataType="i4"
                       name="ErrorColumn" />
                     <externalMetadataColumn
-                      refId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
                       dataType="wstr"
                       length="300"
                       name="ErrorDescription" />
@@ -1963,7 +1963,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Import Category Task\Category Table Destination.Outputs[OLE DB Destination Error Output]" />
             <path
               refId="Package\Import Category Task.Paths[Output 0]"
-              endId="Package\Import Category Task\S1_Import_CategoryErrors.Inputs[Flat File Destination Input]"
+              endId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input]"
               name="Output 0"
               startId="Package\Import Category Task\Get error Description.Outputs[Output 0]" />
             <path
@@ -2239,8 +2239,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\Import Category Task\Error_Row_count"
           TopLeft="424,395" />
         <NodeLayout
-          Size="205,42"
-          Id="Package\Import Category Task\S1_Import_CategoryErrors"
+          Size="210,42"
+          Id="Package\Import Category Task\S1_Import_Category_Errors"
           TopLeft="422,576" />
         <NodeLayout
           Size="206,42"
@@ -2320,9 +2320,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="27,52"
+              EndConnector="29.5,52"
               Start="0,0"
-              End="27,44.5">
+              End="29.5,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2333,13 +2333,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     Point2="0,26"
                     Point3="4,26" />
                   <mssgle:LineSegment
-                    End="23,26" />
+                    End="25.5,26" />
                   <mssgle:CubicBezierSegment
-                    Point1="23,26"
-                    Point2="27,26"
-                    Point3="27,30" />
+                    Point1="25.5,26"
+                    Point2="29.5,26"
+                    Point3="29.5,30" />
                   <mssgle:LineSegment
-                    End="27,44.5" />
+                    End="29.5,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

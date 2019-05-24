@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{A74C1227-D815-4B3C-B143-B22DBEC683A7}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{3FD4FAE9-B8CF-42FB-BEAE-199E9BDB51E3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -25,7 +25,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">4/26/2019 11:52:13 AM</DTS:VariableValue>
+        DTS:DataType="7">5/24/2019 7:50:55 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -57,13 +57,42 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Batch Start entry"
+      DTS:refId="Package\S1_Import_Failure_Update"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8A811FCD-6E40-4E60-8823-C37419892323}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="S1_Import_Failure_Update"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8A8CAFFE-39B0-4835-A869-62A8DC2F5C04}"
+          SQLTask:SqlStatementSource="UPDATE Import_Batch&#xA;SET IB_End = @DateTime,&#xA;IB_Status = 'Failure'&#xA;WHERE IB_ID = @IB_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@IB_ID"
+            SQLTask:DtsVariableName="User::IB_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@DateTime"
+            SQLTask:DtsVariableName="User::DateTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="6"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\S1_Import_Insert"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{45B2D4F7-8D92-4B9F-8A03-2068695C4ACA}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Batch Start entry"
+      DTS:ObjectName="S1_Import_Insert"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -105,30 +134,30 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Failure"
+      DTS:refId="Package\S1_Import_Sucess_Update"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{8A811FCD-6E40-4E60-8823-C37419892323}"
+      DTS:DTSID="{78AEA41A-3DE4-4102-BDF6-043C20877A05}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Failure"
-      DTS:ThreadHint="0">
+      DTS:ObjectName="S1_Import_Sucess_Update"
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{8A8CAFFE-39B0-4835-A869-62A8DC2F5C04}"
-          SQLTask:SqlStatementSource="UPDATE Import_Batch&#xA;SET IB_End = @DateTime,&#xA;IB_Status = 'Failure'&#xA;WHERE IB_ID = @IB_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="@IB_ID"
-            SQLTask:DtsVariableName="User::IB_ID"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="11"
-            SQLTask:ParameterSize="-1" />
+          SQLTask:SqlStatementSource="UPDATE Import_Batch&#xA;SET IB_End = @DateTime,&#xA;IB_Status = 'Finished'&#xA;WHERE IB_ID = @IB_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@DateTime"
             SQLTask:DtsVariableName="User::DateTime"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="6"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@IB_ID"
+            SQLTask:DtsVariableName="User::IB_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -166,42 +195,13 @@
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Success"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{78AEA41A-3DE4-4102-BDF6-043C20877A05}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Success"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{8A8CAFFE-39B0-4835-A869-62A8DC2F5C04}"
-          SQLTask:SqlStatementSource="UPDATE Import_Batch&#xA;SET IB_End = @DateTime,&#xA;IB_Status = 'Finished'&#xA;WHERE IB_ID = @IB_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="@DateTime"
-            SQLTask:DtsVariableName="User::DateTime"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="6"
-            SQLTask:ParameterSize="-1" />
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="@IB_ID"
-            SQLTask:DtsVariableName="User::IB_ID"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="11"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{8056D553-4BF2-4552-AD37-9892F562A7E9}"
-      DTS:From="Package\Batch Start entry"
+      DTS:From="Package\S1_Import_Insert"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Sequence Container" />
@@ -212,7 +212,7 @@
       DTS:From="Package\Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Success" />
+      DTS:To="Package\S1_Import_Sucess_Update" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -220,7 +220,7 @@
       DTS:From="Package\Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Failure"
+      DTS:To="Package\S1_Import_Failure_Update"
       DTS:Value="1" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -236,12 +236,12 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="159,42"
-          Id="Package\Batch Start entry"
+          Size="162,42"
+          Id="Package\S1_Import_Insert"
           TopLeft="291.589287054782,38.164706585894" />
         <NodeLayout
-          Size="110,42"
-          Id="Package\Failure"
+          Size="205,42"
+          Id="Package\S1_Import_Failure_Update"
           TopLeft="107.089287054782,468.188240244644" />
         <NodeLayout
           Size="253,42"
@@ -255,18 +255,18 @@
           Id="Package\Sequence Container"
           TopLeft="228.089287054782,175.952943475849" />
         <NodeLayout
-          Size="116,42"
-          Id="Package\Success"
+          Size="206,42"
+          Id="Package\S1_Import_Sucess_Update"
           TopLeft="569.089287054782,482.117652249584" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="371.089287054782,80.164706585894">
+          TopLeft="372.589287054782,80.164706585894">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="23,95.788236889955"
+              EndConnector="21.5,95.788236889955"
               Start="0,0"
-              End="23,88.288236889955">
+              End="21.5,88.288236889955">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -277,13 +277,13 @@
                     Point2="0,47.8941184449775"
                     Point3="4,47.8941184449775" />
                   <mssgle:LineSegment
-                    End="19,47.8941184449775" />
+                    End="17.5,47.8941184449775" />
                   <mssgle:CubicBezierSegment
-                    Point1="19,47.8941184449775"
-                    Point2="23,47.8941184449775"
-                    Point3="23,51.8941184449775" />
+                    Point1="17.5,47.8941184449775"
+                    Point2="21.5,47.8941184449775"
+                    Point3="21.5,51.8941184449775" />
                   <mssgle:LineSegment
-                    End="23,88.288236889955" />
+                    End="21.5,88.288236889955" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -298,9 +298,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="179,119.164708773735"
+              EndConnector="224,119.164708773735"
               Start="0,0"
-              End="179,111.664708773735">
+              End="224,111.664708773735">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -311,13 +311,13 @@
                     Point2="0,48.0088035347422"
                     Point3="4,48.0088035347422" />
                   <mssgle:LineSegment
-                    End="175,48.0088035347422" />
+                    End="220,48.0088035347422" />
                   <mssgle:CubicBezierSegment
-                    Point1="175,48.0088035347422"
-                    Point2="179,48.0088035347422"
-                    Point3="179,52.0088035347422" />
+                    Point1="220,48.0088035347422"
+                    Point2="224,48.0088035347422"
+                    Point3="224,52.0088035347422" />
                   <mssgle:LineSegment
-                    End="179,111.664708773735" />
+                    End="224,111.664708773735" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -332,9 +332,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-178,105.235296768795"
+              EndConnector="-130.5,105.235296768795"
               Start="0,0"
-              End="-178,97.735296768795">
+              End="-130.5,97.735296768795">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -345,20 +345,20 @@
                     Point2="0,42.396954093903"
                     Point3="-4,42.396954093903" />
                   <mssgle:LineSegment
-                    End="-174,42.396954093903" />
+                    End="-126.5,42.396954093903" />
                   <mssgle:CubicBezierSegment
-                    Point1="-174,42.396954093903"
-                    Point2="-178,42.396954093903"
-                    Point3="-178,46.396954093903" />
+                    Point1="-126.5,42.396954093903"
+                    Point2="-130.5,42.396954093903"
+                    Point3="-130.5,46.396954093903" />
                   <mssgle:LineSegment
-                    End="-178,97.735296768795" />
+                    End="-130.5,97.735296768795" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-104.24134765625,47.396954093903,30.4826953125,9.7490234375"
+              BoundingBox="-80.49134765625,47.396954093903,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
