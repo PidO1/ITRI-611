@@ -1,18 +1,18 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/6/2019 2:28:16 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MSI"
   DTS:CreatorName="MSI\piete"
-  DTS:DTSID="{AB89AE45-83F5-4471-98D0-97DBEFFEFC4C}"
+  DTS:DTSID="{D22AA391-6610-45D1-89C0-AFD924D5512C}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="7177"
-  DTS:ObjectName="S1_Import_Category"
+  DTS:ObjectName="S2_Import_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{8E580D29-B8CA-4021-A5C9-F65B7E8498E2}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{DEE3C2FE-2A83-43CD-92DB-A6F72B1A3FD4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -98,7 +98,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S1_Import_CategoryErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S2_Import_CategoryErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -215,7 +215,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">7/26/2019 11:45:20 AM</DTS:VariableValue>
+        DTS:DataType="7">7/26/2019 11:53:15 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

@@ -1,26 +1,26 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="4/6/2019 2:27:59 PM"
+  DTS:CreationDate="4/6/2019 2:28:16 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MSI"
   DTS:CreatorName="MSI\piete"
-  DTS:DTSID="{365F0B48-FBA3-401E-97DE-E88DD556BF17}"
+  DTS:DTSID="{D22AA391-6610-45D1-89C0-AFD924D5512C}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="7177"
-  DTS:ObjectName="S2_Import_Business_Category"
+  DTS:ObjectName="S2_Import_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{774B9A11-11B9-4069-AFBA-9AB9D9DCBFFE}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{DEE3C2FE-2A83-43CD-92DB-A6F72B1A3FD4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Business_Categories Flat File]"
+      DTS:refId="Package.ConnectionManagers[Category_flat_file_connection]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{73683881-224A-4462-9697-FE6DD788137C}"
-      DTS:ObjectName="Business_Categories Flat File">
+      DTS:DTSID="{1AF07A5D-C9D5-42B3-8DF5-73AEE26B9F4E}"
+      DTS:ObjectName="Category_flat_file_connection">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::Source_Files_Folder]+"\\"+ @[$Package::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -32,16 +32,16 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Business_Categories.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Category.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="30"
+              DTS:MaximumWidth="75"
               DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName="business_id"
-              DTS:DTSID="{8C9CD09E-B77B-49D9-8F90-D90BDA816DD4}"
+              DTS:ObjectName="category_id"
+              DTS:DTSID="{412BBA50-8524-498B-9ADD-EBEFEA93E94F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,26 +49,45 @@
               DTS:MaximumWidth="75"
               DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName="category"
-              DTS:DTSID="{6D163D14-F6FA-4FBE-90D7-123CF393A1A6}"
+              DTS:ObjectName="title"
+              DTS:DTSID="{389BF71F-30A0-43BB-B9E7-DA1A47881E47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="75"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="parent_1"
+              DTS:DTSID="{BB067525-F6FC-4DD8-A62A-385C0692DAF4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="75"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="parent_2"
+              DTS:DTSID="{4EEAD637-10BB-48F2-9C3F-463A32A7090A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="75"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName="category_order"
-              DTS:DTSID="{2FD11381-6068-49B2-ACAD-CF604B75E3D1}"
+              DTS:ObjectName="parent_3"
+              DTS:DTSID="{B875F184-E036-434A-B223-2C272F039DAE}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Business_Category Errors Flat File]"
+      DTS:refId="Package.ConnectionManagers[Error_File]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{E0A56E18-3B66-4CA6-9FCA-7524EC8950EC}"
-      DTS:ObjectName="Business_Category Errors Flat File">
+      DTS:DTSID="{F811BF67-7FD0-417F-AFE4-3A38E7A48140}"
+      DTS:ObjectName="Error_File">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::Error_Files_Folder]+"\\"+ @[System::PackageName]+"Errors.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -79,16 +98,16 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S2_Import_Business_CategoryErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S2_Import_CategoryErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="30"
+              DTS:MaximumWidth="75"
               DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName="B_Source_ID"
-              DTS:DTSID="{82CADFA7-49EC-48B3-BA7F-28338446BC15}"
+              DTS:ObjectName="category_id"
+              DTS:DTSID="{82839F12-1226-457A-9369-FF28827FD701}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -96,24 +115,35 @@
               DTS:MaximumWidth="75"
               DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName="C_ID"
-              DTS:DTSID="{99AEF7ED-359C-42CB-B21F-399DFF2F2136}"
+              DTS:ObjectName="title"
+              DTS:DTSID="{7D4DCF77-FD64-4FAA-9C88-F8635C154ACC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName="BC_order"
-              DTS:DTSID="{40063E1D-34B7-4EBE-A40F-7B6FAAE7A006}"
+              DTS:ObjectName="parent_1"
+              DTS:DTSID="{D598B813-C230-44AF-A856-994E8DF185B0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName="IBPT_ID"
-              DTS:DTSID="{B6F9398F-CA3C-4582-8A5F-6DDBE532C2C1}"
+              DTS:ObjectName="parent_2"
+              DTS:DTSID="{4B3B9A6F-60FE-4051-B67F-96BAED524C74}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="parent_3"
+              DTS:DTSID="{60B6F9EF-7709-4D8B-B2A8-DF5D34592842}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -121,7 +151,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{AE049F66-C7FD-4C7D-88D3-94AB9C2A6A1B}"
+              DTS:DTSID="{01E7B35F-628E-45F8-9B9E-77B73F05A30A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +159,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{57D47FFE-2D0E-46E6-9D00-4667E39EC330}"
+              DTS:DTSID="{BA2B9982-79E6-4F34-BF07-6CF4672E25BE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -138,7 +168,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorDescription"
-              DTS:DTSID="{A478CE47-8A47-4617-BBE9-80623432ED70}"
+              DTS:DTSID="{9EFD1D96-C65E-4CAA-9D09-B04B68209F1F}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -147,7 +177,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.Stage 11]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{34AEFC92-CEB1-4EB4-A0ED-121690817A30}"
+      DTS:DTSID="{5E552927-34EC-4FA2-9D11-73ACA5F53549}"
       DTS:ObjectName="localhost.Stage 11">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -159,16 +189,16 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{F541A7E5-E249-4A99-9045-CF4134EFDCCB}"
+      DTS:DTSID="{349256D7-33FA-4524-9CA6-7363D6360375}"
       DTS:ObjectName="FileName">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">Business_Categories.csv</DTS:Property>
+        DTS:Name="ParameterValue">Category.csv</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{7C00706B-7B13-477C-8CA2-E886B8DEB21F}"
+      DTS:DTSID="{5D974250-6B76-4C8E-B393-EC8AAB1BBBEE}"
       DTS:ObjectName="IBP_ID">
       <DTS:Property
         DTS:DataType="3"
@@ -178,18 +208,18 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FA774F1E-AB40-46BA-9E4B-7D87E76BD66B}"
+      DTS:DTSID="{BFDBD5DF-2373-4C6E-BA4B-E8E3487A252A}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="getdate()"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">7/26/2019 11:52:00 AM</DTS:VariableValue>
+        DTS:DataType="7">7/26/2019 11:56:22 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4729EA08-D78C-4B3C-85F3-8E8A037E80B1}"
+      DTS:DTSID="{30833E74-F53F-46C5-85A8-9335C4939C46}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Error_row_Count">
@@ -198,7 +228,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3D04C6F2-9D0D-4CFB-B0E8-73DA0BEE9AB7}"
+      DTS:DTSID="{0A9F7063-7AFE-4607-8F82-3E97D1DEFD1E}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="IBPT_ID">
@@ -207,7 +237,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B643168B-6321-40B6-ACD5-F2A505063E56}"
+      DTS:DTSID="{C2C2B8FB-CE4F-4234-B241-6D564F79D5FD}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Row_Count">
@@ -217,13 +247,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Create_Import_Batch_Process_Task_Business_Categories"
+      DTS:refId="Package\Create Import_Batch_Process_task_Category"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D8BCA251-2974-4A85-B19B-8D2A4E8DAFE1}"
+      DTS:DTSID="{E2E84C9C-D827-40EB-9B6B-6D9AF394AA39}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Create_Import_Batch_Process_Task_Business_Categories"
+      DTS:ObjectName="Create Import_Batch_Process_task_Category"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -238,10 +268,10 @@
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="IBPT_Description"
-            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterName="IBPT_Start"
+            SQLTask:DtsVariableName="User::Current_Date_Time"
             SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="16"
+            SQLTask:DataType="6"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="IBPT_ID"
@@ -250,22 +280,22 @@
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="IBPT_Start"
-            SQLTask:DtsVariableName="User::Current_Date_Time"
+            SQLTask:ParameterName="IBPT_Description"
+            SQLTask:DtsVariableName="System::PackageName"
             SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="6"
+            SQLTask:DataType="16"
             SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Import Category Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{F0A9EEFA-7BE1-4AEC-B533-92F5932ADFE0}"
+      DTS:DTSID="{0E1B873D-84F7-4F9C-B0E4-1682F5136F3B}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="Import Category Task"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -273,12 +303,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Business_category_Flat_Files"
+              refId="Package\Import Category Task\Category flat file"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="7177"
-              name="Business_category_Flat_Files"
+              name="Category flat file"
               usesDispositions="true"
               version="1">
               <properties>
@@ -293,46 +323,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Business_category_Flat_Files.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Business_Categories Flat File]"
-                  connectionManagerRefId="Package.ConnectionManagers[Business_Categories Flat File]"
+                  refId="Package\Import Category Task\Category flat file.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Category_flat_file_connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Category_flat_file_connection]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output]"
+                  refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[B_Source_ID]"
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[category_id]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].ExternalColumns[business_id]"
-                      length="30"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[B_Source_ID]"
-                      name="B_Source_ID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[C_ID]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].ExternalColumns[category]"
+                      externalMetadataColumnId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[category_id]"
                       length="75"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[C_ID]"
-                      name="C_ID"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[category_id]"
+                      name="category_id"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -346,13 +355,77 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]"
-                      dataType="i4"
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[title]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].ExternalColumns[category_order]"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]"
-                      name="BC_order"
+                      externalMetadataColumnId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[title]"
+                      length="75"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[title]"
+                      name="title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[parent_1]"
+                      length="75"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_1]"
+                      name="parent_1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[parent_2]"
+                      length="75"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_2]"
+                      name="parent_2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[parent_3]"
+                      length="75"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]"
+                      name="parent_3"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -369,43 +442,54 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].ExternalColumns[business_id]"
-                      dataType="wstr"
-                      length="30"
-                      name="business_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].ExternalColumns[category]"
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[category_id]"
                       dataType="wstr"
                       length="75"
-                      name="category" />
+                      name="category_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].ExternalColumns[category_order]"
-                      dataType="i4"
-                      name="category_order" />
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[title]"
+                      dataType="wstr"
+                      length="75"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[parent_1]"
+                      dataType="wstr"
+                      length="75"
+                      name="parent_1" />
+                    <externalMetadataColumn
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[parent_2]"
+                      dataType="wstr"
+                      length="75"
+                      name="parent_2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[parent_3]"
+                      dataType="wstr"
+                      length="75"
+                      name="parent_3" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output]"
+                  refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -414,11 +498,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Business_Category_Table"
+              refId="Package\Import Category Task\Category Table Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Business_Category_Table"
+              name="Category Table Destination"
               usesDispositions="true"
               version="4">
               <properties>
@@ -429,7 +513,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Business_Category]</property>
+                  name="OpenRowset">[dbo].[Categories]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -471,7 +555,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Business_Category_Table.Connections[OleDbConnection]"
+                  refId="Package\Import Category Task\Category Table Destination.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.Stage 11]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.Stage 11]"
                   description="The OLE DB runtime connection used to access the database."
@@ -479,57 +563,77 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input]"
+                  refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="RedirectRow"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].Columns[B_Source_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="B_Source_ID"
-                      externalMetadataColumnId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[B_Source_ID]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].Columns[C_ID]"
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].Columns[category_id]"
                       cachedDataType="wstr"
                       cachedLength="75"
-                      cachedName="C_ID"
-                      externalMetadataColumnId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[C_ID]"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[C_ID]" />
+                      cachedName="category_id"
+                      externalMetadataColumnId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_ID]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[category_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].Columns[BC_order]"
-                      cachedDataType="i4"
-                      cachedName="BC_order"
-                      externalMetadataColumnId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[BC_order]"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]" />
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].Columns[title]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="title"
+                      externalMetadataColumnId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_title]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[title]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].Columns[IBPT_ID]"
-                      cachedDataType="i4"
-                      cachedName="IBPT_ID"
-                      externalMetadataColumnId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
-                      lineageId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Output].Columns[IBPT_ID]" />
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].Columns[parent_1]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="parent_1"
+                      externalMetadataColumnId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent1]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_1]" />
+                    <inputColumn
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].Columns[parent_2]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="parent_2"
+                      externalMetadataColumnId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent2]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_2]" />
+                    <inputColumn
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].Columns[parent_3]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="parent_3"
+                      externalMetadataColumnId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent3]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
-                      dataType="wstr"
-                      length="30"
-                      name="B_Source_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[C_ID]"
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_ID]"
                       dataType="wstr"
                       length="75"
                       name="C_ID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[BC_order]"
-                      dataType="i4"
-                      name="BC_order" />
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_title]"
+                      dataType="wstr"
+                      length="75"
+                      name="C_title" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent1]"
+                      dataType="wstr"
+                      length="75"
+                      name="C_parent1" />
+                    <externalMetadataColumn
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent2]"
+                      dataType="wstr"
+                      length="75"
+                      name="C_parent2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent3]"
+                      dataType="wstr"
+                      length="75"
+                      name="C_parent3" />
+                    <externalMetadataColumn
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
                       dataType="i4"
                       name="IBPT_ID" />
                   </externalMetadataColumns>
@@ -537,22 +641,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Import Category Task\Category Table Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Category Task\Category Table Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import Category Task\Category Table Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import Category Task\Category Table Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Category Task\Category Table Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -561,11 +665,206 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Error_Count"
+              refId="Package\Import Category Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Category Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Category Task\Derived Column.Inputs[Derived Column Input].Columns[category_id]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="category_id"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[category_id]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACENULL](#{Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[category_id]},"Unknown")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(category_id,"Unknown")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Category Task\Derived Column.Inputs[Derived Column Input].Columns[title]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="title"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[title]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACENULL](#{Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[title]},"Unknown")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(title,"Unknown")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Category Task\Derived Column.Inputs[Derived Column Input].Columns[parent_1]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="parent_1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_1]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACENULL](#{Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_1]},"Unknown")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(parent_1,"Unknown")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Category Task\Derived Column.Inputs[Derived Column Input].Columns[parent_2]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="parent_2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_2]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACENULL](#{Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_2]},"Unknown")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(parent_2,"Unknown")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Category Task\Derived Column.Inputs[Derived Column Input].Columns[parent_3]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="parent_3"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACENULL](#{Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]},"Unknown")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(parent_3,"Unknown")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Category Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Category Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Category Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Category Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]"
+                      name="IBPT_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::IBPT_ID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::IBPT_ID]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Category Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Category Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Category Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Category Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Category Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Category Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Category Task\Error_Row_count"
               componentClassID="Microsoft.RowCount"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
-              name="Error_Count">
+              name="Error_Row_count">
               <properties>
                 <property
                   dataType="System.String"
@@ -574,7 +873,7 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Error_Count.Inputs[Row Count Input 1]"
+                  refId="Package\Import Category Task\Error_Row_count.Inputs[Row Count Input 1]"
                   hasSideEffects="true"
                   name="Row Count Input 1">
                   <externalMetadataColumns />
@@ -582,15 +881,15 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Error_Count.Outputs[Row Count Output 1]"
+                  refId="Package\Import Category Task\Error_Row_count.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
-                  synchronousInputId="Package\Data Flow Task\Error_Count.Inputs[Row Count Input 1]">
+                  synchronousInputId="Package\Import Category Task\Error_Row_count.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Get error Description"
+              refId="Package\Import Category Task\Get error Description"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;11"
               description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
@@ -926,173 +1225,7 @@ public class ScriptMain : UserComponent
 }
 ]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
-*  Microsoft SQL Server Integration Services buffer wrappers
-*  This module defines classes for accessing data flow buffers
-*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
-
-
-
-using System;
-using System.Data;
-using Microsoft.SqlServer.Dts.Pipeline;
-using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
-
-public class Input0Buffer: ScriptBuffer
-
-{
-    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
-        : base(Buffer, BufferColumnIndexes, OutputMap)
-    {
-    }
-
-    public Int32 ErrorCode
-    {
-        get
-        {
-            return Buffer.GetInt32(BufferColumnIndexes[0]);
-        }
-    }
-    public bool ErrorCode_IsNull
-    {
-        get
-        {
-            return IsNull(0);
-        }
-    }
-
-    public String ErrorDescription
-    {
-        set
-        {
-            this[1] = value;
-        }
-    }
-    public bool ErrorDescription_IsNull
-    {
-        set
-        {
-            if (value)
-            {
-                SetNull(1);
-            }
-            else
-            {
-                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
-            }
-        }
-    }
-
-    new public bool NextRow()
-    {
-        return base.NextRow();
-    }
-
-    new public bool EndOfRowset()
-    {
-        return base.EndOfRowset();
-    }
-
-}
-]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_16e254d9ad434726b9ca0bc78a1a08f0.Properties.Settings.get_Default():SC_16e254d9ad434726b9ca0bc78a1a08f0.Properties.Sett" +
-    "ings")]
-
-namespace SC_16e254d9ad434726b9ca0bc78a1a08f0.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}
-]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[Project]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:Language>msBuild</msb:Language>
-    <msb:CodeName>SC_16e254d9ad434726b9ca0bc78a1a08f0</msb:CodeName>
-    <msb:DisplayName>SC_16e254d9ad434726b9ca0bc78a1a08f0</msb:DisplayName>
-    <msb:ProjectId>{881B94BD-3E75-46CB-927D-E7809FC0F9E3}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="SC_16e254d9ad434726b9ca0bc78a1a08f0.csproj" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:File Include="main.cs" />
-    <msb:File Include="BufferWrapper.cs" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="ComponentWrapper.cs" />
-  </msb:ItemGroup>
-</c:Project>]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("SC_16e254d9ad434726b9ca0bc78a1a08f0")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SC_16e254d9ad434726b9ca0bc78a1a08f0")]
-[assembly: AssemblyCopyright("Copyright @  2019")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.0.0")]
-]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[SC_16e254d9ad434726b9ca0bc78a1a08f0.csproj]]></arrayElement>
+                      dataType="System.String"><![CDATA[SC_cdbb2b1f5abb45d4a65ba01823e656fe.csproj]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
@@ -1104,11 +1237,11 @@ using System.Runtime.CompilerServices;
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DD0485E5-1486-4E16-9699-4F048A58FF38}</ProjectGuid>
+    <ProjectGuid>{C48966C5-A571-4F9D-BC85-E088E1C99056}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SC_16e254d9ad434726b9ca0bc78a1a08f0</RootNamespace>
-    <AssemblyName>SC_16e254d9ad434726b9ca0bc78a1a08f0</AssemblyName>
+    <RootNamespace>SC_cdbb2b1f5abb45d4a65ba01823e656fe</RootNamespace>
+    <AssemblyName>SC_cdbb2b1f5abb45d4a65ba01823e656fe</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
@@ -1183,6 +1316,172 @@ using System.Runtime.CompilerServices;
   </ProjectExtensions>
 </Project>]]></arrayElement>
                     <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_cdbb2b1f5abb45d4a65ba01823e656fe.Properties.Settings.get_Default():SC_cdbb2b1f5abb45d4a65ba01823e656fe.Properties.Sett" +
+    "ings")]
+
+namespace SC_cdbb2b1f5abb45d4a65ba01823e656fe.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public Int32 ErrorCode
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[0]);
+        }
+    }
+    public bool ErrorCode_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public String ErrorDescription
+    {
+        set
+        {
+            this[1] = value;
+        }
+    }
+    public bool ErrorDescription_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(1);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:Language>msBuild</msb:Language>
+    <msb:CodeName>SC_cdbb2b1f5abb45d4a65ba01823e656fe</msb:CodeName>
+    <msb:DisplayName>SC_cdbb2b1f5abb45d4a65ba01823e656fe</msb:DisplayName>
+    <msb:ProjectId>{F377F8A7-C08E-4EA1-BDD9-CA769240806C}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_cdbb2b1f5abb45d4a65ba01823e656fe.csproj" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_cdbb2b1f5abb45d4a65ba01823e656fe")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_cdbb2b1f5abb45d4a65ba01823e656fe")]
+[assembly: AssemblyCopyright("Copyright @  2019")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
                       dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
@@ -1208,14 +1507,14 @@ using System.Runtime.CompilerServices;
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_16e254d9ad434726b9ca0bc78a1a08f0.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_cdbb2b1f5abb45d4a65ba01823e656fe.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
     "rceManager")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_16e254d9ad434726b9ca0bc78a1a08f0.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_cdbb2b1f5abb45d4a65ba01823e656fe.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
     "fo")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_16e254d9ad434726b9ca0bc78a1a08f0.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_cdbb2b1f5abb45d4a65ba01823e656fe.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
     "):Void")]
 
-namespace SC_16e254d9ad434726b9ca0bc78a1a08f0.Properties {
+namespace SC_cdbb2b1f5abb45d4a65ba01823e656fe.Properties {
     
     
     /// <summary>
@@ -1243,7 +1542,7 @@ namespace SC_16e254d9ad434726b9ca0bc78a1a08f0.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if ((resourceMan == null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_16e254d9ad434726b9ca0bc78a1a08f0.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_cdbb2b1f5abb45d4a65ba01823e656fe.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -1277,11 +1576,11 @@ namespace SC_16e254d9ad434726b9ca0bc78a1a08f0.Properties {
                   <arrayElements
                     arrayElementCount="2">
                     <arrayElement
-                      dataType="System.String"><![CDATA[SC_16e254d9ad434726b9ca0bc78a1a08f0.dll]]></arrayElement>
+                      dataType="System.String"><![CDATA[SC_cdbb2b1f5abb45d4a65ba01823e656fe.dll]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAPaI1VwAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAdjIA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDANhQ1VwAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAdjIA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAACQyAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1302,30 +1601,30 @@ ACAAAAAIAAAABwAAABgAAAAPAAAAJQAAABAAAAADAAAABwAAAAgAAAABAAAABQAAAAEAAAAAADAD
 AQAAAAAABgAqAhYFBgC+AhYFBgB2AQMFDwCKBQAABgCjAeIDBgANAuIDBgDuAeIDBgClAuIDBgBK
 AuIDBgBjAuIDBgC6AeIDBgDVAfkCCgB+AsMACgCsBMMADgCdBMMACgBUBMMACgBQBsMABgATBpoD
 BgBZAQMFBgC9BDYFBgBIBM0DEgApARoDEgCKARoDEgARAbgDBgA+ARYFFgABAM0EBgD0A5oDBgAT
-A5oDBgA3BJoDBgDkAJoDBgCVAJoDBgDVBuIDAAAAAEcAAAAAAAEAAQABABAArQMAABAAAQABAAEA
+A5oDBgA3BJoDBgDkAJoDBgCVAJoDBgDVBuIDAAAAACMAAAAAAAEAAQABABAArQMAABAAAQABAAEA
 EACQBAAAOQABAAUAAQAQADIGAABFAAEADAABABAABwYAAEkAAwAQAAEAEADIBQAASQAEABEAAAAQ
 AD0FmQVJAAUAEgAAARAA9wWZBWEABwAWAAYABwZ/AAYAyAWDAAEAQAaHAAEAQAaHABEAoQOLABEA
-AQGPABEAdwCTAFAgAAAAAMYA3AIGAAEAWCAAAAAAxgDnAgYAAQBgIAAAAADGALIGlwABAHkgAAAA
-AIYY9gQGAAIAgSAAAAAAhhj2BCUAAgCMIAAAAACGCIcAnQAFAKEgAAAAAIYIWANHAAUAqiAAAAAA
+AQGPABEAUwCTAFAgAAAAAMYA3AIGAAEAWCAAAAAAxgDnAgYAAQBgIAAAAADGALIGlwABAHkgAAAA
+AIYY9gQGAAIAgSAAAAAAhhj2BCUAAgCMIAAAAACGCGMAnQAFAKEgAAAAAIYIWANHAAUAqiAAAAAA
 hggOBBAABQC0IAAAAACGCG0DoQAGAMsgAAAAAIYAyQZHAAcA0yAAAAAAhgAaBkcABwDbIAAAAACG
 GPYEBgAHAPsgAAAAAMYApQamAAcAICEAAAAAxgGeBpcACwAzIQAAAADGAbIGlwAMADUhAAAAAIYY
 9gSwAA0ARCEAAAAAhhj2BLAADgBTIQAAAACDGPYEBgAPAFshAAAAAJMIuQS2AA8AhyEAAAAAkwjp
 ALsADwCOIQAAAACTCPUAwAAPAJYhAAAAAJYIJgbGABAAnSEAAAAAhhj2BAYAEAClIQAAAACRGPwE
-ywAQAAAAAQDNBgAAAQCyBAAAAgDSBQAAAwBiBAAAAQDzAgAAAQDzAgAAAQBQAAAAAgC5AAAAAwCy
+ywAQAAAAAQDNBgAAAQCyBAAAAgDSBQAAAwBiBAAAAQDzAgAAAQDzAgAAAQAsAAAAAgC5AAAAAwCy
 BAAABABiBAAAAQCyBAAAAQDNBgAAAQBWBgAAAQBWBgAAAQDzAgkA9gQBABEA9gQGABkA9gQKACkA
 9gQQADEA9gQQADkA9gQQAEEA9gQQAEkA9gQQAFEA9gQQAFkA9gQQAGEA9gQQAGkA9gQGAJkA9gQG
-ALkA9gQVAMkA9gQGAIkA3AIGAIkA5wIGAIkAWAAbANEAIwQgAHEA9gQlAHEAsgQvAHEA0gUzAHkA
-PgA3AHEAggM8AHEAkQNBAHEAiQMBANkA9gQQAHEAyQZHAHEAGgZHAIkA9gQGAOEAAAZLAIkA5gVS
+ALkA9gQVAMkA9gQGAIkA3AIGAIkA5wIGAIkANAAbANEAIwQgAHEA9gQlAHEAsgQvAHEA0gUzAHkA
+GgA3AHEAggM8AHEAkQNBAHEAiQMBANkA9gQQAHEAyQZHAHEAGgZHAIkA9gQGAOEAAAZLAIkA5gVS
 AJEA9gQGAPEApwBYAPEA0QZfAKEA9gRlAMEA9gQGAC4ACwDqAC4AEwDzAC4AGwASAS4AIwAbAS4A
 KwBEAS4AMwBEAS4AOwBEAS4AQwAbAS4ASwBKAS4AUwBEAS4AWwBhAUMAYwCrAakAcwASAckAcwAS
-AeEAewCrAeMAawCrAQMAAQAHAAUACAAHAAAAiwDPAAAAXAPTAAAAJgTXAAAAcQPTAAAAvQTbAAAA
+AeEAewCrAeMAawCrAQMAAQAHAAUACAAHAAAAZwDPAAAAXAPTAAAAJgTXAAAAcQPTAAAAvQTbAAAA
 CQHgAAAAKgblAAIABgADAAIABwAFAAEACAAHAAEACQAJAAIAEwALAAIAFAANAAEAFQANAAIAFgAP
-AASAAAABAAAAAAAAAAAAAAAAABoAAAAEAAAAAAAAAAAAAABtAG4AAAAAAA4AAAAAAAAAAAAAAHYA
+AASAAAABAAAAAAAAAAAAAAAAAHEAAAAEAAAAAAAAAAAAAABtAEoAAAAAAA4AAAAAAAAAAAAAAHYA
 YAYAAAAADgAAAAAAAAAAAAAAdgB9BgAAAAAEAAAAAAAAAAAAAABtAJoDAAAAAA4AAAAAAAAAAAAA
-AHYAbAQAAAAAAAAAAAEAAABHBQAAAAAAAABJRFRTQ29tcG9uZW50TWV0YURhdGExMDAAU0NfMTZl
-MjU0ZDlhZDQzNDcyNmI5Y2EwYmM3OGExYTA4ZjAAR2V0SW50MzIAPE1vZHVsZT4ASW5wdXRJRABn
-ZXRfQ29tcG9uZW50TWV0YURhdGEAbXNjb3JsaWIAZGVmYXVsdEluc3RhbmNlAGdldF9FcnJvckNv
-ZGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUASW5wdXROYW1lAE1pY3Jvc29m
+AHYAbAQAAAAAAAAAAAEAAABHBQAAAAAAAABJRFRTQ29tcG9uZW50TWV0YURhdGExMDAAR2V0SW50
+MzIAPE1vZHVsZT4ASW5wdXRJRABnZXRfQ29tcG9uZW50TWV0YURhdGEAbXNjb3JsaWIAZGVmYXVs
+dEluc3RhbmNlAGdldF9FcnJvckNvZGUAU0NfY2RiYjJiMWY1YWJiNDVkNGE2NWJhMDE4MjNlNjU2
+ZmUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUASW5wdXROYW1lAE1pY3Jvc29m
 dC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5lAFR5cGUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVz
 b3VyY2VDdWx0dXJlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAEVkaXRvckJyb3dzYWJsZVN0YXRl
 AENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUA
@@ -1336,8 +1635,8 @@ dHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RB
 dHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1NjcmlwdENvbXBvbmVudEVu
 dHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRp
 YmlsaXR5QXR0cmlidXRlAFByZUV4ZWN1dGUAUG9zdEV4ZWN1dGUAdmFsdWUAU3lzdGVtLlJ1bnRp
-bWUuVmVyc2lvbmluZwBTdHJpbmcAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNDXzE2ZTI1NGQ5YWQ0
-MzQ3MjZiOWNhMGJjNzhhMWEwOGYwLmRsbABnZXRfRXJyb3JDb2RlX0lzTnVsbABzZXRfRXJyb3JE
+bWUuVmVyc2lvbmluZwBTdHJpbmcAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNDX2NkYmIyYjFmNWFi
+YjQ1ZDRhNjViYTAxODIzZTY1NmZlLmRsbABnZXRfRXJyb3JDb2RlX0lzTnVsbABzZXRfRXJyb3JE
 ZXNjcmlwdGlvbl9Jc051bGwAU2V0TnVsbABzZXRfSXRlbQBTeXN0ZW0AcmVzb3VyY2VNYW4AU2Ny
 aXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0u
 UmVmbGVjdGlvbgBJbnZhbGlkT3BlcmF0aW9uRXhjZXB0aW9uAHNldF9FcnJvckRlc2NyaXB0aW9u
@@ -1346,9 +1645,9 @@ YW1lTWFwAE91dHB1dE1hcABNaWNyb3NvZnQuU3FsU2VydmVyLkRUU1BpcGVsaW5lV3JhcABJbnB1
 dDBCdWZmZXIAUGlwZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFnZXIA
 TWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUuV3JhcHBlcgAuY3RvcgAuY2N0b3IAU3lz
 dGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJl
-c291cmNlcwBTQ18xNmUyNTRkOWFkNDM0NzI2YjljYTBiYzc4YTFhMDhmMC5Qcm9wZXJ0aWVzLlJl
-c291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU0NfMTZlMjU0ZDlhZDQzNDcyNmI5Y2Ew
-YmM3OGExYTA4ZjAuUHJvcGVydGllcwBWYXJpYWJsZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRD
+c291cmNlcwBTQ19jZGJiMmIxZjVhYmI0NWQ0YTY1YmEwMTgyM2U2NTZmZS5Qcm9wZXJ0aWVzLlJl
+c291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU0NfY2RiYjJiMWY1YWJiNDVkNGE2NWJh
+MDE4MjNlNjU2ZmUuUHJvcGVydGllcwBWYXJpYWJsZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRD
 b2x1bW5JbmRleGVzAFNldHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBPYmplY3QARW5kT2ZSb3dz
 ZXQAZ2V0X0RlZmF1bHQAVXNlckNvbXBvbmVudABQYXJlbnRDb21wb25lbnQAU2NyaXB0Q29tcG9u
 ZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQATWljcm9zb2Z0LlNxbFNlcnZlci5QaXBl
@@ -1356,15 +1655,15 @@ bGluZUhvc3QASW5wdXQwX1Byb2Nlc3NJbnB1dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93AE5leHRS
 b3cAZ2V0X0Fzc2VtYmx5AAAAAICbSQBzAE4AdQBsAGwAIABwAHIAbwBwAGUAcgB0AHkAIABjAGEA
 bgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAAdABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcAbgAg
 AGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABlAGEA
-ZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMAQwBfADEANgBlADIANQA0AGQAOQBhAGQANAAzADQANwAy
-ADYAYgA5AGMAYQAwAGIAYwA3ADgAYQAxAGEAMAA4AGYAMAAuAFAAcgBvAHAAZQByAHQAaQBlAHMA
-LgBSAGUAcwBvAHUAcgBjAGUAcwAAHLjwwnApZUWV133T3N7gjgAEIAEBCAMgAAEFIAEBEREEIAEB
+ZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMAQwBfAGMAZABiAGIAMgBiADEAZgA1AGEAYgBiADQANQBk
+ADQAYQA2ADUAYgBhADAAMQA4ADIAMwBlADYANQA2AGYAZQAuAFAAcgBvAHAAZQByAHQAaQBlAHMA
+LgBSAGUAcwBvAHUAcgBjAGUAcwAArQP0sUOhVEOzyCE7FpVs3AAEIAEBCAMgAAEFIAEBEREEIAEB
 DgUgAQERWQQgABJpBCABDggJIAMBEj0dCBJBAwYSPQMGHQgEIAEICAQgAQIIBSACAQgcAyAAAgYg
 AgIOEXUFIAEdCAgGAAESeRF9BSAAEoCBByACAQ4SgIEIt3pcVhk04IkIiYRdzYCAzJEDBhIUAwYS
 GAMGEkUDBhJRAwYSVQMGEiAFIAEBEgwDIAAIBCABAQIJIAQBCA4SPRJBBSABARJFBAAAElEEAAAS
 VQUAAQESVQQAABIgAwAAAQMoAAgDKAACAygADgQIABJRBAgAElUECAASIAgBAAgAAAAAAB4BAAEA
-VAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0NfMTZlMjU0ZDlhZDQzNDcy
-NmI5Y2EwYmM3OGExYTA4ZjAAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAxOQAASQEAGi5ORVRG
+VAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0NfY2RiYjJiMWY1YWJiNDVk
+NGE2NWJhMDE4MjNlNjU2ZmUAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAxOQAASQEAGi5ORVRG
 cmFtZXdvcmssVmVyc2lvbj12NC41AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1l
 d29yayA0LjUEAQAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJl
 YWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNL
@@ -1385,17 +1684,17 @@ AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
 AAAAAAAAALAETAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAA
 MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
 AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
-AABTAEMAXwAxADYAZQAyADUANABkADkAYQBkADQAMwA0ADcAMgA2AGIAOQBjAGEAMABiAGMANwA4
-AGEAMQBhADAAOABmADAAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
-MAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADEANgBlADIANQA0
-AGQAOQBhAGQANAAzADQANwAyADYAYgA5AGMAYQAwAGIAYwA3ADgAYQAxAGEAMAA4AGYAMAAuAGQA
+AABTAEMAXwBjAGQAYgBiADIAYgAxAGYANQBhAGIAYgA0ADUAZAA0AGEANgA1AGIAYQAwADEAOAAy
+ADMAZQA2ADUANgBmAGUAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
+MAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfAGMAZABiAGIAMgBi
+ADEAZgA1AGEAYgBiADQANQBkADQAYQA2ADUAYgBhADAAMQA4ADIAMwBlADYANQA2AGYAZQAuAGQA
 bABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBo
 AHQAIABAACAAIAAyADAAMQA5AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMA
-AAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8AMQA2
-AGUAMgA1ADQAZAA5AGEAZAA0ADMANAA3ADIANgBiADkAYwBhADAAYgBjADcAOABhADEAYQAwADgA
-ZgAwAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADEANgBl
-ADIANQA0AGQAOQBhAGQANAAzADQANwAyADYAYgA5AGMAYQAwAGIAYwA3ADgAYQAxAGEAMAA4AGYA
-MAAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4
+AAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8AYwBk
+AGIAYgAyAGIAMQBmADUAYQBiAGIANAA1AGQANABhADYANQBiAGEAMAAxADgAMgAzAGUANgA1ADYA
+ZgBlAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfAGMAZABi
+AGIAMgBiADEAZgA1AGEAYgBiADQANQBkADQAYQA2ADUAYgBhADAAMQA4ADIAMwBlADYANQA2AGYA
+ZQAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4
 AAgAAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1420,7 +1719,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   dataType="System.String"
                   description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
                   name="VSTAProjectName"
-                  typeConverter="NOTBROWSABLE">SC_16e254d9ad434726b9ca0bc78a1a08f0</property>
+                  typeConverter="NOTBROWSABLE">SC_cdbb2b1f5abb45d4a65ba01823e656fe</property>
                 <property
                   dataType="System.String"
                   description="Specifies the programming language used by the script."
@@ -1456,30 +1755,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Get error Description.Inputs[Input 0]"
+                  refId="Package\Import Category Task\Get error Description.Inputs[Input 0]"
                   hasSideEffects="true"
                   name="Input 0">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Get error Description.Inputs[Input 0].Columns[ErrorCode]"
+                      refId="Package\Import Category Task\Get error Description.Inputs[Input 0].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                      lineageId="Package\Import Category Task\Category Table Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Get error Description.Outputs[Output 0]"
+                  refId="Package\Import Category Task\Get error Description.Outputs[Output 0]"
                   name="Output 0"
-                  synchronousInputId="Package\Data Flow Task\Get error Description.Inputs[Input 0]">
+                  synchronousInputId="Package\Import Category Task\Get error Description.Inputs[Input 0]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]"
+                      refId="Package\Import Category Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]"
                       dataType="wstr"
                       length="300"
-                      lineageId="Package\Data Flow Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]"
+                      lineageId="Package\Import Category Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]"
                       name="ErrorDescription" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -1487,153 +1786,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Remove_Nulls"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Remove_Nulls"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input].Columns[B_Source_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="B_Source_ID"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[B_Source_ID]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[B_Source_ID]},"Unknown")</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">REPLACENULL(B_Source_ID,"Unknown")</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[C_ID]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[C_ID]},"Unknown")</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">REPLACENULL(C_ID,"Unknown")</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input].Columns[BC_order]"
-                      cachedDataType="i4"
-                      cachedName="BC_order"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]},-1)</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">REPLACENULL(BC_order,-1)</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Output].Columns[IBPT_ID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Output].Columns[IBPT_ID]"
-                      name="IBPT_ID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">@[User::IBPT_ID]</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">@[User::IBPT_ID]</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\Row Count"
+              refId="Package\Import Category Task\Row Count"
               componentClassID="Microsoft.RowCount"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -1646,7 +1799,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Row Count.Inputs[Row Count Input 1]"
+                  refId="Package\Import Category Task\Row Count.Inputs[Row Count Input 1]"
                   hasSideEffects="true"
                   name="Row Count Input 1">
                   <externalMetadataColumns />
@@ -1654,20 +1807,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Row Count.Outputs[Row Count Output 1]"
+                  refId="Package\Import Category Task\Row Count.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
-                  synchronousInputId="Package\Data Flow Task\Row Count.Inputs[Row Count Input 1]">
+                  synchronousInputId="Package\Import Category Task\Row Count.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\S1_Import_Business_Category_Errors"
+              refId="Package\Import Category Task\S1_Import_Category_Errors"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Destination"
               localeId="7177"
-              name="S1_Import_Business_Category_Errors">
+              name="S1_Import_Category_Errors">
               <properties>
                 <property
                   dataType="System.Boolean"
@@ -1685,93 +1838,109 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Business_Category Errors Flat File]"
-                  connectionManagerRefId="Package.ConnectionManagers[Business_Category Errors Flat File]"
+                  refId="Package\Import Category Task\S1_Import_Category_Errors.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Error_File]"
+                  connectionManagerRefId="Package.ConnectionManagers[Error_File]"
                   name="FlatFileConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input]"
+                  refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input]"
                   hasSideEffects="true"
                   name="Flat File Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[B_Source_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="B_Source_ID"
-                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[B_Source_ID]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[C_ID]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[category_id]"
                       cachedDataType="wstr"
                       cachedLength="75"
-                      cachedName="C_ID"
-                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[C_ID]"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[C_ID]" />
+                      cachedName="category_id"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[category_id]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[category_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[BC_order]"
-                      cachedDataType="i4"
-                      cachedName="BC_order"
-                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[BC_order]"
-                      lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]" />
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[title]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="title"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[title]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[title]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[IBPT_ID]"
-                      cachedDataType="i4"
-                      cachedName="IBPT_ID"
-                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[IBPT_ID]"
-                      lineageId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Output].Columns[IBPT_ID]" />
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[parent_1]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="parent_1"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_1]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_1]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[parent_2]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="parent_2"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_2]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_2]" />
+                    <inputColumn
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[parent_3]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="parent_3"
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_3]"
+                      lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]" />
+                    <inputColumn
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Import Category Task\Category Table Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Import Category Task\Category Table Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
                       cachedDataType="wstr"
                       cachedLength="300"
                       cachedName="ErrorDescription"
-                      externalMetadataColumnId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
-                      lineageId="Package\Data Flow Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]" />
+                      externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
+                      lineageId="Package\Import Category Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
-                      dataType="wstr"
-                      length="30"
-                      name="B_Source_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[C_ID]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[category_id]"
                       dataType="wstr"
                       length="75"
-                      name="C_ID" />
+                      name="category_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[BC_order]"
-                      dataType="i4"
-                      name="BC_order" />
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[title]"
+                      dataType="wstr"
+                      length="75"
+                      name="title" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[IBPT_ID]"
-                      dataType="i4"
-                      name="IBPT_ID" />
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_1]"
+                      dataType="wstr"
+                      length="50"
+                      name="parent_1" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_2]"
+                      dataType="wstr"
+                      length="50"
+                      name="parent_2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_3]"
+                      dataType="wstr"
+                      length="50"
+                      name="parent_3" />
+                    <externalMetadataColumn
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
                       dataType="i4"
                       name="ErrorCode" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
                       dataType="i4"
                       name="ErrorColumn" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
+                      refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
                       dataType="wstr"
                       length="300"
                       name="ErrorDescription" />
@@ -1782,53 +1951,53 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input]"
+              refId="Package\Import Category Task.Paths[Derived Column Output]"
+              endId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Output]" />
+              startId="Package\Import Category Task\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task\Row Count.Inputs[Row Count Input 1]"
+              refId="Package\Import Category Task.Paths[Flat File Source Output]"
+              endId="Package\Import Category Task\Row Count.Inputs[Row Count Input 1]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output]" />
+              startId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Destination Error Output]"
-              endId="Package\Data Flow Task\Error_Count.Inputs[Row Count Input 1]"
+              refId="Package\Import Category Task.Paths[OLE DB Destination Error Output]"
+              endId="Package\Import Category Task\Error_Row_count.Inputs[Row Count Input 1]"
               name="OLE DB Destination Error Output"
-              startId="Package\Data Flow Task\Business_Category_Table.Outputs[OLE DB Destination Error Output]" />
+              startId="Package\Import Category Task\Category Table Destination.Outputs[OLE DB Destination Error Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Output 0]"
-              endId="Package\Data Flow Task\S1_Import_Business_Category_Errors.Inputs[Flat File Destination Input]"
+              refId="Package\Import Category Task.Paths[Output 0]"
+              endId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input]"
               name="Output 0"
-              startId="Package\Data Flow Task\Get error Description.Outputs[Output 0]" />
+              startId="Package\Import Category Task\Get error Description.Outputs[Output 0]" />
             <path
-              refId="Package\Data Flow Task.Paths[Row Count Output 1]"
-              endId="Package\Data Flow Task\Remove_Nulls.Inputs[Derived Column Input]"
+              refId="Package\Import Category Task.Paths[Row Count Output 1]"
+              endId="Package\Import Category Task\Get error Description.Inputs[Input 0]"
               name="Row Count Output 1"
-              startId="Package\Data Flow Task\Row Count.Outputs[Row Count Output 1]" />
+              startId="Package\Import Category Task\Error_Row_count.Outputs[Row Count Output 1]" />
             <path
-              refId="Package\Data Flow Task.Paths[Row Count Output 11]"
-              endId="Package\Data Flow Task\Get error Description.Inputs[Input 0]"
+              refId="Package\Import Category Task.Paths[Row Count Output 11]"
+              endId="Package\Import Category Task\Derived Column.Inputs[Derived Column Input]"
               name="Row Count Output 1"
-              startId="Package\Data Flow Task\Error_Count.Outputs[Row Count Output 1]" />
+              startId="Package\Import Category Task\Row Count.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Update_Batch_Import_Task_Failure"
+      DTS:refId="Package\Update_Import_Batch_Process_Task_Failure"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{632F6648-BD32-4D10-A743-0209991ECC67}"
+      DTS:DTSID="{2C152F23-15FC-4A7A-A173-4BA653C6DCA1}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Update_Batch_Import_Task_Failure"
+      DTS:ObjectName="Update_Import_Batch_Process_Task_Failure"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{8A8CAFFE-39B0-4835-A869-62A8DC2F5C04}"
-          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Row_Count,&#xA;IBPT_Records_Failed = @Error_row_Count,&#xA;IBPT_Records_Out = @Row_Count - @Error_row_Count&#xA;WHERE IBPT_ID = @IBPT_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Failed',&#xA;IBPT_Records_In = @Row_Count,&#xA;IBPT_Records_Failed = @Error_row_Count,&#xA;IBPT_Records_Out = @Row_Count - @Error_row_Count&#xA;WHERE IBPT_ID = @IBPT_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="Current_Date_Time"
             SQLTask:DtsVariableName="User::Current_Date_Time"
@@ -1836,7 +2005,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             SQLTask:DataType="6"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="Error_row_Count"
+            SQLTask:ParameterName="Error_Row_Count"
             SQLTask:DtsVariableName="User::Error_row_Count"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="11"
@@ -1857,13 +2026,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Update_Batch_Import_Task_Sucess"
+      DTS:refId="Package\Update_Import_Batch_Process_Task_Success"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{54588B78-ACC7-447E-B038-598598B27CD8}"
+      DTS:DTSID="{514941DF-3D4E-4BD3-85C1-62B578BD096E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Update_Batch_Import_Task_Sucess"
+      DTS:ObjectName="Update_Import_Batch_Process_Task_Success"
       DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -1871,26 +2040,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           SQLTask:Connection="{8A8CAFFE-39B0-4835-A869-62A8DC2F5C04}"
           SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Row_Count,&#xA;IBPT_Records_Failed = @Error_row_Count,&#xA;IBPT_Records_Out = @Row_Count - @Error_row_Count&#xA;WHERE IBPT_ID = @IBPT_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="Current_Date_Time"
-            SQLTask:DtsVariableName="User::Current_Date_Time"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="6"
-            SQLTask:ParameterSize="-1" />
-          <SQLTask:ParameterBinding
             SQLTask:ParameterName="Error_row_Count"
             SQLTask:DtsVariableName="User::Error_row_Count"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="IBPT_ID"
-            SQLTask:DtsVariableName="User::IBPT_ID"
+            SQLTask:ParameterName="Row_Count"
+            SQLTask:DtsVariableName="User::Row_Count"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="Row_Count"
-            SQLTask:DtsVariableName="User::Row_Count"
+            SQLTask:ParameterName="Current_Date_Time"
+            SQLTask:DtsVariableName="User::Current_Date_Time"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="6"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="IBPT_ID"
+            SQLTask:DtsVariableName="User::IBPT_ID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
@@ -1902,27 +2071,27 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{52BF1ED3-45CC-420C-B27D-6A5A529D1918}"
-      DTS:From="Package\Create_Import_Batch_Process_Task_Business_Categories"
+      DTS:DTSID="{870EA3A9-D585-435B-BB4A-29417398D50C}"
+      DTS:From="Package\Create Import_Batch_Process_task_Category"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Data Flow Task" />
+      DTS:To="Package\Import Category Task" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{FD2F1D28-0B90-49E9-A5D2-7C6644500119}"
-      DTS:From="Package\Data Flow Task"
+      DTS:DTSID="{9963BB60-AFEB-4E6B-AA8C-5D1F463F6D51}"
+      DTS:From="Package\Import Category Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Update_Batch_Import_Task_Sucess" />
+      DTS:To="Package\Update_Import_Batch_Process_Task_Success" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{6B1C9560-C286-4C5D-98DE-35BA76066ADA}"
-      DTS:From="Package\Data Flow Task"
+      DTS:DTSID="{24837045-E6AE-4A65-A2F2-3CC1CC3CCD4D}"
+      DTS:From="Package\Import Category Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Update_Batch_Import_Task_Failure"
+      DTS:To="Package\Update_Import_Batch_Process_Task_Failure"
       DTS:Value="1" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -1938,47 +2107,47 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="350.4,41.6"
-          Id="Package\Create_Import_Batch_Process_Task_Business_Categories"
-          TopLeft="365,83" />
+          Size="291.2,41.6"
+          Id="Package\Create Import_Batch_Process_task_Category"
+          TopLeft="315,43" />
         <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Data Flow Task"
-          TopLeft="517,207" />
+          Size="182.4,41.6"
+          Id="Package\Import Category Task"
+          TopLeft="479,150" />
         <NodeLayout
-          Size="248,41.6"
-          Id="Package\Update_Batch_Import_Task_Failure"
-          TopLeft="735,321" />
+          Size="288.8,41.6"
+          Id="Package\Update_Import_Batch_Process_Task_Failure"
+          TopLeft="591,380" />
         <NodeLayout
-          Size="248,41.6"
-          Id="Package\Update_Batch_Import_Task_Sucess"
-          TopLeft="314,323" />
+          Size="294.4,41.6"
+          Id="Package\Update_Import_Batch_Process_Task_Success"
+          TopLeft="77,330" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="540,125">
+          TopLeft="460.5,85">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="52.5,82"
+              EndConnector="109.5,65"
               Start="0,0"
-              End="52.5,74.5">
+              End="109.5,57.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37" />
+                    End="0,28.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37"
-                    Point2="0,41"
-                    Point3="4,41" />
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
                   <mssgle:LineSegment
-                    End="48.5,41" />
+                    End="105.5,32.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="48.5,41"
-                    Point2="52.5,41"
-                    Point3="52.5,45" />
+                    Point1="105.5,32.5"
+                    Point2="109.5,32.5"
+                    Point3="109.5,36.5" />
                   <mssgle:LineSegment
-                    End="52.5,74.5" />
+                    End="109.5,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1989,30 +2158,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="592.5,249">
+          TopLeft="541,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-154.5,74"
+              EndConnector="-317,138"
               Start="0,0"
-              End="-154.5,66.5">
+              End="-317,130.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33" />
+                    End="0,51.921568627451" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33"
-                    Point2="0,37"
-                    Point3="-4,37" />
+                    Point1="0,51.921568627451"
+                    Point2="0,55.921568627451"
+                    Point3="-4,55.921568627451" />
                   <mssgle:LineSegment
-                    End="-150.5,37" />
+                    End="-313,55.921568627451" />
                   <mssgle:CubicBezierSegment
-                    Point1="-150.5,37"
-                    Point2="-154.5,37"
-                    Point3="-154.5,41" />
+                    Point1="-313,55.921568627451"
+                    Point2="-317,55.921568627451"
+                    Point3="-317,59.921568627451" />
                   <mssgle:LineSegment
-                    End="-154.5,66.5" />
+                    End="-317,130.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2023,37 +2192,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="616.333333333333,249">
+          TopLeft="599,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="242.666666666667,72"
+              EndConnector="136.5,188"
               Start="0,0"
-              End="242.666666666667,64.5">
+              End="136.5,180.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.2529488859764" />
+                    End="0,72.1830065359477" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.2529488859764"
-                    Point2="0,29.2529488859764"
-                    Point3="4,29.2529488859764" />
+                    Point1="0,72.1830065359477"
+                    Point2="0,76.1830065359477"
+                    Point3="4,76.1830065359477" />
                   <mssgle:LineSegment
-                    End="238.666666666667,29.2529488859764" />
+                    End="132.5,76.1830065359477" />
                   <mssgle:CubicBezierSegment
-                    Point1="238.666666666667,29.2529488859764"
-                    Point2="242.666666666667,29.2529488859764"
-                    Point3="242.666666666667,33.2529488859764" />
+                    Point1="132.5,76.1830065359477"
+                    Point2="136.5,76.1830065359477"
+                    Point3="136.5,80.1830065359477" />
                   <mssgle:LineSegment
-                    End="242.666666666667,64.5" />
+                    End="136.5,180.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="106.091985677083,34.2529488859764,30.4826953125,9.7490234375"
+              BoundingBox="53.00865234375,81.1830065359477,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2061,64 +2230,64 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\Import Category Task">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Data Flow Task\Get error Description"
-          TopLeft="623,533" />
-        <NodeLayout
           Size="129.6,41.6"
-          Id="Package\Data Flow Task\Row Count"
-          TopLeft="446,142" />
+          Id="Package\Import Category Task\Row Count"
+          TopLeft="429,100" />
         <NodeLayout
-          Size="144.8,41.6"
-          Id="Package\Data Flow Task\Remove_Nulls"
-          TopLeft="425,231" />
+          Size="160,41.6"
+          Id="Package\Import Category Task\Error_Row_count"
+          TopLeft="424,395" />
         <NodeLayout
-          Size="136,41.6"
-          Id="Package\Data Flow Task\Error_Count"
-          TopLeft="462,435" />
+          Size="206.4,41.6"
+          Id="Package\Import Category Task\Category Table Destination"
+          TopLeft="423.14285716232,301" />
         <NodeLayout
-          Size="199.2,41.6"
-          Id="Package\Data Flow Task\Business_Category_Table"
-          TopLeft="439,322" />
+          Size="156.8,41.6"
+          Id="Package\Import Category Task\Category flat file"
+          TopLeft="409,14" />
         <NodeLayout
-          Size="216,41.6"
-          Id="Package\Data Flow Task\Business_category_Flat_Files"
-          TopLeft="436,50" />
+          Size="153.6,41.6"
+          Id="Package\Import Category Task\Derived Column"
+          TopLeft="466,199" />
         <NodeLayout
-          Size="256.8,41.6"
-          Id="Package\Data Flow Task\S1_Import_Business_Category_Errors"
-          TopLeft="652,281" />
+          Size="209.6,41.6"
+          Id="Package\Import Category Task\S1_Import_Category_Errors"
+          TopLeft="422,576" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Import Category Task\Get error Description"
+          TopLeft="409,482" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Row Count Output 11]"
-          TopLeft="530,477">
+          Id="Package\Import Category Task.Paths[Row Count Output 11]"
+          TopLeft="494,142">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="153.333333333333,56"
+              EndConnector="49,57"
               Start="0,0"
-              End="153.333333333333,48.5">
+              End="49,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.2989921612542" />
+                    End="0,24.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.2989921612542"
-                    Point2="0,33.2989921612542"
-                    Point3="4,33.2989921612542" />
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="4,28.5" />
                   <mssgle:LineSegment
-                    End="149.333333333333,33.2989921612542" />
+                    End="45,28.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="149.333333333333,33.2989921612542"
-                    Point2="153.333333333333,33.2989921612542"
-                    Point3="153.333333333333,37.2989921612542" />
+                    Point1="45,28.5"
+                    Point2="49,28.5"
+                    Point3="49,32.5" />
                   <mssgle:LineSegment
-                    End="153.333333333333,48.5" />
+                    End="49,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2128,31 +2297,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Row Count Output 1]"
-          TopLeft="511,184">
+          Id="Package\Import Category Task.Paths[Row Count Output 1]"
+          TopLeft="500.75,437">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-13.5,47"
+              EndConnector="0,45"
               Start="0,0"
-              End="-13.5,39.5">
+              End="0,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="-4,23.5" />
-                  <mssgle:LineSegment
-                    End="-9.5,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9.5,23.5"
-                    Point2="-13.5,23.5"
-                    Point3="-13.5,27.5" />
-                  <mssgle:LineSegment
-                    End="-13.5,39.5" />
+                    End="0,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2162,31 +2319,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Output 0]"
-          TopLeft="739.666666666667,533">
+          Id="Package\Import Category Task.Paths[Output 0]"
+          TopLeft="497.5,524">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40.8333333333334,-210"
+              EndConnector="29.5,52"
               Start="0,0"
-              End="40.8333333333334,-202.5">
+              End="29.5,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-81.1287793952968" />
+                    End="0,22" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-81.1287793952968"
-                    Point2="0,-85.1287793952968"
-                    Point3="4,-85.1287793952968" />
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="4,26" />
                   <mssgle:LineSegment
-                    End="36.8333333333334,-85.1287793952968" />
+                    End="25.5,26" />
                   <mssgle:CubicBezierSegment
-                    Point1="36.8333333333334,-85.1287793952968"
-                    Point2="40.8333333333334,-85.1287793952968"
-                    Point3="40.8333333333334,-89.1287793952968" />
+                    Point1="25.5,26"
+                    Point2="29.5,26"
+                    Point3="29.5,30" />
                   <mssgle:LineSegment
-                    End="40.8333333333334,-202.5" />
+                    End="29.5,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2196,67 +2353,55 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Destination Error Output]"
-          TopLeft="538.5,364">
+          Id="Package\Import Category Task.Paths[OLE DB Destination Error Output]"
+          TopLeft="526.34285716232,342.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8.5,71"
+              EndConnector="-22.34285716232,52.4"
               Start="0,0"
-              End="-8.5,63.5">
+              End="-22.34285716232,44.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
+                    End="0,22.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5"
-                    Point2="0,35.5"
-                    Point3="-4,35.5" />
+                    Point1="0,22.2"
+                    Point2="0,26.2"
+                    Point3="-4,26.2" />
                   <mssgle:LineSegment
-                    End="-4.5,35.5" />
+                    End="-18.34285716232,26.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="-4.5,35.5"
-                    Point2="-8.5,35.5"
-                    Point3="-8.5,39.5" />
+                    Point1="-18.34285716232,26.2"
+                    Point2="-22.34285716232,26.2"
+                    Point3="-22.34285716232,30.2" />
                   <mssgle:LineSegment
-                    End="-8.5,63.5" />
+                    End="-22.34285716232,44.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-77.45890625,40.5,146.4178125,11.43359375"
+              BoundingBox="-84.38033483116,31.2,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="544,92">
+          Id="Package\Import Category Task.Paths[Flat File Source Output]"
+          TopLeft="490.75,56">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-33,50"
+              EndConnector="0,44"
               Start="0,0"
-              End="-33,42.5">
+              End="0,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21"
-                    Point2="0,25"
-                    Point3="-4,25" />
-                  <mssgle:LineSegment
-                    End="-29,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29,25"
-                    Point2="-33,25"
-                    Point3="-33,29" />
-                  <mssgle:LineSegment
-                    End="-33,42.5" />
+                    End="0,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2266,31 +2411,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="497.5,273">
+          Id="Package\Import Category Task.Paths[Derived Column Output]"
+          TopLeft="542.8,240.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41,49"
+              EndConnector="-16.45714283768,60.4"
               Start="0,0"
-              End="41,41.5">
+              End="-16.45714283768,52.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5" />
+                    End="0,26.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="4,24.5" />
+                    Point1="0,26.2"
+                    Point2="0,30.2"
+                    Point3="-4,30.2" />
                   <mssgle:LineSegment
-                    End="37,24.5" />
+                    End="-12.45714283768,30.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="37,24.5"
-                    Point2="41,24.5"
-                    Point3="41,28.5" />
+                    Point1="-12.45714283768,30.2"
+                    Point2="-16.45714283768,30.2"
+                    Point3="-16.45714283768,34.2" />
                   <mssgle:LineSegment
-                    End="41,41.5" />
+                    End="-16.45714283768,52.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2303,7 +2448,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Business_Category_Table">
+    design-time-name="Package\Import Category Task\Category Table Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
