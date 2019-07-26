@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">MSI</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAOA3xdyfk8kOlFttAnQbuQAAAAAACAAAAAAAQZgAAAAEAACAAAAAq0oTVW0IOhxDfEGrTARVAG/LYp5TlJYqY0e/CC1tU8QAAAAAOgAAAAAIAACAAAACLM7VZL9i0OWSYQl3c0tYPbcXeEieZZ/HORr9gvBIE7pAAAABDQpNGT90dEJy8hS2MOvfnkGiZ1jAhz3t/Do79hCfC++8emexl4CMXjbQLEDkbbdBpzkNldmQwmhGDj0oQex0dXCMV5blB0lWGYXs/NP4ngqpCveqYrcN/yIhJMn7/L44yT+xRrHF14+yd8LoEvrdr/J9MH9FUNmHFNtULT1F+FFMxZeKEYr1Ia8CoHZhuMK5AAAAAz5TbEYsBksX51xbpTh48XEQvqFhrEqCfglJGgOalfX2kJ7paT2KBuoD7HmyUnfXi862PLmTHH1cT+2SRolY5LA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdqMhbi0yZkuOs364Yi8CHgAAAAACAAAAAAAQZgAAAAEAACAAAAAVUFpZ71cvudMwBicXD4FME+LNQDcPqxFSgciG1WWnZwAAAAAOgAAAAAIAACAAAADoxFmhdRdb6IgA8tXkOM86qh+D7bB2dEIqZ7mj4A3jdJAAAAD9tkGgMVj2ONm5mVfBUfXtb4Bke3fNDLE4q160InOTGFQ510NHck4jz8gwJ2pb4u23UwbistxDonmyHMbJB0PZvLQTyU34TM5zvZ/AXe3xbVmdfWtiLiNMKdZZI3z91+FrxnL7hUNCbxp41Dqk9o7WSVPNwNJvDBdzzPlkN6XzfJcBRX3FExCdcY6lrw1sWNdAAAAAI2Km8zYh/76pmyOzwN0wZZjyKGg3x0/9BzBFbFtKU4Ib2HPlrg8S8Zc/nX1WiTvuN7c3+71LvEdHRxHvBO46Zw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -226,10 +226,10 @@
                 <SSIS:Property SSIS:Name="Name">S1_Import</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">53</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">54</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A74C1227-D815-4B3C-B143-B22DBEC683A7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3FD4FAE9-B8CF-42FB-BEAE-199E9BDB51E3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -243,10 +243,10 @@
                 <SSIS:Property SSIS:Name="Name">S1_Import_BC</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">80</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">82</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{4A71DA2D-ADA9-4BDB-80C4-AC84DB47B3B3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B67091A1-88D8-4A1D-85F4-FA5275A33171}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -363,10 +363,10 @@
                 <SSIS:Property SSIS:Name="Name">S1_Import_Business</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">65</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">68</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DAFB96C7-6366-42A0-A51F-EAEA3CC2CC0F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F3977DD3-ACC0-4D99-A054-0FD2F224D7BF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -624,7 +624,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Business.csv</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Business.csv</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -715,6 +715,8 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1099,10 +1101,10 @@
                 <SSIS:Property SSIS:Name="Name">S1_Import_Category</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">53</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">57</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{2104AE02-3149-4524-8B44-9E7BEE390BEB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{516F647B-5073-44F6-A4DD-17B3F6D8A821}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1567,10 +1569,10 @@
                 <SSIS:Property SSIS:Name="Name">S1_Import_Business_Category</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">36</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">41</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{12097A9D-9058-4C1D-BFC7-66C1B1BFD53E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{562FBFF5-A920-41D7-8973-2772B3DB487B}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

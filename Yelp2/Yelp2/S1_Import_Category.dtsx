@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{1BF11BFC-F327-4418-9BB4-98345139049A}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{0CECE1ED-2CF8-477C-9C40-B0CE8602F420}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Category.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Category.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,7 +41,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="category_id"
-              DTS:DTSID="{A4BBD079-F248-4855-B9CE-A21477D85C51}"
+              DTS:DTSID="{E04C2750-96CE-46A0-80F0-43A538B424F9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,34 +50,34 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="title"
-              DTS:DTSID="{A85F91B7-A7D3-42E8-BAD3-CBBD8569DDBB}"
+              DTS:DTSID="{7B1AE3A0-493F-4887-83F4-83076FAFD030}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="75"
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="parent_1"
-              DTS:DTSID="{3DBB1C05-B8D1-4AAE-A281-26C24D6A6C9A}"
+              DTS:DTSID="{B3CD529F-9B1D-44FE-933A-2A1CAFECCB03}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="75"
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="parent_2"
-              DTS:DTSID="{6CA7723B-A5D1-44B2-BDC3-0AA8362AFC8C}"
+              DTS:DTSID="{0FAD52AC-EAF5-4503-8BDC-95AD511B8476}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="75"
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="parent_3"
-              DTS:DTSID="{001E01DF-9155-4896-A08F-19313BDBB3FA}"
+              DTS:DTSID="{31E33734-183F-4007-B60A-B6737C2F2DE4}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -98,7 +98,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S1_Import_CategoryErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S1_Import_CategoryErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -215,7 +215,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">5/24/2019 7:53:33 AM</DTS:VariableValue>
+        DTS:DataType="7">7/26/2019 11:45:20 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -381,7 +381,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[parent_1]"
-                      length="50"
+                      length="75"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_1]"
                       name="parent_1"
                       truncationRowDisposition="FailComponent">
@@ -402,7 +402,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[parent_2]"
-                      length="50"
+                      length="75"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_2]"
                       name="parent_2"
                       truncationRowDisposition="FailComponent">
@@ -423,7 +423,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[parent_3]"
-                      length="50"
+                      length="75"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]"
                       name="parent_3"
                       truncationRowDisposition="FailComponent">
@@ -454,17 +454,17 @@
                     <externalMetadataColumn
                       refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[parent_1]"
                       dataType="wstr"
-                      length="50"
+                      length="75"
                       name="parent_1" />
                     <externalMetadataColumn
                       refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[parent_2]"
                       dataType="wstr"
-                      length="50"
+                      length="75"
                       name="parent_2" />
                     <externalMetadataColumn
                       refId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].ExternalColumns[parent_3]"
                       dataType="wstr"
-                      length="50"
+                      length="75"
                       name="parent_3" />
                   </externalMetadataColumns>
                 </output>
@@ -586,21 +586,21 @@
                     <inputColumn
                       refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].Columns[parent_1]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="75"
                       cachedName="parent_1"
                       externalMetadataColumnId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent1]"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_1]" />
                     <inputColumn
                       refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].Columns[parent_2]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="75"
                       cachedName="parent_2"
                       externalMetadataColumnId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent2]"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_2]" />
                     <inputColumn
                       refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].Columns[parent_3]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="75"
                       cachedName="parent_3"
                       externalMetadataColumnId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent3]"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]" />
@@ -620,18 +620,22 @@
                     <externalMetadataColumn
                       refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent1]"
                       dataType="wstr"
-                      length="50"
+                      length="75"
                       name="C_parent1" />
                     <externalMetadataColumn
                       refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent2]"
                       dataType="wstr"
-                      length="50"
+                      length="75"
                       name="C_parent2" />
                     <externalMetadataColumn
                       refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent3]"
                       dataType="wstr"
-                      length="50"
+                      length="75"
                       name="C_parent3" />
+                    <externalMetadataColumn
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
+                      dataType="i4"
+                      name="IBPT_ID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -724,7 +728,7 @@
                     <inputColumn
                       refId="Package\Import Category Task\Derived Column.Inputs[Derived Column Input].Columns[parent_1]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="75"
                       cachedName="parent_1"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
@@ -748,7 +752,7 @@
                     <inputColumn
                       refId="Package\Import Category Task\Derived Column.Inputs[Derived Column Input].Columns[parent_2]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="75"
                       cachedName="parent_2"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
@@ -772,7 +776,7 @@
                     <inputColumn
                       refId="Package\Import Category Task\Derived Column.Inputs[Derived Column Input].Columns[parent_3]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="75"
                       cachedName="parent_3"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
@@ -1862,21 +1866,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     <inputColumn
                       refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[parent_1]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="75"
                       cachedName="parent_1"
                       externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_1]"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_1]" />
                     <inputColumn
                       refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[parent_2]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="75"
                       cachedName="parent_2"
                       externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_2]"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_2]" />
                     <inputColumn
                       refId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].Columns[parent_3]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="75"
                       cachedName="parent_3"
                       externalMetadataColumnId="Package\Import Category Task\S1_Import_Category_Errors.Inputs[Flat File Destination Input].ExternalColumns[parent_3]"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]" />
@@ -2103,19 +2107,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="291,42"
+          Size="291.2,41.6"
           Id="Package\Create Import_Batch_Process_task_Category"
           TopLeft="315,43" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Import Category Task"
           TopLeft="479,150" />
         <NodeLayout
-          Size="289,42"
+          Size="288.8,41.6"
           Id="Package\Update_Import_Batch_Process_Task_Failure"
           TopLeft="591,380" />
         <NodeLayout
-          Size="294,42"
+          Size="294.4,41.6"
           Id="Package\Update_Import_Batch_Process_Task_Success"
           TopLeft="77,330" />
         <EdgeLayout
@@ -2231,31 +2235,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="130,42"
+          Size="129.6,41.6"
           Id="Package\Import Category Task\Row Count"
           TopLeft="429,100" />
         <NodeLayout
-          Size="160,42"
+          Size="160,41.6"
           Id="Package\Import Category Task\Error_Row_count"
           TopLeft="424,395" />
         <NodeLayout
-          Size="210,42"
-          Id="Package\Import Category Task\S1_Import_Category_Errors"
-          TopLeft="422,576" />
-        <NodeLayout
-          Size="206,42"
+          Size="206.4,41.6"
           Id="Package\Import Category Task\Category Table Destination"
-          TopLeft="422,301" />
+          TopLeft="423.14285716232,301" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Import Category Task\Derived Column"
-          TopLeft="466,199" />
-        <NodeLayout
-          Size="157,42"
+          Size="156.8,41.6"
           Id="Package\Import Category Task\Category flat file"
           TopLeft="409,14" />
         <NodeLayout
-          Size="177,42"
+          Size="153.6,41.6"
+          Id="Package\Import Category Task\Derived Column"
+          TopLeft="466,199" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Import Category Task\S1_Import_Category_Errors"
+          TopLeft="422,576" />
+        <NodeLayout
+          Size="176.8,41.6"
           Id="Package\Import Category Task\Get error Description"
           TopLeft="409,482" />
         <EdgeLayout
@@ -2350,37 +2354,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Category Task.Paths[OLE DB Destination Error Output]"
-          TopLeft="525,343">
+          TopLeft="526.34285716232,342.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-21,52"
+              EndConnector="-22.34285716232,52.4"
               Start="0,0"
-              End="-21,44.5">
+              End="-22.34285716232,44.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22" />
+                    End="0,22.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="-4,26" />
+                    Point1="0,22.2"
+                    Point2="0,26.2"
+                    Point3="-4,26.2" />
                   <mssgle:LineSegment
-                    End="-17,26" />
+                    End="-18.34285716232,26.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="-17,26"
-                    Point2="-21,26"
-                    Point3="-21,30" />
+                    Point1="-18.34285716232,26.2"
+                    Point2="-22.34285716232,26.2"
+                    Point3="-22.34285716232,30.2" />
                   <mssgle:LineSegment
-                    End="-21,44.5" />
+                    End="-22.34285716232,44.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-83.70890625,31,146.4178125,11.43359375"
+              BoundingBox="-84.38033483116,31.2,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2408,30 +2412,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Category Task.Paths[Derived Column Output]"
-          TopLeft="543,241">
+          TopLeft="542.8,240.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-18,60"
+              EndConnector="-16.45714283768,60.4"
               Start="0,0"
-              End="-18,52.5">
+              End="-16.45714283768,52.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26" />
+                    End="0,26.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
+                    Point1="0,26.2"
+                    Point2="0,30.2"
+                    Point3="-4,30.2" />
                   <mssgle:LineSegment
-                    End="-14,30" />
+                    End="-12.45714283768,30.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="-14,30"
-                    Point2="-18,30"
-                    Point3="-18,34" />
+                    Point1="-12.45714283768,30.2"
+                    Point2="-16.45714283768,30.2"
+                    Point3="-16.45714283768,34.2" />
                   <mssgle:LineSegment
-                    End="-18,52.5" />
+                    End="-16.45714283768,52.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

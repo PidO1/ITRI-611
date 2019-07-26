@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Business"
   DTS:PackageType="5"
-  DTS:VersionBuild="66"
-  DTS:VersionGUID="{B5923B39-4027-403D-AEFA-10422F4041DC}">
+  DTS:VersionBuild="68"
+  DTS:VersionGUID="{F3977DD3-ACC0-4D99-A054-0FD2F224D7BF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Business.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Business.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,7 +41,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="business_id"
-              DTS:DTSID="{2E045FAD-4C97-41AD-8043-ED07430B6C9E}"
+              DTS:DTSID="{238F61DE-9533-4A34-9B1F-5DEE21FCE702}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="business_name"
-              DTS:DTSID="{0F7E6723-E202-4690-8CE1-EAD75D10C510}"
+              DTS:DTSID="{C41ACC0F-9CD8-4DF9-8265-4C924E19771C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="neighborhood"
-              DTS:DTSID="{3BD38FBB-219E-4ADF-AE0A-663B524C0EEB}"
+              DTS:DTSID="{3F9B6B2E-BD77-42E8-9577-2F854663F5D2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="address"
-              DTS:DTSID="{B733590A-E2F7-405D-8315-6DAF8A2E929F}"
+              DTS:DTSID="{8D065FEE-63B2-4CE9-BE66-451093314C40}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="city"
-              DTS:DTSID="{44A90D0B-4FF2-4F74-A159-4ECF36B974C2}"
+              DTS:DTSID="{7E1E4877-2357-4573-8C4C-8BF0B1D4A3BE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="state"
-              DTS:DTSID="{B2E45EAD-3045-44D7-8BAF-6D19BE17BBEA}"
+              DTS:DTSID="{2C8AD2A0-9139-41FD-80ED-6A5E35198B39}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,7 +95,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="postal_code"
-              DTS:DTSID="{846E1CCD-B1D8-41D9-BC80-802279C5369C}"
+              DTS:DTSID="{604FD406-467A-4898-BFDC-C5CD8AC1363B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -105,7 +105,7 @@
               DTS:DataScale="10"
               DTS:TextQualified="True"
               DTS:ObjectName="latitude"
-              DTS:DTSID="{977A9DB8-390E-4A3A-9014-90F19B75A2DE}"
+              DTS:DTSID="{AAA4CFB6-652E-4116-88FE-A630342FD128}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -115,7 +115,7 @@
               DTS:DataScale="10"
               DTS:TextQualified="True"
               DTS:ObjectName="longitude"
-              DTS:DTSID="{BD0DBE30-87A9-4A2E-B917-0805E2FED378}"
+              DTS:DTSID="{3948CD7F-9028-4FAC-938C-6170335FEB61}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -125,7 +125,7 @@
               DTS:DataScale="1"
               DTS:TextQualified="True"
               DTS:ObjectName="stars"
-              DTS:DTSID="{792B7B1E-69CF-418D-8041-CAFB0D97C7C5}"
+              DTS:DTSID="{A9551571-3DA0-4675-8D3B-8BBC5243FDF9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -133,7 +133,7 @@
               DTS:DataType="17"
               DTS:TextQualified="True"
               DTS:ObjectName="is_open"
-              DTS:DTSID="{D1DFB3F3-06F7-477A-BE6B-29E95EFE8B70}"
+              DTS:DTSID="{23266E61-787C-42E0-BF25-8FF8560CD4D0}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -153,7 +153,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Business.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Business.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -162,7 +162,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="business_id"
-              DTS:DTSID="{E1FE453C-52EB-48E6-801D-AC5178DB7C36}"
+              DTS:DTSID="{6D60DE5D-B0FD-4F72-B5EE-10A5A9A748E2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -171,7 +171,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="business_name"
-              DTS:DTSID="{5FFDB314-54DF-44F1-8537-2F356DBD4809}"
+              DTS:DTSID="{7C208CFB-171D-4212-861F-2A9284B6E51E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -180,7 +180,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="neighborhood"
-              DTS:DTSID="{E0B477FB-3D33-4AB6-9E0A-922F8D595F0F}"
+              DTS:DTSID="{043A369A-177E-4C36-A390-855F8396D8D2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -189,7 +189,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="address"
-              DTS:DTSID="{73C90DB3-2D1A-44CF-92DC-32FA28BB513A}"
+              DTS:DTSID="{F8C0209F-71CB-4088-B3D9-1B0C5A362860}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -198,7 +198,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="city"
-              DTS:DTSID="{2AFB33D4-D98B-4DAB-91E0-5F3FB79FFF05}"
+              DTS:DTSID="{63808A79-95BA-4E3F-B71B-C1BA1A3A757F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -207,7 +207,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="state"
-              DTS:DTSID="{B182C1A3-A143-410E-86BE-C296D96190CB}"
+              DTS:DTSID="{3B2EB024-930B-404F-ADF2-11F2FE03211F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -216,7 +216,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="postal_code"
-              DTS:DTSID="{C7457832-CB40-4DC2-8A69-E9288F136197}"
+              DTS:DTSID="{D65986B8-B555-4D33-B02B-8BFCC1E5590E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -226,7 +226,7 @@
               DTS:DataScale="10"
               DTS:TextQualified="True"
               DTS:ObjectName="latitude"
-              DTS:DTSID="{0598C234-5B16-4A9A-B21A-10AB62FBECEC}"
+              DTS:DTSID="{EB11E95B-6ABE-4ABF-B6B2-8BC16089EFED}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -236,7 +236,7 @@
               DTS:DataScale="10"
               DTS:TextQualified="True"
               DTS:ObjectName="longitude"
-              DTS:DTSID="{A1A546FB-2FA9-468F-92FF-F8342DE3038E}"
+              DTS:DTSID="{7772B6BE-003F-4986-86E2-58A17F2E0557}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -246,7 +246,7 @@
               DTS:DataScale="1"
               DTS:TextQualified="True"
               DTS:ObjectName="stars"
-              DTS:DTSID="{1CFCF187-A51A-402D-8D24-C96A8016C47F}"
+              DTS:DTSID="{FB025A25-7508-4428-A4F9-AB8433DE5103}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -254,7 +254,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="is_open"
-              DTS:DTSID="{DF8EB9C9-4ED0-4E7F-B48C-F07DE4D968F8}"
+              DTS:DTSID="{714C228C-34BE-43B7-B715-0C7C94B8D8FA}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -275,7 +275,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S1_Import_BusinessErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S1_Import_BusinessErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -475,7 +475,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">5/24/2019 7:49:18 AM</DTS:VariableValue>
+        DTS:DataType="7">7/26/2019 11:40:31 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2725,7 +2725,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Failure"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2754,7 +2754,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Success"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2828,19 +2828,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="290,42"
+          Size="289.6,41.6"
           Id="Package\Create Import_Batch_Process_task_Business"
           TopLeft="249,36" />
         <NodeLayout
-          Size="180,42"
+          Size="180,41.6"
           Id="Package\Import Business Task"
           TopLeft="314,169" />
         <NodeLayout
-          Size="289,42"
+          Size="288.8,41.6"
           Id="Package\Update_Import_Batch_Process_Task_Failure"
           TopLeft="479,355" />
         <NodeLayout
-          Size="294,42"
+          Size="294.4,41.6"
           Id="Package\Update_Import_Batch_Process_Task_Success"
           TopLeft="82,345" />
         <EdgeLayout
@@ -2956,33 +2956,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="167,42"
+          Size="167.2,41.6"
           Id="Package\Import Business Task\Rows_Read_Count"
           TopLeft="456.857142857143,92.6666666666667" />
         <NodeLayout
-          Size="177,42"
-          Id="Package\Import Business Task\Get error Description"
-          TopLeft="451.857142857143,416" />
-        <NodeLayout
-          Size="202,42"
+          Size="201.6,41.6"
           Id="Package\Import Business Task\Business_Flat_File_Source"
           TopLeft="464.857142857143,14" />
         <NodeLayout
-          Size="210,42"
-          Id="Package\Import Business Task\Business_Table_Destination"
-          TopLeft="454.857142857143,247" />
+          Size="153.6,41.6"
+          Id="Package\Import Business Task\Derived Column"
+          TopLeft="463.357142857143,171.333333333333" />
         <NodeLayout
-          Size="209,42"
+          Size="208.8,41.6"
           Id="Package\Import Business Task\S1_Import_Business_Errors"
           TopLeft="450.857142857143,505.666666666667" />
         <NodeLayout
-          Size="167,42"
+          Size="209.6,41.6"
+          Id="Package\Import Business Task\Business_Table_Destination"
+          TopLeft="454.857142857143,247" />
+        <NodeLayout
+          Size="167.2,41.6"
           Id="Package\Import Business Task\Row_Count_Errors"
           TopLeft="606.857142857143,344.333333333333" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Import Business Task\Derived Column"
-          TopLeft="463.357142857143,171.333333333333" />
+          Size="176.8,41.6"
+          Id="Package\Import Business Task\Get error Description"
+          TopLeft="451.857142857143,416" />
         <EdgeLayout
           Id="Package\Import Business Task.Paths[Row Count Output 11]"
           TopLeft="690.357142857143,386.333333333333">

@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Business_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{08AB192F-10F0-4683-A666-F5FDECCD9399}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{727112A7-18AC-4294-B635-9CBD274BA02B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Business_Categories.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Business_Categories.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -79,7 +79,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S1_Import_Business_CategoryErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S1_Import_Business_CategoryErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -185,7 +185,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">5/24/2019 7:53:16 AM</DTS:VariableValue>
+        DTS:DataType="7">7/26/2019 11:43:49 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -505,6 +505,12 @@
                       cachedName="BC_order"
                       externalMetadataColumnId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[BC_order]"
                       lineageId="Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].Columns[IBPT_ID]"
+                      cachedDataType="i4"
+                      cachedName="IBPT_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
+                      lineageId="Package\Data Flow Task\Remove_Nulls.Outputs[Derived Column Output].Columns[IBPT_ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -522,6 +528,10 @@
                       refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[BC_order]"
                       dataType="i4"
                       name="BC_order" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Business_Category_Table.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
+                      dataType="i4"
+                      name="IBPT_ID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1551,13 +1561,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]},"Unknown")</property>
+                          name="Expression">[REPLACENULL](#{Package\Data Flow Task\Business_category_Flat_Files.Outputs[Flat File Source Output].Columns[BC_order]},-1)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">REPLACENULL(BC_order,"Unknown")</property>
+                          name="FriendlyExpression">REPLACENULL(BC_order,-1)</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -1928,19 +1938,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="350,42"
+          Size="350.4,41.6"
           Id="Package\Create_Import_Batch_Process_Task_Business_Categories"
           TopLeft="365,83" />
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Data Flow Task"
           TopLeft="517,207" />
         <NodeLayout
-          Size="248,42"
+          Size="248,41.6"
           Id="Package\Update_Batch_Import_Task_Failure"
           TopLeft="735,321" />
         <NodeLayout
-          Size="248,42"
+          Size="248,41.6"
           Id="Package\Update_Batch_Import_Task_Sucess"
           TopLeft="314,323" />
         <EdgeLayout
@@ -2056,33 +2066,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="130,42"
-          Id="Package\Data Flow Task\Row Count"
-          TopLeft="446,142" />
-        <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\Data Flow Task\Get error Description"
           TopLeft="623,533" />
         <NodeLayout
-          Size="199,42"
-          Id="Package\Data Flow Task\Business_Category_Table"
-          TopLeft="439,322" />
+          Size="129.6,41.6"
+          Id="Package\Data Flow Task\Row Count"
+          TopLeft="446,142" />
         <NodeLayout
-          Size="216,42"
-          Id="Package\Data Flow Task\Business_category_Flat_Files"
-          TopLeft="436,50" />
-        <NodeLayout
-          Size="257,42"
-          Id="Package\Data Flow Task\S1_Import_Business_Category_Errors"
-          TopLeft="652,281" />
-        <NodeLayout
-          Size="145,42"
+          Size="144.8,41.6"
           Id="Package\Data Flow Task\Remove_Nulls"
           TopLeft="425,231" />
         <NodeLayout
-          Size="136,42"
+          Size="136,41.6"
           Id="Package\Data Flow Task\Error_Count"
           TopLeft="462,435" />
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\Data Flow Task\Business_Category_Table"
+          TopLeft="439,322" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\Data Flow Task\Business_category_Flat_Files"
+          TopLeft="436,50" />
+        <NodeLayout
+          Size="256.8,41.6"
+          Id="Package\Data Flow Task\S1_Import_Business_Category_Errors"
+          TopLeft="652,281" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Row Count Output 11]"
           TopLeft="530,477">

@@ -5,31 +5,31 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MSI"
   DTS:CreatorName="MSI\piete"
-  DTS:DTSID="{24F41356-E3A1-438F-9B0C-35F2500310ED}"
+  DTS:DTSID="{99A5E457-E37D-43B8-9202-4DDCA19ACB67}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import"
   DTS:PackageType="5"
   DTS:VersionBuild="54"
-  DTS:VersionGUID="{3FD4FAE9-B8CF-42FB-BEAE-199E9BDB51E3}">
+  DTS:VersionGUID="{EA12A6B8-743C-418A-8FF2-DBDD3BD9D8E5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B58CD5BA-7CEC-4F8A-837F-59EFEE812982}"
+      DTS:DTSID="{1E40AFDC-11C7-461A-9094-ABCEB412E26C}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="GETDATE()"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">5/24/2019 9:01:52 AM</DTS:VariableValue>
+        DTS:DataType="7">5/24/2019 7:50:55 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F2523BCB-8160-4D9B-869A-32988D977D96}"
+      DTS:DTSID="{3F612E47-F796-415D-9574-6ABE11623E25}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="IB_Description">
@@ -38,7 +38,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D12E2312-9A64-4688-BF6A-FC033E4A9B19}"
+      DTS:DTSID="{4409A953-0963-4D45-B4FA-2A43B8CCF328}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="IB_Description1">
@@ -47,7 +47,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{ED915FF2-2EAB-40D3-B363-D22B838BBA9D}"
+      DTS:DTSID="{8C96EC6F-D45F-4475-8294-CC029A2FC74B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="IB_ID">
@@ -60,7 +60,7 @@
       DTS:refId="Package\S1_Import_Failure_Update"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{8A811FCD-6E40-4E60-8823-C37419892323}"
+      DTS:DTSID="{7BACD142-BCF2-4CD8-A124-871AA2529C0C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="S1_Import_Failure_Update"
@@ -89,7 +89,7 @@
       DTS:refId="Package\S1_Import_Insert"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{45B2D4F7-8D92-4B9F-8A03-2068695C4ACA}"
+      DTS:DTSID="{FEE649BE-6CB7-4C50-9886-B65B10E0D58E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="S1_Import_Insert"
@@ -137,7 +137,7 @@
       DTS:refId="Package\S1_Import_Sucess_Update"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{78AEA41A-3DE4-4102-BDF6-043C20877A05}"
+      DTS:DTSID="{89F5B63A-FA0C-411F-B2FE-541D9DF96DEB}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="S1_Import_Sucess_Update"
@@ -166,7 +166,7 @@
       DTS:refId="Package\Sequence Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{6C36CDE1-4D32-46FC-8F72-2728B5C01B4C}"
+      DTS:DTSID="{9AC10FA9-B807-47A5-AC8B-3CE72B3A1B2B}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sequence Container">
@@ -176,7 +176,7 @@
           DTS:refId="Package\Sequence Container\Package Business Categorise Process"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:DTSID="{4F25E259-3358-4609-9F8E-E359EA49A2FA}"
+          DTS:DTSID="{DD0B5968-85FE-4DCD-9C19-83FE6A893944}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Package Business Categorise Process"
@@ -200,7 +200,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{8056D553-4BF2-4552-AD37-9892F562A7E9}"
+      DTS:DTSID="{174BFE89-1F86-40B6-970A-8541C806CFA6}"
       DTS:From="Package\S1_Import_Insert"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -208,7 +208,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{D764F3B6-F142-4A06-BAC0-E0C8E9A577CC}"
+      DTS:DTSID="{FF8C16C7-447D-41FF-AE7E-6B896945EB50}"
       DTS:From="Package\Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -216,7 +216,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{46C18F26-C81D-40CB-BBC2-3E74DAC31323}"
+      DTS:DTSID="{5D51D198-4651-47E2-9154-E8BB20306783}"
       DTS:From="Package\Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
