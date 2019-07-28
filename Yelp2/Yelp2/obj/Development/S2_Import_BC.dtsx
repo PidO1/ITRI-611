@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_BC"
   DTS:PackageType="5"
-  DTS:VersionBuild="83"
-  DTS:VersionGUID="{6D65F4C3-847F-453F-8388-71CB6986654D}">
+  DTS:VersionBuild="87"
+  DTS:VersionGUID="{EE2CCB04-8185-48B1-BBC5-A834B19971CC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,6 +24,26 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=localhost;Initial Catalog=Stage 1;Integrated Security=True;Application Name=SSIS-S1_Import_BC-{846E8CE4-6092-4308-AD58-4B0B13D4B1DD}localhost.Stage 1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.Stage2]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{66644C9D-1AB6-49B9-9821-15443BBD2DD4}"
+      DTS:ObjectName="localhost.Stage2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Stage2;Integrated Security=True;Application Name=SSIS-S2_Import_BC-{66644C9D-1AB6-49B9-9821-15443BBD2DD4}localhost.Stage2;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.Stage2 1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{D3ECD547-C71E-40B5-B9C8-B27416B94A03}"
+      DTS:ObjectName="localhost.Stage2 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Stage2;Integrated Security=True;Application Name=SSIS-S2_Import_BC-{D3ECD547-C71E-40B5-B9C8-B27416B94A03}localhost.Stage2 1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -49,7 +69,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">7/26/2019 11:56:22 AM</DTS:VariableValue>
+        DTS:DataType="7">7/28/2019 3:48:51 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -74,7 +94,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{846E8CE4-6092-4308-AD58-4B0B13D4B1DD}"
+          SQLTask:Connection="{66644C9D-1AB6-49B9-9821-15443BBD2DD4}"
           SQLTask:SqlStatementSource="UPDATE Import_Batch_Process&#xA;SET IBP_End = @DateTime,&#xA;IBP_Status = 'Failed'&#xA;WHERE IBP_ID = @IBP_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@IBP_ID"
@@ -103,7 +123,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8A8CAFFE-39B0-4835-A869-62A8DC2F5C04}"
+          SQLTask:Connection="{66644C9D-1AB6-49B9-9821-15443BBD2DD4}"
           SQLTask:IsStoredProc="True"
           SQLTask:SqlStatementSource="Create_Import_Batch_Process" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
@@ -145,7 +165,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8A8CAFFE-39B0-4835-A869-62A8DC2F5C04}"
+          SQLTask:Connection="{66644C9D-1AB6-49B9-9821-15443BBD2DD4}"
           SQLTask:SqlStatementSource="UPDATE Import_Batch_Process&#xA;SET IBP_End = @DateTime,&#xA;IBP_Status = 'Finished'&#xA;WHERE IBP_ID = @IBP_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@IBP_ID"
@@ -185,7 +205,7 @@
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
-              <PackageName>S1_Import_Business.dtsx</PackageName>
+              <PackageName>S2_Import_Business.dtsx</PackageName>
               <ParameterAssignment>
                 <ParameterName>IBP_ID</ParameterName>
                 <BindedVariableOrParameterName>User::IBP_ID</BindedVariableOrParameterName>
@@ -197,6 +217,7 @@
           DTS:refId="Package\Sequence Container\Business_Categories_package"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{6101554A-1175-4EAB-9800-995C3039C70C}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -218,6 +239,7 @@
           DTS:refId="Package\Sequence Container\Categories_Package"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{E67CDE0E-B46E-44D9-954D-6821CEC3EB1D}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -278,34 +300,34 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="224,41.6"
+          Size="224,42"
           Id="Package\S1_Import_BC_Failure_Update"
           TopLeft="614,527" />
         <NodeLayout
-          Size="179.2,41.6"
+          Size="179,42"
           Id="Package\S1_Import_BC_insert"
           TopLeft="183,12" />
         <NodeLayout
-          Size="224,41.6"
+          Size="224,42"
           Id="Package\S1_Import_BC_Sucess_Update"
           TopLeft="229,523" />
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\Sequence Container\Business Package"
           TopLeft="66,31" />
         <NodeLayout
-          Size="220,41.6"
+          Size="220,42"
           Id="Package\Sequence Container\Business_Categories_package"
           TopLeft="220,157" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="173,42"
           Id="Package\Sequence Container\Categories_Package"
           TopLeft="451,32" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="649.6,254.4"
-          Size="649.6,296.8"
+          PanelSize="650,254"
+          Size="650,297"
           Id="Package\Sequence Container"
           TopLeft="174,119" />
         <EdgeLayout
