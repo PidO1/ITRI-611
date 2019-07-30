@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Yelp2</Name>
-    <LastWriteTime>2019-07-28T14:45:46.8923732Z</LastWriteTime>
+    <LastWriteTime>2019-07-30T10:27:58.744211Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,12 +18,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S1_Import_Business.dtsx</Name>
-      <LastWriteTime>2019-07-28T14:45:46.8913763Z</LastWriteTime>
+      <LastWriteTime>2019-07-30T10:27:49.6885267Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S1_Import_Category.dtsx</Name>
-      <LastWriteTime>2019-07-28T14:45:46.8913763Z</LastWriteTime>
+      <LastWriteTime>2019-07-30T10:27:47.3968269Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -38,12 +38,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import_BC.dtsx</Name>
-      <LastWriteTime>2019-07-28T13:48:50.7190668Z</LastWriteTime>
+      <LastWriteTime>2019-07-30T10:29:22.2094358Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import_Business.dtsx</Name>
-      <LastWriteTime>2019-07-28T14:41:15.9749579Z</LastWriteTime>
+      <LastWriteTime>2019-07-30T10:27:06.2692238Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -53,7 +53,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import_Category.dtsx</Name>
-      <LastWriteTime>2019-07-26T09:56:21.7516332Z</LastWriteTime>
+      <LastWriteTime>2019-07-30T10:42:28.3200146Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

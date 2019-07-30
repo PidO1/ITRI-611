@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Business"
   DTS:PackageType="5"
-  DTS:VersionBuild="68"
-  DTS:VersionGUID="{F3977DD3-ACC0-4D99-A054-0FD2F224D7BF}">
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{CFC9E638-46A8-4A89-91BE-E90C5C667404}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -475,7 +475,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">7/26/2019 11:40:31 AM</DTS:VariableValue>
+        DTS:DataType="7">7/30/2019 12:27:27 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2725,7 +2725,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Failure"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2754,7 +2754,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Success"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2828,19 +2828,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="289.6,41.6"
+          Size="290,42"
           Id="Package\Create Import_Batch_Process_task_Business"
           TopLeft="249,36" />
         <NodeLayout
-          Size="180,41.6"
+          Size="180,42"
           Id="Package\Import Business Task"
           TopLeft="314,169" />
         <NodeLayout
-          Size="288.8,41.6"
+          Size="289,42"
           Id="Package\Update_Import_Batch_Process_Task_Failure"
           TopLeft="479,355" />
         <NodeLayout
-          Size="294.4,41.6"
+          Size="294,42"
           Id="Package\Update_Import_Batch_Process_Task_Success"
           TopLeft="82,345" />
         <EdgeLayout
@@ -2956,31 +2956,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="167.2,41.6"
+          Size="167,42"
           Id="Package\Import Business Task\Rows_Read_Count"
           TopLeft="456.857142857143,92.6666666666667" />
         <NodeLayout
-          Size="201.6,41.6"
+          Size="202,42"
           Id="Package\Import Business Task\Business_Flat_File_Source"
           TopLeft="464.857142857143,14" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\Import Business Task\Derived Column"
           TopLeft="463.357142857143,171.333333333333" />
         <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\Import Business Task\S1_Import_Business_Errors"
           TopLeft="450.857142857143,505.666666666667" />
         <NodeLayout
-          Size="209.6,41.6"
+          Size="210,42"
           Id="Package\Import Business Task\Business_Table_Destination"
           TopLeft="454.857142857143,247" />
         <NodeLayout
-          Size="167.2,41.6"
+          Size="167,42"
           Id="Package\Import Business Task\Row_Count_Errors"
           TopLeft="606.857142857143,344.333333333333" />
         <NodeLayout
-          Size="176.8,41.6"
+          Size="177,42"
           Id="Package\Import Business Task\Get error Description"
           TopLeft="451.857142857143,416" />
         <EdgeLayout

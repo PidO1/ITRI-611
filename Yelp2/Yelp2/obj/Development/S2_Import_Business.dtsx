@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_Business"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{24C12CD3-E03E-4BE5-95FD-6FD795AA6D2E}">
+  DTS:VersionBuild="94"
+  DTS:VersionGUID="{5DC1870B-3EF7-45EC-99A9-57BA8B6C5217}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -495,7 +495,16 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">7/28/2019 4:41:16 PM</DTS:VariableValue>
+        DTS:DataType="7">7/30/2019 12:27:59 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1DB2F8EE-BC29-468C-B721-47E5C6C4EF95}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Dummy_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -583,11 +592,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Import Business Task\Business_Table_Destination"
+              refId="Package\Import Business Task\Business_Table_Destination_Stage2"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Business_Table_Destination"
+              name="Business_Table_Destination_Stage2"
               usesDispositions="true"
               version="4">
               <properties>
@@ -620,7 +629,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -640,7 +649,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Import Business Task\Business_Table_Destination.Connections[OleDbConnection]"
+                  refId="Package\Import Business Task\Business_Table_Destination_Stage2.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.Stage21]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.Stage21]"
                   description="The OLE DB runtime connection used to access the database."
@@ -648,157 +657,159 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="RedirectRow"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].Columns[B_Source_ID]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].Columns[B_Source_ID]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="B_Source_ID"
-                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Source_ID]" />
+                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Source_ID]" />
                     <inputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].Columns[B_Name]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].Columns[B_Name]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="B_Name"
-                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Name]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Name]" />
+                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Name]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Name]" />
                     <inputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].Columns[B_Neighbourhood]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].Columns[B_Neighbourhood]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="B_Neighbourhood"
-                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Neighbourhood]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]" />
+                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Neighbourhood]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]" />
                     <inputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].Columns[B_Address]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].Columns[B_Address]"
                       cachedDataType="wstr"
                       cachedLength="125"
                       cachedName="B_Address"
-                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Address]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Address]" />
+                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Address]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Address]" />
                     <inputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].Columns[B_City]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].Columns[B_City]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="B_City"
-                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_City]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_City]" />
+                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_City]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_City]" />
                     <inputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].Columns[B_State]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].Columns[B_State]"
                       cachedDataType="wstr"
                       cachedLength="8"
                       cachedName="B_State"
-                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_State]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_State]" />
+                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_State]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_State]" />
                     <inputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].Columns[B_Postal_Code]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].Columns[B_Postal_Code]"
                       cachedDataType="wstr"
                       cachedLength="8"
                       cachedName="B_Postal_Code"
-                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Postal_Code]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Postal_Code]" />
+                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Postal_Code]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Postal_Code]" />
                     <inputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].Columns[B_Latitude]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].Columns[B_Latitude]"
                       cachedDataType="numeric"
                       cachedName="B_Latitude"
                       cachedPrecision="12"
                       cachedScale="10"
-                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Latitude]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Latitude]" />
+                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Latitude]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Latitude]" />
                     <inputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].Columns[B_Longitude]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].Columns[B_Longitude]"
                       cachedDataType="numeric"
                       cachedName="B_Longitude"
                       cachedPrecision="13"
                       cachedScale="10"
-                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Longitude]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Longitude]" />
+                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Longitude]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Longitude]" />
                     <inputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].Columns[B_Is_Open]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].Columns[B_Rating_Stars]"
+                      cachedDataType="numeric"
+                      cachedName="B_Rating_Stars"
+                      cachedPrecision="2"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Rating_Stars]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].Columns[B_Is_Open]"
                       cachedDataType="ui1"
                       cachedName="B_Is_Open"
-                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Is_Open]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Is_Open]" />
+                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Is_Open]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Is_Open]" />
                     <inputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].Columns[IBPT_ID]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].Columns[IBPT_ID]"
                       cachedDataType="i4"
                       cachedName="IBPT_ID"
-                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[IBPT_ID]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].Columns[B_Rating]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="B_Rating"
-                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Rating_Stars]"
-                      lineageId="Package\Import Business Task\Lookup.Outputs[Lookup Match Output].Columns[B_Rating]" />
+                      externalMetadataColumnId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
+                      lineageId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
                       dataType="i4"
                       name="IBPT_ID" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
                       dataType="wstr"
                       length="30"
                       name="B_Source_ID" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Name]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Name]"
                       dataType="wstr"
                       length="75"
                       name="B_Name" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Neighbourhood]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Neighbourhood]"
                       dataType="wstr"
                       length="50"
                       name="B_Neighbourhood" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Address]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Address]"
                       dataType="wstr"
                       length="125"
                       name="B_Address" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_City]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_City]"
                       dataType="wstr"
                       length="75"
                       name="B_City" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_State]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_State]"
                       dataType="wstr"
                       length="8"
                       name="B_State" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Postal_Code]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Postal_Code]"
                       dataType="wstr"
                       length="8"
                       name="B_Postal_Code" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Latitude]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Latitude]"
                       dataType="numeric"
                       name="B_Latitude"
                       precision="12"
                       scale="10" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Longitude]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Longitude]"
                       dataType="numeric"
                       name="B_Longitude"
                       precision="13"
                       scale="10" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Rating_Stars]"
-                      dataType="wstr"
-                      length="50"
-                      name="B_Rating_Stars" />
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Rating_Stars]"
+                      dataType="numeric"
+                      name="B_Rating_Stars"
+                      precision="2"
+                      scale="1" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input].ExternalColumns[B_Is_Open]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input].ExternalColumns[B_Is_Open]"
                       dataType="ui1"
                       name="B_Is_Open" />
                   </externalMetadataColumns>
@@ -806,22 +817,95 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Import Business Task\Business_Table_Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Import Business Task\Business_Table_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Import Business Task\Business_Table_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Import Business Task\Business_Table_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Business Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]"
+                      name="IBPT_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::IBPT_ID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::IBPT_ID]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Business Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Business Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1705,7 +1789,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       refId="Package\Import Business Task\Get error Description.Inputs[Input 0].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\Import Business Task\Business_Table_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                      lineageId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1728,171 +1812,287 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </outputs>
             </component>
             <component
-              refId="Package\Import Business Task\Lookup"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup"
-              usesDispositions="true"
-              version="6">
+              refId="Package\Import Business Task\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
               <properties>
                 <property
                   dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Rating_Lookup]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Rating_Lookup]) [refTable]
-where [refTable].[Rating] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Rating" dataType="DT_NUMERIC" length="0" precision="2" scale="1" codePage="0"/&gt;&lt;referenceColumn name="Worded_Rating" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Row_Count</property>
               </properties>
-              <connections>
-                <connection
-                  refId="Package\Import Business Task\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.Stage21]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.Stage21]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
               <inputs>
                 <input
-                  refId="Package\Import Business Task\Lookup.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Import Business Task\Lookup.Inputs[Lookup Input].Columns[B_Rating_Stars]"
-                      cachedDataType="numeric"
-                      cachedName="B_Rating_Stars"
-                      cachedPrecision="2"
-                      cachedScale="1"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Rating</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
+                  refId="Package\Import Business Task\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Import Business Task\Lookup.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Import Business Task\Lookup.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Business Task\Lookup.Outputs[Lookup Match Output].Columns[B_Rating]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Copy Column"
-                      length="50"
-                      lineageId="Package\Import Business Task\Lookup.Outputs[Lookup Match Output].Columns[B_Rating]"
-                      name="B_Rating"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">Worded_Rating</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Import Business Task\Lookup.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Import Business Task\Lookup.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Import Business Task\Lookup.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Import Business Task\Lookup.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Business Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import Business Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import Business Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import Business Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
+                  refId="Package\Import Business Task\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Import Business Task\Row Count.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Import Business Task\OLE DB Source 1"
+              refId="Package\Import Business Task\Row_Count_Errors"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row_Count_Errors">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Error_row_Count</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Business Task\Row_Count_Errors.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Business Task\Row_Count_Errors.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Import Business Task\Row_Count_Errors.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Business Task\S2_Import_Business_Errors"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="7177"
+              name="S2_Import_Business_Errors">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">false</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Business Task\S2_Import_Business_Errors.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Business_Errors_File]"
+                  connectionManagerRefId="Package.ConnectionManagers[Business_Errors_File]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Source_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="B_Source_ID"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Source_ID]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="B_Name"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Name]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Name]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Neighbourhood]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="B_Neighbourhood"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Neighbourhood]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Address]"
+                      cachedDataType="wstr"
+                      cachedLength="125"
+                      cachedName="B_Address"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Address]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Address]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_City]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="B_City"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_City]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_City]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_State]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="B_State"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_State]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_State]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Postal_Code]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="B_Postal_Code"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Postal_Code]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Postal_Code]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Latitude]"
+                      cachedDataType="numeric"
+                      cachedName="B_Latitude"
+                      cachedPrecision="12"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Latitude]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Latitude]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Longitude]"
+                      cachedDataType="numeric"
+                      cachedName="B_Longitude"
+                      cachedPrecision="13"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Longitude]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Longitude]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Rating_Stars]"
+                      cachedDataType="numeric"
+                      cachedName="B_Rating_Stars"
+                      cachedPrecision="2"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Rating_Stars]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Is_Open]"
+                      cachedDataType="ui1"
+                      cachedName="B_Is_Open"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Is_Open]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Is_Open]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="300"
+                      cachedName="ErrorDescription"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Description]"
+                      lineageId="Package\Import Business Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
+                      dataType="wstr"
+                      length="30"
+                      name="B_Source_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Name]"
+                      dataType="wstr"
+                      length="75"
+                      name="B_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Neighbourhood]"
+                      dataType="wstr"
+                      length="50"
+                      name="B_Neighbourhood" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Address]"
+                      dataType="wstr"
+                      length="125"
+                      name="B_Address" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_City]"
+                      dataType="wstr"
+                      length="75"
+                      name="B_City" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_State]"
+                      dataType="wstr"
+                      length="8"
+                      name="B_State" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Postal_Code]"
+                      dataType="wstr"
+                      length="8"
+                      name="B_Postal_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Latitude]"
+                      dataType="numeric"
+                      name="B_Latitude"
+                      precision="12"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Longitude]"
+                      dataType="numeric"
+                      name="B_Longitude"
+                      precision="13"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Rating_Stars]"
+                      dataType="numeric"
+                      name="B_Rating_Stars"
+                      precision="2"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Is_Open]"
+                      dataType="ui1"
+                      name="B_Is_Open" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[IBPT_ID]"
+                      dataType="i4"
+                      name="IBPT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Code]"
+                      dataType="i4"
+                      name="Error Code" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Description]"
+                      dataType="wstr"
+                      length="100"
+                      name="Error Description" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Import Business Task\Stage1_Business"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source 1"
+              name="Stage1_Business"
               usesDispositions="true"
               version="7">
               <properties>
@@ -1937,7 +2137,7 @@ where [refTable].[Rating] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Import Business Task\OLE DB Source 1.Connections[OleDbConnection]"
+                  refId="Package\Import Business Task\Stage1_Business.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.Stage 11]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.Stage 11]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1945,284 +2145,270 @@ where [refTable].[Rating] = ?</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output]"
+                  refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Source_ID]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Source_ID]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Source_ID]"
+                      externalMetadataColumnId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Source_ID]"
                       length="30"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Source_ID]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Source_ID]"
                       name="B_Source_ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Name]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Name]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Name]"
+                      externalMetadataColumnId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Name]"
                       length="75"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Name]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Name]"
                       name="B_Name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Neighbourhood]"
+                      externalMetadataColumnId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Neighbourhood]"
                       length="50"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]"
                       name="B_Neighbourhood"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Address]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Address]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Address]"
+                      externalMetadataColumnId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Address]"
                       length="125"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Address]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Address]"
                       name="B_Address"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_City]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_City]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_City]"
+                      externalMetadataColumnId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_City]"
                       length="75"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_City]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_City]"
                       name="B_City"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_State]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_State]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_State]"
+                      externalMetadataColumnId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_State]"
                       length="8"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_State]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_State]"
                       name="B_State"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Postal_Code]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Postal_Code]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Postal_Code]"
+                      externalMetadataColumnId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Postal_Code]"
                       length="8"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Postal_Code]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Postal_Code]"
                       name="B_Postal_Code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Latitude]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Latitude]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Latitude]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Latitude]"
+                      externalMetadataColumnId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Latitude]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Latitude]"
                       name="B_Latitude"
                       precision="12"
                       scale="10"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Longitude]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Longitude]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Longitude]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Longitude]"
+                      externalMetadataColumnId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Longitude]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Longitude]"
                       name="B_Longitude"
                       precision="13"
                       scale="10"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Rating_Stars]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]"
+                      externalMetadataColumnId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Rating_Stars]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]"
                       name="B_Rating_Stars"
                       precision="2"
                       scale="1"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Is_Open]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Is_Open]"
                       dataType="ui1"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Is_Open]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Is_Open]"
+                      externalMetadataColumnId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Is_Open]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Is_Open]"
                       name="B_Is_Open"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[IBPT_ID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[IBPT_ID]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[IBPT_ID]"
-                      name="IBPT_ID"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Source_ID]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Source_ID]"
                       dataType="wstr"
                       length="30"
                       name="B_Source_ID" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Name]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Name]"
                       dataType="wstr"
                       length="75"
                       name="B_Name" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Neighbourhood]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Neighbourhood]"
                       dataType="wstr"
                       length="50"
                       name="B_Neighbourhood" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Address]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Address]"
                       dataType="wstr"
                       length="125"
                       name="B_Address" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_City]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_City]"
                       dataType="wstr"
                       length="75"
                       name="B_City" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_State]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_State]"
                       dataType="wstr"
                       length="8"
                       name="B_State" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Postal_Code]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Postal_Code]"
                       dataType="wstr"
                       length="8"
                       name="B_Postal_Code" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Latitude]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Latitude]"
                       dataType="numeric"
                       name="B_Latitude"
                       precision="12"
                       scale="10" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Longitude]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Longitude]"
                       dataType="numeric"
                       name="B_Longitude"
                       precision="13"
                       scale="10" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Rating_Stars]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Rating_Stars]"
                       dataType="numeric"
                       name="B_Rating_Stars"
                       precision="2"
                       scale="1" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[B_Is_Open]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[B_Is_Open]"
                       dataType="ui1"
                       name="B_Is_Open" />
                     <externalMetadataColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[IBPT_ID]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].ExternalColumns[IBPT_ID]"
                       dataType="i4"
                       name="IBPT_ID" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Source_ID]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Source_ID]"
                       dataType="wstr"
                       length="30"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Source_ID]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Source_ID]"
                       name="B_Source_ID" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Name]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Name]"
                       dataType="wstr"
                       length="75"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Name]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Name]"
                       name="B_Name" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Neighbourhood]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Neighbourhood]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Neighbourhood]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Neighbourhood]"
                       name="B_Neighbourhood" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Address]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Address]"
                       dataType="wstr"
                       length="125"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Address]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Address]"
                       name="B_Address" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_City]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_City]"
                       dataType="wstr"
                       length="75"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_City]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_City]"
                       name="B_City" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_State]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_State]"
                       dataType="wstr"
                       length="8"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_State]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_State]"
                       name="B_State" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Postal_Code]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Postal_Code]"
                       dataType="wstr"
                       length="8"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Postal_Code]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Postal_Code]"
                       name="B_Postal_Code" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Latitude]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Latitude]"
                       dataType="numeric"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Latitude]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Latitude]"
                       name="B_Latitude"
                       precision="12"
                       scale="10" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Longitude]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Longitude]"
                       dataType="numeric"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Longitude]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Longitude]"
                       name="B_Longitude"
                       precision="13"
                       scale="10" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Rating_Stars]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Rating_Stars]"
                       dataType="numeric"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Rating_Stars]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Rating_Stars]"
                       name="B_Rating_Stars"
                       precision="2"
                       scale="1" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Is_Open]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Is_Open]"
                       dataType="ui1"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[B_Is_Open]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[B_Is_Open]"
                       name="B_Is_Open" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[IBPT_ID]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[IBPT_ID]"
-                      name="IBPT_ID" />
-                    <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2230,273 +2416,26 @@ where [refTable].[Rating] = ?</property>
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Import Business Task\Row_Count_Errors"
-              componentClassID="Microsoft.RowCount"
-              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
-              name="Row_Count_Errors">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable to hold the row count."
-                  name="VariableName">User::Error_row_Count</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Import Business Task\Row_Count_Errors.Inputs[Row Count Input 1]"
-                  hasSideEffects="true"
-                  name="Row Count Input 1">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Import Business Task\Row_Count_Errors.Outputs[Row Count Output 1]"
-                  name="Row Count Output 1"
-                  synchronousInputId="Package\Import Business Task\Row_Count_Errors.Inputs[Row Count Input 1]">
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Import Business Task\S1_Import_Business_Errors"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="7177"
-              name="S1_Import_Business_Errors">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">false</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Import Business Task\S1_Import_Business_Errors.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Business_Errors_File]"
-                  connectionManagerRefId="Package.ConnectionManagers[Business_Errors_File]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Source_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="B_Source_ID"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Source_ID]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Name]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="B_Name"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Name]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Name]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Neighbourhood]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="B_Neighbourhood"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Neighbourhood]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Address]"
-                      cachedDataType="wstr"
-                      cachedLength="125"
-                      cachedName="B_Address"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Address]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Address]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_City]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="B_City"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_City]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_City]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_State]"
-                      cachedDataType="wstr"
-                      cachedLength="8"
-                      cachedName="B_State"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_State]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_State]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Postal_Code]"
-                      cachedDataType="wstr"
-                      cachedLength="8"
-                      cachedName="B_Postal_Code"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Postal_Code]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Postal_Code]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Latitude]"
-                      cachedDataType="numeric"
-                      cachedName="B_Latitude"
-                      cachedPrecision="12"
-                      cachedScale="10"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Latitude]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Latitude]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Longitude]"
-                      cachedDataType="numeric"
-                      cachedName="B_Longitude"
-                      cachedPrecision="13"
-                      cachedScale="10"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Longitude]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Longitude]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Rating_Stars]"
-                      cachedDataType="numeric"
-                      cachedName="B_Rating_Stars"
-                      cachedPrecision="2"
-                      cachedScale="1"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Rating_Stars]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Is_Open]"
-                      cachedDataType="ui1"
-                      cachedName="B_Is_Open"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Is_Open]"
-                      lineageId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[B_Is_Open]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Import Business Task\Business_Table_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Import Business Task\Business_Table_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
-                    <inputColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="300"
-                      cachedName="ErrorDescription"
-                      externalMetadataColumnId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Description]"
-                      lineageId="Package\Import Business Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
-                      dataType="wstr"
-                      length="30"
-                      name="B_Source_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Name]"
-                      dataType="wstr"
-                      length="75"
-                      name="B_Name" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Neighbourhood]"
-                      dataType="wstr"
-                      length="50"
-                      name="B_Neighbourhood" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Address]"
-                      dataType="wstr"
-                      length="125"
-                      name="B_Address" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_City]"
-                      dataType="wstr"
-                      length="75"
-                      name="B_City" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_State]"
-                      dataType="wstr"
-                      length="8"
-                      name="B_State" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Postal_Code]"
-                      dataType="wstr"
-                      length="8"
-                      name="B_Postal_Code" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Latitude]"
-                      dataType="numeric"
-                      name="B_Latitude"
-                      precision="12"
-                      scale="10" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Longitude]"
-                      dataType="numeric"
-                      name="B_Longitude"
-                      precision="13"
-                      scale="10" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Rating_Stars]"
-                      dataType="numeric"
-                      name="B_Rating_Stars"
-                      precision="2"
-                      scale="1" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Is_Open]"
-                      dataType="ui1"
-                      name="B_Is_Open" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      dataType="i4"
-                      name="ErrorCode" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      dataType="i4"
-                      name="ErrorColumn" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[IBPT_ID]"
-                      dataType="i4"
-                      name="IBPT_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Code]"
-                      dataType="i4"
-                      name="Error Code" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Description]"
-                      dataType="wstr"
-                      length="100"
-                      name="Error Description" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
           </components>
           <paths>
             <path
-              refId="Package\Import Business Task.Paths[Lookup Match Output]"
-              endId="Package\Import Business Task\Business_Table_Destination.Inputs[OLE DB Destination Input]"
-              name="Lookup Match Output"
-              startId="Package\Import Business Task\Lookup.Outputs[Lookup Match Output]" />
+              refId="Package\Import Business Task.Paths[Derived Column Output]"
+              endId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Import Business Task.Paths[OLE DB Destination Error Output]"
               endId="Package\Import Business Task\Row_Count_Errors.Inputs[Row Count Input 1]"
               name="OLE DB Destination Error Output"
-              startId="Package\Import Business Task\Business_Table_Destination.Outputs[OLE DB Destination Error Output]" />
+              startId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output]" />
             <path
               refId="Package\Import Business Task.Paths[OLE DB Source Output]"
-              endId="Package\Import Business Task\Lookup.Inputs[Lookup Input]"
+              endId="Package\Import Business Task\Row Count.Inputs[Row Count Input 1]"
               name="OLE DB Source Output"
-              startId="Package\Import Business Task\OLE DB Source 1.Outputs[OLE DB Source Output]" />
+              startId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Import Business Task.Paths[Output 0]"
-              endId="Package\Import Business Task\S1_Import_Business_Errors.Inputs[Flat File Destination Input]"
+              endId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input]"
               name="Output 0"
               startId="Package\Import Business Task\Get error Description.Outputs[Output 0]" />
             <path
@@ -2504,6 +2443,11 @@ where [refTable].[Rating] = ?</property>
               endId="Package\Import Business Task\Get error Description.Inputs[Input 0]"
               name="Row Count Output 1"
               startId="Package\Import Business Task\Row_Count_Errors.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Import Business Task.Paths[Row Count Output 11]"
+              endId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\Import Business Task\Row Count.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2747,47 +2691,91 @@ where [refTable].[Rating] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="209,42"
-          Id="Package\Import Business Task\S1_Import_Business_Errors"
-          TopLeft="450.857142857143,505.666666666667" />
+          Size="158,42"
+          Id="Package\Import Business Task\Stage1_Business"
+          TopLeft="441,11" />
         <NodeLayout
-          Size="210,42"
-          Id="Package\Import Business Task\Business_Table_Destination"
-          TopLeft="454.857142857143,247" />
+          Size="209,42"
+          Id="Package\Import Business Task\S2_Import_Business_Errors"
+          TopLeft="397.857142857143,428.666666666667" />
         <NodeLayout
           Size="167,42"
           Id="Package\Import Business Task\Row_Count_Errors"
-          TopLeft="447.857142857143,337.333333333333" />
+          TopLeft="411.857142857143,280.333333333333" />
         <NodeLayout
           Size="177,42"
           Id="Package\Import Business Task\Get error Description"
-          TopLeft="451.857142857143,416" />
+          TopLeft="421.857142857143,355" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Import Business Task\Row Count"
+          TopLeft="460,82" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Import Business Task\Business_Table_Destination_Stage2"
+          TopLeft="400.857142857143,174" />
         <EdgeLayout
-          Id="Package\Import Business Task.Paths[Row Count Output 1]"
-          TopLeft="531.357142857143,379.333333333333">
+          Id="Package\Import Business Task.Paths[OLE DB Destination Error Output]"
+          TopLeft="524.857142857143,216">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9,36.666666666667"
+              EndConnector="-29.5,64.333333333333"
               Start="0,0"
-              End="9,29.166666666667">
+              End="-29.5,56.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.3333333333335" />
+                    End="0,28.1666666666665" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.3333333333335"
-                    Point2="0,18.3333333333335"
-                    Point3="4,18.3333333333335" />
+                    Point1="0,28.1666666666665"
+                    Point2="0,32.1666666666665"
+                    Point3="-4,32.1666666666665" />
                   <mssgle:LineSegment
-                    End="5,18.3333333333335" />
+                    End="-25.5,32.1666666666665" />
                   <mssgle:CubicBezierSegment
-                    Point1="5,18.3333333333335"
-                    Point2="9,18.3333333333335"
-                    Point3="9,22.3333333333335" />
+                    Point1="-25.5,32.1666666666665"
+                    Point2="-29.5,32.1666666666665"
+                    Point3="-29.5,36.1666666666665" />
                   <mssgle:LineSegment
-                    End="9,29.166666666667" />
+                    End="-29.5,56.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-87.95890625,37.1666666666665,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Row Count Output 1]"
+          TopLeft="495.357142857143,322.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15,32.666666666667"
+              Start="0,0"
+              End="15,25.166666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.3333333333335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.3333333333335"
+                    Point2="0,16.3333333333335"
+                    Point3="4,16.3333333333335" />
+                  <mssgle:LineSegment
+                    End="11,16.3333333333335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11,16.3333333333335"
+                    Point2="15,16.3333333333335"
+                    Point3="15,20.3333333333335" />
+                  <mssgle:LineSegment
+                    End="15,25.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2798,30 +2786,30 @@ where [refTable].[Rating] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Task.Paths[Output 0]"
-          TopLeft="540.357142857143,458">
+          TopLeft="510.357142857143,397">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="15,47.666666666667"
+              EndConnector="-8,31.666666666667"
               Start="0,0"
-              End="15,40.166666666667">
+              End="-8,24.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.8333333333335" />
+                    End="0,11.8333333333335" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.8333333333335"
-                    Point2="0,23.8333333333335"
-                    Point3="4,23.8333333333335" />
+                    Point1="0,11.8333333333335"
+                    Point2="0,15.8333333333335"
+                    Point3="-4,15.8333333333335" />
                   <mssgle:LineSegment
-                    End="11,23.8333333333335" />
+                    End="-4,15.8333333333335" />
                   <mssgle:CubicBezierSegment
-                    Point1="11,23.8333333333335"
-                    Point2="15,23.8333333333335"
-                    Point3="15,27.8333333333335" />
+                    Point1="-4,15.8333333333335"
+                    Point2="-8,15.8333333333335"
+                    Point3="-8,19.8333333333335" />
                   <mssgle:LineSegment
-                    End="15,40.166666666667" />
+                    End="-8,24.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2830,64 +2818,58 @@ where [refTable].[Rating] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[OLE DB Destination Error Output]"
-          TopLeft="559.857142857143,289">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-28.5,48.333333333333"
-              Start="0,0"
-              End="-28.5,40.833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.1666666666665" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.1666666666665"
-                    Point2="0,24.1666666666665"
-                    Point3="-4,24.1666666666665" />
-                  <mssgle:LineSegment
-                    End="-24.5,24.1666666666665" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-24.5,24.1666666666665"
-                    Point2="-28.5,24.1666666666665"
-                    Point3="-28.5,28.1666666666665" />
-                  <mssgle:LineSegment
-                    End="-28.5,40.833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-87.45890625,29.1666666666665,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Import Business Task\Lookup"
-          TopLeft="360,66" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Import Business Task\OLE DB Source 1"
-          TopLeft="63,62" />
         <EdgeLayout
           Id="Package\Import Business Task.Paths[OLE DB Source Output]"
-          TopLeft="213,85">
+          TopLeft="522.5,53">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="147,0"
+              EndConnector="0,29"
               Start="0,0"
-              End="139.5,0">
+              End="0,21.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="139.5,0" />
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Import Business Task\Derived Column"
+          TopLeft="210,119" />
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Row Count Output 11]"
+          TopLeft="460,103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-96,37"
+              Start="0,0"
+              End="-88.5,37">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-44,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44,0"
+                    Point2="-48,0"
+                    Point3="-48,4" />
+                  <mssgle:LineSegment
+                    End="-48,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48,33"
+                    Point2="-48,37"
+                    Point3="-52,37" />
+                  <mssgle:LineSegment
+                    End="-88.5,37" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2897,46 +2879,44 @@ where [refTable].[Rating] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Business Task.Paths[Lookup Match Output]"
-          TopLeft="416.5,108">
+          Id="Package\Import Business Task.Paths[Derived Column Output]"
+          TopLeft="364,145.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="143.357142857143,139"
+              EndConnector="36.857142857143,49.3333333333333"
               Start="0,0"
-              End="143.357142857143,131.5">
+              End="29.357142857143,49.3333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.5" />
+                    End="11.5543905635649,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,65.5"
-                    Point2="0,69.5"
-                    Point3="4,69.5" />
+                    Point1="11.5543905635649,0"
+                    Point2="15.5543905635649,0"
+                    Point3="15.5543905635649,4" />
                   <mssgle:LineSegment
-                    End="139.357142857143,69.5" />
+                    End="15.5543905635649,45.3333333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="139.357142857143,69.5"
-                    Point2="143.357142857143,69.5"
-                    Point3="143.357142857143,73.5" />
+                    Point1="15.5543905635649,45.3333333333333"
+                    Point2="15.5543905635649,49.3333333333333"
+                    Point3="19.5543905635649,49.3333333333333" />
                   <mssgle:LineSegment
-                    End="143.357142857143,131.5" />
+                    End="29.357142857143,49.3333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="23.4871847098215,74.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Import Business Task\Business_Table_Destination">
+    design-time-name="Package\Import Business Task\Stage1_Business">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2949,30 +2929,7 @@ where [refTable].[Rating] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Import Business Task\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Rating_Lookup]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Business Task\OLE DB Source 1">
+    design-time-name="Package\Import Business Task\Business_Table_Destination_Stage2">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
