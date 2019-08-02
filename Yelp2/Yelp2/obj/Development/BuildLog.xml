@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Yelp2</Name>
-    <LastWriteTime>2019-07-30T10:27:58.744211Z</LastWriteTime>
+    <LastWriteTime>2019-08-02T09:17:23.617745Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -38,12 +38,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import_BC.dtsx</Name>
-      <LastWriteTime>2019-07-30T10:29:22.2094358Z</LastWriteTime>
+      <LastWriteTime>2019-08-02T10:42:53.5188682Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import_Business.dtsx</Name>
-      <LastWriteTime>2019-07-30T10:27:06.2692238Z</LastWriteTime>
+      <LastWriteTime>2019-08-02T10:40:01.1515235Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -53,7 +53,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import_Category.dtsx</Name>
-      <LastWriteTime>2019-07-30T10:42:28.3200146Z</LastWriteTime>
+      <LastWriteTime>2019-08-02T10:42:30.2782849Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

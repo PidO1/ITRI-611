@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_BC"
   DTS:PackageType="5"
-  DTS:VersionBuild="90"
-  DTS:VersionGUID="{8B8B6F34-1450-49AD-81F6-043928BE0CCB}">
+  DTS:VersionBuild="92"
+  DTS:VersionGUID="{A0F02FC7-A1A3-485D-9B32-53B3081D0F9F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -69,7 +69,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">7/30/2019 12:29:22 PM</DTS:VariableValue>
+        DTS:DataType="7">8/2/2019 12:42:54 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -196,7 +196,6 @@
           DTS:refId="Package\Sequence Container\Business Package"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{D4DCAA7C-D697-4F47-B4E2-A51FCC0D6F8A}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"

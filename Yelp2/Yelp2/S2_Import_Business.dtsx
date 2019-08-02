@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_Business"
   DTS:PackageType="5"
-  DTS:VersionBuild="94"
-  DTS:VersionGUID="{5DC1870B-3EF7-45EC-99A9-57BA8B6C5217}">
+  DTS:VersionBuild="98"
+  DTS:VersionGUID="{91B5182A-B597-4279-BE32-141F0E22D96E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -495,7 +495,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">7/30/2019 12:27:06 PM</DTS:VariableValue>
+        DTS:DataType="7">8/2/2019 12:40:01 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1812,6 +1812,1383 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </outputs>
             </component>
             <component
+              refId="Package\Import Business Task\Get error Description 1"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;11"
+              description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+              name="Get error Description 1"
+              version="11">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stores the source code of the component"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        Row.ErrorDescription = this.ComponentMetaData.GetErrorDescription(Row.ErrorCode);
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public Int32 ErrorCode
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[0]);
+        }
+    }
+    public bool ErrorCode_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public String ErrorDescription
+    {
+        set
+        {
+            this[1] = value;
+        }
+    }
+    public bool ErrorDescription_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(1);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_8782fdba86484a8ea03fe0beb34e8f4c.Properties.Settings.get_Default():SC_8782fdba86484a8ea03fe0beb34e8f4c.Properties.Sett" +
+    "ings")]
+
+namespace SC_8782fdba86484a8ea03fe0beb34e8f4c.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_8782fdba86484a8ea03fe0beb34e8f4c.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7DF8570B-8F73-4CA9-9872-23929174EC34}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_8782fdba86484a8ea03fe0beb34e8f4c</RootNamespace>
+    <AssemblyName>SC_8782fdba86484a8ea03fe0beb34e8f4c</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptComponent" IconIndex="0" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC140</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>SC_8782fdba86484a8ea03fe0beb34e8f4c</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>SC_8782fdba86484a8ea03fe0beb34e8f4c</msb:DisplayName>
+    <msb:ProjectId>{D9A34C51-DB48-4D63-8B16-5ED96C40F161}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_8782fdba86484a8ea03fe0beb34e8f4c.csproj" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_8782fdba86484a8ea03fe0beb34e8f4c")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_8782fdba86484a8ea03fe0beb34e8f4c")]
+[assembly: AssemblyCopyright("Copyright @  2019")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_8782fdba86484a8ea03fe0beb34e8f4c.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_8782fdba86484a8ea03fe0beb34e8f4c.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_8782fdba86484a8ea03fe0beb34e8f4c.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_8782fdba86484a8ea03fe0beb34e8f4c.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_8782fdba86484a8ea03fe0beb34e8f4c.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stores the binary representation of the component"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_8782fdba86484a8ea03fe0beb34e8f4c.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMcFzFwAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAdjIA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAACQyAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAfBIAAAAgAAAAFAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABY
+MgAAAAAAAEgAAAACAAUAtCEAALgPAAABAAAAAAAAAGwxAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACipiAwIoEgAACgNvBgAABm8TAAAK
+bwgAAAYqHgIoDAAABioqAgMEBSgUAAAKKlICexUAAAoCexYAAAoWlG8XAAAKKiICFigYAAAKKiYC
+FwMoGQAACipaAywIAhcoGgAACipyAQAAcHMbAAAKeh4CKBwAAAoqHgIoHQAACip+AigeAAAKAgJz
+EAAABn0BAAAEAgJzEQAABn0CAAAEKpIEcp4AAHAabx8AAAosFQIFAgMoIAAACg4EcwUAAAZvDgAA
+BipKKwcCA28PAAAGA28KAAAGLfEqBio6AighAAAKAgN9AwAABCo6AighAAAKAgN9BAAABCoeAigh
+AAAKKq5+BQAABC0ecq4AAHDQBwAAAigiAAAKbyMAAApzJAAACoAFAAAEfgUAAAQqGn4GAAAEKh4C
+gAYAAAQqGn4HAAAEKh4CKCUAAAoqLnMXAAAGgAcAAAQqAAAAQlNKQgEAAQAAAAAADAAAAHY0LjAu
+MzAzMTkAAAAABQBsAAAAjAUAACN+AAD4BQAA4AYAACNTdHJpbmdzAAAAANgMAAAgAQAAI1VTAPgN
+AAAQAAAAI0dVSUQAAAAIDgAAsAEAACNCbG9iAAAAAAAAAAIAAAFXFaABCQEAAAD6ATMAFgAAAQAA
+ACAAAAAIAAAABwAAABgAAAAPAAAAJQAAABAAAAADAAAABwAAAAgAAAABAAAABQAAAAEAAAAAADAD
+AQAAAAAABgAqAhYFBgC+AhYFBgB2AQMFDwCKBQAABgCjAeIDBgANAuIDBgDuAeIDBgClAuIDBgBK
+AuIDBgBjAuIDBgC6AeIDBgDVAfkCCgB+AsMACgCsBMMADgCdBMMACgBUBMMACgBQBsMABgATBpoD
+BgBZAQMFBgC9BDYFBgBIBM0DEgApARoDEgCKARoDEgARAbgDBgA+ARYFFgABAM0EBgD0A5oDBgAT
+A5oDBgA3BJoDBgDkAJoDBgCVAJoDBgDVBuIDAAAAACMAAAAAAAEAAQABABAArQMAABAAAQABAAEA
+EACQBAAAOQABAAUAAQAQADIGAABFAAEADAABABAABwYAAEkAAwAQAAEAEADIBQAASQAEABEAAAAQ
+AD0FmQVJAAUAEgAAARAA9wWZBWEABwAWAAYABwZ/AAYAyAWDAAEAQAaHAAEAQAaHABEAoQOLABEA
+AQGPABEAdwCTAFAgAAAAAMYA3AIGAAEAWCAAAAAAxgDnAgYAAQBgIAAAAADGALIGlwABAHkgAAAA
+AIYY9gQGAAIAgSAAAAAAhhj2BCUAAgCMIAAAAACGCIcAnQAFAKEgAAAAAIYIWANHAAUAqiAAAAAA
+hggOBBAABQC0IAAAAACGCG0DoQAGAMsgAAAAAIYAyQZHAAcA0yAAAAAAhgAaBkcABwDbIAAAAACG
+GPYEBgAHAPsgAAAAAMYApQamAAcAICEAAAAAxgGeBpcACwAzIQAAAADGAbIGlwAMADUhAAAAAIYY
+9gSwAA0ARCEAAAAAhhj2BLAADgBTIQAAAACDGPYEBgAPAFshAAAAAJMIuQS2AA8AhyEAAAAAkwjp
+ALsADwCOIQAAAACTCPUAwAAPAJYhAAAAAJYIJgbGABAAnSEAAAAAhhj2BAYAEAClIQAAAACRGPwE
+ywAQAAAAAQDNBgAAAQCyBAAAAgDSBQAAAwBiBAAAAQDzAgAAAQDzAgAAAQAsAAAAAgC5AAAAAwCy
+BAAABABiBAAAAQCyBAAAAQDNBgAAAQBWBgAAAQBWBgAAAQDzAgkA9gQBABEA9gQGABkA9gQKACkA
+9gQQADEA9gQQADkA9gQQAEEA9gQQAEkA9gQQAFEA9gQQAFkA9gQQAGEA9gQQAGkA9gQGAJkA9gQG
+ALkA9gQVAMkA9gQGAIkA3AIGAIkA5wIGAIkANAAbANEAIwQgAHEA9gQlAHEAsgQvAHEA0gUzAHkA
+GgA3AHEAggM8AHEAkQNBAHEAiQMBANkA9gQQAHEAyQZHAHEAGgZHAIkA9gQGAOEAAAZLAIkA5gVS
+AJEA9gQGAPEApwBYAPEA0QZfAKEA9gRlAMEA9gQGAC4ACwDqAC4AEwDzAC4AGwASAS4AIwAbAS4A
+KwBEAS4AMwBEAS4AOwBEAS4AQwAbAS4ASwBKAS4AUwBEAS4AWwBhAUMAYwCrAakAcwASAckAcwAS
+AeEAewCrAeMAawCrAQMAAQAHAAUACAAHAAAAiwDPAAAAXAPTAAAAJgTXAAAAcQPTAAAAvQTbAAAA
+CQHgAAAAKgblAAIABgADAAIABwAFAAEACAAHAAEACQAJAAIAEwALAAIAFAANAAEAFQANAAIAFgAP
+AASAAAABAAAAAAAAAAAAAAAAAFMAAAAEAAAAAAAAAAAAAABtAEoAAAAAAA4AAAAAAAAAAAAAAHYA
+YAYAAAAADgAAAAAAAAAAAAAAdgB9BgAAAAAEAAAAAAAAAAAAAABtAJoDAAAAAA4AAAAAAAAAAAAA
+AHYAbAQAAAAAAAAAAAEAAABHBQAAAAAAAABJRFRTQ29tcG9uZW50TWV0YURhdGExMDAAR2V0SW50
+MzIAPE1vZHVsZT4ASW5wdXRJRABnZXRfQ29tcG9uZW50TWV0YURhdGEAbXNjb3JsaWIAU0NfODc4
+MmZkYmE4NjQ4NGE4ZWEwM2ZlMGJlYjM0ZThmNGMAZGVmYXVsdEluc3RhbmNlAGdldF9FcnJvckNv
+ZGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUASW5wdXROYW1lAE1pY3Jvc29m
+dC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5lAFR5cGUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVz
+b3VyY2VDdWx0dXJlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAEVkaXRvckJyb3dzYWJsZVN0YXRl
+AENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUA
+RGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQXNzZW1ibHlUaXRs
+ZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRy
+aWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25B
+dHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RB
+dHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1NjcmlwdENvbXBvbmVudEVu
+dHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRp
+YmlsaXR5QXR0cmlidXRlAFByZUV4ZWN1dGUAUG9zdEV4ZWN1dGUAdmFsdWUAU3lzdGVtLlJ1bnRp
+bWUuVmVyc2lvbmluZwBTdHJpbmcAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNDXzg3ODJmZGJhODY0
+ODRhOGVhMDNmZTBiZWIzNGU4ZjRjLmRsbABnZXRfRXJyb3JDb2RlX0lzTnVsbABzZXRfRXJyb3JE
+ZXNjcmlwdGlvbl9Jc051bGwAU2V0TnVsbABzZXRfSXRlbQBTeXN0ZW0AcmVzb3VyY2VNYW4AU2Ny
+aXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0u
+UmVmbGVjdGlvbgBJbnZhbGlkT3BlcmF0aW9uRXhjZXB0aW9uAHNldF9FcnJvckRlc2NyaXB0aW9u
+AEdldEVycm9yRGVzY3JpcHRpb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJlSW5mbwBPdXRwdXRO
+YW1lTWFwAE91dHB1dE1hcABNaWNyb3NvZnQuU3FsU2VydmVyLkRUU1BpcGVsaW5lV3JhcABJbnB1
+dDBCdWZmZXIAUGlwZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFnZXIA
+TWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUuV3JhcHBlcgAuY3RvcgAuY2N0b3IAU3lz
+dGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJl
+c291cmNlcwBTQ184NzgyZmRiYTg2NDg0YThlYTAzZmUwYmViMzRlOGY0Yy5Qcm9wZXJ0aWVzLlJl
+c291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU0NfODc4MmZkYmE4NjQ4NGE4ZWEwM2Zl
+MGJlYjM0ZThmNGMuUHJvcGVydGllcwBWYXJpYWJsZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRD
+b2x1bW5JbmRleGVzAFNldHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBPYmplY3QARW5kT2ZSb3dz
+ZXQAZ2V0X0RlZmF1bHQAVXNlckNvbXBvbmVudABQYXJlbnRDb21wb25lbnQAU2NyaXB0Q29tcG9u
+ZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQATWljcm9zb2Z0LlNxbFNlcnZlci5QaXBl
+bGluZUhvc3QASW5wdXQwX1Byb2Nlc3NJbnB1dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93AE5leHRS
+b3cAZ2V0X0Fzc2VtYmx5AAAAAICbSQBzAE4AdQBsAGwAIABwAHIAbwBwAGUAcgB0AHkAIABjAGEA
+bgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAAdABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcAbgAg
+AGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABlAGEA
+ZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMAQwBfADgANwA4ADIAZgBkAGIAYQA4ADYANAA4ADQAYQA4
+AGUAYQAwADMAZgBlADAAYgBlAGIAMwA0AGUAOABmADQAYwAuAFAAcgBvAHAAZQByAHQAaQBlAHMA
+LgBSAGUAcwBvAHUAcgBjAGUAcwAAH5dbUAqMKkGhOzljUJbwpAAEIAEBCAMgAAEFIAEBEREEIAEB
+DgUgAQERWQQgABJpBCABDggJIAMBEj0dCBJBAwYSPQMGHQgEIAEICAQgAQIIBSACAQgcAyAAAgYg
+AgIOEXUFIAEdCAgGAAESeRF9BSAAEoCBByACAQ4SgIEIt3pcVhk04IkIiYRdzYCAzJEDBhIUAwYS
+GAMGEkUDBhJRAwYSVQMGEiAFIAEBEgwDIAAIBCABAQIJIAQBCA4SPRJBBSABARJFBAAAElEEAAAS
+VQUAAQESVQQAABIgAwAAAQMoAAgDKAACAygADgQIABJRBAgAElUECAASIAgBAAgAAAAAAB4BAAEA
+VAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0NfODc4MmZkYmE4NjQ4NGE4
+ZWEwM2ZlMGJlYjM0ZThmNGMAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAxOQAASQEAGi5ORVRG
+cmFtZXdvcmssVmVyc2lvbj12NC41AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1l
+d29yayA0LjUEAQAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJl
+YWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNL
+ZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNl
+U2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAABMMgAAAAAAAAAAAABmMgAAACAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAWDIAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQ
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
+SAAAAFhAAADsAwAAAAAAAAAAAADsAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
+AAAAvQTv/gAAAQAAAAEAAAAAAAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
+AAAAAAAAALAETAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAA
+MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
+AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
+AABTAEMAXwA4ADcAOAAyAGYAZABiAGEAOAA2ADQAOAA0AGEAOABlAGEAMAAzAGYAZQAwAGIAZQBi
+ADMANABlADgAZgA0AGMAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
+MAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADgANwA4ADIAZgBk
+AGIAYQA4ADYANAA4ADQAYQA4AGUAYQAwADMAZgBlADAAYgBlAGIAMwA0AGUAOABmADQAYwAuAGQA
+bABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBo
+AHQAIABAACAAIAAyADAAMQA5AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMA
+AAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8AOAA3
+ADgAMgBmAGQAYgBhADgANgA0ADgANABhADgAZQBhADAAMwBmAGUAMABiAGUAYgAzADQAZQA4AGYA
+NABjAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADgANwA4
+ADIAZgBkAGIAYQA4ADYANAA4ADQAYQA4AGUAYQAwADMAZgBlADAAYgBlAGIAMwA0AGUAOABmADQA
+YwAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4
+AAgAAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAeDIAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_8782fdba86484a8ea03fe0beb34e8f4c</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the programming language used by the script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read-only variables."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read/write variables."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="List of breakpoints present on the script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">06</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Business Task\Get error Description 1.Inputs[Input 0]"
+                  hasSideEffects="true"
+                  name="Input 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Business Task\Get error Description 1.Inputs[Input 0].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\Import Business Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Business Task\Get error Description 1.Outputs[Output 0]"
+                  name="Output 0"
+                  synchronousInputId="Package\Import Business Task\Get error Description 1.Inputs[Input 0]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Business Task\Get error Description 1.Outputs[Output 0].Columns[ErrorDescription]"
+                      dataType="wstr"
+                      length="300"
+                      lineageId="Package\Import Business Task\Get error Description 1.Outputs[Output 0].Columns[ErrorDescription]"
+                      name="ErrorDescription" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Business Task\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Business]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Business]) [refTable]
+where [refTable].[B_Source_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="B_Source_ID" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_Name" dataType="DT_WSTR" length="75" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_Neighbourhood" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_Address" dataType="DT_WSTR" length="125" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_City" dataType="DT_WSTR" length="75" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_State" dataType="DT_WSTR" length="8" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_Postal_Code" dataType="DT_WSTR" length="8" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_Latitude" dataType="DT_NUMERIC" length="0" precision="12" scale="10" codePage="0"/&gt;&lt;referenceColumn name="B_Longitude" dataType="DT_NUMERIC" length="0" precision="13" scale="10" codePage="0"/&gt;&lt;referenceColumn name="B_Rating_Stars" dataType="DT_NUMERIC" length="0" precision="2" scale="1" codePage="0"/&gt;&lt;referenceColumn name="B_Is_Open" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IBPT_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Source_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Business Task\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.Stage21]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.Stage21]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Business Task\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Business Task\Lookup.Inputs[Lookup Input].Columns[B_Source_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="B_Source_ID"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Source_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">B_Source_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Business Task\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Import Business Task\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Business Task\Lookup.Outputs[Lookup Match Output].Columns[B_Source_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="30"
+                      lineageId="Package\Import Business Task\Lookup.Outputs[Lookup Match Output].Columns[B_Source_ID]"
+                      name="B_Source_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">B_Source_ID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Business Task\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Import Business Task\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Business Task\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Import Business Task\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Business Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Business Task\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Business]
+   SET [B_Name] = ?
+      ,[B_Neighbourhood] = ?
+      ,[B_Address] = ?
+      ,[B_City] = ?
+      ,[B_State] = ?
+      ,[B_Postal_Code] = ?
+      ,[B_Latitude] = ?
+      ,[B_Longitude] = ?
+      ,[B_Rating_Stars] = ?
+      ,[B_Is_Open] = ?
+      ,[IBPT_ID] = ?
+ WHERE [B_Source_ID] =?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Business Task\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.Stage21]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.Stage21]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[B_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="B_Name"
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Name]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[B_Neighbourhood]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="B_Neighbourhood"
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[B_Address]"
+                      cachedDataType="wstr"
+                      cachedLength="125"
+                      cachedName="B_Address"
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Address]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[B_City]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="B_City"
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_City]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[B_State]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="B_State"
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_State]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[B_Postal_Code]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="B_Postal_Code"
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Postal_Code]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[B_Latitude]"
+                      cachedDataType="numeric"
+                      cachedName="B_Latitude"
+                      cachedPrecision="12"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Latitude]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[B_Longitude]"
+                      cachedDataType="numeric"
+                      cachedName="B_Longitude"
+                      cachedPrecision="13"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Longitude]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[B_Rating_Stars]"
+                      cachedDataType="numeric"
+                      cachedName="B_Rating_Stars"
+                      cachedPrecision="2"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[B_Is_Open]"
+                      cachedDataType="ui1"
+                      cachedName="B_Is_Open"
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Is_Open]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[IBPT_ID]"
+                      cachedDataType="i4"
+                      cachedName="IBPT_ID"
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[B_Source_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="B_Source_ID"
+                      externalMetadataColumnId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\Import Business Task\Lookup.Outputs[Lookup Match Output].Columns[B_Source_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="75"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="125"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="75"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="8"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="wstr"
+                      length="8"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="numeric"
+                      name="Param_6"
+                      precision="12"
+                      scale="10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="numeric"
+                      name="Param_7"
+                      precision="13"
+                      scale="10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="numeric"
+                      name="Param_8"
+                      precision="2"
+                      scale="1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      dataType="ui1"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      dataType="i4"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      dataType="wstr"
+                      length="30"
+                      name="Param_11">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Business Task\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Business Task\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Business Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Import Business Task\Row Count"
               componentClassID="Microsoft.RowCount"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -1870,6 +3247,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </outputs>
             </component>
             <component
+              refId="Package\Import Business Task\Row_Count_Errors 1"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row_Count_Errors 1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Error_row_Count</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Business Task\Row_Count_Errors 1.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Business Task\Row_Count_Errors 1.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Import Business Task\Row_Count_Errors 1.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Import Business Task\S2_Import_Business_Errors"
               componentClassID="Microsoft.FlatFileDestination"
               contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -1910,49 +3316,49 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       cachedLength="30"
                       cachedName="B_Source_ID"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
-                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Source_ID]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Name]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="B_Name"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Name]"
-                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Name]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Name]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Neighbourhood]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="B_Neighbourhood"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Neighbourhood]"
-                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Neighbourhood]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Address]"
                       cachedDataType="wstr"
                       cachedLength="125"
                       cachedName="B_Address"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Address]"
-                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Address]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Address]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_City]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="B_City"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_City]"
-                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_City]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_City]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_State]"
                       cachedDataType="wstr"
                       cachedLength="8"
                       cachedName="B_State"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_State]"
-                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_State]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_State]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Postal_Code]"
                       cachedDataType="wstr"
                       cachedLength="8"
                       cachedName="B_Postal_Code"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Postal_Code]"
-                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Postal_Code]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Postal_Code]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Latitude]"
                       cachedDataType="numeric"
@@ -1960,7 +3366,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       cachedPrecision="12"
                       cachedScale="10"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Latitude]"
-                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Latitude]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Latitude]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Longitude]"
                       cachedDataType="numeric"
@@ -1968,7 +3374,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       cachedPrecision="13"
                       cachedScale="10"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Longitude]"
-                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Longitude]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Longitude]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Rating_Stars]"
                       cachedDataType="numeric"
@@ -1976,32 +3382,32 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       cachedPrecision="2"
                       cachedScale="1"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Rating_Stars]"
-                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Rating_Stars]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Is_Open]"
                       cachedDataType="ui1"
                       cachedName="B_Is_Open"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Is_Open]"
-                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Is_Open]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Is_Open]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]" />
                     <inputColumn
                       refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
                       cachedDataType="wstr"
                       cachedLength="300"
                       cachedName="ErrorDescription"
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Description]"
-                      lineageId="Package\Import Business Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]" />
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2416,13 +3822,576 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Import Business Task\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Import Business Task\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[B_Source_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="B_Source_ID"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Source_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[B_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="B_Name"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[B_Neighbourhood]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="B_Neighbourhood"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Neighbourhood]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[B_Address]"
+                      cachedDataType="wstr"
+                      cachedLength="125"
+                      cachedName="B_Address"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Address]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Address]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[B_City]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="B_City"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_City]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_City]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[B_State]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="B_State"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_State]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_State]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[B_Postal_Code]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="B_Postal_Code"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Postal_Code]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Postal_Code]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[B_Latitude]"
+                      cachedDataType="numeric"
+                      cachedName="B_Latitude"
+                      cachedPrecision="12"
+                      cachedScale="10"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Latitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Latitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[B_Longitude]"
+                      cachedDataType="numeric"
+                      cachedName="B_Longitude"
+                      cachedPrecision="13"
+                      cachedScale="10"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Longitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Longitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[B_Rating_Stars]"
+                      cachedDataType="numeric"
+                      cachedName="B_Rating_Stars"
+                      cachedPrecision="2"
+                      cachedScale="1"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Rating_Stars]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[B_Is_Open]"
+                      cachedDataType="ui1"
+                      cachedName="B_Is_Open"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Is_Open]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Is_Open]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[IBPT_ID]"
+                      cachedDataType="i4"
+                      cachedName="IBPT_ID"
+                      lineageId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\Import Business Task\Business_Table_Destination_Stage2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 1].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="300"
+                      cachedName="ErrorDescription"
+                      lineageId="Package\Import Business Task\Get error Description.Outputs[Output 0].Columns[ErrorDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import Business Task\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[B_Source_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="B_Source_ID"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Source_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[B_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="B_Name"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[B_Neighbourhood]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="B_Neighbourhood"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Neighbourhood]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[B_Address]"
+                      cachedDataType="wstr"
+                      cachedLength="125"
+                      cachedName="B_Address"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Address]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Address]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[B_City]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="B_City"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_City]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_City]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[B_State]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="B_State"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_State]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_State]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[B_Postal_Code]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="B_Postal_Code"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Postal_Code]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Postal_Code]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[B_Latitude]"
+                      cachedDataType="numeric"
+                      cachedName="B_Latitude"
+                      cachedPrecision="12"
+                      cachedScale="10"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Latitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Latitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[B_Longitude]"
+                      cachedDataType="numeric"
+                      cachedName="B_Longitude"
+                      cachedPrecision="13"
+                      cachedScale="10"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Longitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Longitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[B_Rating_Stars]"
+                      cachedDataType="numeric"
+                      cachedName="B_Rating_Stars"
+                      cachedPrecision="2"
+                      cachedScale="1"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Rating_Stars]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[B_Is_Open]"
+                      cachedDataType="ui1"
+                      cachedName="B_Is_Open"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Is_Open]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Is_Open]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[IBPT_ID]"
+                      cachedDataType="i4"
+                      cachedName="IBPT_ID"
+                      lineageId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\Import Business Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\Import Business Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="300"
+                      cachedName="ErrorDescription"
+                      lineageId="Package\Import Business Task\Get error Description 1.Outputs[Output 0].Columns[ErrorDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import Business Task\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Business Task\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]"
+                      name="B_Source_ID" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Name]"
+                      dataType="wstr"
+                      length="75"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Name]"
+                      name="B_Name" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Neighbourhood]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Neighbourhood]"
+                      name="B_Neighbourhood" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Address]"
+                      dataType="wstr"
+                      length="125"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Address]"
+                      name="B_Address" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_City]"
+                      dataType="wstr"
+                      length="75"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_City]"
+                      name="B_City" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_State]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_State]"
+                      name="B_State" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Postal_Code]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Postal_Code]"
+                      name="B_Postal_Code" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Latitude]"
+                      dataType="numeric"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Latitude]"
+                      name="B_Latitude"
+                      precision="12"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Longitude]"
+                      dataType="numeric"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Longitude]"
+                      name="B_Longitude"
+                      precision="13"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Rating_Stars]"
+                      dataType="numeric"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Rating_Stars]"
+                      name="B_Rating_Stars"
+                      precision="2"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Is_Open]"
+                      dataType="ui1"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Is_Open]"
+                      name="B_Is_Open" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]"
+                      name="IBPT_ID" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      name="ErrorCode" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      name="ErrorColumn" />
+                    <outputColumn
+                      refId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]"
+                      dataType="wstr"
+                      length="300"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]"
+                      name="ErrorDescription" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Import Business Task.Paths[Derived Column Output]"
-              endId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input]"
+              endId="Package\Import Business Task\Lookup.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Business Task.Paths[Lookup Match Output]"
+              endId="Package\Import Business Task\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Import Business Task\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Import Business Task.Paths[Lookup No Match Output]"
+              endId="Package\Import Business Task\Business_Table_Destination_Stage2.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Import Business Task\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Import Business Task.Paths[OLE DB Command Error Output]"
+              endId="Package\Import Business Task\Row_Count_Errors 1.Inputs[Row Count Input 1]"
+              name="OLE DB Command Error Output"
+              startId="Package\Import Business Task\OLE DB Command.Outputs[OLE DB Command Error Output]" />
             <path
               refId="Package\Import Business Task.Paths[OLE DB Destination Error Output]"
               endId="Package\Import Business Task\Row_Count_Errors.Inputs[Row Count Input 1]"
@@ -2435,9 +4404,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Import Business Task.Paths[Output 0]"
-              endId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input]"
+              endId="Package\Import Business Task\Union All.Inputs[Union All Input 1]"
               name="Output 0"
               startId="Package\Import Business Task\Get error Description.Outputs[Output 0]" />
+            <path
+              refId="Package\Import Business Task.Paths[Output 01]"
+              endId="Package\Import Business Task\Union All.Inputs[Union All Input 2]"
+              name="Output 0"
+              startId="Package\Import Business Task\Get error Description 1.Outputs[Output 0]" />
             <path
               refId="Package\Import Business Task.Paths[Row Count Output 1]"
               endId="Package\Import Business Task\Get error Description.Inputs[Input 0]"
@@ -2448,6 +4422,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               endId="Package\Import Business Task\Derived Column.Inputs[Derived Column Input]"
               name="Row Count Output 1"
               startId="Package\Import Business Task\Row Count.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Import Business Task.Paths[Row Count Output 12]"
+              endId="Package\Import Business Task\Get error Description 1.Inputs[Input 0]"
+              name="Row Count Output 1"
+              startId="Package\Import Business Task\Row_Count_Errors 1.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Import Business Task.Paths[Union All Output 1]"
+              endId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Import Business Task\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2689,23 +4673,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     design-time-name="Package\Import Business Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Import Business Task\Stage1_Business"
-          TopLeft="441,11" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Import Business Task\S2_Import_Business_Errors"
-          TopLeft="397.857142857143,428.666666666667" />
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Import Business Task\Row_Count_Errors"
-          TopLeft="411.857142857143,280.333333333333" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Import Business Task\Get error Description"
-          TopLeft="421.857142857143,355" />
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="130,42"
           Id="Package\Import Business Task\Row Count"
@@ -2713,69 +4681,53 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="248,42"
           Id="Package\Import Business Task\Business_Table_Destination_Stage2"
-          TopLeft="400.857142857143,174" />
+          TopLeft="132.857142857143,280" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Import Business Task\Derived Column"
+          TopLeft="372,156" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Import Business Task\Stage1_Business"
+          TopLeft="441,11" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Import Business Task\S2_Import_Business_Errors"
+          TopLeft="355.857142857143,491.666666666667" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Import Business Task\Row_Count_Errors"
+          TopLeft="390.857142857143,344.333333333333" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Import Business Task\Get error Description"
+          TopLeft="369.857142857143,405" />
         <EdgeLayout
-          Id="Package\Import Business Task.Paths[OLE DB Destination Error Output]"
-          TopLeft="524.857142857143,216">
+          Id="Package\Import Business Task.Paths[Row Count Output 11]"
+          TopLeft="525,124">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-29.5,64.333333333333"
+              EndConnector="-76,32"
               Start="0,0"
-              End="-29.5,56.833333333333">
+              End="-76,24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.1666666666665" />
+                    End="0,12" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.1666666666665"
-                    Point2="0,32.1666666666665"
-                    Point3="-4,32.1666666666665" />
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="-4,16" />
                   <mssgle:LineSegment
-                    End="-25.5,32.1666666666665" />
+                    End="-72,16" />
                   <mssgle:CubicBezierSegment
-                    Point1="-25.5,32.1666666666665"
-                    Point2="-29.5,32.1666666666665"
-                    Point3="-29.5,36.1666666666665" />
+                    Point1="-72,16"
+                    Point2="-76,16"
+                    Point3="-76,20" />
                   <mssgle:LineSegment
-                    End="-29.5,56.833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-87.95890625,37.1666666666665,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Row Count Output 1]"
-          TopLeft="495.357142857143,322.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="15,32.666666666667"
-              Start="0,0"
-              End="15,25.166666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.3333333333335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.3333333333335"
-                    Point2="0,16.3333333333335"
-                    Point3="4,16.3333333333335" />
-                  <mssgle:LineSegment
-                    End="11,16.3333333333335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11,16.3333333333335"
-                    Point2="15,16.3333333333335"
-                    Point3="15,20.3333333333335" />
-                  <mssgle:LineSegment
-                    End="15,25.166666666667" />
+                    End="-76,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2785,31 +4737,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Business Task.Paths[Output 0]"
-          TopLeft="510.357142857143,397">
+          Id="Package\Import Business Task.Paths[Row Count Output 1]"
+          TopLeft="557.857142857143,365.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8,31.666666666667"
+              EndConnector="-11,60.666666666667"
               Start="0,0"
-              End="-8,24.166666666667">
+              End="-3.5,60.666666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.8333333333335" />
+                    End="18.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.8333333333335"
-                    Point2="0,15.8333333333335"
-                    Point3="-4,15.8333333333335" />
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
                   <mssgle:LineSegment
-                    End="-4,15.8333333333335" />
+                    End="22.5,56.666666666667" />
                   <mssgle:CubicBezierSegment
-                    Point1="-4,15.8333333333335"
-                    Point2="-8,15.8333333333335"
-                    Point3="-8,19.8333333333335" />
+                    Point1="22.5,56.666666666667"
+                    Point2="22.5,60.666666666667"
+                    Point3="18.5,60.666666666667" />
                   <mssgle:LineSegment
-                    End="-8,24.166666666667" />
+                    End="-3.5,60.666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2840,36 +4792,172 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Import Business Task\Derived Column"
-          TopLeft="210,119" />
         <EdgeLayout
-          Id="Package\Import Business Task.Paths[Row Count Output 11]"
-          TopLeft="460,103">
+          Id="Package\Import Business Task.Paths[OLE DB Destination Error Output]"
+          TopLeft="380.857142857143,301">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-96,37"
+              EndConnector="93.5,43.333333333333"
               Start="0,0"
-              End="-88.5,37">
+              End="93.5,35.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-44,0" />
+                    End="89.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-44,0"
-                    Point2="-48,0"
-                    Point3="-48,4" />
+                    Point1="89.5,0"
+                    Point2="93.5,0"
+                    Point3="93.5,4" />
                   <mssgle:LineSegment
-                    End="-48,33" />
+                    End="93.5,35.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="20.29109375,-17.43359375,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Import Business Task\Lookup"
+          TopLeft="572,205" />
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Lookup No Match Output]"
+          TopLeft="628.5,247">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-371.642857142857,33"
+              Start="0,0"
+              End="-371.642857142857,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-48,33"
-                    Point2="-48,37"
-                    Point3="-52,37" />
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="-4,16.5" />
                   <mssgle:LineSegment
-                    End="-88.5,37" />
+                    End="-367.642857142857,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-367.642857142857,16.5"
+                    Point2="-371.642857142857,16.5"
+                    Point3="-371.642857142857,20.5" />
+                  <mssgle:LineSegment
+                    End="-371.642857142857,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-241.627815290178,21.5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Derived Column Output]"
+          TopLeft="526,177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46,49"
+              Start="0,0"
+              End="38.5,49">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="19,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19,0"
+                    Point2="23,0"
+                    Point3="23,4" />
+                  <mssgle:LineSegment
+                    End="23,45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23,45"
+                    Point2="23,49"
+                    Point3="27,49" />
+                  <mssgle:LineSegment
+                    End="38.5,49" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Import Business Task\OLE DB Command"
+          TopLeft="741,204" />
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Lookup Match Output]"
+          TopLeft="685,225.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56,0"
+              Start="0,0"
+              End="48.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-23.94138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Import Business Task\Row_Count_Errors 1"
+          TopLeft="764.857142857143,328.666666666667" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Import Business Task\Get error Description 1"
+          TopLeft="743.857142857143,389.333333333334" />
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Row Count Output 12]"
+          TopLeft="940.857142857143,349.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20,60.666666666667"
+              Start="0,0"
+              End="-12.5,60.666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,56.666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,56.666666666667"
+                    Point2="22.5,60.666666666667"
+                    Point3="18.5,60.666666666667" />
+                  <mssgle:LineSegment
+                    End="-12.5,60.666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2879,31 +4967,139 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Business Task.Paths[Derived Column Output]"
-          TopLeft="364,145.666666666667">
+          Id="Package\Import Business Task.Paths[OLE DB Command Error Output]"
+          TopLeft="824,246">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="36.857142857143,49.3333333333333"
+              EndConnector="28.857142857143,82.666666666667"
               Start="0,0"
-              End="29.357142857143,49.3333333333333">
+              End="28.857142857143,75.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="11.5543905635649,0" />
+                    End="0,37.3333333333335" />
                   <mssgle:CubicBezierSegment
-                    Point1="11.5543905635649,0"
-                    Point2="15.5543905635649,0"
-                    Point3="15.5543905635649,4" />
+                    Point1="0,37.3333333333335"
+                    Point2="0,41.3333333333335"
+                    Point3="4,41.3333333333335" />
                   <mssgle:LineSegment
-                    End="15.5543905635649,45.3333333333333" />
+                    End="24.857142857143,41.3333333333335" />
                   <mssgle:CubicBezierSegment
-                    Point1="15.5543905635649,45.3333333333333"
-                    Point2="15.5543905635649,49.3333333333333"
-                    Point3="19.5543905635649,49.3333333333333" />
+                    Point1="24.857142857143,41.3333333333335"
+                    Point2="28.857142857143,41.3333333333335"
+                    Point3="28.857142857143,45.3333333333335" />
                   <mssgle:LineSegment
-                    End="29.357142857143,49.3333333333333" />
+                    End="28.857142857143,75.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-56.2803348214285,46.3333333333335,141.4178125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Import Business Task\Union All"
+          TopLeft="676,478" />
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Output 0]"
+          TopLeft="458.357142857143,447">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="278.142857142857,31"
+              Start="0,0"
+              End="278.142857142857,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="274.142857142857,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="274.142857142857,15.5"
+                    Point2="278.142857142857,15.5"
+                    Point3="278.142857142857,19.5" />
+                  <mssgle:LineSegment
+                    End="278.142857142857,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Output 01]"
+          TopLeft="832.357142857143,431.333333333334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-77.0238095238096,46.6666666666661"
+              Start="0,0"
+              End="-77.0238095238096,39.1666666666661">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6345840130502" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.6345840130502"
+                    Point2="0,27.6345840130502"
+                    Point3="-4,27.6345840130502" />
+                  <mssgle:LineSegment
+                    End="-73.0238095238096,27.6345840130502" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-73.0238095238096,27.6345840130502"
+                    Point2="-77.0238095238096,27.6345840130502"
+                    Point3="-77.0238095238096,31.6345840130502" />
+                  <mssgle:LineSegment
+                    End="-77.0238095238096,39.1666666666661" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Union All Output 1]"
+          TopLeft="676,499">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111.142857142857,13.666666666667"
+              Start="0,0"
+              End="-103.642857142857,13.666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-51.5714285714285,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51.5714285714285,0"
+                    Point2="-55.5714285714285,0"
+                    Point3="-55.5714285714285,4" />
+                  <mssgle:LineSegment
+                    End="-55.5714285714285,9.66666666666697" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.5714285714285,9.66666666666697"
+                    Point2="-55.5714285714285,13.666666666667"
+                    Point3="-59.5714285714285,13.666666666667" />
+                  <mssgle:LineSegment
+                    End="-103.642857142857,13.666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2915,6 +5111,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Business Task\Business_Table_Destination_Stage2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Import Business Task\Stage1_Business">
     <Properties>
@@ -2929,15 +5138,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Import Business Task\Business_Table_Destination_Stage2">
+    design-time-name="Package\Import Business Task\Lookup">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Business]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
