@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_Business_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{774B9A11-11B9-4069-AFBA-9AB9D9DCBFFE}">
+  DTS:VersionBuild="44"
+  DTS:VersionGUID="{7540DB6F-C995-4AF2-9895-27C733F4F167}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Business_Categories.csv">
+          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Business_Categories.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -79,7 +79,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S2_Import_Business_CategoryErrors.csv">
+          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S2_Import_Business_CategoryErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -185,7 +185,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">7/26/2019 11:52:00 AM</DTS:VariableValue>
+        DTS:DataType="7">8/4/2019 12:37:16 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1938,21 +1938,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="350.4,41.6"
+          Size="350,42"
           Id="Package\Create_Import_Batch_Process_Task_Business_Categories"
           TopLeft="365,83" />
         <NodeLayout
-          Size="151.2,41.6"
+          Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="517,207" />
         <NodeLayout
-          Size="248,41.6"
+          Size="248,42"
           Id="Package\Update_Batch_Import_Task_Failure"
           TopLeft="735,321" />
         <NodeLayout
-          Size="248,41.6"
+          Size="248,42"
           Id="Package\Update_Batch_Import_Task_Sucess"
-          TopLeft="314,323" />
+          TopLeft="251,320" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="540,125">
@@ -1989,30 +1989,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="592.5,249">
+          TopLeft="568.666666666667,249">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-154.5,74"
+              EndConnector="-193.666666666667,71"
               Start="0,0"
-              End="-154.5,66.5">
+              End="-193.666666666667,63.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33" />
+                    End="0,24.8466579292267" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33"
-                    Point2="0,37"
-                    Point3="-4,37" />
+                    Point1="0,24.8466579292267"
+                    Point2="0,28.8466579292267"
+                    Point3="-4,28.8466579292267" />
                   <mssgle:LineSegment
-                    End="-150.5,37" />
+                    End="-189.666666666667,28.8466579292267" />
                   <mssgle:CubicBezierSegment
-                    Point1="-150.5,37"
-                    Point2="-154.5,37"
-                    Point3="-154.5,41" />
+                    Point1="-189.666666666667,28.8466579292267"
+                    Point2="-193.666666666667,28.8466579292267"
+                    Point3="-193.666666666667,32.8466579292267" />
                   <mssgle:LineSegment
-                    End="-154.5,66.5" />
+                    End="-193.666666666667,63.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2066,33 +2066,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Data Flow Task\Get error Description"
-          TopLeft="623,533" />
-        <NodeLayout
-          Size="129.6,41.6"
+          Size="130,42"
           Id="Package\Data Flow Task\Row Count"
           TopLeft="446,142" />
         <NodeLayout
-          Size="144.8,41.6"
+          Size="145,42"
           Id="Package\Data Flow Task\Remove_Nulls"
           TopLeft="425,231" />
         <NodeLayout
-          Size="136,41.6"
+          Size="136,42"
           Id="Package\Data Flow Task\Error_Count"
           TopLeft="462,435" />
         <NodeLayout
-          Size="199.2,41.6"
+          Size="199,42"
           Id="Package\Data Flow Task\Business_Category_Table"
           TopLeft="439,322" />
         <NodeLayout
-          Size="216,41.6"
+          Size="257,42"
+          Id="Package\Data Flow Task\S1_Import_Business_Category_Errors"
+          TopLeft="858,420" />
+        <NodeLayout
+          Size="216,42"
           Id="Package\Data Flow Task\Business_category_Flat_Files"
           TopLeft="436,50" />
         <NodeLayout
-          Size="256.8,41.6"
-          Id="Package\Data Flow Task\S1_Import_Business_Category_Errors"
-          TopLeft="652,281" />
+          Size="177,42"
+          Id="Package\Data Flow Task\Get error Description"
+          TopLeft="623,533" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Row Count Output 11]"
           TopLeft="530,477">
@@ -2167,26 +2167,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40.8333333333334,-210"
+              EndConnector="246.833333333333,-71"
               Start="0,0"
-              End="40.8333333333334,-202.5">
+              End="246.833333333333,-63.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-81.1287793952968" />
+                    End="0,-24.7816349384099" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-81.1287793952968"
-                    Point2="0,-85.1287793952968"
-                    Point3="4,-85.1287793952968" />
+                    Point1="0,-24.7816349384099"
+                    Point2="0,-28.7816349384099"
+                    Point3="4,-28.7816349384099" />
                   <mssgle:LineSegment
-                    End="36.8333333333334,-85.1287793952968" />
+                    End="242.833333333333,-28.7816349384099" />
                   <mssgle:CubicBezierSegment
-                    Point1="36.8333333333334,-85.1287793952968"
-                    Point2="40.8333333333334,-85.1287793952968"
-                    Point3="40.8333333333334,-89.1287793952968" />
+                    Point1="242.833333333333,-28.7816349384099"
+                    Point2="246.833333333333,-28.7816349384099"
+                    Point3="246.833333333333,-32.7816349384099" />
                   <mssgle:LineSegment
-                    End="40.8333333333334,-202.5" />
+                    End="246.833333333333,-63.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

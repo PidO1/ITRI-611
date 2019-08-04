@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Business"
   DTS:PackageType="5"
-  DTS:VersionBuild="72"
-  DTS:VersionGUID="{CFC9E638-46A8-4A89-91BE-E90C5C667404}">
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{65523418-C6E2-4C6D-A9CD-B7EF778D3C98}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Business.csv">
+          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Business.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -153,7 +153,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Business.csv">
+          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Business.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -162,7 +162,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="business_id"
-              DTS:DTSID="{6D60DE5D-B0FD-4F72-B5EE-10A5A9A748E2}"
+              DTS:DTSID="{A7AB126E-281C-42F6-90F1-F34C1C2BE0AB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -171,7 +171,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="business_name"
-              DTS:DTSID="{7C208CFB-171D-4212-861F-2A9284B6E51E}"
+              DTS:DTSID="{7FA9CEB3-2EBB-4BA5-93D9-1DD2699797BD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -180,7 +180,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="neighborhood"
-              DTS:DTSID="{043A369A-177E-4C36-A390-855F8396D8D2}"
+              DTS:DTSID="{C8776F42-D514-40D9-84A0-9C9F8BFE659A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -189,7 +189,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="address"
-              DTS:DTSID="{F8C0209F-71CB-4088-B3D9-1B0C5A362860}"
+              DTS:DTSID="{41EE9852-0EE1-49AF-8339-BEEFA088A12F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -198,7 +198,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="city"
-              DTS:DTSID="{63808A79-95BA-4E3F-B71B-C1BA1A3A757F}"
+              DTS:DTSID="{12F3315E-0816-4354-AA92-B4132830EE18}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -207,7 +207,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="state"
-              DTS:DTSID="{3B2EB024-930B-404F-ADF2-11F2FE03211F}"
+              DTS:DTSID="{A47AD98A-F073-421A-B713-EB107944259F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -216,7 +216,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="postal_code"
-              DTS:DTSID="{D65986B8-B555-4D33-B02B-8BFCC1E5590E}"
+              DTS:DTSID="{7AF0D1A5-E522-47D8-9EDB-03D7C8E573AF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -226,7 +226,7 @@
               DTS:DataScale="10"
               DTS:TextQualified="True"
               DTS:ObjectName="latitude"
-              DTS:DTSID="{EB11E95B-6ABE-4ABF-B6B2-8BC16089EFED}"
+              DTS:DTSID="{18E170DE-C936-4B1D-8041-9C0B15B66969}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -236,7 +236,7 @@
               DTS:DataScale="10"
               DTS:TextQualified="True"
               DTS:ObjectName="longitude"
-              DTS:DTSID="{7772B6BE-003F-4986-86E2-58A17F2E0557}"
+              DTS:DTSID="{270BBA8D-B842-402A-8B06-0E86D84221E4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -246,7 +246,7 @@
               DTS:DataScale="1"
               DTS:TextQualified="True"
               DTS:ObjectName="stars"
-              DTS:DTSID="{FB025A25-7508-4428-A4F9-AB8433DE5103}"
+              DTS:DTSID="{98F7465F-E3D1-4E65-A8D5-7D55DA4993C0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -254,7 +254,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="is_open"
-              DTS:DTSID="{714C228C-34BE-43B7-B715-0C7C94B8D8FA}"
+              DTS:DTSID="{A42F2217-B640-43B7-B5E3-922D2C42A51C}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -275,7 +275,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S1_Import_BusinessErrors.csv">
+          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S1_Import_BusinessErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -475,7 +475,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">7/30/2019 12:27:27 PM</DTS:VariableValue>
+        DTS:DataType="7">8/4/2019 12:45:46 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

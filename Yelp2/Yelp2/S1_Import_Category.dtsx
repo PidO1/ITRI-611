@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="61"
-  DTS:VersionGUID="{6A359909-3493-48C5-91CE-721184C0C25C}">
+  DTS:VersionBuild="64"
+  DTS:VersionGUID="{141A4536-A715-47B4-AA8E-7F1447509B96}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Category.csv">
+          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Category.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,7 +41,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="category_id"
-              DTS:DTSID="{E04C2750-96CE-46A0-80F0-43A538B424F9}"
+              DTS:DTSID="{30CD4202-4A3D-4FEB-9D6D-E3F413E0448D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="title"
-              DTS:DTSID="{7B1AE3A0-493F-4887-83F4-83076FAFD030}"
+              DTS:DTSID="{F27BD81E-1C9B-4564-8FE6-2305F9A0D30D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="parent_1"
-              DTS:DTSID="{B3CD529F-9B1D-44FE-933A-2A1CAFECCB03}"
+              DTS:DTSID="{700D76D4-826A-4E04-95A6-047B9B45113B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="parent_2"
-              DTS:DTSID="{0FAD52AC-EAF5-4503-8BDC-95AD511B8476}"
+              DTS:DTSID="{B4AE9BC4-5721-484C-A8B7-4C5BFD81DA1F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="parent_3"
-              DTS:DTSID="{31E33734-183F-4007-B60A-B6737C2F2DE4}"
+              DTS:DTSID="{6DE2ADEB-C090-4908-BE83-552D00248DBD}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -98,7 +98,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S1_Import_CategoryErrors.csv">
+          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S1_Import_CategoryErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -215,7 +215,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">7/30/2019 12:27:47 PM</DTS:VariableValue>
+        DTS:DataType="7">8/4/2019 12:43:24 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -604,6 +604,12 @@
                       cachedName="parent_3"
                       externalMetadataColumnId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent3]"
                       lineageId="Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]" />
+                    <inputColumn
+                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].Columns[IBPT_ID]"
+                      cachedDataType="i4"
+                      cachedName="IBPT_ID"
+                      externalMetadataColumnId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
+                      lineageId="Package\Import Category Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -740,13 +746,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_1]},"Unknown")</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_1]},"None")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">REPLACENULL(parent_1,"Unknown")</property>
+                          name="FriendlyExpression">REPLACENULL(parent_1,"None")</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -764,13 +770,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_2]},"Unknown")</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_2]},"None")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">REPLACENULL(parent_2,"Unknown")</property>
+                          name="FriendlyExpression">REPLACENULL(parent_2,"None")</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -788,13 +794,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]},"Unknown")</property>
+                          name="Expression">[REPLACENULL](#{Package\Import Category Task\Category flat file.Outputs[Flat File Source Output].Columns[parent_3]},"None")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">REPLACENULL(parent_3,"Unknown")</property>
+                          name="FriendlyExpression">REPLACENULL(parent_3,"None")</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
