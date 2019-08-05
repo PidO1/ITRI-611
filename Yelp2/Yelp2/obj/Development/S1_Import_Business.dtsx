@@ -475,7 +475,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/4/2019 12:46:01 PM</DTS:VariableValue>
+        DTS:DataType="7">8/5/2019 1:35:26 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
