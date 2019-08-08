@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{141A4536-A715-47B4-AA8E-7F1447509B96}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{440440A6-0903-435C-8271-F97EBFA81435}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -215,7 +215,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/4/2019 12:43:24 PM</DTS:VariableValue>
+        DTS:DataType="7">8/8/2019 12:43:44 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2241,10 +2241,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="130,42"
-          Id="Package\Import Category Task\Row Count"
-          TopLeft="429,100" />
-        <NodeLayout
           Size="160,42"
           Id="Package\Import Category Task\Error_Row_count"
           TopLeft="295,376" />
@@ -2252,10 +2248,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="206,42"
           Id="Package\Import Category Task\Category Table Destination"
           TopLeft="423.14285716232,301" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Import Category Task\Category flat file"
-          TopLeft="409,14" />
         <NodeLayout
           Size="154,42"
           Id="Package\Import Category Task\Derived Column"
@@ -2268,6 +2260,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="177,42"
           Id="Package\Import Category Task\Get error Description"
           TopLeft="409,482" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Import Category Task\Category flat file"
+          TopLeft="409,14" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Import Category Task\Row Count"
+          TopLeft="429,100" />
         <EdgeLayout
           Id="Package\Import Category Task.Paths[Row Count Output 11]"
           TopLeft="494,142">

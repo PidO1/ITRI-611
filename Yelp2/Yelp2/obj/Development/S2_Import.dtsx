@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import"
   DTS:PackageType="5"
-  DTS:VersionBuild="69"
-  DTS:VersionGUID="{B6FB6842-8145-4307-81F3-E4F249D96637}">
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{B345AE56-2B52-453C-8FD0-65A63646AA5B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -74,6 +74,16 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.Stage2 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8B2593FF-4360-4C98-B994-245F8BB2EA11}"
+      DTS:ObjectName="localhost.Stage2 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Stage2;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Ratings]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{E5A8A5B5-5196-494A-8448-EC3F59CB9386}"
@@ -123,7 +133,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">8/5/2019 4:56:38 PM</DTS:VariableValue>
+        DTS:DataType="7">8/8/2019 12:57:06 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -417,7 +427,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[S2_Is_Open_Lookup]</property>
+                      name="OpenRowset">[dbo].[Open_Lookup]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -477,27 +487,27 @@
                           refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CODE_ID]"
                           cachedDataType="i4"
                           cachedName="CODE_ID"
-                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CODE_ID]"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Is_open]"
                           lineageId="Package\Sequence Container\Data Flow Task\Is_Open_File.Outputs[Flat File Source Output].Columns[CODE_ID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CODE_Description]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="CODE_Description"
-                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CODE_Description]"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Is_open_Words]"
                           lineageId="Package\Sequence Container\Data Flow Task\Is_Open_File.Outputs[Flat File Source Output].Columns[CODE_Description]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CODE_Description]"
-                          dataType="wstr"
-                          length="70"
-                          name="CODE_Description" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CODE_ID]"
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Is_open]"
                           dataType="ui1"
-                          name="CODE_ID" />
+                          name="Is_open" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Is_open_Words]"
+                          dataType="wstr"
+                          length="50"
+                          name="Is_open_Words" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -661,7 +671,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[S2_Ratings_Lookup]</property>
+                      name="OpenRowset">[dbo].[Rating_Lookup]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -718,32 +728,34 @@
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence Container\Data Flow Task\s2_Ratig_Lookup_Table.Inputs[OLE DB Destination Input].Columns[CODE_Description]"
-                          cachedDataType="wstr"
-                          cachedLength="50"
-                          cachedName="CODE_Description"
-                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\s2_Ratig_Lookup_Table.Inputs[OLE DB Destination Input].ExternalColumns[CODE_Description]"
-                          lineageId="Package\Sequence Container\Data Flow Task\Ratings_Lookup_File.Outputs[Flat File Source Output].Columns[CODE_Description]" />
-                        <inputColumn
                           refId="Package\Sequence Container\Data Flow Task\s2_Ratig_Lookup_Table.Inputs[OLE DB Destination Input].Columns[CODE_ID]"
                           cachedDataType="numeric"
                           cachedName="CODE_ID"
                           cachedPrecision="2"
                           cachedScale="1"
-                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\s2_Ratig_Lookup_Table.Inputs[OLE DB Destination Input].ExternalColumns[CODE_ID]"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\s2_Ratig_Lookup_Table.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
                           lineageId="Package\Sequence Container\Data Flow Task\Ratings_Lookup_File.Outputs[Flat File Source Output].Columns[CODE_ID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Data Flow Task\s2_Ratig_Lookup_Table.Inputs[OLE DB Destination Input].Columns[CODE_Description]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CODE_Description"
+                          externalMetadataColumnId="Package\Sequence Container\Data Flow Task\s2_Ratig_Lookup_Table.Inputs[OLE DB Destination Input].ExternalColumns[Worded_Rating]"
+                          lineageId="Package\Sequence Container\Data Flow Task\Ratings_Lookup_File.Outputs[Flat File Source Output].Columns[CODE_Description]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Data Flow Task\s2_Ratig_Lookup_Table.Inputs[OLE DB Destination Input].ExternalColumns[CODE_Description]"
+                          refId="Package\Sequence Container\Data Flow Task\s2_Ratig_Lookup_Table.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
+                          dataType="numeric"
+                          name="Rating"
+                          precision="2"
+                          scale="1" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Data Flow Task\s2_Ratig_Lookup_Table.Inputs[OLE DB Destination Input].ExternalColumns[Worded_Rating]"
                           dataType="wstr"
                           length="50"
-                          name="CODE_Description" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Data Flow Task\s2_Ratig_Lookup_Table.Inputs[OLE DB Destination Input].ExternalColumns[CODE_ID]"
-                          dataType="i4"
-                          name="CODE_ID" />
+                          name="Worded_Rating" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -995,51 +1007,17 @@
           Id="Package\Sequence Container\Data Flow Task\s2_Ratig_Lookup_Table"
           TopLeft="203,198" />
         <NodeLayout
-          Size="176,42"
-          Id="Package\Sequence Container\Data Flow Task\Ratings_Lookup_File"
-          TopLeft="242,55" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="330,97">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-31.5,101"
-              Start="0,0"
-              End="-31.5,93.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46.5"
-                    Point2="0,50.5"
-                    Point3="-4,50.5" />
-                  <mssgle:LineSegment
-                    End="-27.5,50.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-27.5,50.5"
-                    Point2="-31.5,50.5"
-                    Point3="-31.5,54.5" />
-                  <mssgle:LineSegment
-                    End="-31.5,93.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="171,42"
+          Id="Package\Sequence Container\Data Flow Task\OLE DB Destination"
+          TopLeft="478,211" />
         <NodeLayout
           Size="140,42"
           Id="Package\Sequence Container\Data Flow Task\Is_Open_File"
           TopLeft="480,79" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Sequence Container\Data Flow Task\OLE DB Destination"
-          TopLeft="478,211" />
+          Size="176,42"
+          Id="Package\Sequence Container\Data Flow Task\Ratings_Lookup_File"
+          TopLeft="242,55" />
         <EdgeLayout
           Id="Package\Sequence Container\Data Flow Task.Paths[Flat File Source Output1]"
           TopLeft="550,121">
@@ -1066,6 +1044,40 @@
                     Point3="13.5,49" />
                   <mssgle:LineSegment
                     End="13.5,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="330,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-31.5,101"
+              Start="0,0"
+              End="-31.5,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.5"
+                    Point2="0,50.5"
+                    Point3="-4,50.5" />
+                  <mssgle:LineSegment
+                    End="-27.5,50.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-27.5,50.5"
+                    Point2="-31.5,50.5"
+                    Point3="-31.5,54.5" />
+                  <mssgle:LineSegment
+                    End="-31.5,93.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
