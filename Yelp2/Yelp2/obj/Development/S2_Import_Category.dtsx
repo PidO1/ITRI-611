@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="111"
-  DTS:VersionGUID="{76807E2B-4D71-4BA9-BE54-23CF86D0431A}">
+  DTS:VersionBuild="118"
+  DTS:VersionGUID="{BFB4C61C-6085-4FBB-A8F9-60F8072A580D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -346,7 +346,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/8/2019 6:59:12 PM</DTS:VariableValue>
+        DTS:DataType="7">8/8/2019 7:33:21 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1748,10 +1748,13 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Category_Hierarchy]
    SET [CH_ID] = ?
-     ,[IBPT_ID]=?
-      ,[C_CHILD] = ?,
+     ,[IBPT_ID]=?,
 [Action_Type]=?
- WHERE [CH_ID] = ? AND [C_CHILD] = ?</property>
+ WHERE( [C_CHILD] = ?) and
+[CH_ID] =?
+
+
+</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1774,12 +1777,12 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[C_child]"
+                      refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[C_parent]"
                       cachedDataType="wstr"
                       cachedLength="75"
-                      cachedName="C_child"
+                      cachedName="C_parent"
                       externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_child]" />
+                      lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_parent]" />
                     <inputColumn
                       refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[IBPT_ID]"
                       cachedDataType="i4"
@@ -1787,32 +1790,25 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
                       externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[IBPT_ID]" />
                     <inputColumn
-                      refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[C_parent]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_parent"
-                      externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_parent]" />
-                    <inputColumn
                       refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[Action_Type]"
                       cachedDataType="wstr"
                       cachedLength="6"
                       cachedName="Action_Type"
-                      externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Action_Type]" />
                     <inputColumn
-                      refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[Derived_CH_ID]"
+                      refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[C_child]"
                       cachedDataType="wstr"
                       cachedLength="75"
-                      cachedName="Derived_CH_ID"
-                      externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Derived_CH_ID]" />
+                      cachedName="C_child"
+                      externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_child]" />
                     <inputColumn
                       refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[Derived_CH_ID_Parent]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="Derived_CH_ID_Parent"
-                      externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Derived_CH_ID_Parent]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -1843,7 +1839,7 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
                     <externalMetadataColumn
                       refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="wstr"
-                      length="75"
+                      length="50"
                       name="Param_2">
                       <properties>
                         <property
@@ -1855,7 +1851,7 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
                     <externalMetadataColumn
                       refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       dataType="wstr"
-                      length="50"
+                      length="75"
                       name="Param_3">
                       <properties>
                         <property
@@ -1869,18 +1865,6 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
                       dataType="wstr"
                       length="75"
                       name="Param_4">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      dataType="wstr"
-                      length="75"
-                      name="Param_5">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5469,33 +5453,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="109,24"
+              EndConnector="109,18.3333333333334"
               Start="0,0"
-              End="101.5,24">
+              End="101.5,18.3333333333334">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="50.5,0" />
+                    End="58.9999999999999,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="50.5,0"
-                    Point2="54.5,0"
-                    Point3="54.5,4" />
+                    Point1="58.9999999999999,0"
+                    Point2="62.9999999999999,0"
+                    Point3="62.9999999999999,4" />
                   <mssgle:LineSegment
-                    End="54.5,20" />
+                    End="62.9999999999999,14.3333333333334" />
                   <mssgle:CubicBezierSegment
-                    Point1="54.5,20"
-                    Point2="54.5,24"
-                    Point3="58.5,24" />
+                    Point1="62.9999999999999,14.3333333333334"
+                    Point2="62.9999999999999,18.3333333333334"
+                    Point3="66.9999999999999,18.3333333333334" />
                   <mssgle:LineSegment
-                    End="101.5,24" />
+                    End="101.5,18.3333333333334" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-16.20890625,-17.609375,141.4178125,11.609375"
+              BoundingBox="-7.70890625000006,-17.609375,141.4178125,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
