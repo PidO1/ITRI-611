@@ -2,58 +2,58 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Yelp2</Name>
-    <LastWriteTime>2019-08-08T10:52:23.26381Z</LastWriteTime>
+    <LastWriteTime>2019-08-09T08:56:11.193232Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>S1_Import.dtsx</Name>
-      <LastWriteTime>2019-08-04T10:18:13.569437Z</LastWriteTime>
+      <LastWriteTime>2019-08-09T08:56:11.1633128Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S1_Import_BC.dtsx</Name>
-      <LastWriteTime>2019-08-04T10:18:13.569437Z</LastWriteTime>
+      <LastWriteTime>2019-08-09T08:56:11.1653064Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S1_Import_Business.dtsx</Name>
-      <LastWriteTime>2019-08-05T15:49:10.2106276Z</LastWriteTime>
+      <LastWriteTime>2019-08-09T08:56:11.1653064Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S1_Import_Category.dtsx</Name>
-      <LastWriteTime>2019-08-08T10:43:44.2716052Z</LastWriteTime>
+      <LastWriteTime>2019-08-09T08:56:11.1742827Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S1_Import_Business_Category.dtsx</Name>
-      <LastWriteTime>2019-08-05T15:49:10.2116242Z</LastWriteTime>
+      <LastWriteTime>2019-08-09T08:56:11.1712917Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import.dtsx</Name>
-      <LastWriteTime>2019-08-08T10:57:03.3769004Z</LastWriteTime>
+      <LastWriteTime>2019-08-09T08:56:11.1752802Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import_BC.dtsx</Name>
-      <LastWriteTime>2019-08-08T16:59:11.5026373Z</LastWriteTime>
+      <LastWriteTime>2019-08-09T09:00:04.4033042Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import_Business.dtsx</Name>
-      <LastWriteTime>2019-08-08T10:59:33.5160357Z</LastWriteTime>
+      <LastWriteTime>2019-08-09T08:56:11.183259Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import_Business_Category.dtsx</Name>
-      <LastWriteTime>2019-08-05T15:49:10.2176083Z</LastWriteTime>
+      <LastWriteTime>2019-08-09T08:56:11.1822609Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import_Category.dtsx</Name>
-      <LastWriteTime>2019-08-08T17:33:16.7124363Z</LastWriteTime>
+      <LastWriteTime>2019-08-09T08:59:51.9115988Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

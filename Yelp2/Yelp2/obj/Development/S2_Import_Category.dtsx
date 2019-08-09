@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="118"
-  DTS:VersionGUID="{BFB4C61C-6085-4FBB-A8F9-60F8072A580D}">
+  DTS:VersionBuild="119"
+  DTS:VersionGUID="{39880CF9-E0B0-433A-9CEC-5E5D5DCC2156}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -346,7 +346,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/8/2019 7:33:21 PM</DTS:VariableValue>
+        DTS:DataType="7">8/9/2019 10:59:52 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -3407,21 +3407,6 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       length="75"
                       name="C_title" />
                     <externalMetadataColumn
-                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent1]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_parent1" />
-                    <externalMetadataColumn
-                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent2]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_parent2" />
-                    <externalMetadataColumn
-                      refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_parent3]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_parent3" />
-                    <externalMetadataColumn
                       refId="Package\Import Category Task\Category Table Destination.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
                       dataType="i4"
                       name="IBPT_ID" />
@@ -4773,7 +4758,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Failure"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4814,7 +4799,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Success"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5038,21 +5023,157 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="166,42"
-          Id="Package\Assign parents\OLE DB Command"
-          TopLeft="567,556" />
+          Size="160,42"
+          Id="Package\Assign parents\Error_Row_count 1"
+          TopLeft="847.14285716232,412" />
         <NodeLayout
-          Size="177,42"
-          Id="Package\Assign parents\Get error Description 1"
-          TopLeft="1040.14285716232,42" />
+          Size="214,42"
+          Id="Package\Assign parents\Select parent 2 from Stage 1"
+          TopLeft="352,70" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Assign parents\OLE DB Destination"
+          TopLeft="218,610" />
         <NodeLayout
           Size="210,42"
           Id="Package\Assign parents\S2_Import_Category_Errors 1"
           TopLeft="1074.14285716232,249" />
         <NodeLayout
-          Size="160,42"
-          Id="Package\Assign parents\Error_Row_count 1"
-          TopLeft="847.14285716232,412" />
+          Size="214,42"
+          Id="Package\Assign parents\Select parent 3 from Stage 1"
+          TopLeft="588,68" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Assign parents\Row Count"
+          TopLeft="412,290" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Assign parents\Lookup"
+          TopLeft="420,366" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Assign parents\Derived Update"
+          TopLeft="553,473" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Assign parents\Union All"
+          TopLeft="407,205" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Assign parents\OLE DB Command"
+          TopLeft="567,556" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Assign parents\Select parent 1 from Stage 1"
+          TopLeft="92,71" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Assign parents\Derived Insert"
+          TopLeft="226,475" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Assign parents\Get error Description 1"
+          TopLeft="1040.14285716232,42" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Assign parents\Union All 1"
+          TopLeft="842,580" />
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[Union All Output 11]"
+          TopLeft="907,580">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.14285716232,-126"
+              Start="0,0"
+              End="20.14285716232,-118.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-59"
+                    Point2="0,-63"
+                    Point3="4,-63" />
+                  <mssgle:LineSegment
+                    End="16.14285716232,-63" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.14285716232,-63"
+                    Point2="20.14285716232,-63"
+                    Point3="20.14285716232,-67" />
+                  <mssgle:LineSegment
+                    End="20.14285716232,-118.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[Union All Output 1]"
+          TopLeft="467.5,247">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.5,43"
+              Start="0,0"
+              End="9.5,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
+                  <mssgle:LineSegment
+                    End="5.5,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.5,21.5"
+                    Point2="9.5,21.5"
+                    Point3="9.5,25.5" />
+                  <mssgle:LineSegment
+                    End="9.5,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[Row Count Output 11]"
+          TopLeft="476.75,332">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Assign parents.Paths[Row Count Output 1]"
           TopLeft="927.14285716232,412">
@@ -5084,7 +5205,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5118,91 +5241,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="214,42"
-          Id="Package\Assign parents\Select parent 1 from Stage 1"
-          TopLeft="92,71" />
-        <NodeLayout
-          Size="214,42"
-          Id="Package\Assign parents\Select parent 2 from Stage 1"
-          TopLeft="352,70" />
-        <NodeLayout
-          Size="214,42"
-          Id="Package\Assign parents\Select parent 3 from Stage 1"
-          TopLeft="588,68" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Assign parents\Union All"
-          TopLeft="407,205" />
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[OLE DB Source Output]"
-          TopLeft="695,110">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-227.5,95"
-              Start="0,0"
-              End="-227.5,87.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.5"
-                    Point2="0,47.5"
-                    Point3="-4,47.5" />
-                  <mssgle:LineSegment
-                    End="-223.5,47.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-223.5,47.5"
-                    Point2="-227.5,47.5"
-                    Point3="-227.5,51.5" />
-                  <mssgle:LineSegment
-                    End="-227.5,87.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[OLE DB Source Output1]"
-          TopLeft="459,112">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-10.3333333333333,93"
-              Start="0,0"
-              End="-10.3333333333333,85.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.0717781402936" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,51.0717781402936"
-                    Point2="0,55.0717781402936"
-                    Point3="-4,55.0717781402936" />
-                  <mssgle:LineSegment
-                    End="-6.33333333333331,55.0717781402936" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.33333333333331,55.0717781402936"
-                    Point2="-10.3333333333333,55.0717781402936"
-                    Point3="-10.3333333333333,59.0717781402936" />
-                  <mssgle:LineSegment
-                    End="-10.3333333333333,85.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5236,81 +5277,155 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Assign parents\Row Count"
-          TopLeft="412,290" />
         <EdgeLayout
-          Id="Package\Assign parents.Paths[Union All Output 1]"
-          TopLeft="467.5,247">
+          Id="Package\Assign parents.Paths[OLE DB Source Output1]"
+          TopLeft="459,112">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.5,43"
+              EndConnector="-10.3333333333333,93"
               Start="0,0"
-              End="9.5,35.5">
+              End="-10.3333333333333,85.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5" />
+                    End="0,51.0717781402936" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="4,21.5" />
+                    Point1="0,51.0717781402936"
+                    Point2="0,55.0717781402936"
+                    Point3="-4,55.0717781402936" />
                   <mssgle:LineSegment
-                    End="5.5,21.5" />
+                    End="-6.33333333333331,55.0717781402936" />
                   <mssgle:CubicBezierSegment
-                    Point1="5.5,21.5"
-                    Point2="9.5,21.5"
-                    Point3="9.5,25.5" />
+                    Point1="-6.33333333333331,55.0717781402936"
+                    Point2="-10.3333333333333,55.0717781402936"
+                    Point3="-10.3333333333333,59.0717781402936" />
                   <mssgle:LineSegment
-                    End="9.5,35.5" />
+                    End="-10.3333333333333,85.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Assign parents\Lookup"
-          TopLeft="420,366" />
         <EdgeLayout
-          Id="Package\Assign parents.Paths[Row Count Output 11]"
-          TopLeft="476.75,332">
+          Id="Package\Assign parents.Paths[OLE DB Source Output]"
+          TopLeft="695,110">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34"
+              EndConnector="-227.5,95"
               Start="0,0"
-              End="0,26.5">
+              End="-227.5,87.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.5"
+                    Point2="0,47.5"
+                    Point3="-4,47.5" />
+                  <mssgle:LineSegment
+                    End="-223.5,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-223.5,47.5"
+                    Point2="-227.5,47.5"
+                    Point3="-227.5,51.5" />
+                  <mssgle:LineSegment
+                    End="-227.5,87.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="146,42"
-          Id="Package\Assign parents\Derived Insert"
-          TopLeft="226,475" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\Assign parents\Derived Update"
-          TopLeft="553,473" />
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[OLE DB Destination Error Output]"
+          TopLeft="389,631">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="453,-24.3333333333334"
+              Start="0,0"
+              End="445.5,-24.3333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="257.825688073394,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="257.825688073394,0"
+                    Point2="261.825688073394,0"
+                    Point3="261.825688073394,-4" />
+                  <mssgle:LineSegment
+                    End="261.825688073394,-20.3333333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="261.825688073394,-20.3333333333334"
+                    Point2="261.825688073394,-24.3333333333334"
+                    Point3="265.825688073394,-24.3333333333334" />
+                  <mssgle:LineSegment
+                    End="445.5,-24.3333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="188.616781823394,1,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[OLE DB Command Error Output]"
+          TopLeft="733,577">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109,18.3333333333334"
+              Start="0,0"
+              End="101.5,18.3333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.9999999999999,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58.9999999999999,0"
+                    Point2="62.9999999999999,0"
+                    Point3="62.9999999999999,4" />
+                  <mssgle:LineSegment
+                    End="62.9999999999999,14.3333333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62.9999999999999,14.3333333333334"
+                    Point2="62.9999999999999,18.3333333333334"
+                    Point3="66.9999999999999,18.3333333333334" />
+                  <mssgle:LineSegment
+                    End="101.5,18.3333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-7.70890625000006,-17.609375,141.4178125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Assign parents.Paths[Lookup No Match Output]"
           TopLeft="459,408">
@@ -5383,32 +5498,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Assign parents\OLE DB Destination"
-          TopLeft="218,610" />
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[Derived Column Output]"
-          TopLeft="301.25,517">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,93"
-              Start="0,0"
-              End="0,85.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,85.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Assign parents.Paths[Derived Column Output1]"
           TopLeft="629,515">
@@ -5440,122 +5529,103 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Assign parents\Union All 1"
-          TopLeft="842,580" />
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[OLE DB Command Error Output]"
-          TopLeft="733,577">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="109,18.3333333333334"
-              Start="0,0"
-              End="101.5,18.3333333333334">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="58.9999999999999,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="58.9999999999999,0"
-                    Point2="62.9999999999999,0"
-                    Point3="62.9999999999999,4" />
-                  <mssgle:LineSegment
-                    End="62.9999999999999,14.3333333333334" />
-                  <mssgle:CubicBezierSegment
-                    Point1="62.9999999999999,14.3333333333334"
-                    Point2="62.9999999999999,18.3333333333334"
-                    Point3="66.9999999999999,18.3333333333334" />
-                  <mssgle:LineSegment
-                    End="101.5,18.3333333333334" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-7.70890625000006,-17.609375,141.4178125,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Assign parents.Paths[Union All Output 11]"
-          TopLeft="907,580">
+          Id="Package\Assign parents.Paths[Derived Column Output]"
+          TopLeft="301.25,517">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="20.14285716232,-126"
+              EndConnector="0,93"
               Start="0,0"
-              End="20.14285716232,-118.5">
+              End="0,85.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-59" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-59"
-                    Point2="0,-63"
-                    Point3="4,-63" />
-                  <mssgle:LineSegment
-                    End="16.14285716232,-63" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.14285716232,-63"
-                    Point2="20.14285716232,-63"
-                    Point3="20.14285716232,-67" />
-                  <mssgle:LineSegment
-                    End="20.14285716232,-118.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[OLE DB Destination Error Output]"
-          TopLeft="389,631">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="453,-24.3333333333334"
-              Start="0,0"
-              End="445.5,-24.3333333333334">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="257.825688073394,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="257.825688073394,0"
-                    Point2="261.825688073394,0"
-                    Point3="261.825688073394,-4" />
-                  <mssgle:LineSegment
-                    End="261.825688073394,-20.3333333333334" />
-                  <mssgle:CubicBezierSegment
-                    Point1="261.825688073394,-20.3333333333334"
-                    Point2="261.825688073394,-24.3333333333334"
-                    Point3="265.825688073394,-24.3333333333334" />
-                  <mssgle:LineSegment
-                    End="445.5,-24.3333333333334" />
+                    End="0,85.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="188.616781823394,1,146.4178125,11.43359375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Assign parents\Select parent 2 from Stage 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Assign parents\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Assign parents\Select parent 3 from Stage 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Assign parents\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Category_Hierarchy]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Assign parents\Select parent 1 from Stage 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Import Category Task">
     <LayoutInfo>
@@ -5589,6 +5659,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="159,42"
           Id="Package\Import Category Task\Stage1_Category"
           TopLeft="376.540816332091,51" />
+        <EdgeLayout
+          Id="Package\Import Category Task.Paths[Derived Column Output]"
+          TopLeft="456.040816332091,293">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Category Task.Paths[Row Count Output 11]"
           TopLeft="456.040816332091,225">
@@ -5701,28 +5793,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Category Task.Paths[Derived Column Output]"
-          TopLeft="456.040816332091,293">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -5741,71 +5811,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Import Category Task\Stage1_Category">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Assign parents\Select parent 1 from Stage 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Assign parents\Select parent 2 from Stage 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Assign parents\Select parent 3 from Stage 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Assign parents\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Category_Hierarchy]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Assign parents\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
