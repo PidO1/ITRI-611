@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_Business"
   DTS:PackageType="5"
-  DTS:VersionBuild="124"
-  DTS:VersionGUID="{C34BED2E-0C7F-4890-9471-7F68243158D2}">
+  DTS:VersionBuild="129"
+  DTS:VersionGUID="{A9BBD250-DF8C-43B3-9BCD-A9F506990C74}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -495,7 +495,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/8/2019 12:56:37 PM</DTS:VariableValue>
+        DTS:DataType="7">8/24/2019 1:04:42 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -3192,9 +3192,16 @@ where [refTable].[Rating] = ?</property>
                 </output>
                 <output
                   refId="Package\Import Business Task\Multicast.Outputs[Multicast Output 1]"
-                  dangling="true"
                   deleteOutputOnPathDetached="true"
                   name="Multicast Output 1"
+                  synchronousInputId="Package\Import Business Task\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Business Task\Multicast.Outputs[Multicast Output 2]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
                   synchronousInputId="Package\Import Business Task\Multicast.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
@@ -3218,6 +3225,13 @@ where [refTable].[Rating] = ?</property>
                   refId="Package\Import Business Task\Multicast 1.Outputs[Multicast Output 2]"
                   deleteOutputOnPathDetached="true"
                   name="Multicast Output 2"
+                  synchronousInputId="Package\Import Business Task\Multicast 1.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Business Task\Multicast 1.Outputs[Multicast Output 3]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
                   synchronousInputId="Package\Import Business Task\Multicast 1.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
@@ -3279,13 +3293,36 @@ where [refTable].[Rating] = ?</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import Business Task\No_Match.Outputs[Derived Column Output].Columns[ErrorDescription_RATINGS]"
+                      refId="Package\Import Business Task\No_Match.Outputs[Derived Column Output].Columns[ErrorDescription]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="29"
-                      lineageId="Package\Import Business Task\No_Match.Outputs[Derived Column Output].Columns[ErrorDescription_RATINGS]"
-                      name="ErrorDescription_RATINGS"
+                      lineageId="Package\Import Business Task\No_Match.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      name="ErrorDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"COULD NOT FIND B_Rating_Stars"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"COULD NOT FIND B_Rating_Stars"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Business Task\No_Match.Outputs[Derived Column Output].Columns[Error Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="29"
+                      lineageId="Package\Import Business Task\No_Match.Outputs[Derived Column Output].Columns[Error Code]"
+                      name="Error Code"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -3696,13 +3733,36 @@ where [refTable].[Rating] = ?</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Import Business Task\No_Match_Is_Open.Outputs[Derived Column Output].Columns[ErrorDescription_Is_OPen]"
+                      refId="Package\Import Business Task\No_Match_Is_Open.Outputs[Derived Column Output].Columns[ErrorDescription]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="22"
-                      lineageId="Package\Import Business Task\No_Match_Is_Open.Outputs[Derived Column Output].Columns[ErrorDescription_Is_OPen]"
-                      name="ErrorDescription_Is_OPen"
+                      lineageId="Package\Import Business Task\No_Match_Is_Open.Outputs[Derived Column Output].Columns[ErrorDescription]"
+                      name="ErrorDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"COULD NOT FIND IS_OPEN"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"COULD NOT FIND IS_OPEN"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Business Task\No_Match_Is_Open.Outputs[Derived Column Output].Columns[Error Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="22"
+                      lineageId="Package\Import Business Task\No_Match_Is_Open.Outputs[Derived Column Output].Columns[Error Code]"
+                      name="Error Code"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -3959,12 +4019,19 @@ where [refTable].[Rating] = ?</property>
                       externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[IBPT_ID]"
                       lineageId="Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[IBPT_ID]" />
                     <inputColumn
-                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[ErrorDescription_RATINGS]"
-                      cachedDataType="wstr"
-                      cachedLength="29"
-                      cachedName="ErrorDescription_RATINGS"
-                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[Error Code]"
-                      lineageId="Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription_RATINGS]" />
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Is_Open]"
+                      cachedDataType="ui1"
+                      cachedName="B_Is_Open"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Is_Open]"
+                      lineageId="Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Is_Open]" />
+                    <inputColumn
+                      refId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].Columns[B_Rating_Stars]"
+                      cachedDataType="numeric"
+                      cachedName="B_Rating_Stars"
+                      cachedPrecision="2"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\Import Business Task\S2_Import_Business_Errors.Inputs[Flat File Destination Input].ExternalColumns[B_Rating_Stars]"
+                      lineageId="Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Rating_Stars]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4768,11 +4835,11 @@ where [refTable].[Rating] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[ErrorDescription_RATINGS]"
+                      refId="Package\Import Business Task\Union All.Inputs[Union All Input 2].Columns[ErrorDescription]"
                       cachedDataType="wstr"
                       cachedLength="29"
-                      cachedName="ErrorDescription_RATINGS"
-                      lineageId="Package\Import Business Task\No_Match.Outputs[Derived Column Output].Columns[ErrorDescription_RATINGS]">
+                      cachedName="ErrorDescription"
+                      lineageId="Package\Import Business Task\No_Match.Outputs[Derived Column Output].Columns[ErrorDescription]">
                       <properties>
                         <property
                           containsID="true"
@@ -5331,11 +5398,11 @@ where [refTable].[Rating] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import Business Task\Union All 1.Inputs[Union All Input 2].Columns[ErrorDescription_Is_OPen]"
+                      refId="Package\Import Business Task\Union All 1.Inputs[Union All Input 2].Columns[ErrorDescription]"
                       cachedDataType="wstr"
                       cachedLength="22"
-                      cachedName="ErrorDescription_Is_OPen"
-                      lineageId="Package\Import Business Task\No_Match_Is_Open.Outputs[Derived Column Output].Columns[ErrorDescription_Is_OPen]">
+                      cachedName="ErrorDescription"
+                      lineageId="Package\Import Business Task\No_Match_Is_Open.Outputs[Derived Column Output].Columns[ErrorDescription]">
                       <properties>
                         <property
                           containsID="true"
@@ -5711,34 +5778,6 @@ where [refTable].[Rating] = ?</property>
                           name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
                       </properties>
                     </inputColumn>
-                    <inputColumn
-                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 1].Columns[ErrorDescription_RATINGS]"
-                      cachedDataType="wstr"
-                      cachedLength="29"
-                      cachedName="ErrorDescription_RATINGS"
-                      lineageId="Package\Import Business Task\Union All 1.Outputs[Union All Output 1].Columns[ErrorDescription_RATINGS]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription_RATINGS]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 1].Columns[ErrorDescription_Is_OPen]"
-                      cachedDataType="wstr"
-                      cachedLength="22"
-                      cachedName="ErrorDescription_Is_OPen"
-                      lineageId="Package\Import Business Task\Union All 1.Outputs[Union All Output 1].Columns[ErrorDescription_Is_OPen]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription_Is_OPen]}</property>
-                      </properties>
-                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -5984,42 +6023,439 @@ where [refTable].[Rating] = ?</property>
                           name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
                       </properties>
                     </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
                     <inputColumn
-                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 2].Columns[ErrorDescription_RATINGS]"
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[B_Source_ID]"
                       cachedDataType="wstr"
-                      cachedLength="29"
-                      cachedName="ErrorDescription_RATINGS"
-                      lineageId="Package\Import Business Task\Union All 1.Outputs[Union All Output 1].Columns[ErrorDescription_RATINGS]">
+                      cachedLength="30"
+                      cachedName="B_Source_ID"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Source_ID]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription_RATINGS]}</property>
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Source_ID]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 2].Columns[ErrorDescription_Is_OPen]"
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[B_Name]"
                       cachedDataType="wstr"
-                      cachedLength="22"
-                      cachedName="ErrorDescription_Is_OPen"
-                      lineageId="Package\Import Business Task\Union All 1.Outputs[Union All Output 1].Columns[ErrorDescription_Is_OPen]">
+                      cachedLength="75"
+                      cachedName="B_Name"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Name]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription_Is_OPen]}</property>
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[B_Neighbourhood]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="B_Neighbourhood"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Neighbourhood]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Neighbourhood]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[B_Address]"
+                      cachedDataType="wstr"
+                      cachedLength="125"
+                      cachedName="B_Address"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Address]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Address]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[B_City]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="B_City"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_City]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_City]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[B_State]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="B_State"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_State]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_State]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[B_Postal_Code]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="B_Postal_Code"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Postal_Code]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Postal_Code]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[B_Latitude]"
+                      cachedDataType="numeric"
+                      cachedName="B_Latitude"
+                      cachedPrecision="12"
+                      cachedScale="10"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Latitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Latitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[B_Longitude]"
+                      cachedDataType="numeric"
+                      cachedName="B_Longitude"
+                      cachedPrecision="13"
+                      cachedScale="10"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Longitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Longitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[B_Rating_Stars]"
+                      cachedDataType="numeric"
+                      cachedName="B_Rating_Stars"
+                      cachedPrecision="2"
+                      cachedScale="1"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Rating_Stars]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Rating_Stars]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[B_Is_Open]"
+                      cachedDataType="ui1"
+                      cachedName="B_Is_Open"
+                      lineageId="Package\Import Business Task\Stage1_Business.Outputs[OLE DB Source Output].Columns[B_Is_Open]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Is_Open]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[IBPT_ID]"
+                      cachedDataType="i4"
+                      cachedName="IBPT_ID"
+                      lineageId="Package\Import Business Task\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[IBPT_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[B_Rating_Stars_CODE_ID]"
+                      cachedDataType="numeric"
+                      cachedName="B_Rating_Stars_CODE_ID"
+                      cachedPrecision="2"
+                      cachedScale="1"
+                      lineageId="Package\Import Business Task\No_Match.Outputs[Derived Column Output].Columns[B_Rating_Stars_CODE_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Rating_Stars_CODE_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="29"
+                      cachedName="ErrorDescription"
+                      lineageId="Package\Import Business Task\No_Match.Outputs[Derived Column Output].Columns[ErrorDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3]"
+                  refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4]"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_Source_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="B_Source_ID"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Source_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="B_Name"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_Neighbourhood]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="B_Neighbourhood"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Neighbourhood]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Neighbourhood]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_Address]"
+                      cachedDataType="wstr"
+                      cachedLength="125"
+                      cachedName="B_Address"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Address]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Address]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_City]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="B_City"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_City]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_City]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_State]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="B_State"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_State]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_State]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_Postal_Code]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="B_Postal_Code"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Postal_Code]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Postal_Code]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_Latitude]"
+                      cachedDataType="numeric"
+                      cachedName="B_Latitude"
+                      cachedPrecision="12"
+                      cachedScale="10"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Latitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Latitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_Longitude]"
+                      cachedDataType="numeric"
+                      cachedName="B_Longitude"
+                      cachedPrecision="13"
+                      cachedScale="10"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Longitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Longitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_Rating_Stars]"
+                      cachedDataType="numeric"
+                      cachedName="B_Rating_Stars"
+                      cachedPrecision="2"
+                      cachedScale="1"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Rating_Stars]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Rating_Stars]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_Is_Open]"
+                      cachedDataType="ui1"
+                      cachedName="B_Is_Open"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Is_Open]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Is_Open]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[IBPT_ID]"
+                      cachedDataType="i4"
+                      cachedName="IBPT_ID"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[IBPT_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_Rating_Stars_CODE_ID]"
+                      cachedDataType="numeric"
+                      cachedName="B_Rating_Stars_CODE_ID"
+                      cachedPrecision="2"
+                      cachedScale="1"
+                      lineageId="Package\Import Business Task\Union All.Outputs[Union All Output 1].Columns[B_Rating_Stars_CODE_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Rating_Stars_CODE_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[B_Is_Open_Code_ID]"
+                      cachedDataType="ui1"
+                      cachedName="B_Is_Open_Code_ID"
+                      lineageId="Package\Import Business Task\No_Match_Is_Open.Outputs[Derived Column Output].Columns[B_Is_Open_Code_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[B_Is_Open_Code_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="22"
+                      cachedName="ErrorDescription"
+                      lineageId="Package\Import Business Task\No_Match_Is_Open.Outputs[Derived Column Output].Columns[ErrorDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import Business Task\Union All 2.Inputs[Union All Input 5]"
                   dangling="true"
                   hasSideEffects="true"
-                  name="Union All Input 3">
+                  name="Union All Input 5">
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -6129,18 +6565,6 @@ where [refTable].[Rating] = ?</property>
                       length="300"
                       lineageId="Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription]"
                       name="ErrorDescription" />
-                    <outputColumn
-                      refId="Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription_RATINGS]"
-                      dataType="wstr"
-                      length="29"
-                      lineageId="Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription_RATINGS]"
-                      name="ErrorDescription_RATINGS" />
-                    <outputColumn
-                      refId="Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription_Is_OPen]"
-                      dataType="wstr"
-                      length="22"
-                      lineageId="Package\Import Business Task\Union All 2.Outputs[Union All Output 1].Columns[ErrorDescription_Is_OPen]"
-                      name="ErrorDescription_Is_OPen" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -6194,10 +6618,20 @@ where [refTable].[Rating] = ?</property>
               name="Lookup No Match Output"
               startId="Package\Import Business Task\Lookup 1.Outputs[Lookup No Match Output]" />
             <path
+              refId="Package\Import Business Task.Paths[Multicast Output 1]"
+              endId="Package\Import Business Task\Union All 2.Inputs[Union All Input 3]"
+              name="Multicast Output 1"
+              startId="Package\Import Business Task\Multicast.Outputs[Multicast Output 1]" />
+            <path
               refId="Package\Import Business Task.Paths[Multicast Output 2]"
               endId="Package\Import Business Task\Union All 1.Inputs[Union All Input 2]"
               name="Multicast Output 2"
               startId="Package\Import Business Task\Multicast 1.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\Import Business Task.Paths[Multicast Output 31]"
+              endId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4]"
+              name="Multicast Output 3"
+              startId="Package\Import Business Task\Multicast 1.Outputs[Multicast Output 3]" />
             <path
               refId="Package\Import Business Task.Paths[Multicast Output 3]"
               endId="Package\Import Business Task\Union All.Inputs[Union All Input 2]"
@@ -6270,7 +6704,7 @@ where [refTable].[Rating] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Failure"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6299,7 +6733,7 @@ where [refTable].[Rating] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Success"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6505,29 +6939,25 @@ where [refTable].[Rating] = ?</property>
           Id="Package\Import Business Task\No_Match_Is_Open"
           TopLeft="171.5,821.5" />
         <NodeLayout
-          Size="122,42"
-          Id="Package\Import Business Task\Lookup 1"
-          TopLeft="343,1127.5" />
+          Size="130,42"
+          Id="Package\Import Business Task\Union All 1"
+          TopLeft="339,1025.5" />
         <NodeLayout
           Size="121,42"
           Id="Package\Import Business Task\Union All"
           TopLeft="343.5,617.5" />
         <NodeLayout
+          Size="122,42"
+          Id="Package\Import Business Task\Lookup 1"
+          TopLeft="486,1121.5" />
+        <NodeLayout
           Size="230,42"
           Id="Package\Import Business Task\Get error Description for update"
-          TopLeft="289,1433.5" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Import Business Task\Union All 2"
-          TopLeft="339,1535.5" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Import Business Task\Union All 1"
-          TopLeft="339,1025.5" />
+          TopLeft="432,1427.5" />
         <NodeLayout
           Size="160,42"
           Id="Package\Import Business Task\No_Match_Insert"
-          TopLeft="324,1229.5" />
+          TopLeft="467,1223.5" />
         <NodeLayout
           Size="113,42"
           Id="Package\Import Business Task\Lookup"
@@ -6539,11 +6969,7 @@ where [refTable].[Rating] = ?</property>
         <NodeLayout
           Size="176,42"
           Id="Package\Import Business Task\Row_Count_Errors 1"
-          TopLeft="316,1331.5" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Import Business Task\Stage1_Business"
-          TopLeft="325,5.5" />
+          TopLeft="459,1325.5" />
         <NodeLayout
           Size="183,42"
           Id="Package\Import Business Task\Lookup_Ratings_Code"
@@ -6551,7 +6977,7 @@ where [refTable].[Rating] = ?</property>
         <NodeLayout
           Size="223,42"
           Id="Package\Import Business Task\Get error Description for insert"
-          TopLeft="5.50000000000017,1433.5" />
+          TopLeft="148.5,1427.5" />
         <NodeLayout
           Size="126,42"
           Id="Package\Import Business Task\No_Match"
@@ -6561,9 +6987,13 @@ where [refTable].[Rating] = ?</property>
           Id="Package\Import Business Task\S2_Import_Business_Errors"
           TopLeft="299.5,1637.5" />
         <NodeLayout
+          Size="158,42"
+          Id="Package\Import Business Task\Stage1_Business"
+          TopLeft="325,5.5" />
+        <NodeLayout
           Size="130,42"
           Id="Package\Import Business Task\Multicast 1"
-          TopLeft="213,923.5" />
+          TopLeft="163,921.5" />
         <NodeLayout
           Size="154,42"
           Id="Package\Import Business Task\Derived Column"
@@ -6571,401 +7001,19 @@ where [refTable].[Rating] = ?</property>
         <NodeLayout
           Size="120,42"
           Id="Package\Import Business Task\Multicast"
-          TopLeft="223,515.5" />
+          TopLeft="73,519.5" />
         <NodeLayout
-          Size="248,42"
+          Size="130,42"
+          Id="Package\Import Business Task\Union All 2"
+          TopLeft="4,1539.5" />
+        <NodeLayout
+          Size="203,42"
           Id="Package\Import Business Task\Business_Table_Destination_Stage2"
-          TopLeft="15.0000000000002,1229.5" />
+          TopLeft="177,1224.5" />
         <NodeLayout
           Size="167,42"
           Id="Package\Import Business Task\Row_Count_Errors"
-          TopLeft="55.5000000000002,1331.5" />
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Union All Output 12]"
-          TopLeft="404,1577.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Union All Output 11]"
-          TopLeft="404,659.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Union All Output 1]"
-          TopLeft="404,1067.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Row Count Output 12]"
-          TopLeft="139,1373.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-22,60"
-              Start="0,0"
-              End="-22,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
-                  <mssgle:LineSegment
-                    End="-18,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-18,30"
-                    Point2="-22,30"
-                    Point3="-22,34" />
-                  <mssgle:LineSegment
-                    End="-22,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Row Count Output 11]"
-          TopLeft="404,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Row Count Output 1]"
-          TopLeft="404,1373.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Output 01]"
-          TopLeft="404,1475.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.3333333333334,60"
-              Start="0,0"
-              End="20.3333333333334,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5623100303951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5623100303951"
-                    Point2="0,35.5623100303951"
-                    Point3="4,35.5623100303951" />
-                  <mssgle:LineSegment
-                    End="16.3333333333334,35.5623100303951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.3333333333334,35.5623100303951"
-                    Point2="20.3333333333334,35.5623100303951"
-                    Point3="20.3333333333334,39.5623100303951" />
-                  <mssgle:LineSegment
-                    End="20.3333333333334,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Output 0]"
-          TopLeft="117,1475.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="266.666666666667,60"
-              Start="0,0"
-              End="266.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5623100303951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5623100303951"
-                    Point2="0,35.5623100303951"
-                    Point3="4,35.5623100303951" />
-                  <mssgle:LineSegment
-                    End="262.666666666667,35.5623100303951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="262.666666666667,35.5623100303951"
-                    Point2="266.666666666667,35.5623100303951"
-                    Point3="266.666666666667,39.5623100303951" />
-                  <mssgle:LineSegment
-                    End="266.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[OLE DB Source Output]"
-          TopLeft="404,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[OLE DB Destination Error Output]"
-          TopLeft="139,1271.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,20.533203125,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[OLE DB Command Error Output]"
-          TopLeft="404,1271.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-70.70890625,20.4453125,141.4178125,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Multicast Output 3]"
-          TopLeft="283,557.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="102.166666666667,60"
-              Start="0,0"
-              End="102.166666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453507"
-                    Point2="0,35.5301794453507"
-                    Point3="4,35.5301794453507" />
-                  <mssgle:LineSegment
-                    End="98.1666666666667,35.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="98.1666666666667,35.5301794453507"
-                    Point2="102.166666666667,35.5301794453507"
-                    Point3="102.166666666667,39.5301794453507" />
-                  <mssgle:LineSegment
-                    End="102.166666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Multicast Output 2]"
-          TopLeft="278,965.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="105.666666666667,60"
-              Start="0,0"
-              End="105.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5623100303951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5623100303951"
-                    Point2="0,35.5623100303951"
-                    Point3="4,35.5623100303951" />
-                  <mssgle:LineSegment
-                    End="101.666666666667,35.5623100303951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="101.666666666667,35.5623100303951"
-                    Point2="105.666666666667,35.5623100303951"
-                    Point3="105.666666666667,39.5623100303951" />
-                  <mssgle:LineSegment
-                    End="105.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Lookup No Match Output2]"
-          TopLeft="385,1169.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-246,60"
-              Start="0,0"
-              End="-246,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.4660194174757" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.4660194174757"
-                    Point2="0,24.4660194174757"
-                    Point3="-4,24.4660194174757" />
-                  <mssgle:LineSegment
-                    End="-242,24.4660194174757" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-242,24.4660194174757"
-                    Point2="-246,24.4660194174757"
-                    Point3="-246,28.4660194174757" />
-                  <mssgle:LineSegment
-                    End="-246,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-178.80638671875,29.4660194174757,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="198.5,1325.5" />
         <EdgeLayout
           Id="Package\Import Business Task.Paths[Lookup No Match Output1]"
           TopLeft="386.5,761.5">
@@ -7100,7 +7148,7 @@ where [refTable].[Rating] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Task.Paths[Lookup Match Output]"
-          TopLeft="423,1169.5">
+          TopLeft="566,1163.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7111,17 +7159,17 @@ where [refTable].[Rating] = ?</property>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.4660194174757" />
+                    End="0,20.4660194174758" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.4660194174757"
-                    Point2="0,24.4660194174757"
-                    Point3="-4,24.4660194174757" />
+                    Point1="0,20.4660194174758"
+                    Point2="0,24.4660194174758"
+                    Point3="-4,24.4660194174758" />
                   <mssgle:LineSegment
-                    End="-15,24.4660194174757" />
+                    End="-15,24.4660194174758" />
                   <mssgle:CubicBezierSegment
-                    Point1="-15,24.4660194174757"
-                    Point2="-19,24.4660194174757"
-                    Point3="-19,28.4660194174757" />
+                    Point1="-15,24.4660194174758"
+                    Point2="-19,24.4660194174758"
+                    Point3="-19,28.4660194174758" />
                   <mssgle:LineSegment
                     End="-19,52.5" />
                 </mssgle:SegmentCollection>
@@ -7130,24 +7178,36 @@ where [refTable].[Rating] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-57.69138671875,29.4660194174757,96.3827734375,11.609375"
+              BoundingBox="-57.69138671875,29.4660194174758,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Task.Paths[Derived Column Output2]"
-          TopLeft="281.5,455.5">
+          TopLeft="280,455.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-147,64"
               Start="0,0"
-              End="0,52.5">
+              End="-147,56.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="-4,32" />
+                  <mssgle:LineSegment
+                    End="-143,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-143,32"
+                    Point2="-147,32"
+                    Point3="-147,36" />
+                  <mssgle:LineSegment
+                    End="-147,56.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7162,26 +7222,26 @@ where [refTable].[Rating] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="21,60"
+              EndConnector="-29,58"
               Start="0,0"
-              End="21,52.5">
+              End="-29,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26" />
+                    End="0,25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="4,30" />
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="-4,29" />
                   <mssgle:LineSegment
-                    End="17,30" />
+                    End="-25,29" />
                   <mssgle:CubicBezierSegment
-                    Point1="17,30"
-                    Point2="21,30"
-                    Point3="21,34" />
+                    Point1="-25,29"
+                    Point2="-29,29"
+                    Point3="-29,33" />
                   <mssgle:LineSegment
-                    End="21,52.5" />
+                    End="-29,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7204,6 +7264,484 @@ where [refTable].[Rating] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Union All Output 12]"
+          TopLeft="69,1581.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="335,56"
+              Start="0,0"
+              End="335,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24"
+                    Point2="0,28"
+                    Point3="4,28" />
+                  <mssgle:LineSegment
+                    End="331,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="331,28"
+                    Point2="335,28"
+                    Point3="335,32" />
+                  <mssgle:LineSegment
+                    End="335,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Union All Output 11]"
+          TopLeft="404,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Union All Output 1]"
+          TopLeft="404,1067.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="143,54"
+              Start="0,0"
+              End="143,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23"
+                    Point2="0,27"
+                    Point3="4,27" />
+                  <mssgle:LineSegment
+                    End="139,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="139,27"
+                    Point2="143,27"
+                    Point3="143,31" />
+                  <mssgle:LineSegment
+                    End="143,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Row Count Output 12]"
+          TopLeft="282,1367.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22,60"
+              Start="0,0"
+              End="-22,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-18,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18,30"
+                    Point2="-22,30"
+                    Point3="-22,34" />
+                  <mssgle:LineSegment
+                    End="-22,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Row Count Output 11]"
+          TopLeft="404,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Row Count Output 1]"
+          TopLeft="547,1367.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Output 01]"
+          TopLeft="547,1469.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-441.4,70"
+              Start="0,0"
+              End="-441.4,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.7152034261242" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.7152034261242"
+                    Point2="0,48.7152034261242"
+                    Point3="-4,48.7152034261242" />
+                  <mssgle:LineSegment
+                    End="-437.4,48.7152034261242" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-437.4,48.7152034261242"
+                    Point2="-441.4,48.7152034261242"
+                    Point3="-441.4,52.7152034261242" />
+                  <mssgle:LineSegment
+                    End="-441.4,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Output 0]"
+          TopLeft="260,1469.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-178.8,70"
+              Start="0,0"
+              End="-178.8,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.6247877758913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.6247877758913"
+                    Point2="0,38.6247877758913"
+                    Point3="-4,38.6247877758913" />
+                  <mssgle:LineSegment
+                    End="-174.8,38.6247877758913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-174.8,38.6247877758913"
+                    Point2="-178.8,38.6247877758913"
+                    Point3="-178.8,42.6247877758913" />
+                  <mssgle:LineSegment
+                    End="-178.8,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[OLE DB Source Output]"
+          TopLeft="404,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[OLE DB Destination Error Output]"
+          TopLeft="280.25,1266.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.20890625,20.033203125,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[OLE DB Command Error Output]"
+          TopLeft="547,1265.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-70.70890625,20.4453125,141.4178125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Multicast Output 3]"
+          TopLeft="151.666666666667,561.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="233.5,56"
+              Start="0,0"
+              End="233.5,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.0037328356219" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.0037328356219"
+                    Point2="0,28.0037328356219"
+                    Point3="4,28.0037328356219" />
+                  <mssgle:LineSegment
+                    End="229.5,28.0037328356219" />
+                  <mssgle:CubicBezierSegment
+                    Point1="229.5,28.0037328356219"
+                    Point2="233.5,28.0037328356219"
+                    Point3="233.5,32.0037328356219" />
+                  <mssgle:LineSegment
+                    End="233.5,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Multicast Output 2]"
+          TopLeft="228,963.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="155.666666666667,62"
+              Start="0,0"
+              End="155.666666666667,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7477203647416" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.7477203647416"
+                    Point2="0,36.7477203647416"
+                    Point3="4,36.7477203647416" />
+                  <mssgle:LineSegment
+                    End="151.666666666667,36.7477203647416" />
+                  <mssgle:CubicBezierSegment
+                    Point1="151.666666666667,36.7477203647416"
+                    Point2="155.666666666667,36.7477203647416"
+                    Point3="155.666666666667,40.7477203647416" />
+                  <mssgle:LineSegment
+                    End="155.666666666667,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Lookup No Match Output2]"
+          TopLeft="528,1163.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-249.5,61"
+              Start="0,0"
+              End="-249.5,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.873786407767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.873786407767"
+                    Point2="0,24.873786407767"
+                    Point3="-4,24.873786407767" />
+                  <mssgle:LineSegment
+                    End="-245.5,24.873786407767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-245.5,24.873786407767"
+                    Point2="-249.5,24.873786407767"
+                    Point3="-249.5,28.873786407767" />
+                  <mssgle:LineSegment
+                    End="-249.5,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-180.55638671875,29.873786407767,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Multicast Output 1]"
+          TopLeft="114.333333333333,561.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-81.9333333333333,978"
+              Start="0,0"
+              End="-81.9333333333333,970.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,594.442150015184" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,594.442150015184"
+                    Point2="0,598.442150015184"
+                    Point3="-4,598.442150015184" />
+                  <mssgle:LineSegment
+                    End="-77.9333333333333,598.442150015184" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-77.9333333333333,598.442150015184"
+                    Point2="-81.9333333333333,598.442150015184"
+                    Point3="-81.9333333333333,602.442150015184" />
+                  <mssgle:LineSegment
+                    End="-81.9333333333333,970.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Multicast Output 31]"
+          TopLeft="171,963.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-114.2,576"
+              Start="0,0"
+              End="-114.2,568.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,259.967168262654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,259.967168262654"
+                    Point2="0,263.967168262654"
+                    Point3="-4,263.967168262654" />
+                  <mssgle:LineSegment
+                    End="-110.2,263.967168262654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-110.2,263.967168262654"
+                    Point2="-114.2,263.967168262654"
+                    Point3="-114.2,267.967168262654" />
+                  <mssgle:LineSegment
+                    End="-114.2,568.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7244,7 +7782,7 @@ where [refTable].[Rating] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -7254,7 +7792,30 @@ where [refTable].[Rating] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Business Task\Lookup_Ratings_Code">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Rating_Lookup]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7271,29 +7832,6 @@ where [refTable].[Rating] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Business Task\Lookup_Ratings_Code">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Rating_Lookup]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

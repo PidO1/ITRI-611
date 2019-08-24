@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_BC"
   DTS:PackageType="5"
-  DTS:VersionBuild="104"
-  DTS:VersionGUID="{5C3741C0-ACE7-4C45-9BF8-B9955EFA0CA6}">
+  DTS:VersionBuild="107"
+  DTS:VersionGUID="{1C6E04D2-50FF-41B4-A854-A68F86B69FCA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -69,7 +69,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">8/9/2019 11:00:05 AM</DTS:VariableValue>
+        DTS:DataType="7">8/24/2019 1:09:49 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -218,7 +218,6 @@
           DTS:refId="Package\Sequence Container\Business_Categories_package"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{6101554A-1175-4EAB-9800-995C3039C70C}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -228,7 +227,7 @@
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
-              <PackageName>S1_Import_Business_Category.dtsx</PackageName>
+              <PackageName>S2_Import_Business_Category.dtsx</PackageName>
               <ParameterAssignment>
                 <ParameterName>IBP_ID</ParameterName>
                 <BindedVariableOrParameterName>User::IBP_ID</BindedVariableOrParameterName>
@@ -240,6 +239,7 @@
           DTS:refId="Package\Sequence Container\Categories_Package"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{E67CDE0E-B46E-44D9-954D-6821CEC3EB1D}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
