@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_Business_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{F84C9196-9BCB-4149-B9E3-5E6FE08054C7}">
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{848BDF4A-B474-48E7-8E63-BBF144FBB770}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -296,7 +296,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/30/2019 10:55:42 AM</DTS:VariableValue>
+        DTS:DataType="7">8/30/2019 1:25:29 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -4916,7 +4916,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4926,7 +4926,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

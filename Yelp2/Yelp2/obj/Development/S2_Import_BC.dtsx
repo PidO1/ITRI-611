@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_BC"
   DTS:PackageType="5"
-  DTS:VersionBuild="110"
-  DTS:VersionGUID="{23E296F3-5FE1-4D97-84C7-B936992D2898}">
+  DTS:VersionBuild="111"
+  DTS:VersionGUID="{F83C4618-16BF-4834-A8EC-EB94D85B5DFC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -69,7 +69,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">8/30/2019 10:05:35 AM</DTS:VariableValue>
+        DTS:DataType="7">8/30/2019 1:25:29 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -90,7 +90,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="S1_Import_BC_Failure_Update"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -161,7 +161,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="S1_Import_BC_Sucess_Update"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -196,7 +196,6 @@
           DTS:refId="Package\Sequence Container\Business Package"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{D4DCAA7C-D697-4F47-B4E2-A51FCC0D6F8A}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -239,7 +238,6 @@
           DTS:refId="Package\Sequence Container\Categories_Package"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{E67CDE0E-B46E-44D9-954D-6821CEC3EB1D}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
