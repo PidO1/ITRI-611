@@ -1,49 +1,39 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/6/2019 2:26:56 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MSI"
   DTS:CreatorName="MSI\piete"
-  DTS:DTSID="{170ACB7E-0394-428B-9199-A16A72A29BFB}"
+  DTS:DTSID="{6574E1FB-350E-4499-972F-720CA24CB35C}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="7177"
-  DTS:ObjectName="S2_Import_BC"
+  DTS:ObjectName="DW_Import_BC"
   DTS:PackageType="5"
-  DTS:VersionBuild="111"
-  DTS:VersionGUID="{F83C4618-16BF-4834-A8EC-EB94D85B5DFC}">
+  DTS:VersionBuild="87"
+  DTS:VersionGUID="{CE6CAB0D-D2D1-4CE6-969A-729AB12B2DAE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.AtomicDW]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{CC886418-9287-4A7B-B535-824959C1BDBF}"
+      DTS:ObjectName="localhost.AtomicDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AtomicDW;Integrated Security=True;Application Name=SSIS-DW_Import_BC-{CC886418-9287-4A7B-B535-824959C1BDBF}localhost.AtomicDW;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.Stage 1]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{846E8CE4-6092-4308-AD58-4B0B13D4B1DD}"
+      DTS:DTSID="{08DD1F4B-2BBD-424A-A50B-B4ABDC1D292E}"
       DTS:ObjectName="localhost.Stage 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Stage 1;Integrated Security=True;Application Name=SSIS-S1_Import_BC-{846E8CE4-6092-4308-AD58-4B0B13D4B1DD}localhost.Stage 1;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.Stage2]"
-      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{66644C9D-1AB6-49B9-9821-15443BBD2DD4}"
-      DTS:ObjectName="localhost.Stage2">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Stage2;Integrated Security=True;Application Name=SSIS-S2_Import_BC-{66644C9D-1AB6-49B9-9821-15443BBD2DD4}localhost.Stage2;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.Stage2 1]"
-      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{D3ECD547-C71E-40B5-B9C8-B27416B94A03}"
-      DTS:ObjectName="localhost.Stage2 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Stage2;Integrated Security=True;Application Name=SSIS-S2_Import_BC-{D3ECD547-C71E-40B5-B9C8-B27416B94A03}localhost.Stage2 1;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Stage 1;Integrated Security=True;Application Name=SSIS-S1_Import_BC-{08DD1F4B-2BBD-424A-A50B-B4ABDC1D292E}localhost.Stage 1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -51,7 +41,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{95280803-95AA-42C0-9A9D-829943125B89}"
+      DTS:DTSID="{81B8C0B1-3C6C-411F-99A0-B7A246013673}"
       DTS:ObjectName="IB_ID"
       DTS:Required="True">
       <DTS:Property
@@ -62,18 +52,18 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B239017E-CECB-4D81-859F-5EFB70777DD1}"
+      DTS:DTSID="{86F4C506-3678-477A-AEFD-D2B6C8ADA9FD}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="GETDATE()"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">8/30/2019 12:20:27 PM</DTS:VariableValue>
+        DTS:DataType="7">8/30/2019 11:58:50 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8E9E80B6-842B-479E-BE50-6E98B976EFB5}"
+      DTS:DTSID="{6947D0EF-BF66-49F5-9A55-E7244A311D42}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="IBP_ID">
@@ -83,18 +73,18 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\S1_Import_BC_Failure_Update"
+      DTS:refId="Package\DW_Import_BC_Failure_Update"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{56F356A7-014E-493A-B02B-A1BC32A3035F}"
+      DTS:DTSID="{CAA9473F-FC9D-466F-9D73-7213DAB07478}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="S1_Import_BC_Failure_Update"
+      DTS:ObjectName="DW_Import_BC_Failure_Update"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{66644C9D-1AB6-49B9-9821-15443BBD2DD4}"
+          SQLTask:Connection="{CC886418-9287-4A7B-B535-824959C1BDBF}"
           SQLTask:SqlStatementSource="UPDATE Import_Batch_Process&#xA;SET IBP_End = @DateTime,&#xA;IBP_Status = 'Failed'&#xA;WHERE IBP_ID = @IBP_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@IBP_ID"
@@ -112,18 +102,18 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\S1_Import_BC_insert"
+      DTS:refId="Package\DW_Import_BC_insert"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{0D8976CB-E86C-44A4-A45D-6108DE6C0BF8}"
+      DTS:DTSID="{788CE7D8-C3CD-4A73-83D3-F24CDAAFADAF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="S1_Import_BC_insert"
+      DTS:ObjectName="DW_Import_BC_insert"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{66644C9D-1AB6-49B9-9821-15443BBD2DD4}"
+          SQLTask:Connection="{CC886418-9287-4A7B-B535-824959C1BDBF}"
           SQLTask:IsStoredProc="True"
           SQLTask:SqlStatementSource="Create_Import_Batch_Process" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
@@ -154,18 +144,18 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\S1_Import_BC_Sucess_Update"
+      DTS:refId="Package\DW_Import_BC_Sucess_Update"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{960520C8-DBB3-432A-8263-B5E55A349137}"
+      DTS:DTSID="{F532CE9B-7E3E-4E8D-865B-E6475C9CFC7D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="S1_Import_BC_Sucess_Update"
+      DTS:ObjectName="DW_Import_BC_Sucess_Update"
       DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{66644C9D-1AB6-49B9-9821-15443BBD2DD4}"
+          SQLTask:Connection="{CC886418-9287-4A7B-B535-824959C1BDBF}"
           SQLTask:SqlStatementSource="UPDATE Import_Batch_Process&#xA;SET IBP_End = @DateTime,&#xA;IBP_Status = 'Finished'&#xA;WHERE IBP_ID = @IBP_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@IBP_ID"
@@ -186,38 +176,18 @@
       DTS:refId="Package\Sequence Container"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{BD792CD8-3280-4D38-8BBC-80AE68B404DF}"
+      DTS:DTSID="{A6C6F83B-2031-479E-A941-DF4664F04449}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sequence Container">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Sequence Container\Business Package"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:Description="Execute Package Task"
-          DTS:DTSID="{D4DCAA7C-D697-4F47-B4E2-A51FCC0D6F8A}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Business Package"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecutePackageTask>
-              <UseProjectReference>True</UseProjectReference>
-              <PackageName>S2_Import_Business.dtsx</PackageName>
-              <ParameterAssignment>
-                <ParameterName>IBP_ID</ParameterName>
-                <BindedVariableOrParameterName>User::IBP_ID</BindedVariableOrParameterName>
-              </ParameterAssignment>
-            </ExecutePackageTask>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
           DTS:refId="Package\Sequence Container\Business_Categories_package"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:DTSID="{6101554A-1175-4EAB-9800-995C3039C70C}"
+          DTS:Disabled="True"
+          DTS:DTSID="{8E7169E2-6B4D-49D9-B2E6-28E5C7E86CBB}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Business_Categories_package"
@@ -226,7 +196,7 @@
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
-              <PackageName>S2_Import_Business_Category.dtsx</PackageName>
+              <PackageName>S1_Import_Business_Category.dtsx</PackageName>
               <ParameterAssignment>
                 <ParameterName>IBP_ID</ParameterName>
                 <BindedVariableOrParameterName>User::IBP_ID</BindedVariableOrParameterName>
@@ -235,19 +205,41 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence Container\Categories_Package"
+          DTS:refId="Package\Sequence Container\Load Business Entity"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:DTSID="{E67CDE0E-B46E-44D9-954D-6821CEC3EB1D}"
+          DTS:Disabled="True"
+          DTS:DTSID="{C727B4EE-FE70-42CD-9087-22D8D44C91C2}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Categories_Package"
+          DTS:ObjectName="Load Business Entity"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
-              <PackageName>S2_Import_Category.dtsx</PackageName>
+              <PackageName>S1_Import_Category.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>IBP_ID</ParameterName>
+                <BindedVariableOrParameterName>User::IBP_ID</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Load Date Dimension"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{AD1D8603-DA70-4BA8-9FE6-1D1403C73E7E}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Date Dimension"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DW_Import_Date_Dimension.dtsx</PackageName>
               <ParameterAssignment>
                 <ParameterName>IBP_ID</ParameterName>
                 <BindedVariableOrParameterName>User::IBP_ID</BindedVariableOrParameterName>
@@ -256,33 +248,51 @@
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{3F87FC36-D1E2-4F0C-96D4-65D4C2488CDF}"
+          DTS:From="Package\Sequence Container\Load Date Dimension"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Load Business Entity" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{E6C9B3CF-5CF2-40EF-AD75-7E5107FD3804}"
+          DTS:From="Package\Sequence Container\Load Business Entity"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\Business_Categories_package" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{6F1FB5EB-21F4-446E-8674-12EEFA262076}"
-      DTS:From="Package\S1_Import_BC_insert"
+      DTS:DTSID="{CAED73FD-99CF-48F8-B77D-02A26FF11A8B}"
+      DTS:From="Package\DW_Import_BC_insert"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Sequence Container" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{C3EF75E1-AB0A-4ACA-86F6-AEB22BE26BB4}"
+      DTS:DTSID="{BB434928-6D90-4642-A9E5-A29C53D22CA5}"
       DTS:From="Package\Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\S1_Import_BC_Sucess_Update" />
+      DTS:To="Package\DW_Import_BC_Sucess_Update" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{1A71F197-7567-467D-B594-BC1A65B85925}"
+      DTS:DTSID="{06AF6FEC-D952-48F0-B6E0-910AFEC13C99}"
       DTS:From="Package\Sequence Container"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\S1_Import_BC_Failure_Update"
+      DTS:To="Package\DW_Import_BC_Failure_Update"
       DTS:Value="1" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -298,29 +308,73 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="224,42"
-          Id="Package\S1_Import_BC_Failure_Update"
+          Size="229,42"
+          Id="Package\DW_Import_BC_Failure_Update"
           TopLeft="614,527" />
         <NodeLayout
-          Size="179,42"
-          Id="Package\S1_Import_BC_insert"
+          Size="184,42"
+          Id="Package\DW_Import_BC_insert"
           TopLeft="183,12" />
         <NodeLayout
-          Size="224,42"
-          Id="Package\S1_Import_BC_Sucess_Update"
+          Size="229,42"
+          Id="Package\DW_Import_BC_Sucess_Update"
           TopLeft="229,523" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Sequence Container\Business Package"
-          TopLeft="66,31" />
         <NodeLayout
           Size="220,42"
           Id="Package\Sequence Container\Business_Categories_package"
-          TopLeft="220,157" />
+          TopLeft="425,105" />
         <NodeLayout
-          Size="173,42"
-          Id="Package\Sequence Container\Categories_Package"
+          Size="176,42"
+          Id="Package\Sequence Container\Load Business Entity"
           TopLeft="451,32" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Sequence Container\Load Date Dimension"
+          TopLeft="66,31" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="245,52.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="206,0"
+              Start="0,0"
+              End="198.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="198.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="537,74">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -330,13 +384,13 @@
           TopLeft="174,119" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="272.5,54">
+          TopLeft="275,54">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="226.5,65"
+              EndConnector="224,65"
               Start="0,0"
-              End="226.5,57.5">
+              End="224,57.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -347,13 +401,13 @@
                     Point2="0,32.5"
                     Point3="4,32.5" />
                   <mssgle:LineSegment
-                    End="222.5,32.5" />
+                    End="220,32.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="222.5,32.5"
-                    Point2="226.5,32.5"
-                    Point3="226.5,36.5" />
+                    Point1="220,32.5"
+                    Point2="224,32.5"
+                    Point3="224,36.5" />
                   <mssgle:LineSegment
-                    End="226.5,57.5" />
+                    End="224,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -368,9 +422,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-51,107"
+              EndConnector="-48.5,107"
               Start="0,0"
-              End="-51,99.5">
+              End="-48.5,99.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -381,13 +435,13 @@
                     Point2="0,42.9576427255985"
                     Point3="-4,42.9576427255985" />
                   <mssgle:LineSegment
-                    End="-47,42.9576427255985" />
+                    End="-44.5,42.9576427255985" />
                   <mssgle:CubicBezierSegment
-                    Point1="-47,42.9576427255985"
-                    Point2="-51,42.9576427255985"
-                    Point3="-51,46.9576427255985" />
+                    Point1="-44.5,42.9576427255985"
+                    Point2="-48.5,42.9576427255985"
+                    Point3="-48.5,46.9576427255985" />
                   <mssgle:LineSegment
-                    End="-51,99.5" />
+                    End="-48.5,99.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -402,9 +456,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="120,111"
+              EndConnector="122.5,111"
               Start="0,0"
-              End="120,103.5">
+              End="122.5,103.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -415,20 +469,20 @@
                     Point2="0,44.5635359116022"
                     Point3="4,44.5635359116022" />
                   <mssgle:LineSegment
-                    End="116,44.5635359116022" />
+                    End="118.5,44.5635359116022" />
                   <mssgle:CubicBezierSegment
-                    Point1="116,44.5635359116022"
-                    Point2="120,44.5635359116022"
-                    Point3="120,48.5635359116022" />
+                    Point1="118.5,44.5635359116022"
+                    Point2="122.5,44.5635359116022"
+                    Point3="122.5,48.5635359116022" />
                   <mssgle:LineSegment
-                    End="120,103.5" />
+                    End="122.5,103.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="44.75865234375,49.5635359116022,30.4826953125,9.7490234375"
+              BoundingBox="46.00865234375,49.5635359116022,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

@@ -11,139 +11,18 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Business"
   DTS:PackageType="5"
-  DTS:VersionBuild="75"
-  DTS:VersionGUID="{65523418-C6E2-4C6D-A9CD-B7EF778D3C98}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{E17272B0-5FBA-4477-9EED-741E2829B6BC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Business Flat File]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{EF8F2B38-AEB7-4976-A90C-FEF48471ADD8}"
-      DTS:ObjectName="Business Flat File">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Project::Source_Files_Folder]+"\\"+ @[$Package::FileName]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="7177"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x0022_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Business.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="30"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="business_id"
-              DTS:DTSID="{238F61DE-9533-4A34-9B1F-5DEE21FCE702}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="75"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="business_name"
-              DTS:DTSID="{C41ACC0F-9CD8-4DF9-8265-4C924E19771C}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="neighborhood"
-              DTS:DTSID="{3F9B6B2E-BD77-42E8-9577-2F854663F5D2}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="125"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="address"
-              DTS:DTSID="{8D065FEE-63B2-4CE9-BE66-451093314C40}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="75"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="city"
-              DTS:DTSID="{7E1E4877-2357-4573-8C4C-8BF0B1D4A3BE}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="8"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="state"
-              DTS:DTSID="{2C8AD2A0-9139-41FD-80ED-6A5E35198B39}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="8"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="postal_code"
-              DTS:DTSID="{604FD406-467A-4898-BFDC-C5CD8AC1363B}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="131"
-              DTS:DataPrecision="12"
-              DTS:DataScale="10"
-              DTS:TextQualified="True"
-              DTS:ObjectName="latitude"
-              DTS:DTSID="{AAA4CFB6-652E-4116-88FE-A630342FD128}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="131"
-              DTS:DataPrecision="13"
-              DTS:DataScale="10"
-              DTS:TextQualified="True"
-              DTS:ObjectName="longitude"
-              DTS:DTSID="{3948CD7F-9028-4FAC-938C-6170335FEB61}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="131"
-              DTS:DataPrecision="2"
-              DTS:DataScale="1"
-              DTS:TextQualified="True"
-              DTS:ObjectName="stars"
-              DTS:DTSID="{A9551571-3DA0-4675-8D3B-8BBC5243FDF9}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="17"
-              DTS:TextQualified="True"
-              DTS:ObjectName="is_open"
-              DTS:DTSID="{23266E61-787C-42E0-BF25-8FF8560CD4D0}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Business Flat file connection]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{0A04BAA0-44AD-4EBE-BA8C-AAD732B5486C}"
       DTS:ObjectName="Business Flat file connection">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::Source_Files_Folder]+"\\"+ @[$Package::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -475,7 +354,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/24/2019 12:38:48 PM</DTS:VariableValue>
+        DTS:DataType="7">8/30/2019 9:35:08 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_BC"
   DTS:PackageType="5"
-  DTS:VersionBuild="107"
-  DTS:VersionGUID="{1C6E04D2-50FF-41B4-A854-A68F86B69FCA}">
+  DTS:VersionBuild="110"
+  DTS:VersionGUID="{23E296F3-5FE1-4D97-84C7-B936992D2898}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -69,7 +69,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">8/24/2019 1:09:49 PM</DTS:VariableValue>
+        DTS:DataType="7">8/30/2019 10:05:35 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
