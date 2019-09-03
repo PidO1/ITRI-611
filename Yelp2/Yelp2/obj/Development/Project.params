@@ -16,7 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">C:\Users\RKW-PostGrad\Desktop\DW2019\Backup_Folder</SSIS:Property>
+        SSIS:Name="Value">C:\Users\piete\Desktop\DW2019 - 2\DW2019\Backup_Folder</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -37,7 +37,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files</SSIS:Property>
+        SSIS:Name="Value">C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -58,7 +58,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">2018</SSIS:Property>
+        SSIS:Name="Value">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">9</SSIS:Property>
     </SSIS:Properties>
@@ -79,7 +79,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">0</SSIS:Property>
+        SSIS:Name="Value">2018</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">9</SSIS:Property>
     </SSIS:Properties>
@@ -100,7 +100,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">C:\Users\RKW-PostGrad\Desktop\DW2019\Logs</SSIS:Property>
+        SSIS:Name="Value">C:\Users\piete\Desktop\DW2019 - 2\DW2019\Logs</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -121,7 +121,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files</SSIS:Property>
+        SSIS:Name="Value">C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

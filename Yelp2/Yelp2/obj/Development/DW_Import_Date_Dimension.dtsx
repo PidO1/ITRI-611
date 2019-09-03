@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Date.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Date.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +113,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Date.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Date.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -235,7 +235,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\DW_Import_Date_DimensionErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\DW_Import_Date_DimensionErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -398,7 +398,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\DW_Import_Date_DimensionErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\DW_Import_Date_DimensionErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -578,7 +578,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/30/2019 11:59:02 AM</DTS:VariableValue>
+        DTS:DataType="7">9/3/2019 10:29:28 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

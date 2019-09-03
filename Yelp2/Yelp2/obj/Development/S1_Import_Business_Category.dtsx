@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Business_Categories.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Business_Categories.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -79,7 +79,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S1_Import_Business_CategoryErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S1_Import_Business_CategoryErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -185,7 +185,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/24/2019 12:38:48 PM</DTS:VariableValue>
+        DTS:DataType="7">9/3/2019 10:29:27 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

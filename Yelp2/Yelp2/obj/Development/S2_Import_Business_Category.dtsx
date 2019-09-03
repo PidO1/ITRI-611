@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_Business_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="66"
-  DTS:VersionGUID="{848BDF4A-B474-48E7-8E63-BBF144FBB770}">
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{9B74F03E-03A7-4FFA-9199-FA12B7E9395A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Business_Categories.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Business_Categories.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -79,7 +79,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S2_Import_Business_CategoryErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S2_Import_Business_CategoryErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -159,7 +159,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S2_Import_Business_Category_Error.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S2_Import_Business_Category_Error.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -296,16 +296,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/30/2019 1:25:29 PM</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{4729EA08-D78C-4B3C-85F3-8E8A037E80B1}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="Error_row_Count">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
+        DTS:DataType="7">9/3/2019 10:36:40 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -318,10 +309,30 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{CDB010AB-CE75-4AA3-9C16-5D4C9A30E31E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Records_Failed">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{B643168B-6321-40B6-ACD5-F2A505063E56}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="Row_Count">
+      DTS:ObjectName="Records_In">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4729EA08-D78C-4B3C-85F3-8E8A037E80B1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::Records_In]- @[User::Records_Failed]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Records_Out">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
@@ -341,6 +352,100 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Categories Check\Aggregate"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregate"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Categories Check\Aggregate.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Categories Check\Aggregate.Inputs[Aggregate Input 1].Columns[C_Title]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="C_Title"
+                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[C_Title]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Categories Check\Aggregate.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Categories Check\Aggregate.Outputs[Aggregate Output 1].Columns[C_Title]"
+                      dataType="wstr"
+                      length="75"
+                      lineageId="Package\Categories Check\Aggregate.Outputs[Aggregate Output 1].Columns[C_Title]"
+                      name="C_Title">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[C_Title]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Categories Check\Categories Table Read"
               componentClassID="Microsoft.OLEDBSource"
@@ -403,42 +508,14 @@
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[B_Source_ID]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].ExternalColumns[B_Source_ID]"
-                      length="30"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[B_Source_ID]"
-                      name="B_Source_ID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[C_ID]"
+                      refId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[C_Title]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].ExternalColumns[C_ID]"
                       length="75"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[C_ID]"
-                      name="C_ID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[BC_order]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].ExternalColumns[BC_order]"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[BC_order]"
-                      name="BC_order"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[IBPT_ID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].ExternalColumns[IBPT_ID]"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[IBPT_ID]"
-                      name="IBPT_ID"
+                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[C_Title]"
+                      name="C_Title"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -469,27 +546,11 @@
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Error Output].Columns[B_Source_ID]"
-                      dataType="wstr"
-                      length="30"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Error Output].Columns[B_Source_ID]"
-                      name="B_Source_ID" />
-                    <outputColumn
                       refId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Error Output].Columns[C_ID]"
                       dataType="wstr"
                       length="75"
                       lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Error Output].Columns[C_ID]"
                       name="C_ID" />
-                    <outputColumn
-                      refId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Error Output].Columns[BC_order]"
-                      dataType="i4"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Error Output].Columns[BC_order]"
-                      name="BC_order" />
-                    <outputColumn
-                      refId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Error Output].Columns[IBPT_ID]"
-                      dataType="i4"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Error Output].Columns[IBPT_ID]"
-                      name="IBPT_ID" />
                     <outputColumn
                       refId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -592,6 +653,14 @@
                   refId="Package\Categories Check\Derived Column 1.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Categories Check\Derived Column 1.Inputs[Derived Column Input].Columns[C_Title]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="C_Title"
+                      lineageId="Package\Categories Check\Aggregate.Outputs[Aggregate Output 1].Columns[C_Title]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -603,29 +672,6 @@
                   name="Derived Column Output"
                   synchronousInputId="Package\Categories Check\Derived Column 1.Inputs[Derived Column Input]">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[C_title]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="12"
-                      lineageId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[C_title]"
-                      name="C_title"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">"Dummy record"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"Dummy record"</property>
-                      </properties>
-                    </outputColumn>
                     <outputColumn
                       refId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorDescription]"
                       dataType="wstr"
@@ -669,6 +715,29 @@
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">4</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[C_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="75"
+                      lineageId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[C_ID]"
+                      name="C_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Categories Check\Aggregate.Outputs[Aggregate Output 1].Columns[C_Title]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">C_Title</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1654,7 +1723,7 @@ where [refTable].[C_title] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[C_ID]};</property>
+                  name="ParameterMap">#{Package\Categories Check\Aggregate.Outputs[Aggregate Output 1].Columns[C_Title]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1678,11 +1747,11 @@ where [refTable].[C_title] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Categories Check\Lookup.Inputs[Lookup Input].Columns[C_ID]"
+                      refId="Package\Categories Check\Lookup.Inputs[Lookup Input].Columns[C_Title]"
                       cachedDataType="wstr"
                       cachedLength="75"
-                      cachedName="C_ID"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[C_ID]">
+                      cachedName="C_Title"
+                      lineageId="Package\Categories Check\Aggregate.Outputs[Aggregate Output 1].Columns[C_Title]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -1757,13 +1826,6 @@ where [refTable].[C_title] = ?</property>
                   refId="Package\Categories Check\Multicast.Outputs[Multicast Output 1]"
                   deleteOutputOnPathDetached="true"
                   name="Multicast Output 1"
-                  synchronousInputId="Package\Categories Check\Multicast.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Categories Check\Multicast.Outputs[Multicast Output 3]"
-                  deleteOutputOnPathDetached="true"
-                  name="Multicast Output 3"
                   synchronousInputId="Package\Categories Check\Multicast.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
@@ -1850,25 +1912,25 @@ where [refTable].[C_title] = ?</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Categories Check\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[C_ID]"
+                      refId="Package\Categories Check\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[C_Title]"
                       cachedDataType="wstr"
                       cachedLength="75"
-                      cachedName="C_ID"
-                      externalMetadataColumnId="Package\Categories Check\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_ID]"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[C_ID]" />
-                    <inputColumn
-                      refId="Package\Categories Check\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[C_title]"
-                      cachedDataType="wstr"
-                      cachedLength="12"
-                      cachedName="C_title"
+                      cachedName="C_Title"
                       externalMetadataColumnId="Package\Categories Check\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_title]"
-                      lineageId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[C_title]" />
+                      lineageId="Package\Categories Check\Aggregate.Outputs[Aggregate Output 1].Columns[C_Title]" />
                     <inputColumn
                       refId="Package\Categories Check\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IBPT_ID]"
                       cachedDataType="i4"
                       cachedName="IBPT_ID"
                       externalMetadataColumnId="Package\Categories Check\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
                       lineageId="Package\Categories Check\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]" />
+                    <inputColumn
+                      refId="Package\Categories Check\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[C_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="C_ID"
+                      externalMetadataColumnId="Package\Categories Check\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[C_ID]"
+                      lineageId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[C_ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1914,418 +1976,23 @@ where [refTable].[C_title] = ?</property>
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Categories Check\Row Count"
-              componentClassID="Microsoft.RowCount"
-              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
-              name="Row Count">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable to hold the row count."
-                  name="VariableName">User::Row_Count</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Categories Check\Row Count.Inputs[Row Count Input 1]"
-                  hasSideEffects="true"
-                  name="Row Count Input 1">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Categories Check\Row Count.Outputs[Row Count Output 1]"
-                  name="Row Count Output 1"
-                  synchronousInputId="Package\Categories Check\Row Count.Inputs[Row Count Input 1]">
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Categories Check\S2_Import_Category_Errors 1"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="7177"
-              name="S2_Import_Category_Errors 1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">false</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Categories Check\S2_Import_Category_Errors 1.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Category_Checking_for_Existence]"
-                  connectionManagerRefId="Package.ConnectionManagers[Category_Checking_for_Existence]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].Columns[C_title]"
-                      cachedDataType="wstr"
-                      cachedLength="12"
-                      cachedName="C_title"
-                      externalMetadataColumnId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_title]"
-                      lineageId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[C_title]" />
-                    <inputColumn
-                      refId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      externalMetadataColumnId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_ID]"
-                      lineageId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[C_ID]" />
-                    <inputColumn
-                      refId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="18"
-                      cachedName="ErrorDescription"
-                      externalMetadataColumnId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
-                      lineageId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      dataType="i4"
-                      name="ErrorCode" />
-                    <externalMetadataColumn
-                      refId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      dataType="i4"
-                      name="ErrorColumn" />
-                    <externalMetadataColumn
-                      refId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
-                      dataType="wstr"
-                      length="300"
-                      name="ErrorDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_ID]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_title]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_title" />
-                    <externalMetadataColumn
-                      refId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_parent1]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_parent1" />
-                    <externalMetadataColumn
-                      refId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_parent2]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_parent2" />
-                    <externalMetadataColumn
-                      refId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_parent3]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_parent3" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
-              refId="Package\Categories Check\Union All"
-              componentClassID="Microsoft.UnionAll"
-              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
-              name="Union All"
-              version="1">
-              <inputs>
-                <input
-                  refId="Package\Categories Check\Union All.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 1].Columns[B_Source_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="B_Source_ID"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[B_Source_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 1].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[C_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[C_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 1].Columns[BC_order]"
-                      cachedDataType="i4"
-                      cachedName="BC_order"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[BC_order]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[BC_order]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 1].Columns[IBPT_ID]"
-                      cachedDataType="i4"
-                      cachedName="IBPT_ID"
-                      lineageId="Package\Categories Check\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 1].Columns[C_title]"
-                      cachedDataType="wstr"
-                      cachedLength="12"
-                      cachedName="C_title"
-                      lineageId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[C_title]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[C_title]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 1].Columns[ErrorDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="18"
-                      cachedName="ErrorDescription"
-                      lineageId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorDescription]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 1].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      lineageId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorCode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Categories Check\Union All.Inputs[Union All Input 2]"
-                  hasSideEffects="true"
-                  name="Union All Input 2">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 2].Columns[B_Source_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="B_Source_ID"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[B_Source_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 2].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[C_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[C_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 2].Columns[BC_order]"
-                      cachedDataType="i4"
-                      cachedName="BC_order"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[BC_order]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[BC_order]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 2].Columns[IBPT_ID]"
-                      cachedDataType="i4"
-                      cachedName="IBPT_ID"
-                      lineageId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output].Columns[IBPT_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 2].Columns[C_title]"
-                      cachedDataType="wstr"
-                      cachedLength="12"
-                      cachedName="C_title"
-                      lineageId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[C_title]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[C_title]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 2].Columns[ErrorDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="18"
-                      cachedName="ErrorDescription"
-                      lineageId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorDescription]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Categories Check\Union All.Inputs[Union All Input 2].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      lineageId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorCode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Categories Check\Union All.Inputs[Union All Input 3]"
-                  dangling="true"
-                  hasSideEffects="true"
-                  name="Union All Input 3">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Categories Check\Union All.Outputs[Union All Output 1]"
-                  name="Union All Output 1">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]"
-                      dataType="wstr"
-                      length="30"
-                      lineageId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]"
-                      name="B_Source_ID" />
-                    <outputColumn
-                      refId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[C_ID]"
-                      dataType="wstr"
-                      length="75"
-                      lineageId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[C_ID]"
-                      name="C_ID" />
-                    <outputColumn
-                      refId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[BC_order]"
-                      dataType="i4"
-                      lineageId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[BC_order]"
-                      name="BC_order" />
-                    <outputColumn
-                      refId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]"
-                      dataType="i4"
-                      lineageId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]"
-                      name="IBPT_ID" />
-                    <outputColumn
-                      refId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[C_title]"
-                      dataType="wstr"
-                      length="12"
-                      lineageId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[C_title]"
-                      name="C_title" />
-                    <outputColumn
-                      refId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]"
-                      dataType="wstr"
-                      length="18"
-                      lineageId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]"
-                      name="ErrorDescription" />
-                    <outputColumn
-                      refId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Categories Check\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
-                      name="ErrorCode" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
-              refId="Package\Categories Check.Paths[Derived Column Output]"
-              endId="Package\Categories Check\Lookup.Inputs[Lookup Input]"
-              name="Derived Column Output"
-              startId="Package\Categories Check\Derived Column.Outputs[Derived Column Output]" />
+              refId="Package\Categories Check.Paths[Aggregate Output 1]"
+              endId="Package\Categories Check\Derived Column.Inputs[Derived Column Input]"
+              name="Aggregate Output 1"
+              startId="Package\Categories Check\Aggregate.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\Categories Check.Paths[Derived Column Output1]"
+              refId="Package\Categories Check.Paths[Derived Column Output]"
               endId="Package\Categories Check\Multicast.Inputs[Multicast Input 1]"
               name="Derived Column Output"
               startId="Package\Categories Check\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Categories Check.Paths[Derived Column Output1]"
+              endId="Package\Categories Check\Lookup.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Categories Check\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Categories Check.Paths[Lookup No Match Output]"
               endId="Package\Categories Check\Derived Column 1.Inputs[Derived Column Input]"
@@ -2337,35 +2004,15 @@ where [refTable].[C_title] = ?</property>
               name="Multicast Output 1"
               startId="Package\Categories Check\Multicast.Outputs[Multicast Output 1]" />
             <path
-              refId="Package\Categories Check.Paths[Multicast Output 3]"
-              endId="Package\Categories Check\Union All.Inputs[Union All Input 1]"
-              name="Multicast Output 3"
-              startId="Package\Categories Check\Multicast.Outputs[Multicast Output 3]" />
-            <path
               refId="Package\Categories Check.Paths[OLE DB Destination Error Output]"
               endId="Package\Categories Check\Get error Description 1.Inputs[Input 0]"
               name="OLE DB Destination Error Output"
               startId="Package\Categories Check\OLE DB Destination.Outputs[OLE DB Destination Error Output]" />
             <path
               refId="Package\Categories Check.Paths[OLE DB Source Output]"
-              endId="Package\Categories Check\Row Count.Inputs[Row Count Input 1]"
+              endId="Package\Categories Check\Aggregate.Inputs[Aggregate Input 1]"
               name="OLE DB Source Output"
               startId="Package\Categories Check\Categories Table Read.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Categories Check.Paths[Output 0]"
-              endId="Package\Categories Check\Union All.Inputs[Union All Input 2]"
-              name="Output 0"
-              startId="Package\Categories Check\Get error Description 1.Outputs[Output 0]" />
-            <path
-              refId="Package\Categories Check.Paths[Row Count Output 1]"
-              endId="Package\Categories Check\Derived Column.Inputs[Derived Column Input]"
-              name="Row Count Output 1"
-              startId="Package\Categories Check\Row Count.Outputs[Row Count Output 1]" />
-            <path
-              refId="Package\Categories Check.Paths[Union All Output 1]"
-              endId="Package\Categories Check\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input]"
-              name="Union All Output 1"
-              startId="Package\Categories Check\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2458,85 +2105,11 @@ where [refTable].[C_title] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Check business and load business\Derived Column 1"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column 1"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Check business and load business\Derived Column 1.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Check business and load business\Derived Column 1.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Check business and load business\Derived Column 1.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Check business and load business\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="18"
-                      lineageId="Package\Check business and load business\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorDescription]"
-                      name="ErrorDescription"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">"Business Not Found"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"Business Not Found"</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Check business and load business\Derived Column 1.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Check business and load business\Derived Column 1.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Check business and load business\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Check business and load business\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Check business and load business\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Check business and load business\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Check business and load business\Lookup"
+              refId="Package\Check business and load business\Lookup 1"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup"
+              name="Lookup 1"
               usesDispositions="true"
               version="6">
               <properties>
@@ -2545,14 +2118,14 @@ where [refTable].[C_title] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Business]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Categories]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Business]) [refTable]
-where [refTable].[B_Source_ID] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Categories]) [refTable]
+where [refTable].[C_title] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -2567,7 +2140,7 @@ where [refTable].[B_Source_ID] = ?</property>
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
+                  typeConverter="LookupNoMatchBehavior">0</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -2583,12 +2156,12 @@ where [refTable].[B_Source_ID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="B_Source_ID" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_Name" dataType="DT_WSTR" length="75" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_Neighbourhood" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_Address" dataType="DT_WSTR" length="125" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_City" dataType="DT_WSTR" length="75" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_State" dataType="DT_WSTR" length="8" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_Postal_Code" dataType="DT_WSTR" length="8" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="B_Latitude" dataType="DT_NUMERIC" length="0" precision="12" scale="10" codePage="0"/&gt;&lt;referenceColumn name="B_Longitude" dataType="DT_NUMERIC" length="0" precision="13" scale="10" codePage="0"/&gt;&lt;referenceColumn name="B_Rating_Stars" dataType="DT_NUMERIC" length="0" precision="2" scale="1" codePage="0"/&gt;&lt;referenceColumn name="B_Is_Open" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IBPT_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="C_ID" dataType="DT_WSTR" length="75" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="C_title" dataType="DT_WSTR" length="75" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IBPT_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[B_Source_ID]};</property>
+                  name="ParameterMap">#{Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[C_Title]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2600,7 +2173,7 @@ where [refTable].[B_Source_ID] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Check business and load business\Lookup.Connections[OleDbConnection]"
+                  refId="Package\Check business and load business\Lookup 1.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.Stage2]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.Stage2]"
                   description="Connection manager used to access lookup data."
@@ -2608,20 +2181,20 @@ where [refTable].[B_Source_ID] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Check business and load business\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Check business and load business\Lookup 1.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Check business and load business\Lookup.Inputs[Lookup Input].Columns[B_Source_ID]"
+                      refId="Package\Check business and load business\Lookup 1.Inputs[Lookup Input].Columns[C_Title]"
                       cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="B_Source_ID"
-                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[B_Source_ID]">
+                      cachedLength="75"
+                      cachedName="C_Title"
+                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[C_Title]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">B_Source_ID</property>
+                          name="JoinToReferenceColumn">C_title</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -2634,38 +2207,56 @@ where [refTable].[B_Source_ID] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Check business and load business\Lookup.Outputs[Lookup Match Output]"
+                  refId="Package\Check business and load business\Lookup 1.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Check business and load business\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Check business and load business\Lookup 1.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Check business and load business\Lookup 1.Outputs[Lookup Match Output].Columns[C_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copy Column"
+                      length="75"
+                      lineageId="Package\Check business and load business\Lookup 1.Outputs[Lookup Match Output].Columns[C_ID]"
+                      name="C_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">C_ID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Check business and load business\Lookup.Outputs[Lookup No Match Output]"
+                  refId="Package\Check business and load business\Lookup 1.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Check business and load business\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Check business and load business\Lookup 1.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Check business and load business\Lookup.Outputs[Lookup Error Output]"
+                  refId="Package\Check business and load business\Lookup 1.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Check business and load business\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Check business and load business\Lookup 1.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Check business and load business\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Check business and load business\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Check business and load business\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Check business and load business\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Check business and load business\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Check business and load business\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Check business and load business\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Check business and load business\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2683,7 +2274,7 @@ where [refTable].[B_Source_ID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable to hold the row count."
-                  name="VariableName">User::Row_Count</property>
+                  name="VariableName">User::Records_In</property>
               </properties>
               <inputs>
                 <input
@@ -2698,6 +2289,35 @@ where [refTable].[B_Source_ID] = ?</property>
                   refId="Package\Check business and load business\Row Count.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
                   synchronousInputId="Package\Check business and load business\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Check business and load business\Row Count 1"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count 1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Records_Failed</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Check business and load business\Row Count 1.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Check business and load business\Row Count 1.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Check business and load business\Row Count 1.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -2774,14 +2394,14 @@ where [refTable].[B_Source_ID] = ?</property>
                       name="B_Source_ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[C_ID]"
+                      refId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[C_Title]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[C_ID]"
                       length="75"
-                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[C_ID]"
-                      name="C_ID"
+                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[C_Title]"
+                      name="C_Title"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[BC_order]"
@@ -2791,15 +2411,6 @@ where [refTable].[B_Source_ID] = ?</property>
                       externalMetadataColumnId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[BC_order]"
                       lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[BC_order]"
                       name="BC_order"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[IBPT_ID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IBPT_ID]"
-                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[IBPT_ID]"
-                      name="IBPT_ID"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -2846,11 +2457,6 @@ where [refTable].[B_Source_ID] = ?</property>
                       dataType="i4"
                       lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Error Output].Columns[BC_order]"
                       name="BC_order" />
-                    <outputColumn
-                      refId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Error Output].Columns[IBPT_ID]"
-                      dataType="i4"
-                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Error Output].Columns[IBPT_ID]"
-                      name="IBPT_ID" />
                     <outputColumn
                       refId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -2948,13 +2554,6 @@ where [refTable].[B_Source_ID] = ?</property>
                       externalMetadataColumnId="Package\Check business and load business\S2_Business_Category.Inputs[OLE DB Destination Input].ExternalColumns[B_Source_ID]"
                       lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[B_Source_ID]" />
                     <inputColumn
-                      refId="Package\Check business and load business\S2_Business_Category.Inputs[OLE DB Destination Input].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      externalMetadataColumnId="Package\Check business and load business\S2_Business_Category.Inputs[OLE DB Destination Input].ExternalColumns[C_ID]"
-                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[C_ID]" />
-                    <inputColumn
                       refId="Package\Check business and load business\S2_Business_Category.Inputs[OLE DB Destination Input].Columns[BC_order]"
                       cachedDataType="i4"
                       cachedName="BC_order"
@@ -2966,6 +2565,13 @@ where [refTable].[B_Source_ID] = ?</property>
                       cachedName="IBPT_ID"
                       externalMetadataColumnId="Package\Check business and load business\S2_Business_Category.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
                       lineageId="Package\Check business and load business\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]" />
+                    <inputColumn
+                      refId="Package\Check business and load business\S2_Business_Category.Inputs[OLE DB Destination Input].Columns[C_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="C_ID"
+                      externalMetadataColumnId="Package\Check business and load business\S2_Business_Category.Inputs[OLE DB Destination Input].ExternalColumns[C_ID]"
+                      lineageId="Package\Check business and load business\Lookup 1.Outputs[Lookup Match Output].Columns[C_ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3913,366 +3519,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="7177"
-              name="S2_Import_Business_Category_Errors_Flat_File">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">false</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Category_Checking_for_Existence]"
-                  connectionManagerRefId="Package.ConnectionManagers[Category_Checking_for_Existence]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      externalMetadataColumnId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input].ExternalColumns[C_ID]"
-                      lineageId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[C_ID]" />
-                    <inputColumn
-                      refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="300"
-                      cachedName="ErrorDescription"
-                      externalMetadataColumnId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
-                      lineageId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      dataType="i4"
-                      name="ErrorCode" />
-                    <externalMetadataColumn
-                      refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      dataType="i4"
-                      name="ErrorColumn" />
-                    <externalMetadataColumn
-                      refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
-                      dataType="wstr"
-                      length="300"
-                      name="ErrorDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input].ExternalColumns[C_ID]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input].ExternalColumns[C_title]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_title" />
-                    <externalMetadataColumn
-                      refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input].ExternalColumns[C_parent1]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_parent1" />
-                    <externalMetadataColumn
-                      refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input].ExternalColumns[C_parent2]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_parent2" />
-                    <externalMetadataColumn
-                      refId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input].ExternalColumns[C_parent3]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_parent3" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
-              refId="Package\Check business and load business\Union All"
-              componentClassID="Microsoft.UnionAll"
-              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
-              name="Union All"
-              version="1">
-              <inputs>
-                <input
-                  refId="Package\Check business and load business\Union All.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Check business and load business\Union All.Inputs[Union All Input 1].Columns[B_Source_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="B_Source_ID"
-                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[B_Source_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Check business and load business\Union All.Inputs[Union All Input 1].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[C_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[C_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Check business and load business\Union All.Inputs[Union All Input 1].Columns[BC_order]"
-                      cachedDataType="i4"
-                      cachedName="BC_order"
-                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[BC_order]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[BC_order]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Check business and load business\Union All.Inputs[Union All Input 1].Columns[IBPT_ID]"
-                      cachedDataType="i4"
-                      cachedName="IBPT_ID"
-                      lineageId="Package\Check business and load business\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Check business and load business\Union All.Inputs[Union All Input 1].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      lineageId="Package\Check business and load business\S2_Business_Category.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Check business and load business\Union All.Inputs[Union All Input 1].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      lineageId="Package\Check business and load business\S2_Business_Category.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Check business and load business\Union All.Inputs[Union All Input 1].Columns[ErrorDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="300"
-                      cachedName="ErrorDescription"
-                      lineageId="Package\Check business and load business\S2_Business_Category_Error_Descriptions.Outputs[Output 0].Columns[ErrorDescription]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Check business and load business\Union All.Inputs[Union All Input 3]"
-                  hasSideEffects="true"
-                  name="Union All Input 3">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Check business and load business\Union All.Inputs[Union All Input 3].Columns[B_Source_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="30"
-                      cachedName="B_Source_ID"
-                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[B_Source_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Check business and load business\Union All.Inputs[Union All Input 3].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[C_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[C_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Check business and load business\Union All.Inputs[Union All Input 3].Columns[BC_order]"
-                      cachedDataType="i4"
-                      cachedName="BC_order"
-                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[BC_order]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[BC_order]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Check business and load business\Union All.Inputs[Union All Input 3].Columns[IBPT_ID]"
-                      cachedDataType="i4"
-                      cachedName="IBPT_ID"
-                      lineageId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output].Columns[IBPT_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Check business and load business\Union All.Inputs[Union All Input 3].Columns[ErrorDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="18"
-                      cachedName="ErrorDescription"
-                      lineageId="Package\Check business and load business\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorDescription]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Check business and load business\Union All.Inputs[Union All Input 2]"
-                  dangling="true"
-                  hasSideEffects="true"
-                  name="Union All Input 2">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Check business and load business\Union All.Outputs[Union All Output 1]"
-                  name="Union All Output 1">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]"
-                      dataType="wstr"
-                      length="30"
-                      lineageId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[B_Source_ID]"
-                      name="B_Source_ID" />
-                    <outputColumn
-                      refId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[C_ID]"
-                      dataType="wstr"
-                      length="75"
-                      lineageId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[C_ID]"
-                      name="C_ID" />
-                    <outputColumn
-                      refId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[BC_order]"
-                      dataType="i4"
-                      lineageId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[BC_order]"
-                      name="BC_order" />
-                    <outputColumn
-                      refId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]"
-                      dataType="i4"
-                      lineageId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]"
-                      name="IBPT_ID" />
-                    <outputColumn
-                      refId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
-                      name="ErrorCode" />
-                    <outputColumn
-                      refId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
-                      name="ErrorColumn" />
-                    <outputColumn
-                      refId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]"
-                      dataType="wstr"
-                      length="300"
-                      lineageId="Package\Check business and load business\Union All.Outputs[Union All Output 1].Columns[ErrorDescription]"
-                      name="ErrorDescription" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
               refId="Package\Check business and load business.Paths[Derived Column Output]"
-              endId="Package\Check business and load business\Lookup.Inputs[Lookup Input]"
+              endId="Package\Check business and load business\Lookup 1.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Check business and load business\Derived Column.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Check business and load business.Paths[Derived Column Output1]"
-              endId="Package\Check business and load business\Union All.Inputs[Union All Input 3]"
-              name="Derived Column Output"
-              startId="Package\Check business and load business\Derived Column 1.Outputs[Derived Column Output]" />
             <path
               refId="Package\Check business and load business.Paths[Lookup Match Output]"
               endId="Package\Check business and load business\S2_Business_Category.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
-              startId="Package\Check business and load business\Lookup.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Check business and load business.Paths[Lookup No Match Output]"
-              endId="Package\Check business and load business\Derived Column 1.Inputs[Derived Column Input]"
-              name="Lookup No Match Output"
-              startId="Package\Check business and load business\Lookup.Outputs[Lookup No Match Output]" />
+              startId="Package\Check business and load business\Lookup 1.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Check business and load business.Paths[OLE DB Destination Error Output]"
-              endId="Package\Check business and load business\S2_Business_Category_Error_Descriptions.Inputs[Input 0]"
+              endId="Package\Check business and load business\Row Count 1.Inputs[Row Count Input 1]"
               name="OLE DB Destination Error Output"
               startId="Package\Check business and load business\S2_Business_Category.Outputs[OLE DB Destination Error Output]" />
             <path
@@ -4281,20 +3542,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               name="OLE DB Source Output"
               startId="Package\Check business and load business\S1_Business_Category.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Check business and load business.Paths[Output 0]"
-              endId="Package\Check business and load business\Union All.Inputs[Union All Input 1]"
-              name="Output 0"
-              startId="Package\Check business and load business\S2_Business_Category_Error_Descriptions.Outputs[Output 0]" />
-            <path
               refId="Package\Check business and load business.Paths[Row Count Output 1]"
               endId="Package\Check business and load business\Derived Column.Inputs[Derived Column Input]"
               name="Row Count Output 1"
               startId="Package\Check business and load business\Row Count.Outputs[Row Count Output 1]" />
             <path
-              refId="Package\Check business and load business.Paths[Union All Output 1]"
-              endId="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File.Inputs[Flat File Destination Input]"
-              name="Union All Output 1"
-              startId="Package\Check business and load business\Union All.Outputs[Union All Output 1]" />
+              refId="Package\Check business and load business.Paths[Row Count Output 11]"
+              endId="Package\Check business and load business\S2_Business_Category_Error_Descriptions.Inputs[Input 0]"
+              name="Row Count Output 1"
+              startId="Package\Check business and load business\Row Count 1.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -4354,18 +3610,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{66BBFBDD-3178-4F06-AAAC-E09CD4B940A8}"
-          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Row_Count,&#xA;IBPT_Records_Failed = @Error_row_Count,&#xA;IBPT_Records_Out = @Row_Count - @Error_row_Count&#xA;WHERE IBPT_ID = @IBPT_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Records_In,&#xA;IBPT_Records_Failed = @Records_Failed,&#xA;IBPT_Records_Out = @Records_Out&#xA;WHERE IBPT_ID = @IBPT_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="Current_Date_Time"
             SQLTask:DtsVariableName="User::Current_Date_Time"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="6"
-            SQLTask:ParameterSize="-1" />
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="Error_row_Count"
-            SQLTask:DtsVariableName="User::Error_row_Count"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="IBPT_ID"
@@ -4374,8 +3624,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="Row_Count"
-            SQLTask:DtsVariableName="User::Row_Count"
+            SQLTask:ParameterName="Records_In"
+            SQLTask:DtsVariableName="User::Records_In"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="Records_Out"
+            SQLTask:DtsVariableName="User::Records_Out"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="Records_Failed"
+            SQLTask:DtsVariableName="User::Records_Failed"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
@@ -4395,18 +3657,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{66BBFBDD-3178-4F06-AAAC-E09CD4B940A8}"
-          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Row_Count,&#xA;IBPT_Records_Failed = @Error_row_Count,&#xA;IBPT_Records_Out = @Row_Count - @Error_row_Count&#xA;WHERE IBPT_ID = @IBPT_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Records_In,&#xA;IBPT_Records_Failed = @Records_Failed,&#xA;IBPT_Records_Out = @Records_Out&#xA;WHERE IBPT_ID = @IBPT_ID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="Current_Date_Time"
             SQLTask:DtsVariableName="User::Current_Date_Time"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="6"
-            SQLTask:ParameterSize="-1" />
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="Error_row_Count"
-            SQLTask:DtsVariableName="User::Error_row_Count"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="IBPT_ID"
@@ -4415,8 +3671,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="Row_Count"
-            SQLTask:DtsVariableName="User::Row_Count"
+            SQLTask:ParameterName="Records_In"
+            SQLTask:DtsVariableName="User::Records_In"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="Records_Out"
+            SQLTask:DtsVariableName="User::Records_Out"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="Records_Failed"
+            SQLTask:DtsVariableName="User::Records_Failed"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
@@ -4612,90 +3880,48 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     design-time-name="Package\Categories Check">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Categories Check\Lookup"
-          TopLeft="489,219" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Categories Check\Row Count"
-          TopLeft="492,73" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Categories Check\Derived Column"
-          TopLeft="470,150" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Categories Check\Union All"
-          TopLeft="707,414" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Categories Check\OLE DB Destination"
-          TopLeft="455,501" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="120,42"
           Id="Package\Categories Check\Multicast"
           TopLeft="478,412" />
         <NodeLayout
-          Size="177,42"
-          Id="Package\Categories Check\Get error Description 1"
-          TopLeft="473,639" />
-        <NodeLayout
           Size="163,42"
           Id="Package\Categories Check\Derived Column 1"
           TopLeft="463,342" />
         <NodeLayout
-          Size="210,42"
-          Id="Package\Categories Check\S2_Import_Category_Errors 1"
-          TopLeft="958,411" />
+          Size="177,42"
+          Id="Package\Categories Check\Get error Description 1"
+          TopLeft="452,636" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Categories Check\Lookup"
+          TopLeft="488,215" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Categories Check\Derived Column"
+          TopLeft="470,150" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Categories Check\OLE DB Destination"
+          TopLeft="455,501" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Categories Check\Aggregate"
+          TopLeft="477,73" />
         <NodeLayout
           Size="185,42"
           Id="Package\Categories Check\Categories Table Read"
           TopLeft="463,11" />
-        <EdgeLayout
-          Id="Package\Categories Check.Paths[Output 0]"
-          TopLeft="589.666666666667,639">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="159,-183"
-              Start="0,0"
-              End="159,-175.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-6.03445691182492" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-6.03445691182492"
-                    Point2="0,-10.0344569118249"
-                    Point3="4,-10.0344569118249" />
-                  <mssgle:LineSegment
-                    End="155,-10.0344569118249" />
-                  <mssgle:CubicBezierSegment
-                    Point1="155,-10.0344569118249"
-                    Point2="159,-10.0344569118249"
-                    Point3="159,-14.0344569118249" />
-                  <mssgle:LineSegment
-                    End="159,-175.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Categories Check.Paths[OLE DB Source Output]"
           TopLeft="555.5,53">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="66.5,41"
+              EndConnector="48.5,41"
               Start="0,0"
-              End="59,41">
+              End="41,41">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -4706,7 +3932,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     Point2="0,41"
                     Point3="4,41" />
                   <mssgle:LineSegment
-                    End="59,41" />
+                    End="41,41" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4717,48 +3943,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Categories Check.Paths[OLE DB Destination Error Output]"
-          TopLeft="536.916666666667,543">
+          TopLeft="540.5,543">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,96"
+              EndConnector="0,93"
               Start="0,0"
-              End="0,88.5">
+              End="0,85.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,88.5" />
+                    End="0,85.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,38.533203125,146.4178125,11.43359375"
+              BoundingBox="-73.20890625,37.033203125,146.4178125,11.43359375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Categories Check.Paths[Multicast Output 3]"
-          TopLeft="598,434">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="109,0"
-              Start="0,0"
-              End="101.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="101.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4784,31 +3988,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Categories Check.Paths[Lookup No Match Output]"
-          TopLeft="545,261">
+          Id="Package\Categories Check.Paths[Derived Column Output1]"
+          TopLeft="545.75,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,81"
+              EndConnector="0,23"
               Start="0,0"
-              End="0,73.5">
+              End="0,15.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,73.5" />
+                    End="0,15.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,30.9453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Categories Check.Paths[Derived Column Output1]"
+          Id="Package\Categories Check.Paths[Derived Column Output]"
           TopLeft="541.25,384">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4830,19 +4032,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Categories Check.Paths[Derived Column Output]"
-          TopLeft="546.25,192">
+          Id="Package\Categories Check.Paths[Aggregate Output 1]"
+          TopLeft="543.75,115">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27"
+              EndConnector="0,35"
               Start="0,0"
-              End="0,19.5">
+              End="0,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5" />
+                    End="0,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4852,59 +4054,27 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Categories Check.Paths[Union All Output 1]"
-          TopLeft="828,433.5">
+          Id="Package\Categories Check.Paths[Lookup No Match Output]"
+          TopLeft="544.5,257">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="130,0"
+              EndConnector="0,85"
               Start="0,0"
-              End="122.5,0">
+              End="0,77.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="122.5,0" />
+                    End="0,77.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Categories Check.Paths[Row Count Output 1]"
-          TopLeft="557,115">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-10,35"
-              Start="0,0"
-              End="-10,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.5"
-                    Point2="0,17.5"
-                    Point3="-4,17.5" />
-                  <mssgle:LineSegment
-                    End="-6,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6,17.5"
-                    Point2="-10,17.5"
-                    Point3="-10,21.5" />
-                  <mssgle:LineSegment
-                    End="-10,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,32.9453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4963,229 +4133,45 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     design-time-name="Package\Check business and load business">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="277,42"
-          Id="Package\Check business and load business\S2_Business_Category_Error_Descriptions"
-          TopLeft="134,524" />
-        <NodeLayout
-          Size="185,42"
-          Id="Package\Check business and load business\S1_Business_Category"
-          TopLeft="153,30" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Check business and load business\Derived Column 1"
-          TopLeft="386,277" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Check business and load business\Union All"
-          TopLeft="410,419" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Check business and load business\Row Count"
-          TopLeft="175,126" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="185,42"
           Id="Package\Check business and load business\S2_Business_Category"
-          TopLeft="143,411" />
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Check business and load business\Lookup"
-          TopLeft="182,282" />
+          TopLeft="150,330" />
         <NodeLayout
           Size="154,42"
           Id="Package\Check business and load business\Derived Column"
-          TopLeft="157,213" />
+          TopLeft="167,160" />
         <NodeLayout
-          Size="302,42"
-          Id="Package\Check business and load business\S2_Import_Business_Category_Errors_Flat_File"
-          TopLeft="623,421" />
-        <EdgeLayout
-          Id="Package\Check business and load business.Paths[OLE DB Destination Error Output]"
-          TopLeft="231.583333333333,453">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,71"
-              Start="0,0"
-              End="0,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,26.033203125,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Check business and load business.Paths[Lookup No Match Output]"
-          TopLeft="295,300.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="91,0"
-              Start="0,0"
-              End="83.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="83.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-14.05638671875,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Check business and load business.Paths[Lookup Match Output]"
-          TopLeft="237,324">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,87"
-              Start="0,0"
-              End="0,79.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,79.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,33.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Check business and load business.Paths[Derived Column Output1]"
-          TopLeft="469,319">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,100"
-              Start="0,0"
-              End="0,92.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,92.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Check business and load business.Paths[Derived Column Output]"
-          TopLeft="236.25,255">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27"
-              Start="0,0"
-              End="0,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Check business and load business.Paths[Union All Output 1]"
-          TopLeft="531,441">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="92,0"
-              Start="0,0"
-              End="84.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="84.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="122,42"
+          Id="Package\Check business and load business\Lookup 1"
+          TopLeft="181,241" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Check business and load business\S1_Business_Category"
+          TopLeft="162,6" />
+        <NodeLayout
+          Size="277,42"
+          Id="Package\Check business and load business\S2_Business_Category_Error_Descriptions"
+          TopLeft="97,548" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Check business and load business\Row Count"
+          TopLeft="178,77" />
         <EdgeLayout
           Id="Package\Check business and load business.Paths[Row Count Output 1]"
-          TopLeft="237,168">
+          TopLeft="243.5,119">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45"
+              EndConnector="0,41"
               Start="0,0"
-              End="0,37.5">
+              End="0,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Check business and load business.Paths[Output 0]"
-          TopLeft="317.333333333333,524">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="153.166666666667,-63"
-              Start="0,0"
-              End="153.166666666667,-55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-21.4170854271357" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-21.4170854271357"
-                    Point2="0,-25.4170854271357"
-                    Point3="4,-25.4170854271357" />
-                  <mssgle:LineSegment
-                    End="149.166666666667,-25.4170854271357" />
-                  <mssgle:CubicBezierSegment
-                    Point1="149.166666666667,-25.4170854271357"
-                    Point2="153.166666666667,-25.4170854271357"
-                    Point3="153.166666666667,-29.4170854271357" />
-                  <mssgle:LineSegment
-                    End="153.166666666667,-55.5" />
+                    End="0,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5196,18 +4182,150 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Check business and load business.Paths[OLE DB Source Output]"
-          TopLeft="242.75,72">
+          TopLeft="254.5,48">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,54"
+              EndConnector="-11.5,29"
               Start="0,0"
-              End="0,46.5">
+              End="-11.5,21.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.5" />
+                    End="0,10.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5"
+                    Point2="0,14.5"
+                    Point3="-4,14.5" />
+                  <mssgle:LineSegment
+                    End="-7.5,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.5,14.5"
+                    Point2="-11.5,14.5"
+                    Point3="-11.5,18.5" />
+                  <mssgle:LineSegment
+                    End="-11.5,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Check business and load business.Paths[Lookup Match Output]"
+          TopLeft="242.25,283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,13.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Check business and load business.Paths[Derived Column Output]"
+          TopLeft="243,202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Check business and load business\Row Count 1"
+          TopLeft="186,403" />
+        <EdgeLayout
+          Id="Package\Check business and load business.Paths[OLE DB Destination Error Output]"
+          TopLeft="242.5,372">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13,31"
+              Start="0,0"
+              End="13,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="9,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9,15.5"
+                    Point2="13,15.5"
+                    Point3="13,19.5" />
+                  <mssgle:LineSegment
+                    End="13,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-66.70890625,20.5,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Check business and load business.Paths[Row Count Output 11]"
+          TopLeft="255.5,445">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20,103"
+              Start="0,0"
+              End="-20,95.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.5"
+                    Point2="0,51.5"
+                    Point3="-4,51.5" />
+                  <mssgle:LineSegment
+                    End="-16,51.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16,51.5"
+                    Point2="-20,51.5"
+                    Point3="-20,55.5" />
+                  <mssgle:LineSegment
+                    End="-20,95.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5219,19 +4337,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Check business and load business\S1_Business_Category">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Check business and load business\S2_Business_Category">
     <Properties>
@@ -5246,7 +4351,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Check business and load business\Lookup">
+    design-time-name="Package\Check business and load business\Lookup 1">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -5256,7 +4361,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Business]</Value>
+          type="q3:string">[dbo].[Categories]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -5265,6 +4370,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Check business and load business\S1_Business_Category">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="121"
-  DTS:VersionGUID="{0841F768-F166-4506-9266-4458718F4ECF}">
+  DTS:VersionBuild="124"
+  DTS:VersionGUID="{78A721F6-E4A4-40C7-872D-CC4030F7C50A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Category.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Category.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -98,7 +98,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S2_Import_CategoryErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S2_Import_CategoryErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -189,7 +189,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S2_Import_CategoryErrorsMappingParentsLookupMatch.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S2_Import_CategoryErrorsMappingParentsLookupMatch.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -346,7 +346,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/30/2019 1:25:29 PM</DTS:VariableValue>
+        DTS:DataType="7">9/3/2019 10:29:28 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -499,20 +499,6 @@
                   refId="Package\Assign parents\Derived Update.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Assign parents\Derived Update.Inputs[Derived Column Input].Columns[C_child]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_child"
-                      lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_child]" />
-                    <inputColumn
-                      refId="Package\Assign parents\Derived Update.Inputs[Derived Column Input].Columns[C_parent]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_parent"
-                      lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_parent]" />
-                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -544,52 +530,6 @@
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">@[User::IBPT_ID]</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Derived_CH_ID]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="75"
-                      lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Derived_CH_ID]"
-                      name="Derived_CH_ID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">#{Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_child]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">C_child</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Derived_CH_ID_Parent]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="75"
-                      lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Derived_CH_ID_Parent]"
-                      name="Derived_CH_ID_Parent"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">#{Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_parent]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">C_parent</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1621,7 +1561,7 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CH_ID" dataType="DT_WSTR" length="75" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IBPT_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="C_CHILD" dataType="DT_WSTR" length="75" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CH_ID" dataType="DT_WSTR" length="75" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="C_CHILD" dataType="DT_WSTR" length="75" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IBPT_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Action_Type" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -1747,9 +1687,8 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Category_Hierarchy]
-   SET [CH_ID] = ?
-     ,[IBPT_ID]=?,
-[Action_Type]=?
+   SET [Action_Type] = ?
+     ,[IBPT_ID]=?
  WHERE( [C_CHILD] = ?) and
 [CH_ID] =?
 
@@ -1777,12 +1716,12 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[C_parent]"
+                      refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[Action_Type]"
                       cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_parent"
+                      cachedLength="6"
+                      cachedName="Action_Type"
                       externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_parent]" />
+                      lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Action_Type]" />
                     <inputColumn
                       refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[IBPT_ID]"
                       cachedDataType="i4"
@@ -1790,33 +1729,26 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
                       externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[IBPT_ID]" />
                     <inputColumn
-                      refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[Action_Type]"
-                      cachedDataType="wstr"
-                      cachedLength="6"
-                      cachedName="Action_Type"
-                      externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Action_Type]" />
-                    <inputColumn
                       refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[C_child]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="C_child"
-                      externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_child]" />
                     <inputColumn
-                      refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[Derived_CH_ID_Parent]"
+                      refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].Columns[C_parent]"
                       cachedDataType="wstr"
                       cachedLength="75"
-                      cachedName="Derived_CH_ID_Parent"
-                      externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Derived_CH_ID_Parent]" />
+                      cachedName="C_parent"
+                      externalMetadataColumnId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_parent]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       dataType="wstr"
-                      length="75"
+                      length="50"
                       name="Param_0">
                       <properties>
                         <property
@@ -1839,7 +1771,7 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
                     <externalMetadataColumn
                       refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="wstr"
-                      length="50"
+                      length="75"
                       name="Param_2">
                       <properties>
                         <property
@@ -1853,18 +1785,6 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
                       dataType="wstr"
                       length="75"
                       name="Param_3">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Assign parents\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      dataType="wstr"
-                      length="75"
-                      name="Param_4">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2086,119 +2006,6 @@ where [refTable].[C_CHILD] = ? and [refTable].[CH_ID] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Assign parents\S2_Import_Category_Errors 1"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="7177"
-              name="S2_Import_Category_Errors 1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">false</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Assign parents\S2_Import_Category_Errors 1.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[error_parent_Mapping]"
-                  connectionManagerRefId="Package.ConnectionManagers[error_parent_Mapping]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[ErrorCode]" />
-                    <inputColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[ErrorColumn]" />
-                    <inputColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="300"
-                      cachedName="ErrorDescription"
-                      externalMetadataColumnId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
-                      lineageId="Package\Assign parents\Get error Description 1.Outputs[Output 0].Columns[ErrorDescription]" />
-                    <inputColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].Columns[C_title]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_title"
-                      externalMetadataColumnId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_title]"
-                      lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[C_title]" />
-                    <inputColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].Columns[C_child]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_child"
-                      externalMetadataColumnId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_ID]"
-                      lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[C_child]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      dataType="i4"
-                      name="ErrorCode" />
-                    <externalMetadataColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      dataType="i4"
-                      name="ErrorColumn" />
-                    <externalMetadataColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
-                      dataType="wstr"
-                      length="300"
-                      name="ErrorDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_ID]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_title]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_title" />
-                    <externalMetadataColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_parent1]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_parent1" />
-                    <externalMetadataColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_parent2]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_parent2" />
-                    <externalMetadataColumn
-                      refId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input].ExternalColumns[C_parent3]"
-                      dataType="wstr"
-                      length="75"
-                      name="C_parent3" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
               refId="Package\Assign parents\Select parent 1 from Stage 1"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -2272,16 +2079,6 @@ WHERE        (NOT (C_parent1 = N'none'))</property>
                       name="C_child"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Output].Columns[C_title]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Output].ExternalColumns[C_title]"
-                      length="75"
-                      lineageId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Output].Columns[C_title]"
-                      name="C_title"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Output].Columns[C_parent]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -2336,12 +2133,6 @@ WHERE        (NOT (C_parent1 = N'none'))</property>
                       length="75"
                       lineageId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Error Output].Columns[C_ID]"
                       name="C_ID" />
-                    <outputColumn
-                      refId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Error Output].Columns[C_title]"
-                      dataType="wstr"
-                      length="75"
-                      lineageId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Error Output].Columns[C_title]"
-                      name="C_title" />
                     <outputColumn
                       refId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Error Output].Columns[C_parent1]"
                       dataType="wstr"
@@ -2439,16 +2230,6 @@ WHERE        (NOT (C_parent2 = N'none'))</property>
                       name="C_child"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Assign parents\Select parent 2 from Stage 1.Outputs[OLE DB Source Output].Columns[C_title]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Assign parents\Select parent 2 from Stage 1.Outputs[OLE DB Source Output].ExternalColumns[C_title]"
-                      length="75"
-                      lineageId="Package\Assign parents\Select parent 2 from Stage 1.Outputs[OLE DB Source Output].Columns[C_title]"
-                      name="C_title"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Assign parents\Select parent 2 from Stage 1.Outputs[OLE DB Source Output].Columns[C_parent]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -2503,12 +2284,6 @@ WHERE        (NOT (C_parent2 = N'none'))</property>
                       length="75"
                       lineageId="Package\Assign parents\Select parent 2 from Stage 1.Outputs[OLE DB Source Error Output].Columns[C_ID]"
                       name="C_ID" />
-                    <outputColumn
-                      refId="Package\Assign parents\Select parent 2 from Stage 1.Outputs[OLE DB Source Error Output].Columns[C_title]"
-                      dataType="wstr"
-                      length="75"
-                      lineageId="Package\Assign parents\Select parent 2 from Stage 1.Outputs[OLE DB Source Error Output].Columns[C_title]"
-                      name="C_title" />
                     <outputColumn
                       refId="Package\Assign parents\Select parent 2 from Stage 1.Outputs[OLE DB Source Error Output].Columns[C_parent2]"
                       dataType="wstr"
@@ -2606,16 +2381,6 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       name="C_child"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Output].Columns[C_title]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Output].ExternalColumns[C_title]"
-                      length="75"
-                      lineageId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Output].Columns[C_title]"
-                      name="C_title"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Output].Columns[C_parent]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -2671,12 +2436,6 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       lineageId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Error Output].Columns[C_ID]"
                       name="C_ID" />
                     <outputColumn
-                      refId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Error Output].Columns[C_title]"
-                      dataType="wstr"
-                      length="75"
-                      lineageId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Error Output].Columns[C_title]"
-                      name="C_title" />
-                    <outputColumn
                       refId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Error Output].Columns[C_parent3]"
                       dataType="wstr"
                       length="75"
@@ -2716,7 +2475,7 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="C_child"
-                      lineageId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Output].Columns[C_child]">
+                      lineageId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Output].Columns[C_child]">
                       <properties>
                         <property
                           containsID="true"
@@ -2726,25 +2485,11 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Assign parents\Union All.Inputs[Union All Input 1].Columns[C_title]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_title"
-                      lineageId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Output].Columns[C_title]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_title]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Assign parents\Union All.Inputs[Union All Input 1].Columns[C_parent]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="C_parent"
-                      lineageId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Output].Columns[C_parent]">
+                      lineageId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Output].Columns[C_parent]">
                       <properties>
                         <property
                           containsID="true"
@@ -2776,20 +2521,6 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Assign parents\Union All.Inputs[Union All Input 2].Columns[C_title]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_title"
-                      lineageId="Package\Assign parents\Select parent 2 from Stage 1.Outputs[OLE DB Source Output].Columns[C_title]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_title]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Assign parents\Union All.Inputs[Union All Input 2].Columns[C_parent]"
                       cachedDataType="wstr"
                       cachedLength="75"
@@ -2816,7 +2547,7 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="C_child"
-                      lineageId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Output].Columns[C_child]">
+                      lineageId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Output].Columns[C_child]">
                       <properties>
                         <property
                           containsID="true"
@@ -2826,25 +2557,11 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Assign parents\Union All.Inputs[Union All Input 3].Columns[C_title]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_title"
-                      lineageId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Output].Columns[C_title]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_title]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Assign parents\Union All.Inputs[Union All Input 3].Columns[C_parent]"
                       cachedDataType="wstr"
                       cachedLength="75"
                       cachedName="C_parent"
-                      lineageId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Output].Columns[C_parent]">
+                      lineageId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Output].Columns[C_parent]">
                       <properties>
                         <property
                           containsID="true"
@@ -2875,12 +2592,6 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       length="75"
                       lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_child]"
                       name="C_child" />
-                    <outputColumn
-                      refId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_title]"
-                      dataType="wstr"
-                      length="75"
-                      lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_title]"
-                      name="C_title" />
                     <outputColumn
                       refId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_parent]"
                       dataType="wstr"
@@ -2919,20 +2630,6 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Assign parents\Union All 1.Inputs[Union All Input 1].Columns[C_title]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_title"
-                      lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_title]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[C_title]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Assign parents\Union All 1.Inputs[Union All Input 1].Columns[C_parent]"
                       cachedDataType="wstr"
                       cachedLength="75"
@@ -2950,7 +2647,7 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       refId="Package\Assign parents\Union All 1.Inputs[Union All Input 1].Columns[IBPT_ID]"
                       cachedDataType="i4"
                       cachedName="IBPT_ID"
-                      lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[IBPT_ID]">
+                      lineageId="Package\Assign parents\Derived Insert.Outputs[Derived Column Output].Columns[IBPT_ID]">
                       <properties>
                         <property
                           containsID="true"
@@ -2960,38 +2657,24 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Assign parents\Union All 1.Inputs[Union All Input 1].Columns[Derived_CH_ID]"
+                      refId="Package\Assign parents\Union All 1.Inputs[Union All Input 1].Columns[Action_Type]"
                       cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="Derived_CH_ID"
-                      lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Derived_CH_ID]">
+                      cachedLength="6"
+                      cachedName="Action_Type"
+                      lineageId="Package\Assign parents\Derived Insert.Outputs[Derived Column Output].Columns[Action_Type]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[Derived_CH_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Assign parents\Union All 1.Inputs[Union All Input 1].Columns[Derived_CH_ID_Parent]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="Derived_CH_ID_Parent"
-                      lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Derived_CH_ID_Parent]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[Derived_CH_ID_Parent]}</property>
+                          name="OutputColumnLineageID">#{Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[Action_Type]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
                       refId="Package\Assign parents\Union All 1.Inputs[Union All Input 1].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\Assign parents\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]">
+                      lineageId="Package\Assign parents\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]">
                       <properties>
                         <property
                           containsID="true"
@@ -3004,7 +2687,7 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       refId="Package\Assign parents\Union All 1.Inputs[Union All Input 1].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
-                      lineageId="Package\Assign parents\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]">
+                      lineageId="Package\Assign parents\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]">
                       <properties>
                         <property
                           containsID="true"
@@ -3036,20 +2719,6 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Assign parents\Union All 1.Inputs[Union All Input 2].Columns[C_title]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_title"
-                      lineageId="Package\Assign parents\Union All.Outputs[Union All Output 1].Columns[C_title]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[C_title]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Assign parents\Union All 1.Inputs[Union All Input 2].Columns[C_parent]"
                       cachedDataType="wstr"
                       cachedLength="75"
@@ -3067,7 +2736,7 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       refId="Package\Assign parents\Union All 1.Inputs[Union All Input 2].Columns[IBPT_ID]"
                       cachedDataType="i4"
                       cachedName="IBPT_ID"
-                      lineageId="Package\Assign parents\Derived Insert.Outputs[Derived Column Output].Columns[IBPT_ID]">
+                      lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[IBPT_ID]">
                       <properties>
                         <property
                           containsID="true"
@@ -3077,10 +2746,24 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
+                      refId="Package\Assign parents\Union All 1.Inputs[Union All Input 2].Columns[Action_Type]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Action_Type"
+                      lineageId="Package\Assign parents\Derived Update.Outputs[Derived Column Output].Columns[Action_Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[Action_Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
                       refId="Package\Assign parents\Union All 1.Inputs[Union All Input 2].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\Assign parents\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]">
+                      lineageId="Package\Assign parents\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]">
                       <properties>
                         <property
                           containsID="true"
@@ -3093,7 +2776,7 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       refId="Package\Assign parents\Union All 1.Inputs[Union All Input 2].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
-                      lineageId="Package\Assign parents\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]">
+                      lineageId="Package\Assign parents\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]">
                       <properties>
                         <property
                           containsID="true"
@@ -3125,12 +2808,6 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[C_child]"
                       name="C_child" />
                     <outputColumn
-                      refId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[C_title]"
-                      dataType="wstr"
-                      length="75"
-                      lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[C_title]"
-                      name="C_title" />
-                    <outputColumn
                       refId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[C_parent]"
                       dataType="wstr"
                       length="75"
@@ -3142,17 +2819,11 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
                       lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[IBPT_ID]"
                       name="IBPT_ID" />
                     <outputColumn
-                      refId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[Derived_CH_ID]"
+                      refId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[Action_Type]"
                       dataType="wstr"
-                      length="75"
-                      lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[Derived_CH_ID]"
-                      name="Derived_CH_ID" />
-                    <outputColumn
-                      refId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[Derived_CH_ID_Parent]"
-                      dataType="wstr"
-                      length="75"
-                      lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[Derived_CH_ID_Parent]"
-                      name="Derived_CH_ID_Parent" />
+                      length="6"
+                      lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[Action_Type]"
+                      name="Action_Type" />
                     <outputColumn
                       refId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[ErrorCode]"
                       dataType="i4"
@@ -3192,19 +2863,19 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
               startId="Package\Assign parents\Lookup.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Assign parents.Paths[OLE DB Command Error Output]"
-              endId="Package\Assign parents\Union All 1.Inputs[Union All Input 1]"
+              endId="Package\Assign parents\Union All 1.Inputs[Union All Input 2]"
               name="OLE DB Command Error Output"
               startId="Package\Assign parents\OLE DB Command.Outputs[OLE DB Command Error Output]" />
             <path
               refId="Package\Assign parents.Paths[OLE DB Destination Error Output]"
-              endId="Package\Assign parents\Union All 1.Inputs[Union All Input 2]"
+              endId="Package\Assign parents\Union All 1.Inputs[Union All Input 1]"
               name="OLE DB Destination Error Output"
               startId="Package\Assign parents\OLE DB Destination.Outputs[OLE DB Destination Error Output]" />
             <path
               refId="Package\Assign parents.Paths[OLE DB Source Output]"
               endId="Package\Assign parents\Union All.Inputs[Union All Input 1]"
               name="OLE DB Source Output"
-              startId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Output]" />
+              startId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Assign parents.Paths[OLE DB Source Output1]"
               endId="Package\Assign parents\Union All.Inputs[Union All Input 2]"
@@ -3214,12 +2885,7 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
               refId="Package\Assign parents.Paths[OLE DB Source Output2]"
               endId="Package\Assign parents\Union All.Inputs[Union All Input 3]"
               name="OLE DB Source Output"
-              startId="Package\Assign parents\Select parent 1 from Stage 1.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Assign parents.Paths[Output 0]"
-              endId="Package\Assign parents\S2_Import_Category_Errors 1.Inputs[Flat File Destination Input]"
-              name="Output 0"
-              startId="Package\Assign parents\Get error Description 1.Outputs[Output 0]" />
+              startId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Assign parents.Paths[Row Count Output 1]"
               endId="Package\Assign parents\Get error Description 1.Inputs[Input 0]"
@@ -4757,7 +4423,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Failure"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4798,7 +4464,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Success"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5022,41 +4688,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="160,42"
+          Size="170,42"
           Id="Package\Assign parents\Error_Row_count 1"
-          TopLeft="847.14285716232,412" />
+          TopLeft="539.14285716232,747" />
         <NodeLayout
           Size="214,42"
           Id="Package\Assign parents\Select parent 2 from Stage 1"
-          TopLeft="341,67" />
+          TopLeft="361,20" />
         <NodeLayout
           Size="171,42"
           Id="Package\Assign parents\OLE DB Destination"
           TopLeft="218,610" />
         <NodeLayout
-          Size="210,42"
-          Id="Package\Assign parents\S2_Import_Category_Errors 1"
-          TopLeft="1074.14285716232,249" />
-        <NodeLayout
           Size="214,42"
           Id="Package\Assign parents\Select parent 3 from Stage 1"
-          TopLeft="588,68" />
+          TopLeft="588,71" />
         <NodeLayout
           Size="130,42"
           Id="Package\Assign parents\Row Count"
-          TopLeft="412,290" />
+          TopLeft="413,337" />
         <NodeLayout
           Size="113,42"
           Id="Package\Assign parents\Lookup"
-          TopLeft="420,366" />
+          TopLeft="414,405" />
         <NodeLayout
           Size="152,42"
           Id="Package\Assign parents\Derived Update"
           TopLeft="553,473" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Assign parents\Union All"
-          TopLeft="407,205" />
         <NodeLayout
           Size="166,42"
           Id="Package\Assign parents\OLE DB Command"
@@ -5072,93 +4730,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="177,42"
           Id="Package\Assign parents\Get error Description 1"
-          TopLeft="1040.14285716232,42" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Assign parents\Union All 1"
-          TopLeft="842,580" />
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[Union All Output 11]"
-          TopLeft="907,580">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.14285716232,-126"
-              Start="0,0"
-              End="20.14285716232,-118.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-59" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-59"
-                    Point2="0,-63"
-                    Point3="4,-63" />
-                  <mssgle:LineSegment
-                    End="16.14285716232,-63" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.14285716232,-63"
-                    Point2="20.14285716232,-63"
-                    Point3="20.14285716232,-67" />
-                  <mssgle:LineSegment
-                    End="20.14285716232,-118.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[Union All Output 1]"
-          TopLeft="467.5,247">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.5,43"
-              Start="0,0"
-              End="9.5,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="4,21.5" />
-                  <mssgle:LineSegment
-                    End="5.5,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.5,21.5"
-                    Point2="9.5,21.5"
-                    Point3="9.5,25.5" />
-                  <mssgle:LineSegment
-                    End="9.5,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="545.14285716232,825" />
         <EdgeLayout
           Id="Package\Assign parents.Paths[Row Count Output 11]"
-          TopLeft="476.75,332">
+          TopLeft="474.25,379">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34"
+              EndConnector="0,26"
               Start="0,0"
-              End="0,26.5">
+              End="0,18.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5169,315 +4755,107 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Assign parents.Paths[Row Count Output 1]"
-          TopLeft="927.14285716232,412">
+          TopLeft="624.14285716232,789">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="173.333333333333,-328"
+              EndConnector="9.50000000000011,36"
               Start="0,0"
-              End="173.333333333333,-320.5">
+              End="9.50000000000011,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-191.036954087346" />
+                    End="0,14" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-191.036954087346"
-                    Point2="0,-195.036954087346"
-                    Point3="4,-195.036954087346" />
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
                   <mssgle:LineSegment
-                    End="169.333333333333,-195.036954087346" />
+                    End="5.50000000000011,18" />
                   <mssgle:CubicBezierSegment
-                    Point1="169.333333333333,-195.036954087346"
-                    Point2="173.333333333333,-195.036954087346"
-                    Point3="173.333333333333,-199.036954087346" />
+                    Point1="5.50000000000011,18"
+                    Point2="9.50000000000011,18"
+                    Point3="9.50000000000011,22" />
                   <mssgle:LineSegment
-                    End="173.333333333333,-320.5" />
+                    End="9.50000000000011,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[Output 0]"
-          TopLeft="1156.80952382899,84">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="22.3333333333335,165"
-              Start="0,0"
-              End="22.3333333333335,157.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.8868980963046" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,62.8868980963046"
-                    Point2="0,66.8868980963046"
-                    Point3="4,66.8868980963046" />
-                  <mssgle:LineSegment
-                    End="18.3333333333335,66.8868980963046" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.3333333333335,66.8868980963046"
-                    Point2="22.3333333333335,66.8868980963046"
-                    Point3="22.3333333333335,70.8868980963046" />
-                  <mssgle:LineSegment
-                    End="22.3333333333335,157.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[OLE DB Source Output2]"
-          TopLeft="199,113">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="240.25,92"
-              Start="0,0"
-              End="240.25,84.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56.010781671159" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,56.010781671159"
-                    Point2="0,60.010781671159"
-                    Point3="4,60.010781671159" />
-                  <mssgle:LineSegment
-                    End="236.25,60.010781671159" />
-                  <mssgle:CubicBezierSegment
-                    Point1="236.25,60.010781671159"
-                    Point2="240.25,60.010781671159"
-                    Point3="240.25,64.010781671159" />
-                  <mssgle:LineSegment
-                    End="240.25,84.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[OLE DB Source Output1]"
-          TopLeft="448,109">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19.5,96"
-              Start="0,0"
-              End="19.5,88.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,44"
-                    Point2="0,48"
-                    Point3="4,48" />
-                  <mssgle:LineSegment
-                    End="15.5,48" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.5,48"
-                    Point2="19.5,48"
-                    Point3="19.5,52" />
-                  <mssgle:LineSegment
-                    End="19.5,88.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[OLE DB Source Output]"
-          TopLeft="695,110">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-227.5,95"
-              Start="0,0"
-              End="-227.5,87.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.5"
-                    Point2="0,47.5"
-                    Point3="-4,47.5" />
-                  <mssgle:LineSegment
-                    End="-223.5,47.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-223.5,47.5"
-                    Point2="-227.5,47.5"
-                    Point3="-227.5,51.5" />
-                  <mssgle:LineSegment
-                    End="-227.5,87.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[OLE DB Destination Error Output]"
-          TopLeft="389,631">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="453,-24.3333333333334"
-              Start="0,0"
-              End="445.5,-24.3333333333334">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="257.825688073394,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="257.825688073394,0"
-                    Point2="261.825688073394,0"
-                    Point3="261.825688073394,-4" />
-                  <mssgle:LineSegment
-                    End="261.825688073394,-20.3333333333334" />
-                  <mssgle:CubicBezierSegment
-                    Point1="261.825688073394,-20.3333333333334"
-                    Point2="261.825688073394,-24.3333333333334"
-                    Point3="265.825688073394,-24.3333333333334" />
-                  <mssgle:LineSegment
-                    End="445.5,-24.3333333333334" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="188.616781823394,1,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Assign parents.Paths[OLE DB Command Error Output]"
-          TopLeft="733,577">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="109,18.3333333333334"
-              Start="0,0"
-              End="101.5,18.3333333333334">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="58.9999999999999,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="58.9999999999999,0"
-                    Point2="62.9999999999999,0"
-                    Point3="62.9999999999999,4" />
-                  <mssgle:LineSegment
-                    End="62.9999999999999,14.3333333333334" />
-                  <mssgle:CubicBezierSegment
-                    Point1="62.9999999999999,14.3333333333334"
-                    Point2="62.9999999999999,18.3333333333334"
-                    Point3="66.9999999999999,18.3333333333334" />
-                  <mssgle:LineSegment
-                    End="101.5,18.3333333333334" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-7.70890625000006,-17.609375,141.4178125,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Assign parents.Paths[Lookup No Match Output]"
-          TopLeft="459,408">
+          TopLeft="453,447">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-160,67"
+              EndConnector="-154,28"
               Start="0,0"
-              End="-160,59.5">
+              End="-154,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.3612565445026" />
+                    End="0,7.43455497382199" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.3612565445026"
-                    Point2="0,27.3612565445026"
-                    Point3="-4,27.3612565445026" />
+                    Point1="0,7.43455497382199"
+                    Point2="0,11.434554973822"
+                    Point3="-4,11.434554973822" />
                   <mssgle:LineSegment
-                    End="-156,27.3612565445026" />
+                    End="-150,11.434554973822" />
                   <mssgle:CubicBezierSegment
-                    Point1="-156,27.3612565445026"
-                    Point2="-160,27.3612565445026"
-                    Point3="-160,31.3612565445026" />
+                    Point1="-150,11.434554973822"
+                    Point2="-154,11.434554973822"
+                    Point3="-154,15.434554973822" />
                   <mssgle:LineSegment
-                    End="-160,59.5" />
+                    End="-154,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-135.80638671875,32.3612565445026,111.6127734375,11.609375"
+              BoundingBox="-132.80638671875,16.434554973822,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Assign parents.Paths[Lookup Match Output]"
-          TopLeft="494,408">
+          TopLeft="488,447">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="135,65"
+              EndConnector="141,26"
               Start="0,0"
-              End="135,57.5">
+              End="141,18.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.544502617801" />
+                    End="0,6.61780104712042" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.544502617801"
-                    Point2="0,26.544502617801"
-                    Point3="4,26.544502617801" />
+                    Point1="0,6.61780104712042"
+                    Point2="0,10.6178010471204"
+                    Point3="4,10.6178010471204" />
                   <mssgle:LineSegment
-                    End="131,26.544502617801" />
+                    End="137,10.6178010471204" />
                   <mssgle:CubicBezierSegment
-                    Point1="131,26.544502617801"
-                    Point2="135,26.544502617801"
-                    Point3="135,30.544502617801" />
+                    Point1="137,10.6178010471204"
+                    Point2="141,10.6178010471204"
+                    Point3="141,14.6178010471204" />
                   <mssgle:LineSegment
-                    End="135,57.5" />
+                    End="141,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="19.30861328125,31.544502617801,96.3827734375,11.609375"
+              BoundingBox="22.30861328125,15.6178010471204,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5537,6 +4915,256 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Assign parents\Union All"
+          TopLeft="308,161" />
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[OLE DB Source Output]"
+          TopLeft="199,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="169.5,48"
+              Start="0,0"
+              End="169.5,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="4,24" />
+                  <mssgle:LineSegment
+                    End="165.5,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="165.5,24"
+                    Point2="169.5,24"
+                    Point3="169.5,28" />
+                  <mssgle:LineSegment
+                    End="169.5,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[OLE DB Source Output1]"
+          TopLeft="468,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-80.6666666666667,99"
+              Start="0,0"
+              End="-80.6666666666667,91.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.6247960848287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54.6247960848287"
+                    Point2="0,58.6247960848287"
+                    Point3="-4,58.6247960848287" />
+                  <mssgle:LineSegment
+                    End="-76.6666666666667,58.6247960848287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-76.6666666666667,58.6247960848287"
+                    Point2="-80.6666666666667,58.6247960848287"
+                    Point3="-80.6666666666667,62.6247960848287" />
+                  <mssgle:LineSegment
+                    End="-80.6666666666667,91.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[OLE DB Source Output2]"
+          TopLeft="695,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-298.25,48"
+              Start="0,0"
+              End="-298.25,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.3099730458221" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.3099730458221"
+                    Point2="0,31.3099730458221"
+                    Point3="-4,31.3099730458221" />
+                  <mssgle:LineSegment
+                    End="-294.25,31.3099730458221" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-294.25,31.3099730458221"
+                    Point2="-298.25,31.3099730458221"
+                    Point3="-298.25,35.3099730458221" />
+                  <mssgle:LineSegment
+                    End="-298.25,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[Union All Output 1]"
+          TopLeft="368.5,203">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109.5,134"
+              Start="0,0"
+              End="109.5,126.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63"
+                    Point2="0,67"
+                    Point3="4,67" />
+                  <mssgle:LineSegment
+                    End="105.5,67" />
+                  <mssgle:CubicBezierSegment
+                    Point1="105.5,67"
+                    Point2="109.5,67"
+                    Point3="109.5,71" />
+                  <mssgle:LineSegment
+                    End="109.5,126.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Assign parents\Union All 1"
+          TopLeft="478,674" />
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[OLE DB Destination Error Output]"
+          TopLeft="389,631">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89,64"
+              Start="0,0"
+              End="81.5,64">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="40.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40.5,0"
+                    Point2="44.5,0"
+                    Point3="44.5,4" />
+                  <mssgle:LineSegment
+                    End="44.5,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="44.5,60"
+                    Point2="44.5,64"
+                    Point3="48.5,64" />
+                  <mssgle:LineSegment
+                    End="81.5,64" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-28.70890625,-17.43359375,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[OLE DB Command Error Output]"
+          TopLeft="650,598">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-107,76"
+              Start="0,0"
+              End="-107,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="-4,38" />
+                  <mssgle:LineSegment
+                    End="-103,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-103,38"
+                    Point2="-107,38"
+                    Point3="-107,42" />
+                  <mssgle:LineSegment
+                    End="-107,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-124.20890625,43,141.4178125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[Union All Output 11]"
+          TopLeft="543,716">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81.14285716232,31"
+              Start="0,0"
+              End="81.14285716232,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="77.14285716232,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77.14285716232,15.5"
+                    Point2="81.14285716232,15.5"
+                    Point3="81.14285716232,19.5" />
+                  <mssgle:LineSegment
+                    End="81.14285716232,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -5575,7 +5203,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5585,7 +5213,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5657,7 +5285,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5679,7 +5309,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5725,7 +5357,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5747,7 +5381,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5769,7 +5405,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

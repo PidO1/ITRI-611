@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S1_Import_Business"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{E17272B0-5FBA-4477-9EED-741E2829B6BC}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{8D297F21-5C32-49AA-92E6-F35E7D9E1FC3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Business.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Business.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,7 +41,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="business_id"
-              DTS:DTSID="{A7AB126E-281C-42F6-90F1-F34C1C2BE0AB}"
+              DTS:DTSID="{8148B2F8-9B5D-4135-B9D4-15D8D07DFCBF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="business_name"
-              DTS:DTSID="{7FA9CEB3-2EBB-4BA5-93D9-1DD2699797BD}"
+              DTS:DTSID="{BF824A36-B9FF-4348-8208-AE08E5B12F50}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="neighborhood"
-              DTS:DTSID="{C8776F42-D514-40D9-84A0-9C9F8BFE659A}"
+              DTS:DTSID="{AF2B8B1C-6227-409B-BEAF-1DF9BC0699AC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="address"
-              DTS:DTSID="{41EE9852-0EE1-49AF-8339-BEEFA088A12F}"
+              DTS:DTSID="{094A53E8-5C3F-4AC7-ACA8-ECFEFFF6D9F9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="city"
-              DTS:DTSID="{12F3315E-0816-4354-AA92-B4132830EE18}"
+              DTS:DTSID="{261D6C0B-EE8C-43C4-A9FF-42D70AD9DF72}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="state"
-              DTS:DTSID="{A47AD98A-F073-421A-B713-EB107944259F}"
+              DTS:DTSID="{20317320-DA13-4A2C-B7FB-A4C1DA7BD1D3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,7 +95,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="postal_code"
-              DTS:DTSID="{7AF0D1A5-E522-47D8-9EDB-03D7C8E573AF}"
+              DTS:DTSID="{37BD546F-4DB3-4089-8DC0-902608275F1A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -105,7 +105,7 @@
               DTS:DataScale="10"
               DTS:TextQualified="True"
               DTS:ObjectName="latitude"
-              DTS:DTSID="{18E170DE-C936-4B1D-8041-9C0B15B66969}"
+              DTS:DTSID="{B0D84306-3131-4BFC-9213-65276B4E47EA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -115,7 +115,7 @@
               DTS:DataScale="10"
               DTS:TextQualified="True"
               DTS:ObjectName="longitude"
-              DTS:DTSID="{270BBA8D-B842-402A-8B06-0E86D84221E4}"
+              DTS:DTSID="{04FB0B67-F6D6-4278-A91B-8A69ABA93AB5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -125,7 +125,7 @@
               DTS:DataScale="1"
               DTS:TextQualified="True"
               DTS:ObjectName="stars"
-              DTS:DTSID="{98F7465F-E3D1-4E65-A8D5-7D55DA4993C0}"
+              DTS:DTSID="{668F97D8-5E9C-43BF-836E-5598CD8B125B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -133,7 +133,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="is_open"
-              DTS:DTSID="{A42F2217-B640-43B7-B5E3-922D2C42A51C}"
+              DTS:DTSID="{D36959B1-5062-4B8D-AB05-FB76D96C39E2}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -154,7 +154,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\S1_Import_BusinessErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\S1_Import_BusinessErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -354,7 +354,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/30/2019 9:29:51 AM</DTS:VariableValue>
+        DTS:DataType="7">9/3/2019 10:44:08 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -834,7 +834,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -2604,7 +2604,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Failure"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2633,7 +2633,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Success"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2857,37 +2857,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="167,42"
           Id="Package\Import Business Task\Row_Count_Errors"
-          TopLeft="606.857142857143,344.333333333333" />
+          TopLeft="471.857142857143,332.333333333333" />
         <NodeLayout
           Size="177,42"
           Id="Package\Import Business Task\Get error Description"
           TopLeft="451.857142857143,416" />
         <EdgeLayout
           Id="Package\Import Business Task.Paths[Row Count Output 11]"
-          TopLeft="690.357142857143,386.333333333333">
+          TopLeft="555.357142857143,374.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-150,29.666666666667"
+              EndConnector="-15,41.666666666667"
               Start="0,0"
-              End="-150,22.166666666667">
+              End="-15,34.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.8333333333335" />
+                    End="0,16.8333333333335" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.8333333333335"
-                    Point2="0,14.8333333333335"
-                    Point3="-4,14.8333333333335" />
+                    Point1="0,16.8333333333335"
+                    Point2="0,20.8333333333335"
+                    Point3="-4,20.8333333333335" />
                   <mssgle:LineSegment
-                    End="-146,14.8333333333335" />
+                    End="-11,20.8333333333335" />
                   <mssgle:CubicBezierSegment
-                    Point1="-146,14.8333333333335"
-                    Point2="-150,14.8333333333335"
-                    Point3="-150,18.8333333333335" />
+                    Point1="-11,20.8333333333335"
+                    Point2="-15,20.8333333333335"
+                    Point3="-15,24.8333333333335" />
                   <mssgle:LineSegment
-                    End="-150,22.166666666667" />
+                    End="-15,34.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2954,37 +2954,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Task.Paths[OLE DB Destination Error Output]"
-          TopLeft="559.857142857143,289">
+          TopLeft="557.607142857143,289">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="130.5,55.333333333333"
+              EndConnector="0,43.333333333333"
               Start="0,0"
-              End="130.5,47.833333333333">
+              End="0,35.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.6666666666665" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.6666666666665"
-                    Point2="0,27.6666666666665"
-                    Point3="4,27.6666666666665" />
-                  <mssgle:LineSegment
-                    End="126.5,27.6666666666665" />
-                  <mssgle:CubicBezierSegment
-                    Point1="126.5,27.6666666666665"
-                    Point2="130.5,27.6666666666665"
-                    Point3="130.5,31.6666666666665" />
-                  <mssgle:LineSegment
-                    End="130.5,47.833333333333" />
+                    End="0,35.833333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-7.95890625,32.6666666666665,146.4178125,11.43359375"
+              BoundingBox="-73.20890625,12.1998697916665,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
