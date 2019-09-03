@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_Business"
   DTS:PackageType="5"
-  DTS:VersionBuild="135"
-  DTS:VersionGUID="{DFC82051-DC39-4CA6-A7CD-EEF84B73CF40}">
+  DTS:VersionBuild="136"
+  DTS:VersionGUID="{AA346A5F-5EF7-4536-81DF-D20D6DEBEBFE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -241,7 +241,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">9/3/2019 10:29:28 AM</DTS:VariableValue>
+        DTS:DataType="7">9/3/2019 11:37:04 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -6375,14 +6375,14 @@ where [refTable].[Rating] = ?</property>
               startId="Package\Import Business Task\Multicast 1.Outputs[Multicast Output 2]" />
             <path
               refId="Package\Import Business Task.Paths[Multicast Output 31]"
-              endId="Package\Import Business Task\Union All.Inputs[Union All Input 2]"
-              name="Multicast Output 3"
-              startId="Package\Import Business Task\Multicast.Outputs[Multicast Output 3]" />
-            <path
-              refId="Package\Import Business Task.Paths[Multicast Output 3]"
               endId="Package\Import Business Task\Union All 2.Inputs[Union All Input 4]"
               name="Multicast Output 3"
               startId="Package\Import Business Task\Multicast 1.Outputs[Multicast Output 3]" />
+            <path
+              refId="Package\Import Business Task.Paths[Multicast Output 3]"
+              endId="Package\Import Business Task\Union All.Inputs[Union All Input 2]"
+              name="Multicast Output 3"
+              startId="Package\Import Business Task\Multicast.Outputs[Multicast Output 3]" />
             <path
               refId="Package\Import Business Task.Paths[OLE DB Command Error Output]"
               endId="Package\Import Business Task\Row_Count_Errors 1.Inputs[Row Count Input 1]"
@@ -6450,7 +6450,7 @@ where [refTable].[Rating] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Failure"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6479,7 +6479,7 @@ where [refTable].[Rating] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Success"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6681,29 +6681,29 @@ where [refTable].[Rating] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="158,42"
-          Id="Package\Import Business Task\Stage1_Business"
-          TopLeft="325,5.5" />
+          Size="130,42"
+          Id="Package\Import Business Task\Multicast 1"
+          TopLeft="163,921.5" />
         <NodeLayout
           Size="122,42"
           Id="Package\Import Business Task\Lookup 1"
           TopLeft="486,1121.5" />
         <NodeLayout
-          Size="141,42"
-          Id="Package\Import Business Task\Match_Insert"
-          TopLeft="467,1223.5" />
+          Size="158,42"
+          Id="Package\Import Business Task\Stage1_Business"
+          TopLeft="325,5.5" />
         <NodeLayout
           Size="230,42"
           Id="Package\Import Business Task\Get error Description for update"
           TopLeft="432,1427.5" />
         <NodeLayout
-          Size="126,42"
-          Id="Package\Import Business Task\No_Match"
-          TopLeft="217,413.5" />
-        <NodeLayout
           Size="176,42"
           Id="Package\Import Business Task\Row_Count_Errors 1"
           TopLeft="459,1325.5" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Import Business Task\No_Match"
+          TopLeft="217,413.5" />
         <NodeLayout
           Size="113,42"
           Id="Package\Import Business Task\Lookup"
@@ -6725,25 +6725,25 @@ where [refTable].[Rating] = ?</property>
           Id="Package\Import Business Task\Get error Description for insert"
           TopLeft="148.5,1427.5" />
         <NodeLayout
+          Size="120,42"
+          Id="Package\Import Business Task\Multicast"
+          TopLeft="73,519.5" />
+        <NodeLayout
           Size="130,42"
           Id="Package\Import Business Task\Union All 2"
           TopLeft="4,1539.5" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Import Business Task\Multicast 1"
-          TopLeft="163,921.5" />
-        <NodeLayout
           Size="209,42"
           Id="Package\Import Business Task\S2_Import_Business_Errors"
-          TopLeft="299.5,1637.5" />
+          TopLeft="418.5,1566.5" />
         <NodeLayout
           Size="154,42"
           Id="Package\Import Business Task\Derived Column"
           TopLeft="327,209.5" />
         <NodeLayout
-          Size="120,42"
-          Id="Package\Import Business Task\Multicast"
-          TopLeft="73,519.5" />
+          Size="141,42"
+          Id="Package\Import Business Task\Match_Insert"
+          TopLeft="467,1223.5" />
         <NodeLayout
           Size="121,42"
           Id="Package\Import Business Task\Union All"
@@ -7045,7 +7045,7 @@ where [refTable].[Rating] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Business Task.Paths[Multicast Output 31]"
+          Id="Package\Import Business Task.Paths[Multicast Output 3]"
           TopLeft="151.666666666667,561.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7079,7 +7079,7 @@ where [refTable].[Rating] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Business Task.Paths[Multicast Output 3]"
+          Id="Package\Import Business Task.Paths[Multicast Output 31]"
           TopLeft="171,963.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7253,6 +7253,78 @@ where [refTable].[Rating] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Import Business Task.Paths[Lookup No Match Output]"
+          TopLeft="528,1163.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-249.5,61"
+              Start="0,0"
+              End="-249.5,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.873786407767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.873786407767"
+                    Point2="0,24.873786407767"
+                    Point3="-4,24.873786407767" />
+                  <mssgle:LineSegment
+                    End="-245.5,24.873786407767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-245.5,24.873786407767"
+                    Point2="-249.5,24.873786407767"
+                    Point3="-249.5,28.873786407767" />
+                  <mssgle:LineSegment
+                    End="-249.5,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-180.55638671875,29.873786407767,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Task.Paths[Lookup Match Output2]"
+          TopLeft="566,1163.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-28.5,60"
+              Start="0,0"
+              End="-28.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4660194174757" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4660194174757"
+                    Point2="0,24.4660194174757"
+                    Point3="-4,24.4660194174757" />
+                  <mssgle:LineSegment
+                    End="-24.5,24.4660194174757" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.5,24.4660194174757"
+                    Point2="-28.5,24.4660194174757"
+                    Point3="-28.5,28.4660194174757" />
+                  <mssgle:LineSegment
+                    End="-28.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-62.44138671875,29.4660194174757,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Import Business Task.Paths[Lookup Match Output1]"
           TopLeft="422.916666666667,761.5">
           <EdgeLayout.Curve>
@@ -7404,30 +7476,30 @@ where [refTable].[Rating] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Task.Paths[Union All Output 12]"
-          TopLeft="69,1581.5">
+          TopLeft="134,1560.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="335,56"
+              EndConnector="284.5,27"
               Start="0,0"
-              End="335,48.5">
+              End="277,27">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24" />
+                    End="138.25,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24"
-                    Point2="0,28"
-                    Point3="4,28" />
+                    Point1="138.25,0"
+                    Point2="142.25,0"
+                    Point3="142.25,4" />
                   <mssgle:LineSegment
-                    End="331,28" />
+                    End="142.25,23" />
                   <mssgle:CubicBezierSegment
-                    Point1="331,28"
-                    Point2="335,28"
-                    Point3="335,32" />
+                    Point1="142.25,23"
+                    Point2="142.25,27"
+                    Point3="146.25,27" />
                   <mssgle:LineSegment
-                    End="335,48.5" />
+                    End="277,27" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7436,94 +7508,9 @@ where [refTable].[Rating] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Lookup Match Output2]"
-          TopLeft="566,1163.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-28.5,60"
-              Start="0,0"
-              End="-28.5,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.4660194174757" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.4660194174757"
-                    Point2="0,24.4660194174757"
-                    Point3="-4,24.4660194174757" />
-                  <mssgle:LineSegment
-                    End="-24.5,24.4660194174757" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-24.5,24.4660194174757"
-                    Point2="-28.5,24.4660194174757"
-                    Point3="-28.5,28.4660194174757" />
-                  <mssgle:LineSegment
-                    End="-28.5,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-62.44138671875,29.4660194174757,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Task.Paths[Lookup No Match Output]"
-          TopLeft="528,1163.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-249.5,61"
-              Start="0,0"
-              End="-249.5,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.873786407767" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.873786407767"
-                    Point2="0,24.873786407767"
-                    Point3="-4,24.873786407767" />
-                  <mssgle:LineSegment
-                    End="-245.5,24.873786407767" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-245.5,24.873786407767"
-                    Point2="-249.5,24.873786407767"
-                    Point3="-249.5,28.873786407767" />
-                  <mssgle:LineSegment
-                    End="-249.5,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-180.55638671875,29.873786407767,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Business Task\Stage1_Business">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Import Business Task\Lookup 1">
     <Properties>
@@ -7548,12 +7535,25 @@ where [refTable].[Rating] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Import Business Task\Stage1_Business">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Import Business Task\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -7563,7 +7563,7 @@ where [refTable].[Rating] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

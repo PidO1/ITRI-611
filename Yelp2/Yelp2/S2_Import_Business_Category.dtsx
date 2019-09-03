@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_Business_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="75"
-  DTS:VersionGUID="{9B74F03E-03A7-4FFA-9199-FA12B7E9395A}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{3A4B376C-074C-42F8-A95E-8A3DB1D64505}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -296,7 +296,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">9/3/2019 10:34:30 AM</DTS:VariableValue>
+        DTS:DataType="7">9/3/2019 10:56:34 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -3988,6 +3988,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Categories Check.Paths[Lookup No Match Output]"
+          TopLeft="544.5,257">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85"
+              Start="0,0"
+              End="0,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,32.9453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Categories Check.Paths[Derived Column Output1]"
           TopLeft="545.75,192">
           <EdgeLayout.Curve>
@@ -4053,30 +4077,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Categories Check.Paths[Lookup No Match Output]"
-          TopLeft="544.5,257">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,85"
-              Start="0,0"
-              End="0,77.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,77.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,32.9453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -4086,7 +4086,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4096,7 +4096,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4135,10 +4135,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="185,42"
-          Id="Package\Check business and load business\S2_Business_Category"
-          TopLeft="150,330" />
-        <NodeLayout
           Size="154,42"
           Id="Package\Check business and load business\Derived Column"
           TopLeft="167,160" />
@@ -4153,11 +4149,53 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="277,42"
           Id="Package\Check business and load business\S2_Business_Category_Error_Descriptions"
-          TopLeft="97,548" />
+          TopLeft="104,476" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Check business and load business\Row Count 1"
+          TopLeft="186,403" />
         <NodeLayout
           Size="130,42"
           Id="Package\Check business and load business\Row Count"
           TopLeft="178,77" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Check business and load business\S2_Business_Category"
+          TopLeft="150,330" />
+        <EdgeLayout
+          Id="Package\Check business and load business.Paths[Row Count Output 11]"
+          TopLeft="255.5,445">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13,31"
+              Start="0,0"
+              End="-13,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="-4,15.5" />
+                  <mssgle:LineSegment
+                    End="-9,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9,15.5"
+                    Point2="-13,15.5"
+                    Point3="-13,19.5" />
+                  <mssgle:LineSegment
+                    End="-13,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Check business and load business.Paths[Row Count Output 1]"
           TopLeft="243.5,119">
@@ -4215,6 +4253,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Check business and load business.Paths[OLE DB Destination Error Output]"
+          TopLeft="242.5,372">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13,31"
+              Start="0,0"
+              End="13,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="9,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9,15.5"
+                    Point2="13,15.5"
+                    Point3="13,19.5" />
+                  <mssgle:LineSegment
+                    End="13,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-66.70890625,20.5,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Check business and load business.Paths[Lookup Match Output]"
           TopLeft="242.25,283">
           <EdgeLayout.Curve>
@@ -4260,96 +4334,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Check business and load business\Row Count 1"
-          TopLeft="186,403" />
-        <EdgeLayout
-          Id="Package\Check business and load business.Paths[OLE DB Destination Error Output]"
-          TopLeft="242.5,372">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="13,31"
-              Start="0,0"
-              End="13,23.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.5"
-                    Point2="0,15.5"
-                    Point3="4,15.5" />
-                  <mssgle:LineSegment
-                    End="9,15.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9,15.5"
-                    Point2="13,15.5"
-                    Point3="13,19.5" />
-                  <mssgle:LineSegment
-                    End="13,23.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-66.70890625,20.5,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Check business and load business.Paths[Row Count Output 11]"
-          TopLeft="255.5,445">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20,103"
-              Start="0,0"
-              End="-20,95.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,47.5"
-                    Point2="0,51.5"
-                    Point3="-4,51.5" />
-                  <mssgle:LineSegment
-                    End="-16,51.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16,51.5"
-                    Point2="-20,51.5"
-                    Point3="-20,55.5" />
-                  <mssgle:LineSegment
-                    End="-20,95.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Check business and load business\S2_Business_Category">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Check business and load business\Lookup 1">
     <Properties>
@@ -4375,6 +4362,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Check business and load business\S1_Business_Category">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Check business and load business\S2_Business_Category">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

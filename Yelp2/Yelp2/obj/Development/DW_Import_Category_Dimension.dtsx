@@ -78,7 +78,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">9/3/2019 10:29:28 AM</DTS:VariableValue>
+        DTS:DataType="7">9/3/2019 11:37:05 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
