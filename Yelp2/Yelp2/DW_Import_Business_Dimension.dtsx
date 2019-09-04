@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="DW_Import_Business_Dimension"
   DTS:PackageType="5"
-  DTS:VersionBuild="119"
-  DTS:VersionGUID="{6824EF8A-20EA-417E-8740-4B99B55B5660}">
+  DTS:VersionBuild="120"
+  DTS:VersionGUID="{709CA366-70C8-47BD-8E2B-F9655646A3AB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -558,7 +558,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">9/3/2019 11:39:50 AM</DTS:VariableValue>
+        DTS:DataType="7">9/4/2019 6:48:12 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2991,7 +2991,7 @@ WHERE [Business_ID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Failure"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3020,7 +3020,7 @@ WHERE [Business_ID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_Import_Batch_Process_Task_Success"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3126,22 +3126,22 @@ WHERE [Business_ID] = ?</property>
         <NodeLayout
           Size="383,42"
           Id="Package\Create Import_Batch_Process_task_Import_Business_Dimension"
-          TopLeft="249,36" />
+          TopLeft="251,36" />
         <NodeLayout
           Size="207,42"
           Id="Package\Import Business Dimension"
-          TopLeft="314,169" />
+          TopLeft="316,169" />
         <NodeLayout
           Size="289,42"
           Id="Package\Update_Import_Batch_Process_Task_Failure"
-          TopLeft="479,355" />
+          TopLeft="645,257" />
         <NodeLayout
           Size="294,42"
           Id="Package\Update_Import_Batch_Process_Task_Success"
-          TopLeft="82,345" />
+          TopLeft="0,231" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="440.5,78">
+          TopLeft="442.5,78">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3175,30 +3175,24 @@ WHERE [Business_ID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="384.333333333333,211">
+          TopLeft="316,190">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-155.333333333333,134"
+              EndConnector="-169,41"
               Start="0,0"
-              End="-155.333333333333,126.5">
+              End="-169,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.2166826462128" />
+                    End="-165,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,50.2166826462128"
-                    Point2="0,54.2166826462128"
-                    Point3="-4,54.2166826462128" />
+                    Point1="-165,0"
+                    Point2="-169,0"
+                    Point3="-169,4" />
                   <mssgle:LineSegment
-                    End="-151.333333333333,54.2166826462128" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-151.333333333333,54.2166826462128"
-                    Point2="-155.333333333333,54.2166826462128"
-                    Point3="-155.333333333333,58.2166826462128" />
-                  <mssgle:LineSegment
-                    End="-155.333333333333,126.5" />
+                    End="-169,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3209,37 +3203,37 @@ WHERE [Business_ID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="450.666666666667,211">
+          TopLeft="452.666666666667,211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="172.833333333333,144"
+              EndConnector="336.833333333333,46"
               Start="0,0"
-              End="172.833333333333,136.5">
+              End="336.833333333333,38.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.2627037392138" />
+                    End="0,14.6116970278044" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,54.2627037392138"
-                    Point2="0,58.2627037392138"
-                    Point3="4,58.2627037392138" />
+                    Point1="0,14.6116970278044"
+                    Point2="0,18.6116970278044"
+                    Point3="4,18.6116970278044" />
                   <mssgle:LineSegment
-                    End="168.833333333333,58.2627037392138" />
+                    End="332.833333333333,18.6116970278044" />
                   <mssgle:CubicBezierSegment
-                    Point1="168.833333333333,58.2627037392138"
-                    Point2="172.833333333333,58.2627037392138"
-                    Point3="172.833333333333,62.2627037392138" />
+                    Point1="332.833333333333,18.6116970278044"
+                    Point2="336.833333333333,18.6116970278044"
+                    Point3="336.833333333333,22.6116970278044" />
                   <mssgle:LineSegment
-                    End="172.833333333333,136.5" />
+                    End="336.833333333333,38.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="71.1753190104167,63.2627037392138,30.4826953125,9.7490234375"
+              BoundingBox="153.175319010417,23.6116970278044,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3735,19 +3729,6 @@ WHERE [Business_ID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Import Business Dimension\S2_Business_Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Import Business Dimension\Slowly Changing Dimension">
     <Properties>
       <Property>
@@ -3826,6 +3807,19 @@ WHERE [Business_ID] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Import Business Dimension\Insert Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Business Dimension\S2_Business_Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
