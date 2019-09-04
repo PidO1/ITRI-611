@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="DW_Import_Category_Dimension"
   DTS:PackageType="5"
-  DTS:VersionBuild="125"
-  DTS:VersionGUID="{9811E1A7-F7FE-4333-9EC0-EE741E0A6D27}">
+  DTS:VersionBuild="162"
+  DTS:VersionGUID="{7AA52D2F-D4A8-4B99-ACBD-01F8614A0407}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -78,29 +78,58 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">9/3/2019 12:37:47 AM</DTS:VariableValue>
+        DTS:DataType="7">9/4/2019 7:54:09 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{35CD0B38-8F36-4EDF-8D2F-53E1D86372A2}"
+      DTS:DTSID="{AB57602E-D18C-4226-9894-6F2D41E24E69}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="Effective_Date">
-      <DTS:VariableValue
-        DTS:DataType="7">12/1/2018</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{237D599E-CBE9-4A78-A7AF-8FE9B35320FC}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="Error_row_Count">
+      DTS:ObjectName="Dim_Changing">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3B97CAFA-8EEB-4ED3-BE07-2C0305369670}"
+      DTS:DTSID="{4DE5B69F-23EC-4D2E-919E-53D84B017C13}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Dim_Historical">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{93428B1B-2C2C-4241-B931-5BD6B81FB5AF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Dim_New">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4E203475-1713-447B-A16C-F30CFA0B0350}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Dim_Unchanged">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E995C13E-3C8B-421A-AD7E-1FD81B4D721C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::Effective_Date]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Effective_Date">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2018</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E932D209-3870-4B2C-8967-BE506103D1FF}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="IBPT_ID">
@@ -109,23 +138,41 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A4F21790-6FA1-43F6-BD7B-9C44DBD9E96E}"
+      DTS:DTSID="{CE52B1FF-2CE2-4236-BFC0-B4525B67F759}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="Row_Count">
+      DTS:ObjectName="Records_Failed">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D8AE3A7C-778C-4984-8A19-135D4FD247B6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Records_In">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9A4A7D09-615F-4F52-9383-28E975EFEA66}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Records_Out">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Create Import_Batch_Process_task_Import_Category_Dimension"
+      DTS:refId="Package\Create Import_Batch_Process_task_Import_Business_Dimension"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{117FDA4B-A4F8-4252-A5FB-2F66ACFD22E6}"
+      DTS:DTSID="{46f76ae9-1a5a-46dc-a88c-00d9aed6cca3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Create Import_Batch_Process_task_Import_Category_Dimension"
+      DTS:ObjectName="Create Import_Batch_Process_task_Import_Business_Dimension"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -199,7 +246,7 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Import Category Dimension\Derived Column.Outputs[Derived Column Output].Columns[Expiration_Date]"
-                      dataType="dbDate"
+                      dataType="date"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Import Category Dimension\Derived Column.Outputs[Derived Column Output].Columns[Expiration_Date]"
@@ -210,13 +257,35 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)(@[User::Effective_Date])</property>
+                          name="Expression">@[User::Effective_Date]</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)(@[User::Effective_Date])</property>
+                          name="FriendlyExpression">@[User::Effective_Date]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Category Dimension\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Category Dimension\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]"
+                      name="IBPT_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::IBPT_ID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::IBPT_ID]</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -271,50 +340,6 @@
                   synchronousInputId="Package\Import Category Dimension\Derived Column 1.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Effective_Date]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Effective_Date]"
-                      name="Effective_Date"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)(@[User::Effective_Date])</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)(@[User::Effective_Date])</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Expiration_Date]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Expiration_Date]"
-                      name="Expiration_Date"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)("9999/01/01")</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)("9999/01/01")</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
@@ -337,6 +362,28 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
+                      refId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Expiration_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Expiration_Date]"
+                      name="Expiration_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)"9999-01-01"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)"9999-01-01"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
                       refId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Import_Action]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
@@ -350,13 +397,35 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"INSERT"</property>
+                          name="Expression">"Insert"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"INSERT"</property>
+                          name="FriendlyExpression">"Insert"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Effective_Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Effective_Date]"
+                      name="Effective_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::Effective_Date]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::Effective_Date]</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -402,6 +471,216 @@
                       refId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Category Dimension\Derived Column 2"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Category Dimension\Derived Column 2.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Category Dimension\Derived Column 2.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Category Dimension\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Category Dimension\Derived Column 2.Outputs[Derived Column Output].Columns[IBPT_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Category Dimension\Derived Column 2.Outputs[Derived Column Output].Columns[IBPT_ID]"
+                      name="IBPT_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::IBPT_ID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::IBPT_ID]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Category Dimension\Derived Column 2.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Category Dimension\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Category Dimension\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Category Dimension\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Category Dimension\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Category Dimension\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Category Dimension\EXpire records"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="EXpire records"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Category_Entity_Dimension] SET 
+[Expiration_Date] = ?,
+ [IsCurrent] = 0,
+[IBPT_ID] = ?,
+[Import_Action] = 'Expire' 
+WHERE 
+[Category_ID] = ? AND [IsCurrent] = '1'</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Category Dimension\EXpire records.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.AtomicDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.AtomicDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input].Columns[Expiration_Date]"
+                      cachedDataType="date"
+                      cachedName="Expiration_Date"
+                      externalMetadataColumnId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Import Category Dimension\Derived Column.Outputs[Derived Column Output].Columns[Expiration_Date]" />
+                    <inputColumn
+                      refId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input].Columns[IBPT_ID]"
+                      cachedDataType="i4"
+                      cachedName="IBPT_ID"
+                      externalMetadataColumnId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Import Category Dimension\Derived Column.Outputs[Derived Column Output].Columns[IBPT_ID]" />
+                    <inputColumn
+                      refId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input].Columns[C_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="C_ID"
+                      externalMetadataColumnId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[C_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbDate"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="75"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Category Dimension\EXpire records.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Category Dimension\EXpire records.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Category Dimension\EXpire records.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Category Dimension\EXpire records.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Category Dimension\EXpire records.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Category Dimension\EXpire records.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -503,24 +782,17 @@
                       externalMetadataColumnId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category_Title_Current]"
                       lineageId="Package\Import Category Dimension\Union All.Outputs[Union All Output 1].Columns[Category_Title_Current]" />
                     <inputColumn
-                      refId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].Columns[Effective_Date]"
-                      cachedDataType="dbDate"
-                      cachedName="Effective_Date"
-                      externalMetadataColumnId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Effective_Date]"
-                      lineageId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Effective_Date]" />
-                    <inputColumn
-                      refId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].Columns[Import_Action]"
-                      cachedDataType="wstr"
-                      cachedLength="6"
-                      cachedName="Import_Action"
-                      externalMetadataColumnId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Import_Action]"
-                      lineageId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Import_Action]" />
-                    <inputColumn
                       refId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].Columns[IsCurrent]"
                       cachedDataType="i4"
                       cachedName="IsCurrent"
                       externalMetadataColumnId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
                       lineageId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]" />
+                    <inputColumn
+                      refId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].Columns[Effective_Date]"
+                      cachedDataType="date"
+                      cachedName="Effective_Date"
+                      externalMetadataColumnId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Effective_Date]"
+                      lineageId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Effective_Date]" />
                     <inputColumn
                       refId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].Columns[Expiration_Date]"
                       cachedDataType="dbDate"
@@ -533,6 +805,13 @@
                       cachedName="IBPT_ID"
                       externalMetadataColumnId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IBPT_ID]"
                       lineageId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[IBPT_ID]" />
+                    <inputColumn
+                      refId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].Columns[Import_Action]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="Import_Action"
+                      externalMetadataColumnId="Package\Import Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Import_Action]"
+                      lineageId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Import_Action]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -605,236 +884,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Import Category Dimension\OLE DB Command"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Category_Entity_Dimension] SET [Expiration_Date] = ? WHERE [Category_ID] = ? AND IsCurrent =1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Import Category Dimension\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.AtomicDW]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.AtomicDW]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Import Category Dimension\OLE DB Command.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Import Category Dimension\OLE DB Command.Inputs[OLE DB Command Input].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      externalMetadataColumnId="Package\Import Category Dimension\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[C_ID]" />
-                    <inputColumn
-                      refId="Package\Import Category Dimension\OLE DB Command.Inputs[OLE DB Command Input].Columns[Expiration_Date]"
-                      cachedDataType="dbDate"
-                      cachedName="Expiration_Date"
-                      externalMetadataColumnId="Package\Import Category Dimension\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Import Category Dimension\Derived Column.Outputs[Derived Column Output].Columns[Expiration_Date]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Import Category Dimension\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="dbDate"
-                      name="Param_0">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Import Category Dimension\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="wstr"
-                      length="75"
-                      name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Import Category Dimension\OLE DB Command.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Import Category Dimension\OLE DB Command.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Import Category Dimension\OLE DB Command.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Import Category Dimension\OLE DB Command.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Category Dimension\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import Category Dimension\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import Category Dimension\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import Category Dimension\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Import Category Dimension\OLE DB Command 1"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command 1"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Category_Entity_Dimension] SET [Category_Title_Current] = ?,Import_Action='Updated' WHERE [Category_ID] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Import Category Dimension\OLE DB Command 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.AtomicDW]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.AtomicDW]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Import Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Import Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      externalMetadataColumnId="Package\Import Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[C_ID]" />
-                    <inputColumn
-                      refId="Package\Import Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Category_Title_Current]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="Category_Title_Current"
-                      externalMetadataColumnId="Package\Import Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[Category_Title_Current]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Import Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="wstr"
-                      length="75"
-                      name="Param_0">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Import Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="wstr"
-                      length="75"
-                      name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Import Category Dimension\OLE DB Command 1.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Import Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Import Category Dimension\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Import Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Category Dimension\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import Category Dimension\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import Category Dimension\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import Category Dimension\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Import Category Dimension\Row Count"
               componentClassID="Microsoft.RowCount"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -844,7 +893,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the variable to hold the row count."
-                  name="VariableName">User::Row_Count</property>
+                  name="VariableName">User::Dim_Historical</property>
               </properties>
               <inputs>
                 <input
@@ -859,6 +908,93 @@
                   refId="Package\Import Category Dimension\Row Count.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
                   synchronousInputId="Package\Import Category Dimension\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Category Dimension\Row Count 1"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count 1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Dim_New</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Category Dimension\Row Count 1.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Category Dimension\Row Count 1.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Import Category Dimension\Row Count 1.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Category Dimension\Row Count 2"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count 2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Dim_Changing</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Category Dimension\Row Count 2.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Category Dimension\Row Count 2.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Import Category Dimension\Row Count 2.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Category Dimension\Row Count 3"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count 3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Dim_Unchanged</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Category Dimension\Row Count 3.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Category Dimension\Row Count 3.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Import Category Dimension\Row Count 3.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -1045,11 +1181,11 @@ FROM            Categories</property>
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Category_ID], [Category_Title], [Category_Title_Current],[Effective_Date],[Expiration_Date] FROM [dbo].[Category_Entity_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Category_ID], [Category_Title], [Category_Title_Current],[IsCurrent] FROM [dbo].[Category_Entity_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
-                  name="CurrentRowWhere">[Effective_Date] IS NOT NULL AND [Expiration_Date] IS NULL</property>
+                  name="CurrentRowWhere">[IsCurrent] = '1'</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
@@ -1154,13 +1290,9 @@ FROM            Categories</property>
                       length="75"
                       name="Category_Title_Current" />
                     <externalMetadataColumn
-                      refId="Package\Import Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Effective_Date]"
-                      dataType="dbDate"
-                      name="Effective_Date" />
-                    <externalMetadataColumn
-                      refId="Package\Import Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Expiration_Date]"
-                      dataType="dbDate"
-                      name="Expiration_Date" />
+                      refId="Package\Import Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[IsCurrent]"
+                      dataType="bool"
+                      name="IsCurrent" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1223,68 +1355,6 @@ FROM            Categories</property>
               name="Union All"
               version="1">
               <inputs>
-                <input
-                  refId="Package\Import Category Dimension\Union All.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Import Category Dimension\Union All.Inputs[Union All Input 1].Columns[C_ID]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="C_ID"
-                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[C_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Import Category Dimension\Union All.Outputs[Union All Output 1].Columns[C_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Import Category Dimension\Union All.Inputs[Union All Input 1].Columns[Category_Title]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="Category_Title"
-                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[Category_Title]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Import Category Dimension\Union All.Outputs[Union All Output 1].Columns[Category_Title]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Import Category Dimension\Union All.Inputs[Union All Input 1].Columns[IBPT_ID]"
-                      cachedDataType="i4"
-                      cachedName="IBPT_ID"
-                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[IBPT_ID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Import Category Dimension\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Import Category Dimension\Union All.Inputs[Union All Input 1].Columns[Category_Title_Current]"
-                      cachedDataType="wstr"
-                      cachedLength="75"
-                      cachedName="Category_Title_Current"
-                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[Category_Title_Current]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Import Category Dimension\Union All.Outputs[Union All Output 1].Columns[Category_Title_Current]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
                 <input
                   refId="Package\Import Category Dimension\Union All.Inputs[Union All Input 2]"
                   hasSideEffects="true"
@@ -1350,9 +1420,72 @@ FROM            Categories</property>
                 </input>
                 <input
                   refId="Package\Import Category Dimension\Union All.Inputs[Union All Input 3]"
-                  dangling="true"
                   hasSideEffects="true"
                   name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Category Dimension\Union All.Inputs[Union All Input 3].Columns[C_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="C_ID"
+                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[C_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Category Dimension\Union All.Outputs[Union All Output 1].Columns[C_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Category Dimension\Union All.Inputs[Union All Input 3].Columns[Category_Title]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="Category_Title"
+                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[Category_Title]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Category Dimension\Union All.Outputs[Union All Output 1].Columns[Category_Title]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Category Dimension\Union All.Inputs[Union All Input 3].Columns[IBPT_ID]"
+                      cachedDataType="i4"
+                      cachedName="IBPT_ID"
+                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[IBPT_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Category Dimension\Union All.Outputs[Union All Output 1].Columns[IBPT_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Category Dimension\Union All.Inputs[Union All Input 3].Columns[Category_Title_Current]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="Category_Title_Current"
+                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[Category_Title_Current]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import Category Dimension\Union All.Outputs[Union All Output 1].Columns[Category_Title_Current]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import Category Dimension\Union All.Inputs[Union All Input 1]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 1">
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -1389,16 +1522,135 @@ FROM            Categories</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Import Category Dimension\Update type 1 changes"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update type 1 changes"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Category_Entity_Dimension] SET 
+[Import_Action] = 'Update',
+[Category_Title_Current] = ?
+ WHERE [Category_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Category Dimension\Update type 1 changes.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.AtomicDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.AtomicDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Category Dimension\Update type 1 changes.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Category Dimension\Update type 1 changes.Inputs[OLE DB Command Input].Columns[C_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="C_ID"
+                      externalMetadataColumnId="Package\Import Category Dimension\Update type 1 changes.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[C_ID]" />
+                    <inputColumn
+                      refId="Package\Import Category Dimension\Update type 1 changes.Inputs[OLE DB Command Input].Columns[Category_Title_Current]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="Category_Title_Current"
+                      externalMetadataColumnId="Package\Import Category Dimension\Update type 1 changes.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output].Columns[Category_Title_Current]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Category Dimension\Update type 1 changes.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="75"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Import Category Dimension\Update type 1 changes.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="75"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Category Dimension\Update type 1 changes.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Import Category Dimension\Update type 1 changes.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Category Dimension\Update type 1 changes.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Import Category Dimension\Update type 1 changes.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Category Dimension\Update type 1 changes.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Category Dimension\Update type 1 changes.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Category Dimension\Update type 1 changes.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Category Dimension\Update type 1 changes.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Import Category Dimension.Paths[Changing Attribute Updates Output]"
-              endId="Package\Import Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              endId="Package\Import Category Dimension\Row Count 2.Inputs[Row Count Input 1]"
               name="Changing Attribute Updates Output"
               startId="Package\Import Category Dimension\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
             <path
               refId="Package\Import Category Dimension.Paths[Derived Column Output]"
-              endId="Package\Import Category Dimension\OLE DB Command.Inputs[OLE DB Command Input]"
+              endId="Package\Import Category Dimension\EXpire records.Inputs[OLE DB Command Input]"
               name="Derived Column Output"
               startId="Package\Import Category Dimension\Derived Column.Outputs[Derived Column Output]" />
             <path
@@ -1407,30 +1659,50 @@ FROM            Categories</property>
               name="Derived Column Output"
               startId="Package\Import Category Dimension\Derived Column 1.Outputs[Derived Column Output]" />
             <path
+              refId="Package\Import Category Dimension.Paths[Derived Column Output2]"
+              endId="Package\Import Category Dimension\Update type 1 changes.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Import Category Dimension\Derived Column 2.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Import Category Dimension.Paths[Historical Attribute Inserts Output]"
-              endId="Package\Import Category Dimension\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Import Category Dimension\Row Count.Inputs[Row Count Input 1]"
               name="Historical Attribute Inserts Output"
               startId="Package\Import Category Dimension\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
             <path
               refId="Package\Import Category Dimension.Paths[New Output]"
-              endId="Package\Import Category Dimension\Union All.Inputs[Union All Input 1]"
+              endId="Package\Import Category Dimension\Row Count 1.Inputs[Row Count Input 1]"
               name="New Output"
               startId="Package\Import Category Dimension\Slowly Changing Dimension.Outputs[New Output]" />
             <path
               refId="Package\Import Category Dimension.Paths[OLE DB Command Output]"
               endId="Package\Import Category Dimension\Union All.Inputs[Union All Input 2]"
               name="OLE DB Command Output"
-              startId="Package\Import Category Dimension\OLE DB Command.Outputs[OLE DB Command Output]" />
+              startId="Package\Import Category Dimension\EXpire records.Outputs[OLE DB Command Output]" />
             <path
               refId="Package\Import Category Dimension.Paths[OLE DB Source Output]"
-              endId="Package\Import Category Dimension\Row Count.Inputs[Row Count Input 1]"
+              endId="Package\Import Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="OLE DB Source Output"
               startId="Package\Import Category Dimension\S2_Categories.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Import Category Dimension.Paths[Row Count Output 1]"
-              endId="Package\Import Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              endId="Package\Import Category Dimension\Derived Column.Inputs[Derived Column Input]"
               name="Row Count Output 1"
               startId="Package\Import Category Dimension\Row Count.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Import Category Dimension.Paths[Row Count Output 11]"
+              endId="Package\Import Category Dimension\Union All.Inputs[Union All Input 3]"
+              name="Row Count Output 1"
+              startId="Package\Import Category Dimension\Row Count 1.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Import Category Dimension.Paths[Row Count Output 12]"
+              endId="Package\Import Category Dimension\Derived Column 2.Inputs[Derived Column Input]"
+              name="Row Count Output 1"
+              startId="Package\Import Category Dimension\Row Count 2.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Import Category Dimension.Paths[Unchanged Output]"
+              endId="Package\Import Category Dimension\Row Count 3.Inputs[Row Count Input 1]"
+              name="Unchanged Output"
+              startId="Package\Import Category Dimension\Slowly Changing Dimension.Outputs[Unchanged Output]" />
             <path
               refId="Package\Import Category Dimension.Paths[Union All Output 1]"
               endId="Package\Import Category Dimension\Derived Column 1.Inputs[Derived Column Input]"
@@ -1453,7 +1725,7 @@ FROM            Categories</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{27649E71-592A-4D8F-A4C5-2B9E53B8F996}"
-          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Failed',&#xA;IBPT_Records_In = 0,&#xA;IBPT_Records_Failed = 0,&#xA;IBPT_Records_Out = 0&#xA;WHERE IBPT_ID = @IBPT_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Failed',&#xA;IBPT_Records_In = @Records_In,&#xA;IBPT_Records_Failed = @Records_Failed,&#xA;IBPT_Records_Out = @Records_Out&#xA; ,[IBPT_Dim_Historical] = @Dim_Historical&#xA;      ,[IBPT_Dim_Changing] = @Dim_Changing&#xA;      ,[IBPT_Dim_New] = @Dim_New&#xA;      ,[IBPT_Dim_Unchanged] =@Dim_Unchanged&#xA;WHERE IBPT_ID = @IBPT_ID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@Current_Date_Time"
             SQLTask:DtsVariableName="User::Current_Date_Time"
@@ -1463,6 +1735,48 @@ FROM            Categories</property>
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@IBPT_ID"
             SQLTask:DtsVariableName="User::IBPT_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_Changing"
+            SQLTask:DtsVariableName="User::Dim_Changing"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_Historical"
+            SQLTask:DtsVariableName="User::Dim_Historical"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_New"
+            SQLTask:DtsVariableName="User::Dim_New"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_Unchanged"
+            SQLTask:DtsVariableName="User::Dim_Unchanged"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Records_Failed"
+            SQLTask:DtsVariableName="User::Records_Failed"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Records_In"
+            SQLTask:DtsVariableName="User::Records_In"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Records_Out"
+            SQLTask:DtsVariableName="User::Records_Out"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
@@ -1482,7 +1796,7 @@ FROM            Categories</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{27649E71-592A-4D8F-A4C5-2B9E53B8F996}"
-          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Row_Count,&#xA;IBPT_Records_Failed = @Error_row_Count,&#xA;IBPT_Records_Out = @Row_Count - @Error_row_Count&#xA;WHERE IBPT_ID = @IBPT_ID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Records_In,&#xA;IBPT_Records_Failed = @Records_Failed,&#xA;IBPT_Records_Out = @Records_Out&#xA; ,[IBPT_Dim_Historical] = @Dim_Historical&#xA;      ,[IBPT_Dim_Changing] = @Dim_Changing&#xA;      ,[IBPT_Dim_New] = @Dim_New&#xA;      ,[IBPT_Dim_Unchanged] =@Dim_Unchanged&#xA;WHERE IBPT_ID = @IBPT_ID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@Current_Date_Time"
             SQLTask:DtsVariableName="User::Current_Date_Time"
@@ -1490,20 +1804,50 @@ FROM            Categories</property>
             SQLTask:DataType="6"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="@Row_Count"
-            SQLTask:DtsVariableName="User::Row_Count"
+            SQLTask:ParameterName="@Dim_Changing"
+            SQLTask:DtsVariableName="User::Dim_Changing"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="@Error_row_Count"
-            SQLTask:DtsVariableName="User::Error_row_Count"
+            SQLTask:ParameterName="@Dim_Historical"
+            SQLTask:DtsVariableName="User::Dim_Historical"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_New"
+            SQLTask:DtsVariableName="User::Dim_New"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@IBPT_ID"
             SQLTask:DtsVariableName="User::IBPT_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Records_In"
+            SQLTask:DtsVariableName="User::Records_In"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Records_Failed"
+            SQLTask:DtsVariableName="User::Records_Failed"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Records_Out"
+            SQLTask:DtsVariableName="User::Records_Out"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_Unchanged"
+            SQLTask:DtsVariableName="User::Dim_Unchanged"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="11"
             SQLTask:ParameterSize="-1" />
@@ -1515,8 +1859,8 @@ FROM            Categories</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{0D3C73CC-8F98-4539-972B-D0546A1CFE87}"
-      DTS:From="Package\Create Import_Batch_Process_task_Import_Category_Dimension"
+      DTS:DTSID="{FECA4FC4-312C-47F0-897E-617D74013126}"
+      DTS:From="Package\Create Import_Batch_Process_task_Import_Business_Dimension"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Import Category Dimension" />
@@ -1551,81 +1895,43 @@ FROM            Categories</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="384,42"
-          Id="Package\Create Import_Batch_Process_task_Import_Category_Dimension"
-          TopLeft="249,36" />
-        <NodeLayout
           Size="209,42"
           Id="Package\Import Category Dimension"
-          TopLeft="314,169" />
+          TopLeft="362,126" />
         <NodeLayout
           Size="289,42"
           Id="Package\Update_Import_Batch_Process_Task_Failure"
-          TopLeft="479,355" />
+          TopLeft="534,294" />
         <NodeLayout
           Size="294,42"
           Id="Package\Update_Import_Batch_Process_Task_Success"
-          TopLeft="82,345" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="441,78">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-22.5,91"
-              Start="0,0"
-              End="-22.5,83.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.5"
-                    Point2="0,45.5"
-                    Point3="-4,45.5" />
-                  <mssgle:LineSegment
-                    End="-18.5,45.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-18.5,45.5"
-                    Point2="-22.5,45.5"
-                    Point3="-22.5,49.5" />
-                  <mssgle:LineSegment
-                    End="-22.5,83.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="86,265" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="385,211">
+          TopLeft="433,168">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-156,134"
+              EndConnector="-200,97"
               Start="0,0"
-              End="-156,126.5">
+              End="-200,89.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.2108262108262" />
+                    End="0,35.2421652421652" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,50.2108262108262"
-                    Point2="0,54.2108262108262"
-                    Point3="-4,54.2108262108262" />
+                    Point1="0,35.2421652421652"
+                    Point2="0,39.2421652421652"
+                    Point3="-4,39.2421652421652" />
                   <mssgle:LineSegment
-                    End="-152,54.2108262108262" />
+                    End="-196,39.2421652421652" />
                   <mssgle:CubicBezierSegment
-                    Point1="-152,54.2108262108262"
-                    Point2="-156,54.2108262108262"
-                    Point3="-156,58.2108262108262" />
+                    Point1="-196,39.2421652421652"
+                    Point2="-200,39.2421652421652"
+                    Point3="-200,43.2421652421652" />
                   <mssgle:LineSegment
-                    End="-156,126.5" />
+                    End="-200,89.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1636,38 +1942,76 @@ FROM            Categories</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="452,211">
+          TopLeft="500,168">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="171.5,144"
+              EndConnector="178.5,126"
               Start="0,0"
-              End="171.5,136.5">
+              End="178.5,118.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.2564102564103" />
+                    End="0,46.974358974359" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,54.2564102564103"
-                    Point2="0,58.2564102564103"
-                    Point3="4,58.2564102564103" />
+                    Point1="0,46.974358974359"
+                    Point2="0,50.974358974359"
+                    Point3="4,50.974358974359" />
                   <mssgle:LineSegment
-                    End="167.5,58.2564102564103" />
+                    End="174.5,50.974358974359" />
                   <mssgle:CubicBezierSegment
-                    Point1="167.5,58.2564102564103"
-                    Point2="171.5,58.2564102564103"
-                    Point3="171.5,62.2564102564103" />
+                    Point1="174.5,50.974358974359"
+                    Point2="178.5,50.974358974359"
+                    Point3="178.5,54.974358974359" />
                   <mssgle:LineSegment
-                    End="171.5,136.5" />
+                    End="178.5,118.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="70.50865234375,63.2564102564103,30.4826953125,9.7490234375"
+              BoundingBox="74.00865234375,55.974358974359,30.4826953125,9.7490234375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="383,42"
+          Id="Package\Create Import_Batch_Process_task_Import_Business_Dimension"
+          TopLeft="314,23" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="505.5,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-39,61"
+              Start="0,0"
+              End="-39,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="-4,30.5" />
+                  <mssgle:LineSegment
+                    End="-35,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35,30.5"
+                    Point2="-39,30.5"
+                    Point3="-39,34.5" />
+                  <mssgle:LineSegment
+                    End="-39,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1679,201 +2023,13 @@ FROM            Categories</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="163,42"
-          Id="Package\Import Category Dimension\Insert Destination"
-          TopLeft="151,719.5" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Import Category Dimension\OLE DB Command 1"
-          TopLeft="294,311.5" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Import Category Dimension\Row Count"
-          TopLeft="167.5,107.5" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Import Category Dimension\Derived Column 1"
-          TopLeft="151,617.5" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Import Category Dimension\Slowly Changing Dimension"
-          TopLeft="128,209.5" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Import Category Dimension\OLE DB Command"
-          TopLeft="5.50000000000006,413.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Import Category Dimension\Union All"
-          TopLeft="172,515.5" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Import Category Dimension\Derived Column"
-          TopLeft="17.5000000000001,311.5" />
-        <NodeLayout
           Size="146,42"
           Id="Package\Import Category Dimension\S2_Categories"
           TopLeft="159.5,5.5" />
-        <EdgeLayout
-          Id="Package\Import Category Dimension.Paths[Historical Attribute Inserts Output]"
-          TopLeft="182.25,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-87.75,60"
-              Start="0,0"
-              End="-87.75,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.503937007874" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.503937007874"
-                    Point2="0,20.503937007874"
-                    Point3="-4,20.503937007874" />
-                  <mssgle:LineSegment
-                    End="-83.75,20.503937007874" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-83.75,20.503937007874"
-                    Point2="-87.75,20.503937007874"
-                    Point3="-87.75,24.503937007874" />
-                  <mssgle:LineSegment
-                    End="-87.75,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-118.93138671875,25.503937007874,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Category Dimension.Paths[Derived Column Output1]"
-          TopLeft="232.5,659.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Category Dimension.Paths[Derived Column Output]"
-          TopLeft="91.5000000000001,353.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Category Dimension.Paths[Changing Attribute Updates Output]"
-          TopLeft="282.75,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="98.75,60"
-              Start="0,0"
-              End="98.75,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.503937007874" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.503937007874"
-                    Point2="0,20.503937007874"
-                    Point3="4,20.503937007874" />
-                  <mssgle:LineSegment
-                    End="94.75,20.503937007874" />
-                  <mssgle:CubicBezierSegment
-                    Point1="94.75,20.503937007874"
-                    Point2="98.75,20.503937007874"
-                    Point3="98.75,24.503937007874" />
-                  <mssgle:LineSegment
-                    End="98.75,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-29.15890625,25.503937007874,157.0678125,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Category Dimension.Paths[Union All Output 1]"
-          TopLeft="232.5,557.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Category Dimension.Paths[Row Count Output 1]"
-          TopLeft="232.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Import Category Dimension\Slowly Changing Dimension"
+          TopLeft="128,107.5" />
         <EdgeLayout
           Id="Package\Import Category Dimension.Paths[OLE DB Source Output]"
           TopLeft="232.5,47.5">
@@ -1896,32 +2052,220 @@ FROM            Categories</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Import Category Dimension\Derived Column"
+          TopLeft="21.5000000000001,255.5" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Import Category Dimension\EXpire records"
+          TopLeft="9.50000000000006,357.5" />
         <EdgeLayout
-          Id="Package\Import Category Dimension.Paths[OLE DB Command Output]"
-          TopLeft="88.5000000000001,455.5">
+          Id="Package\Import Category Dimension.Paths[Derived Column Output]"
+          TopLeft="98.5000000000001,297.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125.166666666667,60"
+              EndConnector="-15.5,60"
               Start="0,0"
-              End="125.166666666667,52.5">
+              End="-15.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5301794453507" />
+                    End="0,26" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453507"
-                    Point2="0,35.5301794453507"
-                    Point3="4,35.5301794453507" />
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
                   <mssgle:LineSegment
-                    End="121.166666666667,35.5301794453507" />
+                    End="-11.5,30" />
                   <mssgle:CubicBezierSegment
-                    Point1="121.166666666667,35.5301794453507"
-                    Point2="125.166666666667,35.5301794453507"
-                    Point3="125.166666666667,39.5301794453507" />
+                    Point1="-11.5,30"
+                    Point2="-15.5,30"
+                    Point3="-15.5,34" />
                   <mssgle:LineSegment
-                    End="125.166666666667,52.5" />
+                    End="-15.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Import Category Dimension\Union All"
+          TopLeft="192,513.5" />
+        <EdgeLayout
+          Id="Package\Import Category Dimension.Paths[OLE DB Command Output]"
+          TopLeft="83.0000000000001,399.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.666666666667,114"
+              Start="0,0"
+              End="126.666666666667,106.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5073409461664" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.5073409461664"
+                    Point2="0,67.5073409461664"
+                    Point3="4,67.5073409461664" />
+                  <mssgle:LineSegment
+                    End="122.666666666667,67.5073409461664" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122.666666666667,67.5073409461664"
+                    Point2="126.666666666667,67.5073409461664"
+                    Point3="126.666666666667,71.5073409461664" />
+                  <mssgle:LineSegment
+                    End="126.666666666667,106.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Import Category Dimension\Derived Column 1"
+          TopLeft="163,608.5" />
+        <EdgeLayout
+          Id="Package\Import Category Dimension.Paths[Union All Output 1]"
+          TopLeft="252.5,555.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8,53"
+              Start="0,0"
+              End="-8,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="-4,26.5" />
+                  <mssgle:LineSegment
+                    End="-4,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4,26.5"
+                    Point2="-8,26.5"
+                    Point3="-8,30.5" />
+                  <mssgle:LineSegment
+                    End="-8,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Import Category Dimension\Insert Destination"
+          TopLeft="168,709.5" />
+        <EdgeLayout
+          Id="Package\Import Category Dimension.Paths[Derived Column Output1]"
+          TopLeft="247,650.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Import Category Dimension\Update type 1 changes"
+          TopLeft="443,436.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Import Category Dimension\Row Count"
+          TopLeft="26,176" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Import Category Dimension\Row Count 1"
+          TopLeft="191,291" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Import Category Dimension\Row Count 2"
+          TopLeft="457,236" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Import Category Dimension\Row Count 3"
+          TopLeft="746,118" />
+        <EdgeLayout
+          Id="Package\Import Category Dimension.Paths[Historical Attribute Inserts Output]"
+          TopLeft="175.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-84.5000000000001,26.5"
+              Start="0,0"
+              End="-84.5000000000001,19">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.25"
+                    Point2="0,13.25"
+                    Point3="-4,13.25" />
+                  <mssgle:LineSegment
+                    End="-80.5000000000001,13.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-80.5000000000001,13.25"
+                    Point2="-84.5000000000001,13.25"
+                    Point3="-84.5000000000001,17.25" />
+                  <mssgle:LineSegment
+                    End="-84.5000000000001,19" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-117.30638671875,18.25,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Category Dimension.Paths[Row Count Output 1]"
+          TopLeft="94.75,218">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.5"
+              Start="0,0"
+              End="0,30">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1932,53 +2276,202 @@ FROM            Categories</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Category Dimension.Paths[New Output]"
-          TopLeft="232.5,251.5">
+          TopLeft="232.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18.8333333333334,264"
+              EndConnector="27.9999999999999,141.5"
               Start="0,0"
-              End="18.8333333333334,256.5">
+              End="27.9999999999999,134">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,152.332789559543" />
+                    End="0,66.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,152.332789559543"
-                    Point2="0,156.332789559543"
-                    Point3="4,156.332789559543" />
+                    Point1="0,66.75"
+                    Point2="0,70.75"
+                    Point3="4,70.75" />
                   <mssgle:LineSegment
-                    End="14.8333333333334,156.332789559543" />
+                    End="23.9999999999999,70.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="14.8333333333334,156.332789559543"
-                    Point2="18.8333333333334,156.332789559543"
-                    Point3="18.8333333333334,160.332789559543" />
+                    Point1="23.9999999999999,70.75"
+                    Point2="27.9999999999999,70.75"
+                    Point3="27.9999999999999,74.75" />
                   <mssgle:LineSegment
-                    End="18.8333333333334,256.5" />
+                    End="27.9999999999999,134" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.6747200520833,161.332789559543,54.1827734375,11.43359375"
+              BoundingBox="-13.09138671875,75.75,54.1827734375,11.43359375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Category Dimension.Paths[Row Count Output 11]"
+          TopLeft="259.916666666667,333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,180.5"
+              Start="0,0"
+              End="0,173">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,173" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Category Dimension.Paths[Changing Attribute Updates Output]"
+          TopLeft="282.75,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="243.75,86.5"
+              Start="0,0"
+              End="243.75,79">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.559842519685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.559842519685"
+                    Point2="0,29.559842519685"
+                    Point3="4,29.559842519685" />
+                  <mssgle:LineSegment
+                    End="239.75,29.559842519685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="239.75,29.559842519685"
+                    Point2="243.75,29.559842519685"
+                    Point3="243.75,33.559842519685" />
+                  <mssgle:LineSegment
+                    End="243.75,79" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="43.3410937499999,34.559842519685,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Category Dimension.Paths[Unchanged Output]"
+          TopLeft="337,122.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="409,16.1666666666667"
+              Start="0,0"
+              End="401.5,16.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="168.605504587156,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="168.605504587156,0"
+                    Point2="172.605504587156,0"
+                    Point3="172.605504587156,4" />
+                  <mssgle:LineSegment
+                    End="172.605504587156,12.1666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="172.605504587156,12.1666666666667"
+                    Point2="172.605504587156,16.1666666666667"
+                    Point3="176.605504587156,16.1666666666667" />
+                  <mssgle:LineSegment
+                    End="401.5,16.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="130.405172555906,-17.6630859375,84.4006640625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Import Category Dimension\Derived Column 2"
+          TopLeft="454,320" />
+        <EdgeLayout
+          Id="Package\Import Category Dimension.Paths[Row Count Output 12]"
+          TopLeft="526.5,278">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9,42"
+              Start="0,0"
+              End="9,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="4,21" />
+                  <mssgle:LineSegment
+                    End="5,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5,21"
+                    Point2="9,21"
+                    Point3="9,25" />
+                  <mssgle:LineSegment
+                    End="9,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Category Dimension.Paths[Derived Column Output2]"
+          TopLeft="536,362">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74.5"
+              Start="0,0"
+              End="0,67">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Import Category Dimension\Insert Destination">
+    design-time-name="Package\Import Category Dimension\S2_Categories">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -2022,24 +2515,29 @@ FROM            Categories</property>
   &lt;/GeneratedComponentsIdentificationStrings&gt;
   &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn&gt;IsCurrent&lt;/CurrentIndicatorColumn&gt;
   &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn&gt;Effective_Date&lt;/StartDateColumn&gt;
-  &lt;EndDateColumn&gt;Expiration_Date&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;User::Effective_Date&lt;/DateVariable&gt;
+  &lt;ValueCurrent&gt;1&lt;/ValueCurrent&gt;
+  &lt;ValueExpired&gt;0&lt;/ValueExpired&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Import Category Dimension\S2_Categories">
+    design-time-name="Package\Import Category Dimension\Insert Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
