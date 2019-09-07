@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="DW_Import_Categorise_Business_Fact_Table"
   DTS:PackageType="5"
-  DTS:VersionBuild="187"
-  DTS:VersionGUID="{DC28F5E9-9AB4-4676-92CB-7B0CB95D8837}">
+  DTS:VersionBuild="190"
+  DTS:VersionGUID="{6ED74DBB-30DA-440D-BD10-65D2C7427179}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -254,7 +254,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">9/7/2019 7:08:53 PM</DTS:VariableValue>
+        DTS:DataType="7">9/7/2019 11:33:33 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1112,6 +1112,18 @@ where [refTable].[Category_ID] = ?</property>
                       cachedName="Category_Key"
                       cachedSortKeyPosition="5"
                       lineageId="Package\Import Business Categorise Fact Table\Sort.Outputs[Sort Output].Columns[Category_Key]" />
+                    <inputColumn
+                      refId="Package\Import Business Categorise Fact Table\Merge Join.Inputs[Merge Join Left Input].Columns[IB_Year]"
+                      cachedDataType="i2"
+                      cachedName="IB_Year"
+                      cachedSortKeyPosition="6"
+                      lineageId="Package\Import Business Categorise Fact Table\Sort.Outputs[Sort Output].Columns[IB_Year]" />
+                    <inputColumn
+                      refId="Package\Import Business Categorise Fact Table\Merge Join.Inputs[Merge Join Left Input].Columns[IB_Month]"
+                      cachedDataType="i2"
+                      cachedName="IB_Month"
+                      cachedSortKeyPosition="7"
+                      lineageId="Package\Import Business Categorise Fact Table\Sort.Outputs[Sort Output].Columns[IB_Month]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1194,6 +1206,32 @@ where [refTable].[Category_ID] = ?</property>
                           dataType="System.Int32"
                           description="The input column associated with this output column"
                           name="InputColumnID">#{Package\Import Business Categorise Fact Table\Merge Join.Inputs[Merge Join Right Input].Columns[C_ID_weights]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\Merge Join.Outputs[Merge Join Output].Columns[IB_Year]"
+                      dataType="i2"
+                      lineageId="Package\Import Business Categorise Fact Table\Merge Join.Outputs[Merge Join Output].Columns[IB_Year]"
+                      name="IB_Year">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Import Business Categorise Fact Table\Merge Join.Inputs[Merge Join Left Input].Columns[IB_Year]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\Merge Join.Outputs[Merge Join Output].Columns[IB_Month]"
+                      dataType="i2"
+                      lineageId="Package\Import Business Categorise Fact Table\Merge Join.Outputs[Merge Join Output].Columns[IB_Month]"
+                      name="IB_Month">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Import Business Categorise Fact Table\Merge Join.Inputs[Merge Join Left Input].Columns[IB_Month]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1329,6 +1367,18 @@ where [refTable].[Category_ID] = ?</property>
                       cachedName="C_ID_weights"
                       externalMetadataColumnId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
                       lineageId="Package\Import Business Categorise Fact Table\Merge Join.Outputs[Merge Join Output].Columns[C_ID_weights]" />
+                    <inputColumn
+                      refId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IB_Year]"
+                      cachedDataType="i2"
+                      cachedName="IB_Year"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IB_Year]"
+                      lineageId="Package\Import Business Categorise Fact Table\Merge Join.Outputs[Merge Join Output].Columns[IB_Year]" />
+                    <inputColumn
+                      refId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IB_Month]"
+                      cachedDataType="i2"
+                      cachedName="IB_Month"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IB_Month]"
+                      lineageId="Package\Import Business Categorise Fact Table\Merge Join.Outputs[Merge Join Output].Columns[IB_Month]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1348,6 +1398,14 @@ where [refTable].[Category_ID] = ?</property>
                       refId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
                       dataType="r8"
                       name="Weight" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IB_Year]"
+                      dataType="i2"
+                      name="IB_Year" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IB_Month]"
+                      dataType="i2"
+                      name="IB_Month" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1431,7 +1489,7 @@ where [refTable].[Category_ID] = ?</property>
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
-      [B_Source_ID]
+     [IB_Year] ,[IB_Month],[B_Source_ID]
       ,[C_ID]
       ,[BC_order]
       ,[IBPT_ID]
@@ -1501,6 +1559,24 @@ WHERE ([IB_Month]=?) AND ([IB_Year]=?)</property>
                       lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[BC_order]"
                       name="BC_order"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Year]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IB_Year]"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Year]"
+                      name="IB_Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Month]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IB_Month]"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Month]"
+                      name="IB_Month"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1522,6 +1598,14 @@ WHERE ([IB_Month]=?) AND ([IB_Year]=?)</property>
                       refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IBPT_ID]"
                       dataType="i4"
                       name="IBPT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IB_Year]"
+                      dataType="i2"
+                      name="IB_Year" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IB_Month]"
+                      dataType="i2"
+                      name="IB_Month" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1529,6 +1613,16 @@ WHERE ([IB_Month]=?) AND ([IB_Year]=?)</property>
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[IB_Year]"
+                      dataType="i2"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[IB_Year]"
+                      name="IB_Year" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[IB_Month]"
+                      dataType="i2"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[IB_Month]"
+                      name="IB_Month" />
                     <outputColumn
                       refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[B_Source_ID]"
                       dataType="wstr"
@@ -2674,6 +2768,38 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           name="NewSortKeyPosition">5</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Categorise Fact Table\Sort.Inputs[Sort Input].Columns[IB_Year]"
+                      cachedDataType="i2"
+                      cachedName="IB_Year"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Year]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">6</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Business Categorise Fact Table\Sort.Inputs[Sort Input].Columns[IB_Month]"
+                      cachedDataType="i2"
+                      cachedName="IB_Month"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Month]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">7</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2754,6 +2880,34 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
                           name="SortColumnId">#{Package\Import Business Categorise Fact Table\Lookup 1.Outputs[Lookup Match Output].Columns[Category_Key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\Sort.Outputs[Sort Output].Columns[IB_Year]"
+                      dataType="i2"
+                      lineageId="Package\Import Business Categorise Fact Table\Sort.Outputs[Sort Output].Columns[IB_Year]"
+                      name="IB_Year"
+                      sortKeyPosition="6">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Year]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\Sort.Outputs[Sort Output].Columns[IB_Month]"
+                      dataType="i2"
+                      lineageId="Package\Import Business Categorise Fact Table\Sort.Outputs[Sort Output].Columns[IB_Month]"
+                      name="IB_Month"
+                      sortKeyPosition="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Month]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -3250,13 +3404,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Id="Package\Import Business Categorise Fact Table\Merge Join"
           TopLeft="471,530" />
         <NodeLayout
-          Size="107,42"
-          Id="Package\Import Business Categorise Fact Table\Sort 1"
-          TopLeft="717,398" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Import Business Categorise Fact Table\Script Component"
-          TopLeft="886,508" />
+          Size="98,42"
+          Id="Package\Import Business Categorise Fact Table\Sort"
+          TopLeft="266,440" />
         <NodeLayout
           Size="154,42"
           Id="Package\Import Business Categorise Fact Table\Derived Column"
@@ -3266,9 +3416,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Id="Package\Import Business Categorise Fact Table\OLE DB Destination"
           TopLeft="673,611" />
         <NodeLayout
-          Size="98,42"
-          Id="Package\Import Business Categorise Fact Table\Sort"
-          TopLeft="266,440" />
+          Size="107,42"
+          Id="Package\Import Business Categorise Fact Table\Sort 1"
+          TopLeft="717,398" />
         <NodeLayout
           Size="113,42"
           Id="Package\Import Business Categorise Fact Table\Lookup"
@@ -3286,6 +3436,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Id="Package\Import Business Categorise Fact Table\Row Count"
           TopLeft="499,85" />
         <NodeLayout
+          Size="163,42"
+          Id="Package\Import Business Categorise Fact Table\Script Component"
+          TopLeft="886,508" />
+        <NodeLayout
           Size="122,42"
           Id="Package\Import Business Categorise Fact Table\Lookup 1"
           TopLeft="258,351" />
@@ -3293,6 +3447,152 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Size="127,42"
           Id="Package\Import Business Categorise Fact Table\Aggregate"
           TopLeft="708,315" />
+        <EdgeLayout
+          Id="Package\Import Business Categorise Fact Table.Paths[Sort Output1]"
+          TopLeft="770.5,440">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-214.166666666667,90"
+              Start="0,0"
+              End="-214.166666666667,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.3434650455927" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.3434650455927"
+                    Point2="0,53.3434650455927"
+                    Point3="-4,53.3434650455927" />
+                  <mssgle:LineSegment
+                    End="-210.166666666667,53.3434650455927" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-210.166666666667,53.3434650455927"
+                    Point2="-214.166666666667,53.3434650455927"
+                    Point3="-214.166666666667,57.3434650455927" />
+                  <mssgle:LineSegment
+                    End="-214.166666666667,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Categorise Fact Table.Paths[Sort Output]"
+          TopLeft="315,482">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="200.666666666667,48"
+              Start="0,0"
+              End="200.666666666667,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4498480243161" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.4498480243161"
+                    Point2="0,28.4498480243161"
+                    Point3="4,28.4498480243161" />
+                  <mssgle:LineSegment
+                    End="196.666666666667,28.4498480243161" />
+                  <mssgle:CubicBezierSegment
+                    Point1="196.666666666667,28.4498480243161"
+                    Point2="200.666666666667,28.4498480243161"
+                    Point3="200.666666666667,32.4498480243161" />
+                  <mssgle:LineSegment
+                    End="200.666666666667,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Categorise Fact Table.Paths[Row Count Output 1]"
+          TopLeft="564,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Categorise Fact Table.Paths[Output 0]"
+          TopLeft="967.5,508">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87.5,-89"
+              Start="0,0"
+              End="87.5,-81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-40.5"
+                    Point2="0,-44.5"
+                    Point3="4,-44.5" />
+                  <mssgle:LineSegment
+                    End="83.5,-44.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="83.5,-44.5"
+                    Point2="87.5,-44.5"
+                    Point3="87.5,-48.5" />
+                  <mssgle:LineSegment
+                    End="87.5,-81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Categorise Fact Table.Paths[OLE DB Source Output]"
+          TopLeft="566.25,50">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[OLE DB Destination Error Output]"
           TopLeft="758.5,611">
@@ -3511,152 +3811,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Categorise Fact Table.Paths[Sort Output1]"
-          TopLeft="770.5,440">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-214.166666666667,90"
-              Start="0,0"
-              End="-214.166666666667,82.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.3434650455927" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,49.3434650455927"
-                    Point2="0,53.3434650455927"
-                    Point3="-4,53.3434650455927" />
-                  <mssgle:LineSegment
-                    End="-210.166666666667,53.3434650455927" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-210.166666666667,53.3434650455927"
-                    Point2="-214.166666666667,53.3434650455927"
-                    Point3="-214.166666666667,57.3434650455927" />
-                  <mssgle:LineSegment
-                    End="-214.166666666667,82.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Categorise Fact Table.Paths[Sort Output]"
-          TopLeft="315,482">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="200.666666666667,48"
-              Start="0,0"
-              End="200.666666666667,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.4498480243161" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.4498480243161"
-                    Point2="0,28.4498480243161"
-                    Point3="4,28.4498480243161" />
-                  <mssgle:LineSegment
-                    End="196.666666666667,28.4498480243161" />
-                  <mssgle:CubicBezierSegment
-                    Point1="196.666666666667,28.4498480243161"
-                    Point2="200.666666666667,28.4498480243161"
-                    Point3="200.666666666667,32.4498480243161" />
-                  <mssgle:LineSegment
-                    End="200.666666666667,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Categorise Fact Table.Paths[Row Count Output 1]"
-          TopLeft="564,127">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35"
-              Start="0,0"
-              End="0,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Categorise Fact Table.Paths[Output 0]"
-          TopLeft="967.5,508">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="87.5,-89"
-              Start="0,0"
-              End="87.5,-81.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-40.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-40.5"
-                    Point2="0,-44.5"
-                    Point3="4,-44.5" />
-                  <mssgle:LineSegment
-                    End="83.5,-44.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="83.5,-44.5"
-                    Point2="87.5,-44.5"
-                    Point3="87.5,-48.5" />
-                  <mssgle:LineSegment
-                    End="87.5,-81.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Business Categorise Fact Table.Paths[OLE DB Source Output]"
-          TopLeft="566.25,50">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35"
-              Start="0,0"
-              End="0,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -3679,7 +3833,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3689,7 +3843,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3715,7 +3869,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>

@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="DW_Import_BC"
   DTS:PackageType="5"
-  DTS:VersionBuild="109"
-  DTS:VersionGUID="{F0847E68-1FCB-4B91-90AE-9D43AF1E6E0E}">
+  DTS:VersionBuild="110"
+  DTS:VersionGUID="{595478EB-10FB-416B-AC14-3B01CA010EBD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -59,7 +59,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">9/5/2019 2:23:28 PM</DTS:VariableValue>
+        DTS:DataType="7">9/7/2019 11:35:07 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -80,7 +80,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="DW_Import_BC_Failure_Update"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -151,7 +151,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="DW_Import_BC_Sucess_Update"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -208,6 +208,7 @@
           DTS:refId="Package\Sequence Container\Categorise_Business_Fact"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{fa60e816-7336-49d1-8bbb-d823f1520ea5}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -218,6 +219,27 @@
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
               <PackageName>DW_Import_Categorise_Business_Fact_Table.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>IBP_ID</ParameterName>
+                <BindedVariableOrParameterName>User::IBP_ID</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Category_Hierarchy_Fact_Table"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{2da734c8-0863-490d-ab4d-ae0c24515662}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Category_Hierarchy_Fact_Table"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DW_Import_Category_Hierarchy_Fact_Table.dtsx</PackageName>
               <ParameterAssignment>
                 <ParameterName>IBP_ID</ParameterName>
                 <BindedVariableOrParameterName>User::IBP_ID</BindedVariableOrParameterName>
@@ -338,6 +360,10 @@
           Id="Package\Sequence Container\Categories_package"
           TopLeft="422,150" />
         <NodeLayout
+          Size="200,42"
+          Id="Package\Sequence Container\Categorise_Business_Fact"
+          TopLeft="172,154" />
+        <NodeLayout
           Size="176,42"
           Id="Package\Sequence Container\Load Business Entity"
           TopLeft="451,32" />
@@ -368,14 +394,14 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="200,42"
-          Id="Package\Sequence Container\Categorise_Business_Fact"
-          TopLeft="172,154" />
+          Size="229,42"
+          Id="Package\Sequence Container\Category_Hierarchy_Fact_Table"
+          TopLeft="203,256" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="650,306"
-          Size="650,349"
+          PanelSize="650,353"
+          Size="650,396"
           Id="Package\Sequence Container"
           TopLeft="174,118" />
         <EdgeLayout
@@ -414,30 +440,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="392,467">
+          TopLeft="392,514">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-109.5,75"
+              EndConnector="-109.5,28"
               Start="0,0"
-              End="-109.5,67.5">
+              End="-109.5,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.1104972375691" />
+                    End="0,7.24125230202578" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.1104972375691"
-                    Point2="0,30.1104972375691"
-                    Point3="-4,30.1104972375691" />
+                    Point1="0,7.24125230202578"
+                    Point2="0,11.2412523020258"
+                    Point3="-4,11.2412523020258" />
                   <mssgle:LineSegment
-                    End="-105.5,30.1104972375691" />
+                    End="-105.5,11.2412523020258" />
                   <mssgle:CubicBezierSegment
-                    Point1="-105.5,30.1104972375691"
-                    Point2="-109.5,30.1104972375691"
-                    Point3="-109.5,34.1104972375691" />
+                    Point1="-105.5,11.2412523020258"
+                    Point2="-109.5,11.2412523020258"
+                    Point3="-109.5,15.2412523020258" />
                   <mssgle:LineSegment
-                    End="-109.5,67.5" />
+                    End="-109.5,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -448,37 +474,37 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="606,467">
+          TopLeft="606,514">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="108.5,109"
+              EndConnector="108.5,62"
               Start="0,0"
-              End="108.5,101.5">
+              End="108.5,54.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.7605893186004" />
+                    End="0,20.8913443830571" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.7605893186004"
-                    Point2="0,43.7605893186004"
-                    Point3="4,43.7605893186004" />
+                    Point1="0,20.8913443830571"
+                    Point2="0,24.8913443830571"
+                    Point3="4,24.8913443830571" />
                   <mssgle:LineSegment
-                    End="104.5,43.7605893186004" />
+                    End="104.5,24.8913443830571" />
                   <mssgle:CubicBezierSegment
-                    Point1="104.5,43.7605893186004"
-                    Point2="108.5,43.7605893186004"
-                    Point3="108.5,47.7605893186004" />
+                    Point1="104.5,24.8913443830571"
+                    Point2="108.5,24.8913443830571"
+                    Point3="108.5,28.8913443830571" />
                   <mssgle:LineSegment
-                    End="108.5,101.5" />
+                    End="108.5,54.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="39.00865234375,48.7605893186004,30.4826953125,9.7490234375"
+              BoundingBox="39.00865234375,29.8913443830571,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

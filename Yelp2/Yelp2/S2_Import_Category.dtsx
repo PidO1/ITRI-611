@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import_Category"
   DTS:PackageType="5"
-  DTS:VersionBuild="127"
-  DTS:VersionGUID="{59145E6E-A2EA-4CD5-AB57-CBE093A31C63}">
+  DTS:VersionBuild="128"
+  DTS:VersionGUID="{D4BEDB9A-7F17-48D9-9EF2-DBF4D34836C0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -346,7 +346,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">9/5/2019 3:04:52 PM</DTS:VariableValue>
+        DTS:DataType="7">9/8/2019 12:07:11 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -611,6 +611,112 @@
                   <externalMetadataColumns />
                 </output>
               </outputs>
+            </component>
+            <component
+              refId="Package\Assign parents\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="7177"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Assign parents\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Error_File]"
+                  connectionManagerRefId="Package.ConnectionManagers[Error_File]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="300"
+                      cachedName="ErrorDescription"
+                      externalMetadataColumnId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
+                      lineageId="Package\Assign parents\Get error Description 1.Outputs[Output 0].Columns[ErrorDescription]" />
+                    <inputColumn
+                      refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].Columns[C_child]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="C_child"
+                      externalMetadataColumnId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[category_id]"
+                      lineageId="Package\Assign parents\Union All 1.Outputs[Union All Output 1].Columns[C_child]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[category_id]"
+                      dataType="wstr"
+                      length="75"
+                      name="category_id" />
+                    <externalMetadataColumn
+                      refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[title]"
+                      dataType="wstr"
+                      length="75"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[parent_1]"
+                      dataType="wstr"
+                      length="50"
+                      name="parent_1" />
+                    <externalMetadataColumn
+                      refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[parent_2]"
+                      dataType="wstr"
+                      length="50"
+                      name="parent_2" />
+                    <externalMetadataColumn
+                      refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[parent_3]"
+                      dataType="wstr"
+                      length="50"
+                      name="parent_3" />
+                    <externalMetadataColumn
+                      refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                    <externalMetadataColumn
+                      refId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]"
+                      dataType="wstr"
+                      length="300"
+                      name="ErrorDescription" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
             </component>
             <component
               refId="Package\Assign parents\Get error Description 1"
@@ -2887,6 +2993,11 @@ WHERE        (NOT (C_parent3 = N'none'))</property>
               name="OLE DB Source Output"
               startId="Package\Assign parents\Select parent 3 from Stage 1.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\Assign parents.Paths[Output 0]"
+              endId="Package\Assign parents\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Output 0"
+              startId="Package\Assign parents\Get error Description 1.Outputs[Output 0]" />
+            <path
               refId="Package\Assign parents.Paths[Row Count Output 1]"
               endId="Package\Assign parents\Get error Description 1.Inputs[Input 0]"
               name="Row Count Output 1"
@@ -4702,7 +4813,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="177,42"
           Id="Package\Assign parents\Get error Description 1"
-          TopLeft="353.14285716232,805" />
+          TopLeft="555.14285716232,747" />
         <NodeLayout
           Size="170,42"
           Id="Package\Assign parents\Error_Row_count 1"
@@ -5123,30 +5234,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Assign parents.Paths[Row Count Output 1]"
-          TopLeft="418.14285716232,761">
+          TopLeft="503.14285716232,740">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="23.5,44"
+              EndConnector="52.0000000000001,28"
               Start="0,0"
-              End="23.5,36.5">
+              End="44.5000000000001,28">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18" />
+                    End="22,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18"
-                    Point2="0,22"
-                    Point3="4,22" />
+                    Point1="22,0"
+                    Point2="26,0"
+                    Point3="26,4" />
                   <mssgle:LineSegment
-                    End="19.5,22" />
+                    End="26,24" />
                   <mssgle:CubicBezierSegment
-                    Point1="19.5,22"
-                    Point2="23.5,22"
-                    Point3="23.5,26" />
+                    Point1="26,24"
+                    Point2="26,28"
+                    Point3="30,28" />
                   <mssgle:LineSegment
-                    End="23.5,36.5" />
+                    End="44.5000000000001,28" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5181,6 +5292,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     Point3="-298.25,35.3099730458221" />
                   <mssgle:LineSegment
                     End="-298.25,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Assign parents\Flat File Destination"
+          TopLeft="870,714" />
+        <EdgeLayout
+          Id="Package\Assign parents.Paths[Output 0]"
+          TopLeft="732.14285716232,768">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137.85714283768,-33"
+              Start="0,0"
+              End="130.35714283768,-33">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="64.92857141884,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64.92857141884,0"
+                    Point2="68.92857141884,0"
+                    Point3="68.92857141884,-4" />
+                  <mssgle:LineSegment
+                    End="68.92857141884,-29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.92857141884,-29"
+                    Point2="68.92857141884,-33"
+                    Point3="72.92857141884,-33" />
+                  <mssgle:LineSegment
+                    End="130.35714283768,-33" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5273,7 +5422,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="210,42"
           Id="Package\Import Category Task\S2_Import_Category_Errors"
-          TopLeft="347.040816332091,571" />
+          TopLeft="525.040816332091,557" />
         <NodeLayout
           Size="177,42"
           Id="Package\Import Category Task\Get error Description"
@@ -5292,18 +5441,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           TopLeft="376.040816332091,432" />
         <EdgeLayout
           Id="Package\Import Category Task.Paths[Output 0]"
-          TopLeft="455.540816332091,526">
+          TopLeft="459.040816332091,526">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45"
+              EndConnector="171,31"
               Start="0,0"
-              End="0,37.5">
+              End="171,23.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5" />
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="167,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="167,15.5"
+                    Point2="171,15.5"
+                    Point3="171,19.5" />
+                  <mssgle:LineSegment
+                    End="171,23.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
