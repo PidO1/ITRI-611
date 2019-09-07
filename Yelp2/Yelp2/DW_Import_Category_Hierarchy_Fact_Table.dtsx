@@ -1,0 +1,983 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/6/2019 2:27:41 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MSI"
+  DTS:CreatorName="MSI\piete"
+  DTS:DTSID="{D0921A86-6811-4AB4-ABB5-2152217743CC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="7177"
+  DTS:ObjectName="DW_Import_Category_Hierarchy_Fact_Table"
+  DTS:PackageType="5"
+  DTS:VersionBuild="185"
+  DTS:VersionGUID="{228C83A8-8041-427F-9911-9BAB5F200068}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Error_File]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{564006BB-8E65-4FF0-9219-FCF245105AF5}"
+      DTS:ObjectName="Error_File">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::Error_Files_Folder]+"\\"+ @[System::PackageName]+"Errors.csv"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="7177"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\DW_Import_Category_Hierarchy_Fact_TableErrors.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="75"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="category_id"
+              DTS:DTSID="{94EB645A-A1BA-4A9B-822E-63DF31E28AAB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="75"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="title"
+              DTS:DTSID="{D15AB229-7102-465A-A558-164AD3E23818}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="parent_1"
+              DTS:DTSID="{28225F29-8845-4FC3-A8BD-36C99824B58B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="parent_2"
+              DTS:DTSID="{7A125F45-C06D-4A15-AF90-17EF19640808}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="parent_3"
+              DTS:DTSID="{05C1A9DF-3637-4BD2-A766-6A8B7ACA3430}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{F68A6947-A134-401C-B258-BBBDF8FD5A54}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{F99C4DD3-6562-4998-9102-5E8BD599C7EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="300"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorDescription"
+              DTS:DTSID="{49A56C7A-D913-4DA5-9250-C079F48F84BB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4B857A5A-DF24-4D9D-9334-99177D1A182E}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="7177"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\DW_Import_Categorise_Business_Fact_TableErrors.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="B_Source_ID"
+              DTS:DTSID="{B11A1BAA-2572-4F03-B967-F1979CEBCA77}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Business_Key"
+              DTS:DTSID="{D42045B3-19FE-4956-9A73-61F080C8B5D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category_Key"
+              DTS:DTSID="{9AC260F2-3BCB-4ADA-8120-E0F03691A642}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="C_ID_weights"
+              DTS:DTSID="{352CE64F-42E1-4A39-8911-CC49F3B76642}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weight"
+              DTS:DTSID="{C64A842F-7A34-4CFC-98AA-5F4DE763BED9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{9AC7C9CE-61DA-43A6-8DB0-5A9279B67854}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{C3A7D4EA-7038-483A-9F6C-AD23340ABBAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="300"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Error_Description"
+              DTS:DTSID="{44A57437-DBF8-47EF-A8C2-1B11A8D3CC0B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.AtomicDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{306D6D8A-445B-45CF-AF1A-7D50013EFE0A}"
+      DTS:ObjectName="localhost.AtomicDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AtomicDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.AtomicDW1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{8F6A11BC-4B55-41DB-B0DE-747A198B38F4}"
+      DTS:ObjectName="localhost.AtomicDW1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=AtomicDW;Integrated Security=True;Application Name=SSIS-DW_Import_Category_Dimension-{8F6A11BC-4B55-41DB-B0DE-747A198B38F4}localhost.AtomicDW1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.Stage21]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3D371FEF-F519-44E1-9D7A-0AC4DB251FF7}"
+      DTS:ObjectName="localhost.Stage21">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Stage2;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{90AC9E77-533F-4E31-A7DE-445D22E18BA1}"
+      DTS:ObjectName="FileName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Date.csv</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{B7C33D22-181F-4569-B89C-581B4AD3029B}"
+      DTS:ObjectName="IBP_ID"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2554D302-C3CF-422F-9816-B71057275F1F}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="GETDATE()"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Current_Date_Time">
+      <DTS:VariableValue
+        DTS:DataType="7">9/7/2019 5:58:54 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{403630EE-B759-467C-A722-97C24DDF0B46}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Dim_Changing">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C99A49E0-8B68-47F0-9E34-D1384CE357CF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Dim_Historical">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5071E94E-1017-4D4A-B807-DC69886F98DF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Dim_New">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{64719204-B067-41A3-BE14-EFBA1166B5E5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Dim_Unchanged">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2F763D3C-B09C-4EE2-A07A-54219D82CFA8}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::Effective_Date]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Effective_Date">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2018</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{933CCDC6-8D2E-4EEF-B983-878D0E9ECBB1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="IBPT_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C165B4D7-E83C-4535-B98C-416E80F31495}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Records_Failed">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{13CFFC70-E2A5-414D-8D92-F50BA8327971}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Records_In">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F4E13B95-259C-4AF8-9FD2-0CA2182F9627}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Records_Out">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create Import_Batch_Process_task_Import_Business_Dimension"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A384D466-D1AC-499E-A1A3-B1A2E3B3FFB8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Import_Batch_Process_task_Import_Business_Dimension"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8F6A11BC-4B55-41DB-B0DE-747A198B38F4}"
+          SQLTask:IsStoredProc="True"
+          SQLTask:SqlStatementSource="Create_Import_Batch_Process_Task" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="IBPT_Description"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="IBPT_Start"
+            SQLTask:DtsVariableName="User::Current_Date_Time"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="6"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="IBP_ID"
+            SQLTask:DtsVariableName="$Package::IBP_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="IBPT_ID"
+            SQLTask:DtsVariableName="User::IBPT_ID"
+            SQLTask:ParameterDirection="ReturnValue"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import Business Categorise Fact Table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F9627858-9D3F-44CD-973E-174DBD7EB111}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Business Categorise Fact Table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Business Categorise Fact Table\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Records_In</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Business Categorise Fact Table\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Business Categorise Fact Table\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Import Business Categorise Fact Table\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Business Categorise Fact Table\S2_Business_Category"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="S2_Business_Category"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Business_Category]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        IB_Year, IB_Month, Parent, Child, Level_From
+FROM            UNION_ALL_CATEGORY
+WHERE        (IB_Year = ?)AND (IB_Month=?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{3FC92946-C277-46F2-A743-8EABBE2C2130};"Parameter1:Input",{7CD5CA08-DABC-42E4-8E3E-0C852FAC48EB};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.Stage21]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.Stage21]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[Parent]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[Parent]"
+                      length="75"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[Parent]"
+                      name="Parent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[Child]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[Child]"
+                      length="75"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[Child]"
+                      name="Child"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[Level_From]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[Level_From]"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[Level_From]"
+                      name="Level_From"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Year]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IB_Year]"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Year]"
+                      name="IB_Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Month]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IB_Month]"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Month]"
+                      name="IB_Month"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[Parent]"
+                      dataType="wstr"
+                      length="75"
+                      name="Parent" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[Child]"
+                      dataType="wstr"
+                      length="75"
+                      name="Child" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[Level_From]"
+                      dataType="i4"
+                      name="Level_From" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IB_Year]"
+                      dataType="i2"
+                      name="IB_Year" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IB_Month]"
+                      dataType="i2"
+                      name="IB_Month" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[IB_Year]"
+                      dataType="i2"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[IB_Year]"
+                      name="IB_Year" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[IB_Month]"
+                      dataType="i2"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[IB_Month]"
+                      name="IB_Month" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[Parent]"
+                      dataType="wstr"
+                      length="75"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[Parent]"
+                      name="Parent" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[Child]"
+                      dataType="wstr"
+                      length="75"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[Child]"
+                      name="Child" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[Level_From]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[Level_From]"
+                      name="Level_From" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Business Categorise Fact Table.Paths[OLE DB Source Output]"
+              endId="Package\Import Business Categorise Fact Table\Row Count.Inputs[Row Count Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update_Import_Batch_Process_Task_Failure"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{61D146D5-A4ED-4BF0-A4CE-978880570964}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update_Import_Batch_Process_Task_Failure"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8F6A11BC-4B55-41DB-B0DE-747A198B38F4}"
+          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Failed',&#xA;IBPT_Records_In = @Records_In,&#xA;IBPT_Records_Failed = @Records_Failed,&#xA;IBPT_Records_Out = @Records_Out&#xA; ,[IBPT_Dim_Historical] = @Dim_Historical&#xA;      ,[IBPT_Dim_Changing] = @Dim_Changing&#xA;      ,[IBPT_Dim_New] = @Dim_New&#xA;      ,[IBPT_Dim_Unchanged] =@Dim_Unchanged&#xA;WHERE IBPT_ID = @IBPT_ID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Current_Date_Time"
+            SQLTask:DtsVariableName="User::Current_Date_Time"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="6"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@IBPT_ID"
+            SQLTask:DtsVariableName="User::IBPT_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_Changing"
+            SQLTask:DtsVariableName="User::Dim_Changing"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_Historical"
+            SQLTask:DtsVariableName="User::Dim_Historical"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_New"
+            SQLTask:DtsVariableName="User::Dim_New"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_Unchanged"
+            SQLTask:DtsVariableName="User::Dim_Unchanged"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Records_Failed"
+            SQLTask:DtsVariableName="User::Records_Failed"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Records_In"
+            SQLTask:DtsVariableName="User::Records_In"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Records_Out"
+            SQLTask:DtsVariableName="User::Records_Out"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update_Import_Batch_Process_Task_Success"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4EF6E484-50E4-4EEB-8600-1352F8826CFD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update_Import_Batch_Process_Task_Success"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8F6A11BC-4B55-41DB-B0DE-747A198B38F4}"
+          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Records_In,&#xA;IBPT_Records_Failed = @Records_Failed,&#xA;IBPT_Records_Out = @Records_Out&#xA; ,[IBPT_Dim_Historical] = @Dim_Historical&#xA;      ,[IBPT_Dim_Changing] = @Dim_Changing&#xA;      ,[IBPT_Dim_New] = @Dim_New&#xA;      ,[IBPT_Dim_Unchanged] =@Dim_Unchanged&#xA;WHERE IBPT_ID = @IBPT_ID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Current_Date_Time"
+            SQLTask:DtsVariableName="User::Current_Date_Time"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="6"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_Changing"
+            SQLTask:DtsVariableName="User::Dim_Changing"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_Historical"
+            SQLTask:DtsVariableName="User::Dim_Historical"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_New"
+            SQLTask:DtsVariableName="User::Dim_New"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@IBPT_ID"
+            SQLTask:DtsVariableName="User::IBPT_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Records_In"
+            SQLTask:DtsVariableName="User::Records_In"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Records_Failed"
+            SQLTask:DtsVariableName="User::Records_Failed"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Records_Out"
+            SQLTask:DtsVariableName="User::Records_Out"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Dim_Unchanged"
+            SQLTask:DtsVariableName="User::Dim_Unchanged"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{9D67C38A-3646-4F46-9E8F-F7D4F2E60EC6}"
+      DTS:From="Package\Create Import_Batch_Process_task_Import_Business_Dimension"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import Business Categorise Fact Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7C250506-CDAF-4D1B-BCD1-7FD7EFF9C4CC}"
+      DTS:From="Package\Import Business Categorise Fact Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Update_Import_Batch_Process_Task_Success" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{EA05325F-032C-4DFF-8AB4-4FF5CEA9D37B}"
+      DTS:From="Package\Import Business Categorise Fact Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Update_Import_Batch_Process_Task_Failure"
+      DTS:Value="1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="383,42"
+          Id="Package\Create Import_Batch_Process_task_Import_Business_Dimension"
+          TopLeft="314,23" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\Import Business Categorise Fact Table"
+          TopLeft="362,126" />
+        <NodeLayout
+          Size="289,42"
+          Id="Package\Update_Import_Batch_Process_Task_Failure"
+          TopLeft="534,294" />
+        <NodeLayout
+          Size="294,42"
+          Id="Package\Update_Import_Batch_Process_Task_Success"
+          TopLeft="86,265" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="505.5,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.5,61"
+              Start="0,0"
+              End="-13.5,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="-4,30.5" />
+                  <mssgle:LineSegment
+                    End="-9.5,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.5,30.5"
+                    Point2="-13.5,30.5"
+                    Point3="-13.5,34.5" />
+                  <mssgle:LineSegment
+                    End="-13.5,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="450,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-217,97"
+              Start="0,0"
+              End="-217,89.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1559633027523" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.1559633027523"
+                    Point2="0,39.1559633027523"
+                    Point3="-4,39.1559633027523" />
+                  <mssgle:LineSegment
+                    End="-213,39.1559633027523" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-213,39.1559633027523"
+                    Point2="-217,39.1559633027523"
+                    Point3="-217,43.1559633027523" />
+                  <mssgle:LineSegment
+                    End="-217,89.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="534,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="144.5,126"
+              Start="0,0"
+              End="144.5,118.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.8623853211009" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.8623853211009"
+                    Point2="0,50.8623853211009"
+                    Point3="4,50.8623853211009" />
+                  <mssgle:LineSegment
+                    End="140.5,50.8623853211009" />
+                  <mssgle:CubicBezierSegment
+                    Point1="140.5,50.8623853211009"
+                    Point2="144.5,50.8623853211009"
+                    Point3="144.5,54.8623853211009" />
+                  <mssgle:LineSegment
+                    End="144.5,118.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="57.00865234375,55.8623853211009,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Business Categorise Fact Table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Import Business Categorise Fact Table\S2_Business_Category"
+          TopLeft="476,8" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Import Business Categorise Fact Table\Row Count"
+          TopLeft="498,124" />
+        <EdgeLayout
+          Id="Package\Import Business Categorise Fact Table.Paths[OLE DB Source Output]"
+          TopLeft="565.75,50">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74"
+              Start="0,0"
+              End="0,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Business Categorise Fact Table\S2_Business_Category">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
