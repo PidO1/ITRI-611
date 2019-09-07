@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="DW_Import_Categorise_Business_Fact_Table"
   DTS:PackageType="5"
-  DTS:VersionBuild="183"
-  DTS:VersionGUID="{C8730D65-4BE5-4C96-88B0-2373CC3D491F}">
+  DTS:VersionBuild="187"
+  DTS:VersionGUID="{DC28F5E9-9AB4-4676-92CB-7B0CB95D8837}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -254,7 +254,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">9/7/2019 6:10:13 PM</DTS:VariableValue>
+        DTS:DataType="7">9/7/2019 7:08:53 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1430,9 +1430,8 @@ where [refTable].[Category_ID] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [IB_Year]
-      ,[IB_Month]
-      ,[B_Source_ID]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+      [B_Source_ID]
       ,[C_ID]
       ,[BC_order]
       ,[IBPT_ID]
@@ -1502,24 +1501,6 @@ WHERE ([IB_Month]=?) AND ([IB_Year]=?)</property>
                       lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[BC_order]"
                       name="BC_order"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Year]"
-                      dataType="i2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IB_Year]"
-                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Year]"
-                      name="IB_Year"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Month]"
-                      dataType="i2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IB_Month]"
-                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].Columns[IB_Month]"
-                      name="IB_Month"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1541,14 +1522,6 @@ WHERE ([IB_Month]=?) AND ([IB_Year]=?)</property>
                       refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IBPT_ID]"
                       dataType="i4"
                       name="IBPT_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IB_Year]"
-                      dataType="i2"
-                      name="IB_Year" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Output].ExternalColumns[IB_Month]"
-                      dataType="i2"
-                      name="IB_Month" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1556,16 +1529,6 @@ WHERE ([IB_Month]=?) AND ([IB_Year]=?)</property>
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[IB_Year]"
-                      dataType="i2"
-                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[IB_Year]"
-                      name="IB_Year" />
-                    <outputColumn
-                      refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[IB_Month]"
-                      dataType="i2"
-                      lineageId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[IB_Month]"
-                      name="IB_Month" />
                     <outputColumn
                       refId="Package\Import Business Categorise Fact Table\S2_Business_Category.Outputs[OLE DB Source Error Output].Columns[B_Source_ID]"
                       dataType="wstr"
@@ -3289,7 +3252,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <NodeLayout
           Size="107,42"
           Id="Package\Import Business Categorise Fact Table\Sort 1"
-          TopLeft="685,415" />
+          TopLeft="717,398" />
         <NodeLayout
           Size="163,42"
           Id="Package\Import Business Categorise Fact Table\Script Component"
@@ -3301,7 +3264,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <NodeLayout
           Size="171,42"
           Id="Package\Import Business Categorise Fact Table\OLE DB Destination"
-          TopLeft="676,594" />
+          TopLeft="673,611" />
         <NodeLayout
           Size="98,42"
           Id="Package\Import Business Categorise Fact Table\Sort"
@@ -3329,40 +3292,40 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <NodeLayout
           Size="127,42"
           Id="Package\Import Business Categorise Fact Table\Aggregate"
-          TopLeft="684,295" />
+          TopLeft="708,315" />
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[OLE DB Destination Error Output]"
-          TopLeft="761.5,594">
+          TopLeft="758.5,611">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="206,-44"
+              EndConnector="209,-61"
               Start="0,0"
-              End="206,-36.5">
+              End="209,-53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-18" />
+                    End="0,-26.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-18"
-                    Point2="0,-22"
-                    Point3="4,-22" />
+                    Point1="0,-26.5"
+                    Point2="0,-30.5"
+                    Point3="4,-30.5" />
                   <mssgle:LineSegment
-                    End="202,-22" />
+                    End="205,-30.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="202,-22"
-                    Point2="206,-22"
-                    Point3="206,-26" />
+                    Point1="205,-30.5"
+                    Point2="209,-30.5"
+                    Point3="209,-34.5" />
                   <mssgle:LineSegment
-                    End="206,-36.5" />
+                    End="209,-53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="29.79109375,-17,146.4178125,11.43359375"
+              BoundingBox="31.29109375,-25.5,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3406,26 +3369,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="164.833333333333,91"
+              EndConnector="188.833333333333,111"
               Start="0,0"
-              End="164.833333333333,83.5">
+              End="188.833333333333,103.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.1184210526316" />
+                    End="0,41.2763157894737" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.1184210526316"
-                    Point2="0,37.1184210526316"
-                    Point3="4,37.1184210526316" />
+                    Point1="0,41.2763157894737"
+                    Point2="0,45.2763157894737"
+                    Point3="4,45.2763157894737" />
                   <mssgle:LineSegment
-                    End="160.833333333333,37.1184210526316" />
+                    End="184.833333333333,45.2763157894737" />
                   <mssgle:CubicBezierSegment
-                    Point1="160.833333333333,37.1184210526316"
-                    Point2="164.833333333333,37.1184210526316"
-                    Point3="164.833333333333,41.1184210526316" />
+                    Point1="184.833333333333,45.2763157894737"
+                    Point2="188.833333333333,45.2763157894737"
+                    Point3="188.833333333333,49.2763157894737" />
                   <mssgle:LineSegment
-                    End="164.833333333333,83.5" />
+                    End="188.833333333333,103.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3506,30 +3469,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[Derived Column Output]"
-          TopLeft="614,628">
+          TopLeft="614,630">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="62,-13"
+              EndConnector="59,0"
               Start="0,0"
-              End="54.5,-13">
+              End="51.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="27,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="27,0"
-                    Point2="31,0"
-                    Point3="31,-4" />
-                  <mssgle:LineSegment
-                    End="31,-9" />
-                  <mssgle:CubicBezierSegment
-                    Point1="31,-9"
-                    Point2="31,-13"
-                    Point3="35,-13" />
-                  <mssgle:LineSegment
-                    End="54.5,-13" />
+                    End="51.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3540,30 +3491,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[Aggregate Output 1]"
-          TopLeft="747.5,337">
+          TopLeft="771,357">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9,78"
+              EndConnector="0,41"
               Start="0,0"
-              End="-9,70.5">
+              End="0,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35"
-                    Point2="0,39"
-                    Point3="-4,39" />
-                  <mssgle:LineSegment
-                    End="-5,39" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5,39"
-                    Point2="-9,39"
-                    Point3="-9,43" />
-                  <mssgle:LineSegment
-                    End="-9,70.5" />
+                    End="0,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3574,30 +3513,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[Sort Output1]"
-          TopLeft="738.5,457">
+          TopLeft="770.5,440">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-182.166666666667,73"
+              EndConnector="-214.166666666667,90"
               Start="0,0"
-              End="-182.166666666667,65.5">
+              End="-214.166666666667,82.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.2674772036474" />
+                    End="0,49.3434650455927" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.2674772036474"
-                    Point2="0,43.2674772036474"
-                    Point3="-4,43.2674772036474" />
+                    Point1="0,49.3434650455927"
+                    Point2="0,53.3434650455927"
+                    Point3="-4,53.3434650455927" />
                   <mssgle:LineSegment
-                    End="-178.166666666667,43.2674772036474" />
+                    End="-210.166666666667,53.3434650455927" />
                   <mssgle:CubicBezierSegment
-                    Point1="-178.166666666667,43.2674772036474"
-                    Point2="-182.166666666667,43.2674772036474"
-                    Point3="-182.166666666667,47.2674772036474" />
+                    Point1="-210.166666666667,53.3434650455927"
+                    Point2="-214.166666666667,53.3434650455927"
+                    Point3="-214.166666666667,57.3434650455927" />
                   <mssgle:LineSegment
-                    End="-182.166666666667,65.5" />
+                    End="-214.166666666667,82.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
