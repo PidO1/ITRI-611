@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="DW_Import_Business_Dimension"
   DTS:PackageType="5"
-  DTS:VersionBuild="158"
-  DTS:VersionGUID="{5FCBDDBF-C56B-4FEE-9C03-CA7CC976BACB}">
+  DTS:VersionBuild="164"
+  DTS:VersionGUID="{F4FA8FD5-D720-4CB3-8130-8A899B6C5B29}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -838,7 +838,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">9/9/2019 7:58:33 PM</DTS:VariableValue>
+        DTS:DataType="7">9/9/2019 10:26:55 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -880,12 +880,12 @@
       DTS:CreationName=""
       DTS:DTSID="{D825774E-B3BD-42E0-A272-1ADC05C55506}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="getdate()"
+      DTS:Expression="@[$Project::Effective_Date]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Effective_Date">
       <DTS:VariableValue
-        DTS:DataType="7">9/9/2019 7:58:33 PM</DTS:VariableValue>
+        DTS:DataType="7">1/1/2018</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2677,6 +2677,35 @@ WHERE [Business_ID] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Import Business Dimension\Row Count 4"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count 4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Records_Out</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Business Dimension\Row Count 4.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Business Dimension\Row Count 4.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Import Business Dimension\Row Count 4.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Import Business Dimension\Row Count 5"
               componentClassID="Microsoft.RowCount"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -2701,6 +2730,35 @@ WHERE [Business_ID] = ?</property>
                   refId="Package\Import Business Dimension\Row Count 5.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
                   synchronousInputId="Package\Import Business Dimension\Row Count 5.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Business Dimension\Row Count 6"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count 6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Records_Failed</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Business Dimension\Row Count 6.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Business Dimension\Row Count 6.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Import Business Dimension\Row Count 6.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -5449,14 +5507,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Import Business Dimension\Derived Column 1.Outputs[Derived Column Output]" />
             <path
               refId="Package\Import Business Dimension.Paths[Derived Column Output1]"
-              endId="Package\Import Business Dimension\Insert Destination.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Import Business Dimension\Derived Column 2.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Import Business Dimension.Paths[Derived Column Output2]"
               endId="Package\Import Business Dimension\Row Count 3.Inputs[Row Count Input 1]"
               name="Derived Column Output"
               startId="Package\Import Business Dimension\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Business Dimension.Paths[Derived Column Output2]"
+              endId="Package\Import Business Dimension\Row Count 4.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\Import Business Dimension\Derived Column 2.Outputs[Derived Column Output]" />
             <path
               refId="Package\Import Business Dimension.Paths[Historical Attribute Inserts Output]"
               endId="Package\Import Business Dimension\Row Count 2.Inputs[Row Count Input 1]"
@@ -5474,7 +5532,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Import Business Dimension\OLE DB Command.Outputs[OLE DB Command Output]" />
             <path
               refId="Package\Import Business Dimension.Paths[OLE DB Destination Error Output]"
-              endId="Package\Import Business Dimension\Script Component.Inputs[Input 0]"
+              endId="Package\Import Business Dimension\Row Count 6.Inputs[Row Count Input 1]"
               name="OLE DB Destination Error Output"
               startId="Package\Import Business Dimension\Insert Destination.Outputs[OLE DB Destination Error Output]" />
             <path
@@ -5489,14 +5547,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Import Business Dimension\Script Component.Outputs[Output 0]" />
             <path
               refId="Package\Import Business Dimension.Paths[Row Count Output 1]"
+              endId="Package\Import Business Dimension\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Import Business Dimension\Row Count 4.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Import Business Dimension.Paths[Row Count Output 11]"
               endId="Package\Import Business Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="Row Count Output 1"
               startId="Package\Import Business Dimension\Row Count.Outputs[Row Count Output 1]" />
-            <path
-              refId="Package\Import Business Dimension.Paths[Row Count Output 11]"
-              endId="Package\Import Business Dimension\OLE DB Command 1.Inputs[OLE DB Command Input]"
-              name="Row Count Output 1"
-              startId="Package\Import Business Dimension\Row Count 3.Outputs[Row Count Output 1]" />
             <path
               refId="Package\Import Business Dimension.Paths[Row Count Output 12]"
               endId="Package\Import Business Dimension\Union All 1.Inputs[Union All Input 3]"
@@ -5504,9 +5562,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Import Business Dimension\Row Count 1.Outputs[Row Count Output 1]" />
             <path
               refId="Package\Import Business Dimension.Paths[Row Count Output 13]"
+              endId="Package\Import Business Dimension\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Row Count Output 1"
+              startId="Package\Import Business Dimension\Row Count 3.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Import Business Dimension.Paths[Row Count Output 14]"
               endId="Package\Import Business Dimension\Derived Column 1.Inputs[Derived Column Input]"
               name="Row Count Output 1"
               startId="Package\Import Business Dimension\Row Count 2.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Import Business Dimension.Paths[Row Count Output 15]"
+              endId="Package\Import Business Dimension\Script Component.Inputs[Input 0]"
+              name="Row Count Output 1"
+              startId="Package\Import Business Dimension\Row Count 6.Outputs[Row Count Output 1]" />
             <path
               refId="Package\Import Business Dimension.Paths[Unchanged Output]"
               endId="Package\Import Business Dimension\Row Count 5.Inputs[Row Count Input 1]"
@@ -5605,7 +5673,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{2CFCFF54-58C8-4A80-A153-3BC36B0F6203}"
-          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Records_In,&#xA;IBPT_Records_Failed = @Records_Failed,&#xA;IBPT_Records_Out = @Records_Out&#xA; ,[IBPT_Dim_Historical] = @Dim_Historical&#xA;      ,[IBPT_Dim_Changing] = @Dim_Changing&#xA;      ,[IBPT_Dim_New] = @Dim_New&#xA;      ,[IBPT_Dim_Unchanged] =@Dim_Unchanged&#xA;WHERE IBPT_ID = @IBPT_ID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Records_In,&#xA;IBPT_Records_Failed = @Records_Failed,&#xA;IBPT_Records_Out = @Records_Out-@Records_Failed&#xA; ,[IBPT_Dim_Historical] = @Dim_Historical&#xA;      ,[IBPT_Dim_Changing] = @Dim_Changing&#xA;      ,[IBPT_Dim_New] = @Dim_New&#xA;      ,[IBPT_Dim_Unchanged] =@Dim_Unchanged&#xA;WHERE IBPT_ID = @IBPT_ID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@Current_Date_Time"
             SQLTask:DtsVariableName="User::Current_Date_Time"
@@ -5830,11 +5898,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     design-time-name="Package\Import Business Dimension">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Import Business Dimension\Insert Destination"
+          TopLeft="671,719.5" />
         <NodeLayout
           Size="139,42"
           Id="Package\Import Business Dimension\Row Count 3"
           TopLeft="938,382.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Import Business Dimension\OLE DB Command"
+          TopLeft="345.5,397.5" />
         <NodeLayout
           Size="139,42"
           Id="Package\Import Business Dimension\Row Count 2"
@@ -5844,6 +5920,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\Import Business Dimension\Row Count 1"
           TopLeft="658,335.5" />
         <NodeLayout
+          Size="163,42"
+          Id="Package\Import Business Dimension\Derived Column 2"
+          TopLeft="673,619.5" />
+        <NodeLayout
           Size="130,42"
           Id="Package\Import Business Dimension\Row Count"
           TopLeft="687.5,107.5" />
@@ -5852,31 +5932,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\Import Business Dimension\Slowly Changing Dimension"
           TopLeft="648,209.5" />
         <NodeLayout
+          Size="175,42"
+          Id="Package\Import Business Dimension\OLE DB Command 1"
+          TopLeft="920,467.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Import Business Dimension\Derived Column 1"
+          TopLeft="354,323.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Import Business Dimension\Script Component"
+          TopLeft="285,726" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Import Business Dimension\Flat File Destination"
+          TopLeft="116,614" />
+        <NodeLayout
           Size="169,42"
           Id="Package\Import Business Dimension\S2_Business_Table"
           TopLeft="668,5.49999999999977" />
-        <EdgeLayout
-          Id="Package\Import Business Dimension.Paths[Row Count Output 1]"
-          TopLeft="752.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Import Business Dimension\Derived Column"
+          TopLeft="949,316" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Import Business Dimension\Union All 1"
+          TopLeft="664.5,539.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Import Business Dimension\Row Count 5"
+          TopLeft="940,218" />
         <EdgeLayout
           Id="Package\Import Business Dimension.Paths[OLE DB Source Output]"
           TopLeft="752.5,47.4999999999998">
@@ -5899,40 +5985,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Import Business Dimension\Derived Column 1"
-          TopLeft="354,323.5" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Import Business Dimension\OLE DB Command"
-          TopLeft="345.5,397.5" />
-        <EdgeLayout
-          Id="Package\Import Business Dimension.Paths[Derived Column Output]"
-          TopLeft="432,365.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32"
-              Start="0,0"
-              End="0,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Import Business Dimension\Union All 1"
-          TopLeft="664.5,539.5" />
         <EdgeLayout
           Id="Package\Import Business Dimension.Paths[OLE DB Command Output]"
           TopLeft="428.5,439.5">
@@ -5959,108 +6011,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     Point3="280.666666666667,63.2705167173253" />
                   <mssgle:LineSegment
                     End="280.666666666667,92.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Import Business Dimension\Derived Column 2"
-          TopLeft="660,631.5" />
-        <EdgeLayout
-          Id="Package\Import Business Dimension.Paths[Union All Output 1]"
-          TopLeft="729.5,581.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12,50"
-              Start="0,0"
-              End="12,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21"
-                    Point2="0,25"
-                    Point3="4,25" />
-                  <mssgle:LineSegment
-                    End="8,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8,25"
-                    Point2="12,25"
-                    Point3="12,29" />
-                  <mssgle:LineSegment
-                    End="12,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Import Business Dimension\Insert Destination"
-          TopLeft="671,719.5" />
-        <EdgeLayout
-          Id="Package\Import Business Dimension.Paths[Derived Column Output1]"
-          TopLeft="741.5,673.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="11,46"
-              Start="0,0"
-              End="11,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19"
-                    Point2="0,23"
-                    Point3="4,23" />
-                  <mssgle:LineSegment
-                    End="7,23" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7,23"
-                    Point2="11,23"
-                    Point3="11,27" />
-                  <mssgle:LineSegment
-                    End="11,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Import Business Dimension\OLE DB Command 1"
-          TopLeft="920,467.5" />
-        <EdgeLayout
-          Id="Package\Import Business Dimension.Paths[Row Count Output 11]"
-          TopLeft="1007.5,424.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.9999999999999"
-              Start="0,0"
-              End="0,35.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6106,40 +6056,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Business Dimension.Paths[Row Count Output 12]"
-          TopLeft="727.5,377.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="22.3333333333334,162"
-              Start="0,0"
-              End="22.3333333333334,154.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,92.0182370820668" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,92.0182370820668"
-                    Point2="0,96.0182370820668"
-                    Point3="4,96.0182370820668" />
-                  <mssgle:LineSegment
-                    End="18.3333333333334,96.0182370820668" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.3333333333334,96.0182370820668"
-                    Point2="22.3333333333334,96.0182370820668"
-                    Point3="22.3333333333334,100.018237082067" />
-                  <mssgle:LineSegment
-                    End="22.3333333333334,154.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Import Business Dimension.Paths[Historical Attribute Inserts Output]"
           TopLeft="648,230.5">
           <EdgeLayout.Curve>
@@ -6176,31 +6092,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Business Dimension.Paths[Row Count Output 13]"
-          TopLeft="416.5,282.5">
+          Id="Package\Import Business Dimension.Paths[Derived Column Output1]"
+          TopLeft="1026,358">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19,40.9999999999999"
+              EndConnector="-18.5,24.4999999999999"
               Start="0,0"
-              End="19,33.4999999999999">
+              End="-18.5,16.9999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.4999999999999" />
+                    End="0,8.24999999999994" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.4999999999999"
-                    Point2="0,20.4999999999999"
-                    Point3="4,20.4999999999999" />
+                    Point1="0,8.24999999999994"
+                    Point2="0,12.2499999999999"
+                    Point3="-4,12.2499999999999" />
                   <mssgle:LineSegment
-                    End="15,20.4999999999999" />
+                    End="-14.5,12.2499999999999" />
                   <mssgle:CubicBezierSegment
-                    Point1="15,20.4999999999999"
-                    Point2="19,20.4999999999999"
-                    Point3="19,24.4999999999999" />
+                    Point1="-14.5,12.2499999999999"
+                    Point2="-18.5,12.2499999999999"
+                    Point3="-18.5,16.2499999999999" />
                   <mssgle:LineSegment
-                    End="19,33.4999999999999" />
+                    End="-18.5,16.9999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6209,50 +6125,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Import Business Dimension\Row Count 5"
-          TopLeft="940,218" />
         <EdgeLayout
-          Id="Package\Import Business Dimension.Paths[Unchanged Output]"
-          TopLeft="857,230.5">
+          Id="Package\Import Business Dimension.Paths[Derived Column Output]"
+          TopLeft="432,365.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="83,8.50000000000023"
+              EndConnector="0,32"
               Start="0,0"
-              End="75.5,8.50000000000023">
+              End="0,24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="37.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="37.5,0"
-                    Point2="41.5,0"
-                    Point3="41.5,4" />
-                  <mssgle:LineSegment
-                    End="41.5,4.50000000000023" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41.5,4.50000000000023"
-                    Point2="41.5,8.50000000000023"
-                    Point3="45.5,8.50000000000023" />
-                  <mssgle:LineSegment
-                    End="75.5,8.50000000000023" />
+                    End="0,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-0.700332031249999,-17.6630859375,84.4006640625,11.6630859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Import Business Dimension\Derived Column"
-          TopLeft="949,316" />
         <EdgeLayout
           Id="Package\Import Business Dimension.Paths[Changing Attribute Updates Output]"
           TopLeft="786,251.5">
@@ -6290,31 +6184,213 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Business Dimension.Paths[Derived Column Output2]"
-          TopLeft="1026,358">
+          Id="Package\Import Business Dimension.Paths[Union All Output 1]"
+          TopLeft="729.5,581.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-18.5,24.4999999999999"
+              EndConnector="25,38"
               Start="0,0"
-              End="-18.5,16.9999999999999">
+              End="25,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.24999999999994" />
+                    End="0,15" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.24999999999994"
-                    Point2="0,12.2499999999999"
-                    Point3="-4,12.2499999999999" />
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
                   <mssgle:LineSegment
-                    End="-14.5,12.2499999999999" />
+                    End="21,19" />
                   <mssgle:CubicBezierSegment
-                    Point1="-14.5,12.2499999999999"
-                    Point2="-18.5,12.2499999999999"
-                    Point3="-18.5,16.2499999999999" />
+                    Point1="21,19"
+                    Point2="25,19"
+                    Point3="25,23" />
                   <mssgle:LineSegment
-                    End="-18.5,16.9999999999999" />
+                    End="25,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Dimension.Paths[Unchanged Output]"
+          TopLeft="857,230.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83,8.50000000000023"
+              Start="0,0"
+              End="75.5,8.50000000000023">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="37.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.5,0"
+                    Point2="41.5,0"
+                    Point3="41.5,4" />
+                  <mssgle:LineSegment
+                    End="41.5,4.50000000000023" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.5,4.50000000000023"
+                    Point2="41.5,8.50000000000023"
+                    Point3="45.5,8.50000000000023" />
+                  <mssgle:LineSegment
+                    End="75.5,8.50000000000023" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-0.700332031249999,-17.6630859375,84.4006640625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Dimension.Paths[Row Count Output 14]"
+          TopLeft="416.5,282.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19,40.9999999999999"
+              Start="0,0"
+              End="19,33.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4999999999999"
+                    Point2="0,20.4999999999999"
+                    Point3="4,20.4999999999999" />
+                  <mssgle:LineSegment
+                    End="15,20.4999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15,20.4999999999999"
+                    Point2="19,20.4999999999999"
+                    Point3="19,24.4999999999999" />
+                  <mssgle:LineSegment
+                    End="19,33.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Dimension.Paths[Row Count Output 12]"
+          TopLeft="727.5,377.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.3333333333334,162"
+              Start="0,0"
+              End="22.3333333333334,154.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,92.0182370820668" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,92.0182370820668"
+                    Point2="0,96.0182370820668"
+                    Point3="4,96.0182370820668" />
+                  <mssgle:LineSegment
+                    End="18.3333333333334,96.0182370820668" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.3333333333334,96.0182370820668"
+                    Point2="22.3333333333334,96.0182370820668"
+                    Point3="22.3333333333334,100.018237082067" />
+                  <mssgle:LineSegment
+                    End="22.3333333333334,154.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Dimension.Paths[Row Count Output 13]"
+          TopLeft="1007.5,424.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.9999999999999"
+              Start="0,0"
+              End="0,35.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Dimension.Paths[Row Count Output 11]"
+          TopLeft="752.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Dimension.Paths[Output 0]"
+          TopLeft="366.5,726">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-164.5,-70"
+              Start="0,0"
+              End="-164.5,-62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-31"
+                    Point2="0,-35"
+                    Point3="-4,-35" />
+                  <mssgle:LineSegment
+                    End="-160.5,-35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-160.5,-35"
+                    Point2="-164.5,-35"
+                    Point3="-164.5,-39" />
+                  <mssgle:LineSegment
+                    End="-164.5,-62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6324,63 +6400,143 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="172,42"
-          Id="Package\Import Business Dimension\Flat File Destination"
-          TopLeft="116,614" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Import Business Dimension\Script Component"
-          TopLeft="365,714" />
+          Size="139,42"
+          Id="Package\Import Business Dimension\Row Count 4"
+          TopLeft="876,676" />
         <EdgeLayout
-          Id="Package\Import Business Dimension.Paths[OLE DB Destination Error Output]"
-          TopLeft="671,737.75">
+          Id="Package\Import Business Dimension.Paths[Derived Column Output2]"
+          TopLeft="836,640.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-143,0"
+              EndConnector="40,56.5"
               Start="0,0"
-              End="-135.5,0">
+              End="32.5,56.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-135.5,0" />
+                    End="16,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16,0"
+                    Point2="20,0"
+                    Point3="20,4" />
+                  <mssgle:LineSegment
+                    End="20,52.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20,52.5"
+                    Point2="20,56.5"
+                    Point3="24,56.5" />
+                  <mssgle:LineSegment
+                    End="32.5,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Dimension.Paths[Row Count Output 1]"
+          TopLeft="876,702.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42,37.8333333333334"
+              Start="0,0"
+              End="-34.5,37.8333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-13.7247706422019,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.7247706422019,0"
+                    Point2="-17.7247706422019,0"
+                    Point3="-17.7247706422019,4" />
+                  <mssgle:LineSegment
+                    End="-17.7247706422019,33.8333333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.7247706422019,33.8333333333334"
+                    Point2="-17.7247706422019,37.8333333333334"
+                    Point3="-21.7247706422019,37.8333333333334" />
+                  <mssgle:LineSegment
+                    End="-34.5,37.8333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Import Business Dimension\Row Count 6"
+          TopLeft="467,644" />
+        <EdgeLayout
+          Id="Package\Import Business Dimension.Paths[OLE DB Destination Error Output]"
+          TopLeft="752.5,719.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-216,-33.5"
+              Start="0,0"
+              End="-216,-26">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-12.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-12.75"
+                    Point2="0,-16.75"
+                    Point3="-4,-16.75" />
+                  <mssgle:LineSegment
+                    End="-212,-16.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-212,-16.75"
+                    Point2="-216,-16.75"
+                    Point3="-216,-20.75" />
+                  <mssgle:LineSegment
+                    End="-216,-26" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-140.95890625,5,146.4178125,11.43359375"
+              BoundingBox="-181.20890625,-11.75,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Business Dimension.Paths[Output 0]"
-          TopLeft="446.5,714">
+          Id="Package\Import Business Dimension.Paths[Row Count Output 15]"
+          TopLeft="514.666666666667,686">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-244.5,-58"
+              EndConnector="-122.333333333333,40"
               Start="0,0"
-              End="-244.5,-50.5">
+              End="-122.333333333333,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-25" />
+                    End="0,16.0412707966123" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-25"
-                    Point2="0,-29"
-                    Point3="-4,-29" />
+                    Point1="0,16.0412707966123"
+                    Point2="0,20.0412707966123"
+                    Point3="-4,20.0412707966123" />
                   <mssgle:LineSegment
-                    End="-240.5,-29" />
+                    End="-118.333333333333,20.0412707966123" />
                   <mssgle:CubicBezierSegment
-                    Point1="-240.5,-29"
-                    Point2="-244.5,-29"
-                    Point3="-244.5,-33" />
+                    Point1="-118.333333333333,20.0412707966123"
+                    Point2="-122.333333333333,20.0412707966123"
+                    Point3="-122.333333333333,24.0412707966123" />
                   <mssgle:LineSegment
-                    End="-244.5,-50.5" />
+                    End="-122.333333333333,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6392,6 +6548,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Business Dimension\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Import Business Dimension\Slowly Changing Dimension">
     <Properties>
@@ -6555,19 +6724,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Import Business Dimension\S2_Business_Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Business Dimension\Insert Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

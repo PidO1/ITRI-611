@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="DW_Import_Category_Hierarchy_Fact_Table"
   DTS:PackageType="5"
-  DTS:VersionBuild="197"
-  DTS:VersionGUID="{9F369B2D-3AC9-4EE1-ADF6-55EFA7F40DEE}">
+  DTS:VersionBuild="200"
+  DTS:VersionGUID="{76EF007E-10B5-4C4F-9E21-1540390E0779}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -358,7 +358,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">9/9/2019 8:09:01 PM</DTS:VariableValue>
+        DTS:DataType="7">9/9/2019 10:26:56 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1232,6 +1232,35 @@ where [refTable].[Category_ID] = ?</property>
                   refId="Package\Import Business Categorise Fact Table\Row Count 3.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
                   synchronousInputId="Package\Import Business Categorise Fact Table\Row Count 3.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Business Categorise Fact Table\Row Count 4"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count 4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::Records_Out</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Business Categorise Fact Table\Row Count 4.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Business Categorise Fact Table\Row Count 4.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Import Business Categorise Fact Table\Row Count 4.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -2359,7 +2388,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Import Business Categorise Fact Table\Lookup.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Import Business Categorise Fact Table.Paths[Lookup Match Output1]"
-              endId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Import Business Categorise Fact Table\Row Count 4.Inputs[Row Count Input 1]"
               name="Lookup Match Output"
               startId="Package\Import Business Categorise Fact Table\Lookup 1.Outputs[Lookup Match Output]" />
             <path
@@ -2387,6 +2416,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               endId="Package\Import Business Categorise Fact Table\Script Component.Inputs[Input 0]"
               name="Row Count Output 1"
               startId="Package\Import Business Categorise Fact Table\Row Count 3.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Import Business Categorise Fact Table.Paths[Row Count Output 12]"
+              endId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Import Business Categorise Fact Table\Row Count 4.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2475,7 +2509,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{8F6A11BC-4B55-41DB-B0DE-747A198B38F4}"
-          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Records_In,&#xA;IBPT_Records_Failed = @Records_Failed,&#xA;IBPT_Records_Out = @Records_Out&#xA; ,[IBPT_Dim_Historical] = @Dim_Historical&#xA;      ,[IBPT_Dim_Changing] = @Dim_Changing&#xA;      ,[IBPT_Dim_New] = @Dim_New&#xA;      ,[IBPT_Dim_Unchanged] =@Dim_Unchanged&#xA;WHERE IBPT_ID = @IBPT_ID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="UPDATE Import_Batch_Process_Task&#xA;SET IBPT_End = @Current_Date_Time,&#xA;IBPT_Status = 'Finished',&#xA;IBPT_Records_In = @Records_In,&#xA;IBPT_Records_Failed = @Records_Failed,&#xA;IBPT_Records_Out = @Records_Out-@Records_Failed&#xA; ,[IBPT_Dim_Historical] = @Dim_Historical&#xA;      ,[IBPT_Dim_Changing] = @Dim_Changing&#xA;      ,[IBPT_Dim_New] = @Dim_New&#xA;      ,[IBPT_Dim_Unchanged] =@Dim_Unchanged&#xA;WHERE IBPT_ID = @IBPT_ID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@Current_Date_Time"
             SQLTask:DtsVariableName="User::Current_Date_Time"
@@ -2588,7 +2622,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="294,42"
           Id="Package\Update_Import_Batch_Process_Task_Success"
-          TopLeft="86,265" />
+          TopLeft="92,296" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="505.5,65">
@@ -2629,26 +2663,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-217,97"
+              EndConnector="-211,128"
               Start="0,0"
-              End="-217,89.5">
+              End="-211,120.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.1559633027523" />
+                    End="0,47.6697247706422" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.1559633027523"
-                    Point2="0,39.1559633027523"
-                    Point3="-4,39.1559633027523" />
+                    Point1="0,47.6697247706422"
+                    Point2="0,51.6697247706422"
+                    Point3="-4,51.6697247706422" />
                   <mssgle:LineSegment
-                    End="-213,39.1559633027523" />
+                    End="-207,51.6697247706422" />
                   <mssgle:CubicBezierSegment
-                    Point1="-213,39.1559633027523"
-                    Point2="-217,39.1559633027523"
-                    Point3="-217,43.1559633027523" />
+                    Point1="-207,51.6697247706422"
+                    Point2="-211,51.6697247706422"
+                    Point3="-211,55.6697247706422" />
                   <mssgle:LineSegment
-                    End="-217,89.5" />
+                    End="-211,120.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2708,7 +2742,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="139,42"
           Id="Package\Import Business Categorise Fact Table\Row Count 3"
-          TopLeft="706,388" />
+          TopLeft="692,395" />
         <NodeLayout
           Size="122,42"
           Id="Package\Import Business Categorise Fact Table\Lookup 1"
@@ -2720,7 +2754,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="171,42"
           Id="Package\Import Business Categorise Fact Table\OLE DB Destination"
-          TopLeft="473,385" />
+          TopLeft="450,399" />
         <NodeLayout
           Size="139,42"
           Id="Package\Import Business Categorise Fact Table\Row Count 1"
@@ -2741,30 +2775,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="139,42"
           Id="Package\Import Business Categorise Fact Table\Row Count 2"
           TopLeft="754,256" />
-        <EdgeLayout
-          Id="Package\Import Business Categorise Fact Table.Paths[Lookup Match Output1]"
-          TopLeft="562.25,293">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,92"
-              Start="0,0"
-              End="0,84.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,84.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,36.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[Lookup Match Output]"
           TopLeft="566.75,189">
@@ -2839,30 +2849,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[Row Count Output 11]"
-          TopLeft="845,409">
+          TopLeft="831,416">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="36,16"
+              EndConnector="50,9"
               Start="0,0"
-              End="28.5,16">
+              End="42.5,9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="14,0" />
+                    End="21,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="14,0"
-                    Point2="18,0"
-                    Point3="18,4" />
+                    Point1="21,0"
+                    Point2="25,0"
+                    Point3="25,4" />
                   <mssgle:LineSegment
-                    End="18,12" />
+                    End="25,5" />
                   <mssgle:CubicBezierSegment
-                    Point1="18,12"
-                    Point2="18,16"
-                    Point3="22,16" />
+                    Point1="25,5"
+                    Point2="25,9"
+                    Point3="29,9" />
                   <mssgle:LineSegment
-                    End="28.5,16" />
+                    End="42.5,9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2951,26 +2961,100 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[OLE DB Destination Error Output]"
-          TopLeft="644,407.5">
+          TopLeft="621,418">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="62,0"
+              EndConnector="71,0"
               Start="0,0"
-              End="54.5,0">
+              End="63.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="54.5,0" />
+                    End="63.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-45.95890625,5,146.4178125,11.43359375"
+              BoundingBox="-41.45890625,5,146.4178125,11.43359375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Import Business Categorise Fact Table\Row Count 4"
+          TopLeft="475,322" />
+        <EdgeLayout
+          Id="Package\Import Business Categorise Fact Table.Paths[Lookup Match Output1]"
+          TopLeft="566,293">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.5,29"
+              Start="0,0"
+              End="-21.5,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5"
+                    Point2="0,14.5"
+                    Point3="-4,14.5" />
+                  <mssgle:LineSegment
+                    End="-17.5,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.5,14.5"
+                    Point2="-21.5,14.5"
+                    Point3="-21.5,18.5" />
+                  <mssgle:LineSegment
+                    End="-21.5,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-58.94138671875,19.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Categorise Fact Table.Paths[Row Count Output 12]"
+          TopLeft="544.5,364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,35"
+              Start="0,0"
+              End="-9,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="-4,17.5" />
+                  <mssgle:LineSegment
+                    End="-5,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,17.5"
+                    Point2="-9,17.5"
+                    Point3="-9,21.5" />
+                  <mssgle:LineSegment
+                    End="-9,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

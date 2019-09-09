@@ -33,7 +33,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import.dtsx</Name>
-      <LastWriteTime>2019-09-09T18:08:55.5152588Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T20:05:22.0190532Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -63,7 +63,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Import_BC.dtsx</Name>
-      <LastWriteTime>2019-09-09T17:58:32.2547302Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T20:07:27.3706434Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -73,22 +73,22 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Import_Business_Dimension.dtsx</Name>
-      <LastWriteTime>2019-09-09T17:57:46.9195904Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T20:26:55.0231809Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Import_Category_Dimension.dtsx</Name>
-      <LastWriteTime>2019-09-09T17:53:56.5441954Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T20:26:55.0331859Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Import_Categorise_Business_Fact_Table.dtsx</Name>
-      <LastWriteTime>2019-09-09T16:59:32.3136879Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T20:26:54.9044987Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Import_Category_Hierarchy_Fact_Table.dtsx</Name>
-      <LastWriteTime>2019-09-09T18:02:49.657961Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T20:26:54.8945252Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
