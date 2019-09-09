@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="DW_Import_BC"
   DTS:PackageType="5"
-  DTS:VersionBuild="115"
-  DTS:VersionGUID="{616C4D09-D3FF-4107-B1E5-2260D7DA8F77}">
+  DTS:VersionBuild="118"
+  DTS:VersionGUID="{906A0A0F-1794-4B6A-AEFD-B8094EFC9346}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -59,7 +59,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">9/9/2019 6:56:51 PM</DTS:VariableValue>
+        DTS:DataType="7">9/9/2019 7:58:33 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -80,7 +80,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="DW_Import_BC_Failure_Update"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -151,7 +151,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="DW_Import_BC_Sucess_Update"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -186,7 +186,6 @@
           DTS:refId="Package\Sequence Container\Categories_package"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{8E7169E2-6B4D-49D9-B2E6-28E5C7E86CBB}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -229,7 +228,6 @@
           DTS:refId="Package\Sequence Container\Category_Hierarchy_Fact_Table"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{2da734c8-0863-490d-ab4d-ae0c24515662}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -251,7 +249,6 @@
           DTS:refId="Package\Sequence Container\Load Business Entity"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
-          DTS:Disabled="True"
           DTS:DTSID="{C727B4EE-FE70-42CD-9087-22D8D44C91C2}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"

@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Yelp2</Name>
-    <LastWriteTime>2019-09-09T16:56:50.2609456Z</LastWriteTime>
+    <LastWriteTime>2019-09-09T18:08:55.5940004Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,7 +18,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S1_Import_Business.dtsx</Name>
-      <LastWriteTime>2019-09-04T16:50:27.9108984Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T18:08:55.5441358Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -33,7 +33,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>S2_Import.dtsx</Name>
-      <LastWriteTime>2019-09-09T16:29:43.7378124Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T18:08:55.5152588Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -63,32 +63,32 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Import_BC.dtsx</Name>
-      <LastWriteTime>2019-09-09T16:56:50.212137Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T17:58:32.2547302Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Import_Date_Dimension.dtsx</Name>
-      <LastWriteTime>2019-09-04T16:50:27.882986Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T17:58:32.2228171Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Import_Business_Dimension.dtsx</Name>
-      <LastWriteTime>2019-09-07T23:04:37.0299525Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T17:57:46.9195904Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Import_Category_Dimension.dtsx</Name>
-      <LastWriteTime>2019-09-07T22:08:21.3751146Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T17:53:56.5441954Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Import_Categorise_Business_Fact_Table.dtsx</Name>
-      <LastWriteTime>2019-09-09T16:56:50.1801639Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T16:59:32.3136879Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Import_Category_Hierarchy_Fact_Table.dtsx</Name>
-      <LastWriteTime>2019-09-09T16:45:29.5975498Z</LastWriteTime>
+      <LastWriteTime>2019-09-09T18:02:49.657961Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

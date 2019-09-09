@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="DW_Import_Date_Dimension"
   DTS:PackageType="5"
-  DTS:VersionBuild="84"
-  DTS:VersionGUID="{B68B10B0-82C2-420D-B36C-9DD59CCDC750}">
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{777ED3EC-1802-4387-99DD-0F47F2833390}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Date.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Date.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +113,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Source_Files\Date.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\Date.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -235,7 +235,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\DW_Import_Date_DimensionErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\DW_Import_Date_DimensionErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -398,7 +398,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Error_Files\DW_Import_Date_DimensionErrors.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\DW_Import_Date_DimensionErrors.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -578,7 +578,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">8/30/2019 11:59:02 AM</DTS:VariableValue>
+        DTS:DataType="7">9/9/2019 7:46:25 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1862,7 +1862,7 @@ namespace SC_8782fdba86484a8ea03fe0beb34e8f4c.Properties {
     <msb:CodeName>SC_8782fdba86484a8ea03fe0beb34e8f4c</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_8782fdba86484a8ea03fe0beb34e8f4c</msb:DisplayName>
-    <msb:ProjectId>{D9A34C51-DB48-4D63-8B16-5ED96C40F161}</msb:ProjectId>
+    <msb:ProjectId>{EC82B043-BE87-4EA0-97EC-4054DFEB14FB}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_8782fdba86484a8ea03fe0beb34e8f4c.csproj" />
@@ -2009,7 +2009,7 @@ namespace SC_8782fdba86484a8ea03fe0beb34e8f4c.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMcFzFwAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAdjIA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAH6Pdl0AAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAdjIA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAACQyAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2086,7 +2086,7 @@ bgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAAdABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcAbgAg
 AGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABlAGEA
 ZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMAQwBfADgANwA4ADIAZgBkAGIAYQA4ADYANAA4ADQAYQA4
 AGUAYQAwADMAZgBlADAAYgBlAGIAMwA0AGUAOABmADQAYwAuAFAAcgBvAHAAZQByAHQAaQBlAHMA
-LgBSAGUAcwBvAHUAcgBjAGUAcwAAH5dbUAqMKkGhOzljUJbwpAAEIAEBCAMgAAEFIAEBEREEIAEB
+LgBSAGUAcwBvAHUAcgBjAGUAcwAAWitbu0Z8cU+5RqoEItAGTAAEIAEBCAMgAAEFIAEBEREEIAEB
 DgUgAQERWQQgABJpBCABDggJIAMBEj0dCBJBAwYSPQMGHQgEIAEICAQgAQIIBSACAQgcAyAAAgYg
 AgIOEXUFIAEdCAgGAAESeRF9BSAAEoCBByACAQ4SgIEIt3pcVhk04IkIiYRdzYCAzJEDBhIUAwYS
 GAMGEkUDBhJRAwYSVQMGEiAFIAEBEgwDIAAIBCABAQIJIAQBCA4SPRJBBSABARJFBAAAElEEAAAS
@@ -2547,17 +2547,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="167,42"
-          Id="Package\Import Date Dimension\Rows_Read_Count"
-          TopLeft="456.857142857143,92.6666666666667" />
+          Size="157,42"
+          Id="Package\Import Date Dimension\Date_Errors_File"
+          TopLeft="550,480" />
         <NodeLayout
           Size="154,42"
           Id="Package\Import Date Dimension\Derived Column"
           TopLeft="463.357142857143,171.333333333333" />
         <NodeLayout
-          Size="215,42"
-          Id="Package\Import Date Dimension\Date_Dimension_Destination"
-          TopLeft="454.857142857143,247" />
+          Size="184,42"
+          Id="Package\Import Date Dimension\Date_Flat_File_Source"
+          TopLeft="483,16" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Import Date Dimension\Rows_Read_Count"
+          TopLeft="456.857142857143,92.6666666666667" />
         <NodeLayout
           Size="167,42"
           Id="Package\Import Date Dimension\Row_Count_Errors"
@@ -2566,6 +2570,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="177,42"
           Id="Package\Import Date Dimension\Get error Description"
           TopLeft="451.857142857143,416" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Import Date Dimension\Date_Dimension_Destination"
+          TopLeft="454.857142857143,247" />
         <EdgeLayout
           Id="Package\Import Date Dimension.Paths[Row Count Output 11]"
           TopLeft="581.357142857143,374.333333333333">
@@ -2623,6 +2631,34 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Import Date Dimension.Paths[Output 0]"
+          TopLeft="628.857142857143,437">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-0.357142857143003,43"
+              Start="0,0"
+              End="-0.357142857143003,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="3.642857142857,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="3.642857142857,0"
+                    Point2="-0.357142857143003,0"
+                    Point3="-0.357142857143003,4" />
+                  <mssgle:LineSegment
+                    End="-0.357142857143003,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Import Date Dimension.Paths[OLE DB Destination Error Output]"
           TopLeft="562.357142857143,289">
           <EdgeLayout.Curve>
@@ -2659,44 +2695,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Date Dimension.Paths[Derived Column Output]"
-          TopLeft="540.357142857143,213.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="22,33.666666666667"
-              Start="0,0"
-              End="22,26.166666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.8333333333335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.8333333333335"
-                    Point2="0,16.8333333333335"
-                    Point3="4,16.8333333333335" />
-                  <mssgle:LineSegment
-                    End="18,16.8333333333335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18,16.8333333333335"
-                    Point2="22,16.8333333333335"
-                    Point3="22,20.8333333333335" />
-                  <mssgle:LineSegment
-                    End="22,26.166666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="184,42"
-          Id="Package\Import Date Dimension\Date_Flat_File_Source"
-          TopLeft="483,16" />
-        <EdgeLayout
           Id="Package\Import Date Dimension.Paths[Flat File Source Output]"
           TopLeft="575,58">
           <EdgeLayout.Curve>
@@ -2730,36 +2728,32 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Import Date Dimension\Date_Errors_File"
-          TopLeft="486,517" />
         <EdgeLayout
-          Id="Package\Import Date Dimension.Paths[Output 0]"
-          TopLeft="540.357142857143,458">
+          Id="Package\Import Date Dimension.Paths[Derived Column Output]"
+          TopLeft="540.357142857143,213.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="24.142857142857,59"
+              EndConnector="22,33.666666666667"
               Start="0,0"
-              End="24.142857142857,51.5">
+              End="22,26.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.5" />
+                    End="0,12.8333333333335" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.5"
-                    Point2="0,29.5"
-                    Point3="4,29.5" />
+                    Point1="0,12.8333333333335"
+                    Point2="0,16.8333333333335"
+                    Point3="4,16.8333333333335" />
                   <mssgle:LineSegment
-                    End="20.142857142857,29.5" />
+                    End="18,16.8333333333335" />
                   <mssgle:CubicBezierSegment
-                    Point1="20.142857142857,29.5"
-                    Point2="24.142857142857,29.5"
-                    Point3="24.142857142857,33.5" />
+                    Point1="18,16.8333333333335"
+                    Point2="22,16.8333333333335"
+                    Point3="22,20.8333333333335" />
                   <mssgle:LineSegment
-                    End="24.142857142857,51.5" />
+                    End="22,26.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

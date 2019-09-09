@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="DW_Import_Category_Hierarchy_Fact_Table"
   DTS:PackageType="5"
-  DTS:VersionBuild="195"
-  DTS:VersionGUID="{C4B43981-EE87-4E47-B498-946A04B309D2}">
+  DTS:VersionBuild="197"
+  DTS:VersionGUID="{9F369B2D-3AC9-4EE1-ADF6-55EFA7F40DEE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -358,7 +358,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">9/9/2019 6:45:30 PM</DTS:VariableValue>
+        DTS:DataType="7">9/9/2019 8:09:01 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2708,7 +2708,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="139,42"
           Id="Package\Import Business Categorise Fact Table\Row Count 3"
-          TopLeft="710,381" />
+          TopLeft="706,388" />
         <NodeLayout
           Size="122,42"
           Id="Package\Import Business Categorise Fact Table\Lookup 1"
@@ -2839,30 +2839,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[Row Count Output 11]"
-          TopLeft="849,402">
+          TopLeft="845,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="32,23"
+              EndConnector="36,16"
               Start="0,0"
-              End="24.5,23">
+              End="28.5,16">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="12,0" />
+                    End="14,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="12,0"
-                    Point2="16,0"
-                    Point3="16,4" />
+                    Point1="14,0"
+                    Point2="18,0"
+                    Point3="18,4" />
                   <mssgle:LineSegment
-                    End="16,19" />
+                    End="18,12" />
                   <mssgle:CubicBezierSegment
-                    Point1="16,19"
-                    Point2="16,23"
-                    Point3="20,23" />
+                    Point1="18,12"
+                    Point2="18,16"
+                    Point3="22,16" />
                   <mssgle:LineSegment
-                    End="24.5,23" />
+                    End="28.5,16" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2951,25 +2951,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[OLE DB Destination Error Output]"
-          TopLeft="644,404">
+          TopLeft="644,407.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="66,0"
+              EndConnector="62,0"
               Start="0,0"
-              End="58.5,0">
+              End="54.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="58.5,0" />
+                    End="54.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-43.95890625,5,146.4178125,11.43359375"
+              BoundingBox="-45.95890625,5,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{E05E9FAD-76C2-4AEA-9E0E-04F159A2E6BB}">
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{8B84A311-C32A-4E42-86A9-705DE0BEF42D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{C82F95FE-BE87-4C78-9330-B405322C5CC4}"
       DTS:ObjectName="Is_open">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::Source_Files_Folder]+"\\"+ @[$Package::FileName2]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Lookups\LookupValuesIsOpen.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\LookupValuesIsOpen.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -88,6 +90,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{E5A8A5B5-5196-494A-8448-EC3F59CB9386}"
       DTS:ObjectName="Ratings">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::Source_Files_Folder]+"\\"+ @[$Package::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -97,7 +101,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Lookups\LookupValuesRatings.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Source_Files\LookupValuesRatings.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -123,6 +127,26 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{24797EF6-2C72-4020-A806-80335A6DA097}"
+      DTS:ObjectName="FileName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">LookupValuesRatings.csv</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{3A8F98DD-5206-4EFF-BED8-42624D0F91C1}"
+      DTS:ObjectName="FileName2">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">LookupValuesIsOpen.csv</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -133,7 +157,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">9/9/2019 6:29:44 PM</DTS:VariableValue>
+        DTS:DataType="7">9/9/2019 8:09:01 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -284,7 +308,6 @@
           DTS:refId="Package\Sequence Container\Data Flow Task"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{FFA2A361-7E1A-48F3-BCBC-EEDDB40791CF}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -804,6 +827,7 @@
           DTS:refId="Package\Sequence Container\Package Business Categorise Process"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
           DTS:DTSID="{DD0B5968-85FE-4DCD-9C19-83FE6A893944}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
@@ -866,7 +890,7 @@
         <NodeLayout
           Size="205,42"
           Id="Package\S1_Import_Failure_Update"
-          TopLeft="107.089287054782,468.188240244644" />
+          TopLeft="100.089287054782,477.188240244644" />
         <NodeLayout
           Size="162,42"
           Id="Package\S1_Import_Insert"
@@ -964,33 +988,33 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-130.5,58.235296768795"
+              EndConnector="-137.5,67.235296768795"
               Start="0,0"
-              End="-130.5,50.735296768795">
+              End="-137.5,59.735296768795">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.4617022953419" />
+                    End="0,23.0876015759174" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.4617022953419"
-                    Point2="0,23.4617022953419"
-                    Point3="-4,23.4617022953419" />
+                    Point1="0,23.0876015759174"
+                    Point2="0,27.0876015759174"
+                    Point3="-4,27.0876015759174" />
                   <mssgle:LineSegment
-                    End="-126.5,23.4617022953419" />
+                    End="-133.5,27.0876015759174" />
                   <mssgle:CubicBezierSegment
-                    Point1="-126.5,23.4617022953419"
-                    Point2="-130.5,23.4617022953419"
-                    Point3="-130.5,27.4617022953419" />
+                    Point1="-133.5,27.0876015759174"
+                    Point2="-137.5,27.0876015759174"
+                    Point3="-137.5,31.0876015759174" />
                   <mssgle:LineSegment
-                    End="-130.5,50.735296768795" />
+                    End="-137.5,59.735296768795" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-80.49134765625,28.4617022953419,30.4826953125,9.7490234375"
+              BoundingBox="-83.99134765625,32.0876015759174,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
