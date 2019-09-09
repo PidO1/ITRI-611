@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="DW_Import_Categorise_Business_Fact_Table"
   DTS:PackageType="5"
-  DTS:VersionBuild="190"
-  DTS:VersionGUID="{6ED74DBB-30DA-440D-BD10-65D2C7427179}">
+  DTS:VersionBuild="195"
+  DTS:VersionGUID="{347A2790-D18C-4EEA-8B42-4CD1C8B3D6C0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40,7 +40,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="category_id"
-              DTS:DTSID="{902912A3-2314-46CE-918E-F1DE5B3540CD}"
+              DTS:DTSID="{265B56BE-C993-4B97-9170-4A61E91A4F51}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="title"
-              DTS:DTSID="{B745DFA4-AC52-4F31-A95A-2950F5E9A637}"
+              DTS:DTSID="{50581017-D101-437F-9F5A-5A3A56FD7FE0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="parent_1"
-              DTS:DTSID="{53999343-F996-4E12-B31F-6D0BC40EAA02}"
+              DTS:DTSID="{957A5AB6-204D-4E1B-A1AF-2E91FCC92471}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="parent_2"
-              DTS:DTSID="{50F2160B-0DAF-4909-8680-EC390A301A05}"
+              DTS:DTSID="{6B794743-E470-4CBD-A188-00615DBB8BD7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +76,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="parent_3"
-              DTS:DTSID="{18AD3E6D-49E2-4AB5-8973-AD075276F6C0}"
+              DTS:DTSID="{541046C6-601B-48FC-B7FE-CB3A98B04755}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{78A3269A-FA51-4ADC-9E48-960DD027D79A}"
+              DTS:DTSID="{7CFC6B4C-232D-43E4-90A4-A0E4CE077073}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -92,7 +92,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{D69FEE3E-4B38-4487-9FE4-2FE05802D2B0}"
+              DTS:DTSID="{8CD712AF-5EB4-4A93-801E-2BB0F74D8F41}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -101,7 +101,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorDescription"
-              DTS:DTSID="{6A5E7612-81D8-4A9B-ACBA-7D402ADACB4D}"
+              DTS:DTSID="{F8D83A6C-E20D-4C72-ACFD-CBA2E0375275}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -193,6 +193,109 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7EC4EF9E-4F70-4BE2-A7DB-F56D2E02407E}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::Error_Files_Folder]+"\\"+ @[System::PackageName]+"Errors.csv"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="7177"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Error_Files\DW_Import_Categorise_Business_Fact_TableErrors.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="B_Source_ID"
+              DTS:DTSID="{03CC2713-106D-4839-A122-D71D060088E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Business_Key"
+              DTS:DTSID="{0F1C4E45-4AB4-4D60-88D8-7FFE727B1685}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category_Key"
+              DTS:DTSID="{7774BB54-AFFF-4C2F-81FB-3089E53264A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="C_ID_weights"
+              DTS:DTSID="{34AF2407-1328-4816-BC30-22C34337A063}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IB_Year"
+              DTS:DTSID="{7A5DEE19-8761-4199-B20B-32DCA63079D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IB_Month"
+              DTS:DTSID="{9CDD0CEC-89E4-46C1-887A-31FDECC5412B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weight"
+              DTS:DTSID="{FF7899A8-FC2B-491C-83AA-8BF087BAE1B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{20B54D44-57C3-4791-8087-8520E6DC0E87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{5EF47368-45FF-4A82-BD32-B5C9E9BE83D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="300"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Error_Description"
+              DTS:DTSID="{763478CF-6759-42A6-9D28-4153EB807504}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.AtomicDW]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{62690FC7-5565-48C7-BE7C-D1F61C36D877}"
@@ -254,7 +357,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Current_Date_Time">
       <DTS:VariableValue
-        DTS:DataType="7">9/7/2019 11:33:35 PM</DTS:VariableValue>
+        DTS:DataType="7">9/9/2019 6:56:51 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -338,6 +441,17 @@
       DTS:ObjectName="Records_Out">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1E2BA0D8-E474-4E97-98F4-DEEF0A9A80F6}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::Report_Date]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Report_Date">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2018</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -575,6 +689,28 @@
                           name="FriendlyExpression">((DT_UI8)(1) / C_ID_weights)</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\Derived Column.Outputs[Derived Column Output].Columns[Report_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Business Categorise Fact Table\Derived Column.Outputs[Derived Column Output].Columns[Report_Date]"
+                      name="Report_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)@[User::Report_Date]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)@[User::Report_Date]</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -628,8 +764,8 @@
               <connections>
                 <connection
                   refId="Package\Import Business Categorise Fact Table\Flat File Destination.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
                   name="FlatFileConnection" />
               </connections>
               <inputs>
@@ -638,6 +774,18 @@
                   hasSideEffects="true"
                   name="Flat File Destination Input">
                   <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Import Business Categorise Fact Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Import Business Categorise Fact Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
                     <inputColumn
                       refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].Columns[B_Source_ID]"
                       cachedDataType="wstr"
@@ -665,23 +813,23 @@
                       externalMetadataColumnId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[C_ID_weights]"
                       lineageId="Package\Import Business Categorise Fact Table\Merge Join.Outputs[Merge Join Output].Columns[C_ID_weights]" />
                     <inputColumn
+                      refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].Columns[IB_Year]"
+                      cachedDataType="i2"
+                      cachedName="IB_Year"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[IB_Year]"
+                      lineageId="Package\Import Business Categorise Fact Table\Merge Join.Outputs[Merge Join Output].Columns[IB_Year]" />
+                    <inputColumn
+                      refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].Columns[IB_Month]"
+                      cachedDataType="i2"
+                      cachedName="IB_Month"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[IB_Month]"
+                      lineageId="Package\Import Business Categorise Fact Table\Merge Join.Outputs[Merge Join Output].Columns[IB_Month]" />
+                    <inputColumn
                       refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].Columns[Weight]"
                       cachedDataType="ui8"
                       cachedName="Weight"
                       externalMetadataColumnId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weight]"
                       lineageId="Package\Import Business Categorise Fact Table\Derived Column.Outputs[Derived Column Output].Columns[Weight]" />
-                    <inputColumn
-                      refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Import Business Categorise Fact Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
-                    <inputColumn
-                      refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Import Business Categorise Fact Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
                     <inputColumn
                       refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].Columns[Error_Description]"
                       cachedDataType="wstr"
@@ -692,6 +840,14 @@
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
                     <externalMetadataColumn
                       refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[B_Source_ID]"
                       dataType="wstr"
@@ -710,17 +866,17 @@
                       dataType="ui8"
                       name="C_ID_weights" />
                     <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[IB_Year]"
+                      dataType="i2"
+                      name="IB_Year" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[IB_Month]"
+                      dataType="i2"
+                      name="IB_Month" />
+                    <externalMetadataColumn
                       refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Weight]"
                       dataType="ui8"
                       name="Weight" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      dataType="i4"
-                      name="ErrorCode" />
-                    <externalMetadataColumn
-                      refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      dataType="i4"
-                      name="ErrorColumn" />
                     <externalMetadataColumn
                       refId="Package\Import Business Categorise Fact Table\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Error_Description]"
                       dataType="wstr"
@@ -1041,6 +1197,164 @@ where [refTable].[Category_ID] = ?</property>
                       refId="Package\Import Business Categorise Fact Table\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Import Business Categorise Fact Table\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Business Categorise Fact Table\Lookup 2"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup 2"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Date]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Date]) [refTable]
+where [refTable].[Date] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Date_Key" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date_Description" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month_Of_Year" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year_Month" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Import Business Categorise Fact Table\Derived Column.Outputs[Derived Column Output].Columns[Report_Date]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Business Categorise Fact Table\Lookup 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.AtomicDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.AtomicDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Business Categorise Fact Table\Lookup 2.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Business Categorise Fact Table\Lookup 2.Inputs[Lookup Input].Columns[Report_Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Report_Date"
+                      lineageId="Package\Import Business Categorise Fact Table\Derived Column.Outputs[Derived Column Output].Columns[Report_Date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Date</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Business Categorise Fact Table\Lookup 2.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Import Business Categorise Fact Table\Lookup 2.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\Lookup 2.Outputs[Lookup Match Output].Columns[Date_Key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Import Business Categorise Fact Table\Lookup 2.Outputs[Lookup Match Output].Columns[Date_Key]"
+                      name="Date_Key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Date_Key</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Business Categorise Fact Table\Lookup 2.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Import Business Categorise Fact Table\Lookup 2.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Business Categorise Fact Table\Lookup 2.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Import Business Categorise Fact Table\Lookup 2.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Categorise Fact Table\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Business Categorise Fact Table\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Business Categorise Fact Table\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1379,6 +1693,12 @@ where [refTable].[Category_ID] = ?</property>
                       cachedName="IB_Month"
                       externalMetadataColumnId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IB_Month]"
                       lineageId="Package\Import Business Categorise Fact Table\Merge Join.Outputs[Merge Join Output].Columns[IB_Month]" />
+                    <inputColumn
+                      refId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Date_Key]"
+                      cachedDataType="i4"
+                      cachedName="Date_Key"
+                      externalMetadataColumnId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date_Key]"
+                      lineageId="Package\Import Business Categorise Fact Table\Lookup 2.Outputs[Lookup Match Output].Columns[Date_Key]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1406,6 +1726,10 @@ where [refTable].[Category_ID] = ?</property>
                       refId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IB_Month]"
                       dataType="i2"
                       name="IB_Month" />
+                    <externalMetadataColumn
+                      refId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date_Key]"
+                      dataType="i4"
+                      name="Date_Key" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3023,7 +3347,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               startId="Package\Import Business Categorise Fact Table\Aggregate.Outputs[Aggregate Output 1]" />
             <path
               refId="Package\Import Business Categorise Fact Table.Paths[Derived Column Output]"
-              endId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Import Business Categorise Fact Table\Lookup 2.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Import Business Categorise Fact Table\Derived Column.Outputs[Derived Column Output]" />
             <path
@@ -3036,6 +3360,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               endId="Package\Import Business Categorise Fact Table\Sort.Inputs[Sort Input]"
               name="Lookup Match Output"
               startId="Package\Import Business Categorise Fact Table\Lookup 1.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Import Business Categorise Fact Table.Paths[Lookup Match Output2]"
+              endId="Package\Import Business Categorise Fact Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Import Business Categorise Fact Table\Lookup 2.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Import Business Categorise Fact Table.Paths[Merge Join Output]"
               endId="Package\Import Business Categorise Fact Table\Derived Column.Inputs[Derived Column Input]"
@@ -3404,25 +3733,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Id="Package\Import Business Categorise Fact Table\Merge Join"
           TopLeft="471,530" />
         <NodeLayout
-          Size="98,42"
-          Id="Package\Import Business Categorise Fact Table\Sort"
-          TopLeft="266,440" />
+          Size="171,42"
+          Id="Package\Import Business Categorise Fact Table\OLE DB Destination"
+          TopLeft="956,617" />
         <NodeLayout
           Size="154,42"
           Id="Package\Import Business Categorise Fact Table\Derived Column"
-          TopLeft="460,607" />
+          TopLeft="463,608" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Import Business Categorise Fact Table\OLE DB Destination"
-          TopLeft="673,611" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Import Business Categorise Fact Table\Sort 1"
-          TopLeft="717,398" />
+          Size="130,42"
+          Id="Package\Import Business Categorise Fact Table\Row Count"
+          TopLeft="499,85" />
         <NodeLayout
           Size="113,42"
           Id="Package\Import Business Categorise Fact Table\Lookup"
           TopLeft="266,262" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Import Business Categorise Fact Table\Script Component"
+          TopLeft="962,501" />
         <NodeLayout
           Size="120,42"
           Id="Package\Import Business Categorise Fact Table\Multicast"
@@ -3432,21 +3761,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Id="Package\Import Business Categorise Fact Table\S2_Business_Category"
           TopLeft="476,8" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Import Business Categorise Fact Table\Row Count"
-          TopLeft="499,85" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Import Business Categorise Fact Table\Script Component"
-          TopLeft="886,508" />
-        <NodeLayout
           Size="122,42"
           Id="Package\Import Business Categorise Fact Table\Lookup 1"
           TopLeft="258,351" />
         <NodeLayout
+          Size="107,42"
+          Id="Package\Import Business Categorise Fact Table\Sort 1"
+          TopLeft="717,398" />
+        <NodeLayout
           Size="127,42"
           Id="Package\Import Business Categorise Fact Table\Aggregate"
           TopLeft="708,315" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Import Business Categorise Fact Table\Sort"
+          TopLeft="266,440" />
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[Sort Output1]"
           TopLeft="770.5,440">
@@ -3539,30 +3868,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[Output 0]"
-          TopLeft="967.5,508">
+          TopLeft="1043.5,501">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87.5,-89"
+              EndConnector="11.5,-82"
               Start="0,0"
-              End="87.5,-81.5">
+              End="11.5,-74.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-40.5" />
+                    End="0,-37" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-40.5"
-                    Point2="0,-44.5"
-                    Point3="4,-44.5" />
+                    Point1="0,-37"
+                    Point2="0,-41"
+                    Point3="4,-41" />
                   <mssgle:LineSegment
-                    End="83.5,-44.5" />
+                    End="7.5,-41" />
                   <mssgle:CubicBezierSegment
-                    Point1="83.5,-44.5"
-                    Point2="87.5,-44.5"
-                    Point3="87.5,-48.5" />
+                    Point1="7.5,-41"
+                    Point2="11.5,-41"
+                    Point3="11.5,-45" />
                   <mssgle:LineSegment
-                    End="87.5,-81.5" />
+                    End="11.5,-74.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3595,37 +3924,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[OLE DB Destination Error Output]"
-          TopLeft="758.5,611">
+          TopLeft="1042.5,617">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="209,-61"
+              EndConnector="0,-74"
               Start="0,0"
-              End="209,-53.5">
+              End="0,-66.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-26.5"
-                    Point2="0,-30.5"
-                    Point3="4,-30.5" />
-                  <mssgle:LineSegment
-                    End="205,-30.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="205,-30.5"
-                    Point2="209,-30.5"
-                    Point3="209,-34.5" />
-                  <mssgle:LineSegment
-                    End="209,-53.5" />
+                    End="0,-66.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="31.29109375,-25.5,146.4178125,11.43359375"
+              BoundingBox="-73.20890625,-38.966796875,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3699,18 +4016,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[Merge Join Output]"
-          TopLeft="536.5,572">
+          TopLeft="538,572">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35"
+              EndConnector="0,36"
               Start="0,0"
-              End="0,27.5">
+              End="0,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5" />
+                    End="0,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3768,28 +4085,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Business Categorise Fact Table.Paths[Derived Column Output]"
-          TopLeft="614,630">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="59,0"
-              Start="0,0"
-              End="51.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="51.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Import Business Categorise Fact Table.Paths[Aggregate Output 1]"
           TopLeft="771,357">
           <EdgeLayout.Curve>
@@ -3809,6 +4104,68 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Import Business Categorise Fact Table\Lookup 2"
+          TopLeft="737,617" />
+        <EdgeLayout
+          Id="Package\Import Business Categorise Fact Table.Paths[Derived Column Output]"
+          TopLeft="617,629">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120,9"
+              Start="0,0"
+              End="112.5,9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56,0"
+                    Point2="60,0"
+                    Point3="60,4" />
+                  <mssgle:LineSegment
+                    End="60,5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="60,5"
+                    Point2="60,9"
+                    Point3="64,9" />
+                  <mssgle:LineSegment
+                    End="112.5,9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Business Categorise Fact Table.Paths[Lookup Match Output2]"
+          TopLeft="859,638">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="97,0"
+              Start="0,0"
+              End="89.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="89.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-3.44138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3833,7 +4190,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3843,7 +4200,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3869,7 +4226,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3880,6 +4237,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Business Categorise Fact Table\Lookup 2">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Date]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

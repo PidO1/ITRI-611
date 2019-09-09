@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="S2_Import"
   DTS:PackageType="5"
-  DTS:VersionBuild="74"
-  DTS:VersionGUID="{B345AE56-2B52-453C-8FD0-65A63646AA5B}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{E05E9FAD-76C2-4AEA-9E0E-04F159A2E6BB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Lookup tables Values\LookupValuesIsOpen.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Lookups\LookupValuesIsOpen.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
               DTS:DataType="17"
               DTS:TextQualified="True"
               DTS:ObjectName="CODE_ID"
-              DTS:DTSID="{49F5BC6D-187B-449F-8D9B-32964D72595D}"
+              DTS:DTSID="{CCA492DC-409D-4963-B855-F7C112D4BBE3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CODE_Description"
-              DTS:DTSID="{79BF0199-108F-4BBC-86BD-97554F3CBC4C}"
+              DTS:DTSID="{E69D5877-4EF9-44D3-B6BA-B9CF34FFE201}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -97,7 +97,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\RKW-PostGrad\Desktop\DW2019\Lookup tables Values\LookupValuesRatings.csv">
+          DTS:ConnectionString="C:\Users\piete\Desktop\DW2019 - 2\DW2019\Lookups\LookupValuesRatings.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -107,7 +107,7 @@
               DTS:DataScale="1"
               DTS:TextQualified="True"
               DTS:ObjectName="CODE_ID"
-              DTS:DTSID="{877DAE5E-C70B-49A5-88F3-ABDE3079D468}"
+              DTS:DTSID="{DE751C34-80A3-43D1-9E97-5FEC5AD6A96B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -116,7 +116,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="CODE_Description"
-              DTS:DTSID="{B171555C-750A-4037-8CE5-AEC716371DF5}"
+              DTS:DTSID="{A68C41FE-7640-41E5-9574-F9127897A44E}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -133,7 +133,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DateTime">
       <DTS:VariableValue
-        DTS:DataType="7">8/8/2019 12:57:03 PM</DTS:VariableValue>
+        DTS:DataType="7">9/9/2019 6:29:32 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
